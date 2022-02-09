@@ -64,6 +64,7 @@
 
 <!-- Parse the Latex divs with Katex-->
 <script type="text/javascript">
+  $(document).ready(function () {
   $("script[type='math/tex']").replaceWith(
     function(){
       var tex = $(this).text();
@@ -75,4 +76,5 @@
       var tex = $(this).text();
       return katex.renderToString(tex.replace(/%.*/g, ''), {displayMode: true});
   });
+  })
 </script>
