@@ -45,7 +45,7 @@ While this problem seems well defined, we need to nornalize it carefully so that
 <br />
 
 ### Covariance and Overlaps
-A simple observation (formalized below) will reveal that the fluctuations (variance) of the term above leads to a divergent limit. Therefore, we must normalize it appropariately. To know what normalization is appropriate, we compute the covariance of the underlying gaussian process explicitly,
+A simple observation (formalized below) will reveal that the fluctuations (variance) of the term above lead to a divergent limit. Therefore, we must normalize it appropariately. To know what normalization is appropriate, we compute the covariance of the underlying gaussian process explicitly,
 
 $$ \begin{align} \mathbb{E}[H_n(\sigma^1)H_n(\sigma^2)] &= \frac{1}{n}\mathbb{E}\left[ \sum_{i_1, j_1}J_{i_1, j_1}\sigma^1_{i_1}\sigma^2_{j_1}\sum_{i_2, j_2}J_{i_2, j_2}\sigma^1_{i_2}\sigma^2_{j_2}\right] \\ &= \frac{1}{n}\mathbb{E}\left[\sum_{i_1, j_1}J^2_{i_1, j_1}\sigma^1_{i_1}\sigma^2_{i_1}\sigma^1_{j_1}\sigma^2_{j_1}\right] \\ &= \frac{1}{n}(\sum_{i =1}^n \sigma^1_i\sigma^2_i)^2 = n\cdot (\frac{1}{n}\langle \sigma^1, \sigma^2\rangle)^2\, . \end{align} $$
 
@@ -55,16 +55,39 @@ $$ \begin{equation} \lim_{n \to \infty} \frac{1}{n} \mathbb{E}\left[\max_{\sigma
 
 and this quantity will be termed the _Ground State Energy_ of the system. When studying such quantities, it is a standard trick in statistical physics to understand this quantity using its _smoothed_ approximation, known as the _Free Energy Density_ of the system. This quantity depends on the smoothing parameter $$\beta$$ and is defined as,
 
-$$ \begin{equation} F_{n, \beta} := \frac{1}{n}\mathbb{E}\left[\log(\sum_{\sigma \in \{ \pm 1\}^n} e^{\beta H_n(\sigma)})\right] \, , \end{equation} $$
+$$ \begin{equation} F_{n, \beta} := \frac{1}{n}\mathbb{E}\left[\log\left(\sum_{\sigma \in \{ \pm 1\}^n} e^{\beta H_n(\sigma)}\right)\right] \, , \end{equation} $$
+
 where the exponential summation term, 
 
 $$ \begin{equation} Z_{n, \beta} := \sum_{\sigma \in \{\pm 1\}^n}e^{\beta H_n(\sigma)}\, , \end{equation} $$
 
 is termed the _Partition function_ in Statistical Physics. As we shall see, this softmax trick induces a measure called the _Gibbs Measure_ which will turn out to be very closely related to the _Free Energy_ of the model and will appear as soon as a derivative of the latter is taken with respect to an appropriate parameter in the hamiltonian. Understanding the asymptotic geometric structure of the gibbs, therefore, will be of paramount importance in formally proving the Parisi Variational Principle.
 
+The smoothed free energy can be related to the ground state energy in the regime that the smoothing parameter $$\beta \to \infty$$. This is made precise in the following,
+
+**(Proposition-1)**: The following holds for all $$\beta > 0$$,
+
+$$ \begin{equation} \lim_{n \to \infty} \frac{1}{n} \mathbb{E}\left[\max_{\sigma \in \{\pm 1\}^n} H_n(\sigma)\right] \leq \lim_{n \to \infty} \frac{1}{\beta n}\mathbb{E}\left[log\left(\sum_{\sigma \in \{\pm 1\}^n}e^{\beta H_n(\sigma)}\right)\right] \leq \lim_{n \to \infty} \frac{1}{n} \mathbb{E}\left[\max_{\sigma \in \{\pm 1\}^n} H_n(\sigma)\right] + \frac{\log(2)}{\beta} \, . \end{equation} $$
+
+Note that the above immediately implies that,
+
+$$ \begin{equation} \lim_{n \to \infty} \frac{1}{n} \mathbb{E}\left[\max_{\sigma \in \{\pm 1\}^n} H_n(\sigma)\right] = \lim_{\beta \to \infty}\left(\lim_{n \to \infty} F_{n, \beta}\right)\, , \end{equation} $$
+
+if we assume that the $$n \to \infty$$ limit (also called the _thermodynamic limit_) of the free energy density exists. 
 <br />
 
 ### Guerra-Tonnineli Interpolation
+We now introduce a smooth interpolation between three independent instances of the SK model, and in conjunction with the lemmas of _Fekete_ and _Stein_, use it show that the thermodynamic limit of the free energy density exists.
+
+**(Guerra-Tonnineli Interpolation)** Given three independent instances of the SK model on $$n, m$$ and $$n + m$$ particles, the interpolation is defined $$\forall t \in [0, 1]$$ as follows,
+
+$$ \begin{equation} H^t(\sigma) = \sqrt{t} H_{n + m}(\rho\cdot\tau) + \sqrt{1-t}\left( H_n(\rho) + H_m(\tau)\right)\, . \end{equation} $$
+
+Notice that the interpolation above is equivalent to two independent copies of the SK model of size $$n$$ and $$m$$ at $t = 0$, and becomes a single copy of the SK model of size $$n + m$$ at $$t=1$$. The square-roots are introduced to keep the variance of a single gaussian interaction in the interpolated gaussians within the graphs of size $$n$$ and $$m$$ to $$1$$, while slowly increasing the variance of the gaussian interactions _between_ the two graphs from $$0$$ to $$1$$. As we shall see, the interpolation helps prove that the free energy is _superaddditive_ and an application of _Fekete's_ lemma immediately implies the existence of the limit.
+
+**(Lemma-1)**: The free energy exists in the thermodynamic limit: $$\lim_{n \to \infty} F_{n, \beta}$$ exists.
+
+
 <br />
 
 ### Gaussian Concentration
