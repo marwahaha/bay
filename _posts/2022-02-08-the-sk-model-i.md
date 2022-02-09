@@ -17,8 +17,8 @@ The goal of this post is to introduce the _Sherrington-Kirkpatrick_ model, which
 1. [The Sherrington-Kirkpatrick Model](#the-sherrington-kirkpatrick-model)
    * [An Average-Case Optimization Problem](#an-average-case-optimization-problem)
    * [Covariance and Overlaps](#covariance-and-overlaps)
-   * [Gaussian Concentration](#gaussian-concentration)
    * [Guerra-Tonnineli Interpolation](#guerra-tonnineli-interpolation)
+   * [Gaussian Concentration](#gaussian-concentration)
 2. [Aizenman-Sims-Starr Scheme](#aizenman-sims-starr-scheme)
     * [The ASS Functional](#the-ass-functional)
     * [Invariance Symmetries](#invariance-symmetries)
@@ -28,18 +28,22 @@ The goal of this post is to introduce the _Sherrington-Kirkpatrick_ model, which
 <br />
 
 ## The Sherrington Kirkpatrick Model
+We briefly introduce the Sherrington-Kirkpatrick model as an optimization problem. We will be interested in the almost-surely limit of the optimal value, and we will use an elementary estimate to establish the appropriate normalization in searching for this limit value. The covariance of the optimization problem under consideration will be computed and shown to be a function of the _overlap_ between two solutions - This is a fundamental and critical observation that will show up many times as a quantity of interest in the proof of the Parisi Variational Principle. We will introduce the infamous [Guerra-Tonnineli interpolation](#guerra-tonnineli-interpolation) and use it to demonstrate the existence of (but not compute exactly) the "smoothed" verison of the limit we are interested in _on average_. Using the interpolation again in conjunction with some convexity arguments, we will then establish a [gaussian concentration inequality](#gaussian-concentration) which will imply that the limit exists almost-surely.
 <br />
 
 ### An Average-Case Optimization Problem
+Given $n^2$ i.i.d. standard normal ($\mathcal{N}(0, 1)$) variables $\{J_{ij}\}_{i, j \in [n]}$, we are interested in the optimal value of the following optimization problem over the hypercube,
+  $$
+     \max_{\sigma \in \{\pm 1\}^n} \sum_{i, j=1}^n J_{ij}\sigma_i\sigma_j\, .
 <br />
 
 ### Covariance and Overlaps
 <br />
 
-### Gaussian Concentration
+### Guerra-Tonnineli Interpolation
 <br />
 
-### Guerra-Tonnineli Interpolation
+### Gaussian Concentration
 <br />
 
 ## Aizenman-Sims-Starr Scheme
