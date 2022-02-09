@@ -8,19 +8,19 @@ publications:
 - title: Limitations of Local Quantum Algorithms on Random MAX-k-XOR and Beyond
   authors: Chi-Ning Chou, Peter J. Love, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Submission
-  paperlink: https://arxiv.org/abs/2108.06049
+  paperlink: https://arxiv.org/pdf/2108.06049.pdf
   codelink: NA
   
 - title: Efficient Quantum Voting with Information-Theoretic Security
   authors: Emil T. Khabiboulline, <u>Juspreet Singh Sandhu</u>, Marco Ugo Gambetta, Mikhail D. Lukin, Johannes Borregaard
   conference: In Submission
-  paperlink: https://arxiv.org/pdf/2006.14580.pdf
+  paperlink: https://arxiv.org/pdf/2112.14242.pdf
   codelink: NA
   
 - title: A General Framework for Analyzing Stochastic Dynamics in Learning Algorithms
   authors: Chi-Ning Chou, <u>Juspreet Singh Sandhu</u>, Mien Brabeeba Wang, Tiancheng Yu
   conference: In Submission
-  paperlink: https://www.usenix.org/conference/usenixsecurity20/presentation/shan
+  paperlink: https://arxiv.org/pdf/2006.06171.pdf
   codelink: NA
 
 preprints:
