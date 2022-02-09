@@ -33,7 +33,7 @@ The goal of this post is to introduce the _Sherrington-Kirkpatrick_ model, which
 ## An Average-Case Optimization Problem
 <br />
 
-# Covariance and Overlaps
+## Covariance and Overlaps
 <br />
 
 ## Gaussian Concentration
