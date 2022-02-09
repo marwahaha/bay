@@ -10,12 +10,12 @@
         <div class="home">
           <p style="text-align: center; float:right; display: block">
             <img
-              style="width:280px"
+              style="width:280px; padding-bottom: 10px"
               src="{{ page.profile_picture.src | absolute_url }}"
               alt="{{ page.profile_picture.alt }}"
               class="profile-pic"
             />
-          <p>{{ page.profile_picture.caption }}</p>
+            <div>{{ page.profile_picture.caption }}</div>
           </p>
 
           {{ content }}
