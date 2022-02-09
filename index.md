@@ -3,6 +3,7 @@ layout: home
 profile_picture:
   src: /assets/img/profile-pic.jpg
   alt: website picture
+  caption: 서울, January 2019.
 ---
 
 <p>
