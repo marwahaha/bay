@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+
+  <body>
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="work">
+          <h1 class="page-heading">Publications</h1>
+          {{ content }}
+          {% for item in page.publications %}
+          <div class="work-item">
+            <span class="work-text">
+              <strong>{{ item.title }}</strong></br>
+              {{ item.authors }}</br>
+              <i>{{ item.conference }}</i></br>
+              {% if item.paperlink != "NA" %}
+                  <a href={{ item.paperlink }} target="_blank" class="work-button">PDF</a>
+              {% endif %}
+              {% if item.codelink != "NA" %}
+                  <a href={{ item.codelink }} target="_blank"
+                     class="work-button">Code</a>
+              {% endif %}
+            </span>
+          </div>
+          {% endfor %}
+        </div>
+        <hr>
+        </br>
+        <div class="work">
+          <h1 class="page-heading">Preprints</h1>
+          {% for item in page.preprints %}
+          <div class="work-item">
+            <!-- <img -->
+            <!--   src="{{ item.image.src | absolute_url }}" -->
+            <!--   alt="{{ item.image.alt }}" -->
+            <!--   class="work-bubble" -->
+            <!-- /> -->
+            <span class="work-text">
+              <strong>{{ item.title }}</strong></br>
+              {{ item.authors }}</br>
+              <i>{{ item.conference }}</i></br>
+              {% if item.paperlink != "NA" %}
+                  <a href={{ item.paperlink }} target="_blank" class="work-button">PDF</a>
+              {% endif %}
+              {% if item.codelink != "NA" %}
+                  <a href={{ item.codelink }} target="_blank"
+                     class="work-button">Code</a>
+              {% endif %}
+            </span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+    {% include foot.html %}
+  </body>
+</html>
