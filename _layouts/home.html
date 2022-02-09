@@ -9,13 +9,15 @@
       <div class="wrapper">
         <div class="home">
           <p style="text-align: center; float:right; display: block">
-            <img
-              style="width:280px; margin-bottom: 10px"
-              src="{{ page.profile_picture.src | absolute_url }}"
-              alt="{{ page.profile_picture.alt }}"
-              class="profile-pic"
-            />
-            <div>{{ page.profile_picture.caption }}</div>
+            <div>
+              <img
+                style="width:280px; margin-bottom: 10px"
+                src="{{ page.profile_picture.src | absolute_url }}"
+                alt="{{ page.profile_picture.alt }}"
+                class="profile-pic"
+              />
+              <span>{{ page.profile_picture.caption }}</span>
+            </div>
           </p>
 
           {{ content }}
