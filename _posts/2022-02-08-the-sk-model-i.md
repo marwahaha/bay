@@ -34,9 +34,21 @@ We briefly introduce the Sherrington-Kirkpatrick model as an optimization proble
 ### An Average-Case Optimization Problem
 Given $$n^2$$ i.i.d. standard normal ($$\mathcal{N}(0, 1)$$) variables $$\{J_{ij}\}_{i, j \in [n]}$$, we are interested in the optimal value of the following optimization problem over the hypercube,
 
-$$ \begin{equation} \max_{\sigma \in \{\pm 1\}^n} \sum_{i, j=1}^n J_{ij}\sigma_i\sigma_j\, . \end{equation}$$
+$$ \begin{equation} \max_{\sigma \in \{\pm 1\}^n} \frac{1}{\sqrt{n}}\sum_{i, j=1}^n J_{i,j}\sigma_i\sigma_j\, . \end{equation}$$
 
-The problem above can be seen as asking for the $$\mathsf{MAX}$$-$$\mathsf{CUT}$$ of a complete graph with i.i.d. $$\mathcal{N}(0,1)$$ weights.
+The problem above can be seen as asking for the $$\mathsf{MAX}$$-$$\mathsf{CUT}$$ of a complete graph with i.i.d. $$\mathcal{N}(0,1)$$ weights. As mentioned, we will be interested in the _typical_ optimal value of the above problem as $$n$$ gets large. The normalized quadratic form above will be expressed as $$H_n(\sigma)$$ which, in physics language, translates to asking for the value of the hamiltonian $$H_n$$ under the configuration of spins $$\sigma \in \{\pm 1\}^n$$. Therefore, we will ask the following question instead,
+
+$$ \begin{equation} \lim_{n \to \infty} \mathbb{E}\left[\max_{\sigma \in \{\pm 1\}^n} H_n(\sigma) \right]\, . \end{equation}$$
+
+The above quantity demands attention, as a simple observation will reveal that the fluctuations (variance) of the term above does not lead to a well-defined limit. Therefore, we must normalize it appropariately. To know what normalization is appropriate, we compute the covariance of the underlying gaussian process explicitly,
+
+$$ \begin{align} \mathbb{E}[H_n(\sigma^1)H_n(\sigma^2)] &= \frac{1}{n}\mathbb{E}\left[ \sum_{i_1, j_1}J_{i_1, j_1}\sigma^1_{i_1}\sigma_{j_1}\sum_{i_2, j_2}J_{i_2, j_2}sigma_{i_2}\sigma^2_{j_2}\right] \\ &= \frac{1}{n}\mathbb{E}\left[\sum_{i_1, j_1}J^2_{i_1, j_1}\sigma^1_{i_1}\sigma^2_{i_1}\sigma^1_{j_1}\sigma^2_{j_1}\right] \\ &= \frac{1}{n}(\sum_{i =1}^n \sigma^1_i\sigma^2_i)^2 = n\cdot (\frac{1}{n}\langle \sigma^1, \sigma^2\rangle)^2\, . \end{align} $$
+
+The above calculation reveals that the covariance of the quantity we wish to maximize is a $$O(n)$$ scaling of the _normalized overlap_ between two configurations $$\sigma^1$$ and $$\sigma^2$$. Since the latter quantity is a constant, this tells us that the extra normalization term we wish to add will divide the quantity to optimize by $$n$$. This will yield the final average quantity whose limit we wish to compute precisely.
+
+$$ \begin{equation} \lim_{n \to \infty} \frac{1}{n} \mathbb{E}\left[\max_{\sigma \in \{\pm 1\}^n} H_n(\sigma)\right]\, , \end{equation} $$
+
+which will be termed the _Ground State Energy_ of the system.
 <br />
 
 ### Covariance and Overlaps
