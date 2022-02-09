@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Post example"
+title:  "The SK Model: Part-1"
 date:   2019-10-26 10:00:40
-blurb: "A look at an example post using Bay Jekyll theme."
+blurb: "The Aizenman-Sims-Starr Representation & Ruelle Probability Cascades."
 og_image: /assets/img/content/post-example/Banner.jpg
 ---
 
