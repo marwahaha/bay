@@ -3,7 +3,7 @@
 
 title: Juspreet Singh Sandhu
 description: >- # this means to ignore newlines until "baseurl:"
-  Bay is a minimal Jekyll Theme.
+  Juspreet Singh Sandhu
 baseurl: "/bay" # the subpath of the site
 url: "https://marwahaha.github.io" # the base hostname & protocol for the site
 og_image: /assets/img/profile-pic.jpg
@@ -24,6 +24,9 @@ footer:
     - name: Email
       value: jus065@g.harvard.edu
       link: mailto:jus065@g.harvard.edu
+    - name: Office
+      value: SEC 3.319, 150 Western Ave, Boston, MA 02134
+      link: https://www.google.com/maps/place/Harvard+John+A.+Paulson+School+Of+Engineering+And+Applied+Sciences/@42.3631937,-71.1294895,17z/data=!4m5!3m4!1s0x89e37741111a2a01:0x69c2a968586f826c!8m2!3d42.3631937!4d-71.1273008
   follow:
     - name: Twitter
       link: http://twitter.com/JuspreetS
