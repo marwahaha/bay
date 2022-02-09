@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "The SK Model: Part-1"
-date:   2022-02-10 11:15:40
-blurb: "The Aizenman-Sims-Starr Representation & Ruelle Probability Cascades."
+title:  "The SK Model I"
+date:   2022-02-08 11:15:40
+blurb: "The Aizenman-Sims-Starr Representation & Ruelle Probability Cascades"
 og_image: /assets/img/content/post-example/Banner.jpg
 ---
 
