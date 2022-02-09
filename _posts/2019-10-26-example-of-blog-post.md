@@ -6,8 +6,7 @@ blurb: "The Aizenman-Sims-Starr Representation & Ruelle Probability Cascades."
 og_image: /assets/img/content/post-example/Banner.jpg
 ---
 
-<img src="{{ "/assets/img/content/post-example/Banner.jpg" | absolute_url }}" alt="bay" class="post-pic"/>
-<br />
+[//]: # (<img src="{{ "/assets/img/content/post-example/Banner.jpg" | absolute_url }}" alt="bay" class="post-pic"/>)
 <br />
 
 This is an example of blog post.
