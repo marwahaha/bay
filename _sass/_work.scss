@@ -1,7 +1,8 @@
 .work-item {
   clear: both;
   overflow: hidden;
-  padding-bottom: 3em;
+  padding-bottom: 1.5em;
+  padding-top: 0em;
 }
 
 .work-bubble {
@@ -9,4 +10,18 @@
   padding-right: 20px;
   width: 100px;
   height: 100px;
+}
+
+.work-button {
+    display: inline;
+    padding: .2em .4em .3em;
+    font-size: 90%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    background-color: #3297a8;
+    border-radius: 0.25em;
 }
