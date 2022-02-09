@@ -8,12 +8,15 @@
     <div class="page-content">
       <div class="wrapper">
         <div class="home">
-          <img
-            style="width:280px"
-            src="{{ page.profile_picture.src | absolute_url }}"
-            alt="{{ page.profile_picture.alt }}"
-            class="profile-pic"
-          />
+          <p style="text-align: center; float:right; display: block">
+            <img
+              style="width:280px"
+              src="{{ page.profile_picture.src | absolute_url }}"
+              alt="{{ page.profile_picture.alt }}"
+              class="profile-pic"
+            />
+          <p>{{ page.profile_picture.caption }}</p>
+          </p>
 
           {{ content }}
         </div>
