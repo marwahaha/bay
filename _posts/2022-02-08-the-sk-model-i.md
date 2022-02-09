@@ -55,10 +55,10 @@ $$ \begin{equation} \lim_{n \to \infty} \frac{1}{n} \mathbb{E}\left[\max_{\sigma
 
 and this quantity will be termed the _Ground State Energy_ of the system. When studying such quantities, it is a standard trick in statistical physics to understand this quantity using its _smoothed_ approximation, known as the _Free Energy Density_ of the system. This quantity depends on the smoothing parameter $$\beta$$ and is defined as,
 
-$$ \begin{equation} F_{n, \beta} := \frac{1}{n}\mathbb{E}\left[\log(\sum_{\sigma \in \{ \pm 1\}^n} e^{\beta H_n(\sigma)})\right] \, ,$$
+$$ \begin{equation} F_{n, \beta} := \frac{1}{n}\mathbb{E}\left[\log(\sum_{\sigma \in \{ \pm 1\}^n} e^{\beta H_n(\sigma)})\right] \, , \end{equation} $$
 where the exponential summation term, 
 
-$$ \begin{equation} Z_{n, \beta} := \sum_{\sigma \in \{\pm 1\}^n}e^{\beta H_n(\sigma)}\, , $$
+$$ \begin{equation} Z_{n, \beta} := \sum_{\sigma \in \{\pm 1\}^n}e^{\beta H_n(\sigma)}\, , \end{equation} $$
 
 is termed the _Partition function_ in Statistical Physics. As we shall see, this softmax trick induces a measure called the _Gibbs Measure_ which will turn out to be very closely related to the _Free Energy_ of the model and will appear as soon as a derivative of the latter is taken with respect to an appropriate parameter in the hamiltonian. Understanding the asymptotic geometric structure of the gibbs, therefore, will be of paramount importance in formally proving the Parisi Variational Principle.
 
