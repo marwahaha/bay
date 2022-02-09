@@ -14,7 +14,6 @@ header:
     - name: Home
       slug: /
     - name: Blog
-    - name: Research Interests
     - name: Publications
     - name: Hobbies
 
