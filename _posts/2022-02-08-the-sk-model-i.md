@@ -40,18 +40,28 @@ The problem above can be seen as asking for the $$\mathsf{MAX}$$-$$\mathsf{CUT}$
 
 $$ \begin{equation} \lim_{n \to \infty} \mathbb{E}\left[\max_{\sigma \in \{\pm 1\}^n} H_n(\sigma) \right]\, . \end{equation}$$
 
-The above quantity demands attention, as a simple observation will reveal that the fluctuations (variance) of the term above does not lead to a well-defined limit. Therefore, we must normalize it appropariately. To know what normalization is appropriate, we compute the covariance of the underlying gaussian process explicitly,
+While this problem seems well defined, we need to nornalize it carefully so that the limit we wish to compute does not diverge.
 
-$$ \begin{align} \mathbb{E}[H_n(\sigma^1)H_n(\sigma^2)] &= \frac{1}{n}\mathbb{E}\left[ \sum_{i_1, j_1}J_{i_1, j_1}\sigma^1_{i_1}\sigma_{j_1}\sum_{i_2, j_2}J_{i_2, j_2}sigma_{i_2}\sigma^2_{j_2}\right] \\ &= \frac{1}{n}\mathbb{E}\left[\sum_{i_1, j_1}J^2_{i_1, j_1}\sigma^1_{i_1}\sigma^2_{i_1}\sigma^1_{j_1}\sigma^2_{j_1}\right] \\ &= \frac{1}{n}(\sum_{i =1}^n \sigma^1_i\sigma^2_i)^2 = n\cdot (\frac{1}{n}\langle \sigma^1, \sigma^2\rangle)^2\, . \end{align} $$
-
-The above calculation reveals that the covariance of the quantity we wish to maximize is a $$O(n)$$ scaling of the _normalized overlap_ between two configurations $$\sigma^1$$ and $$\sigma^2$$. Since the latter quantity is a constant, this tells us that the extra normalization term we wish to add will divide the quantity to optimize by $$n$$. This will yield the final average quantity whose limit we wish to compute precisely.
-
-$$ \begin{equation} \lim_{n \to \infty} \frac{1}{n} \mathbb{E}\left[\max_{\sigma \in \{\pm 1\}^n} H_n(\sigma)\right]\, , \end{equation} $$
-
-which will be termed the _Ground State Energy_ of the system.
 <br />
 
 ### Covariance and Overlaps
+A simple observation (formalized below) will reveal that the fluctuations (variance) of the term above leads to a divergent limit. Therefore, we must normalize it appropariately. To know what normalization is appropriate, we compute the covariance of the underlying gaussian process explicitly,
+
+$$ \begin{align} \mathbb{E}[H_n(\sigma^1)H_n(\sigma^2)] &= \frac{1}{n}\mathbb{E}\left[ \sum_{i_1, j_1}J_{i_1, j_1}\sigma^1_{i_1}\sigma^2_{j_1}\sum_{i_2, j_2}J_{i_2, j_2}\sigma^1_{i_2}\sigma^2_{j_2}\right] \\ &= \frac{1}{n}\mathbb{E}\left[\sum_{i_1, j_1}J^2_{i_1, j_1}\sigma^1_{i_1}\sigma^2_{i_1}\sigma^1_{j_1}\sigma^2_{j_1}\right] \\ &= \frac{1}{n}(\sum_{i =1}^n \sigma^1_i\sigma^2_i)^2 = n\cdot (\frac{1}{n}\langle \sigma^1, \sigma^2\rangle)^2\, . \end{align} $$
+
+The above calculation reveals that the covariance of the quantity we wish to maximize is a $$O(n)$$ scaling of the _normalized overlap_ between two configurations $$\sigma^1$$ and $$\sigma^2$$. Since the latter quantity is a constant, this tells us that the extra normalization term we wish to add divides the quantity to optimize by $$n$$. This will yield the final average quantity whose limit we wish to compute precisely,
+
+$$ \begin{equation} \lim_{n \to \infty} \frac{1}{n} \mathbb{E}\left[\max_{\sigma \in \{\pm 1\}^n} H_n(\sigma)\right]\, , \end{equation} $$
+
+and this quantity will be termed the _Ground State Energy_ of the system. When studying such quantities, it is a standard trick in statistical physics to understand this quantity using its _smoothed_ approximation, known as the _Free Energy Density_ of the system. This quantity depends on the smoothing parameter $$\beta$$ and is defined as,
+
+$$ \begin{equation} F_{n, \beta} := \frac{1}{n}\mathbb{E}\left[\log(\sum_{\sigma \in \{ \pm 1\}^n} e^{\beta H_n(\sigma)})\right] \, ,$$
+where the exponential summation term, 
+
+$$ \begin{equation} Z_{n, \beta} := \sum_{\sigma \in \{\pm 1\}^n}e^{\beta H_n(\sigma)}\, , $$
+
+is termed the _Partition function_ in Statistical Physics. As we shall see, this softmax trick induces a measure called the _Gibbs Measure_ which will turn out to be very closely related to the _Free Energy_ of the model and will appear as soon as a derivative of the latter is taken with respect to an appropriate parameter in the hamiltonian. Understanding the asymptotic geometric structure of the gibbs, therefore, will be of paramount importance in formally proving the Parisi Variational Principle.
+
 <br />
 
 ### Guerra-Tonnineli Interpolation
