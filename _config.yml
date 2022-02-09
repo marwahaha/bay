@@ -4,8 +4,8 @@
 title: Juspreet Singh Sandhu
 description: >- # this means to ignore newlines until "baseurl:"
   Juspreet Singh Sandhu
-baseurl: "/bay" # the subpath of the site
-url: "https://marwahaha.github.io" # the base hostname & protocol for the site
+baseurl: "/" # the subpath of the site
+url: "https://juspreetsandhu.me" # the base hostname & protocol for the site
 og_image: /assets/img/profile-pic.jpg
 google_analytics: ""
 
