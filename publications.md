@@ -1,6 +1,3 @@
-All my papers can be found on [Semantic Scholar](https://www.semanticscholar.org/author/Juspreet-Singh-Sandhu/2052821753) or [Google Scholar](https://scholar.google.com/citations?user=2G4gViMAAAAJ).
-<br/>
-
 ---
 layout: publications
 title: Publications
@@ -40,3 +37,6 @@ preprints:
   paperlink: NA
   codelink: NA
 ---
+
+All my papers can be found on [Semantic Scholar](https://www.semanticscholar.org/author/Juspreet-Singh-Sandhu/2052821753) or [Google Scholar](https://scholar.google.com/citations?user=2G4gViMAAAAJ).
+<br/>
