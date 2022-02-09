@@ -3,6 +3,9 @@ layout: publications
 title: Publications
 slug: /publications
 
+All my papers can be found on [Semantic Scholar](https://www.semanticscholar.org/author/Juspreet-Singh-Sandhu/2052821753) or [Google Scholar](https://scholar.google.com/citations?user=2G4gViMAAAAJ).
+<br/>
+
 publications:
 
 - title: Limitations of Local Quantum Algorithms on Random MAX-k-XOR and Beyond
@@ -37,6 +40,3 @@ preprints:
   paperlink: NA
   codelink: NA
 ---
-
-All my papers can be found on [Semantic Scholar](https://www.semanticscholar.org/author/Juspreet-Singh-Sandhu/2052821753) or [Google Scholar](https://scholar.google.com/citations?user=2G4gViMAAAAJ).
-<br/>
