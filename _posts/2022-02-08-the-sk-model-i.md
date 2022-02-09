@@ -32,9 +32,10 @@ We briefly introduce the Sherrington-Kirkpatrick model as an optimization proble
 <br />
 
 ### An Average-Case Optimization Problem
-Given $n^2$ i.i.d. standard normal ($\mathcal{N}(0, 1)$) variables $\{J_{ij}\}_{i, j \in [n]}$, we are interested in the optimal value of the following optimization problem over the hypercube,
+Given $$n^2$$ i.i.d. standard normal ($$\mathcal{N}(0, 1)$$) variables $$\{J_{ij}\}_{i, j \in [n]}$$, we are interested in the optimal value of the following optimization problem over the hypercube,
   $$
      \max_{\sigma \in \{\pm 1\}^n} \sum_{i, j=1}^n J_{ij}\sigma_i\sigma_j\, .
+  $$
 <br />
 
 ### Covariance and Overlaps
