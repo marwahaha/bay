@@ -6,7 +6,10 @@ profile_picture:
 ---
 
 <p>
-  I am a PhD student at <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.seas.harvard.edu%2Fcomputer-science&sa=D&sntz=1&usg=AFQjCNGjg26QHPZ0TDV_KVdv3VHJ0ZsKYg">Harvard University</a>, fortunate to be advised by Prof. <a href="https://www.google.com/url?q=https%3A%2F%2Fsites.google.com%2Fview%2Ftuftsqi&sa=D&sntz=1&usg=AFQjCNHcsMTHG5jtH46FfNZ8OHvDqzM97w">Peter Love</a>. 
+  I am a PhD student at <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.seas.harvard.edu%2Fcomputer-science&sa=D&sntz=1&usg=AFQjCNGjg26QHPZ0TDV_KVdv3VHJ0ZsKYg">Harvard University</a>, fortunate to be advised by Prof. <a href="https://www.google.com/url?q=https%3A%2F%2Fsites.google.com%2Fview%2Ftuftsqi&sa=D&sntz=1&usg=AFQjCNHcsMTHG5jtH46FfNZ8OHvDqzM97w">Peter Love</a>.
+</p>
+
+<p> 
 My research interests lie at the intersection of Theoretical Computer Science & Mathematical Physics, particularly in the areas of Spin-Glass Theory, Quantum Inapproximability, Spectral Graph Theory, Random Optimization & Stochastic Geometry.
 </p>
 
