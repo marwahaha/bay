@@ -27,31 +27,31 @@ The goal of this post is to introduce the _Sherrington-Kirkpatrick_ model, which
 
 <br />
 
-# The Sherrington Kirkpatrick Model
+## The Sherrington Kirkpatrick Model
 <br />
 
-## An Average-Case Optimization Problem
+### An Average-Case Optimization Problem
 <br />
 
-## Covariance and Overlaps
+### Covariance and Overlaps
 <br />
 
-## Gaussian Concentration
+### Gaussian Concentration
 <br />
 
-## Guerra-Tonnineli Interpolation
+### Guerra-Tonnineli Interpolation
 <br />
 
-# Aizenman-Sims-Starr Scheme
+## Aizenman-Sims-Starr Scheme
 <br />
 
-## The ASS functional
+### The ASS functional
 <br />
 
-## Invariance Symmetries
+### Invariance Symmetries
 <br />
 
-# Ruelle Probability Cascades
+## Ruelle Probability Cascades
 <br />
 
 #### FOOTNOTES
