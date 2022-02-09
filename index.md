@@ -6,9 +6,10 @@ profile_picture:
 ---
 
 <p>
-  Welcome! This site serves as an example for the Bay Jekyll theme. Bay is a very simple and minimal theme, directly inspired by Dan Grover's <a href="http://dangrover.com">website</a>.
+  I am a PhD student at <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.seas.harvard.edu%2Fcomputer-science&sa=D&sntz=1&usg=AFQjCNGjg26QHPZ0TDV_KVdv3VHJ0ZsKYg">Harvard University</a>, fortunate to be advised by Prof. <a href="https://www.google.com/url?q=https%3A%2F%2Fsites.google.com%2Fview%2Ftuftsqi&sa=D&sntz=1&usg=AFQjCNHcsMTHG5jtH46FfNZ8OHvDqzM97w">Peter Love</a>. 
+My research interests lie at the intersection of Theoretical Computer Science & Mathematical Physics, particularly in the areas of Spin-Glass Theory, Quantum Inapproximability, Spectral Graph Theory, Random Optimization & Stochastic Geometry.
 </p>
 
 <p>
-  You can find the source code and the instructions on <a href="https://github.com/eliottvincent/bay">GitHub</a>.
+  Previously, I was a Research Engineer at <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.kensho.com%2F&sa=D&sntz=1&usg=AFQjCNFFNoPaarKyKr6fU23OmUQpKrbyxQ">Kensho, Inc.</a> in the Graph-Infrastructure team. I finished my undergraduate studies from <a href="https://www.google.com/url?q=https%3A%2F%2Fphysics.illinois.edu%2F&sa=D&sntz=1&usg=AFQjCNHRHJYVorx2ldFR6JEe1PHQjmt3oA">UIUC</a> with a BS in Physics, and minors in Computer Science & Mathematics.
 </p>
