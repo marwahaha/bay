@@ -23,6 +23,13 @@ figure {
 }
 
 /**
+ * Need to render bold text on firefox properly
+ */
+strong, b {
+  font-weight: bold;
+}
+
+/**
  * Basic styling
  */
 body {
