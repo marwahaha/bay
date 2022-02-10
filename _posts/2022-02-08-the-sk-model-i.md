@@ -85,7 +85,7 @@ Before introducing the interpolation formally, we briefly state _Fekete's_ and _
 
 $$ \begin{equation} \mathbb{E}[g_{\sigma}f(g)] = \sum_{\sigma' \in \Sigma}\mathbb{E}\left[g_{\sigma}g_{\sigma'} \right]\mathbb{E}\left[\partial_{\sigma'}f(g)\right]\, . \end{equation}$$
 
-<u><strong>(Fekete's Lemma)</u></strong>: If a sequence $$\{x_n\}_{n = 1}^{\infty} $$ is _superadditive_ ($$x_n + x_m \leq x_{n + m}\, ,\, \forall n, m \geq 1 $$), then,
+<u><strong>(Fekete's Lemma)</strong></u>: If a sequence $$\{x_n\}_{n = 1}^{\infty} $$ is _superadditive_ ($$x_n + x_m \leq x_{n + m}\, ,\, \forall n, m \geq 1 $$), then,
 
 $$ \begin{equation} \lim_{n \to \infty} \frac{x_n}{n} = \sup_{n \geq 1}\frac{x_n}{n}\, . \end{equation}$$
 
@@ -98,7 +98,7 @@ $$ \begin{equation} H^t(\sigma) = \sqrt{t} H_{n + m}(\rho\cdot\tau) + \sqrt{1-t}
 Notice that the interpolation above is equivalent to two independent copies of the SK model of size $$n$$ and $$m$$ at $$t = 0 $$, and becomes a single copy of the SK model of size $$n + m$$ at $$t=1 $$. The square-roots are introduced to keep the variance of a single gaussian interaction in the interpolated gaussians within the graphs of size $$n$$ and $$m$$ to $$1 $$, while slowly increasing the variance of the gaussian interactions _between_ the two graphs from $$0$$ to $$1$$. As we shall see, the interpolation helps prove that the free energy is _superadditive_ and an application of _Fekete's_ lemma immediately implies the existence of the limit.
 
 <u><strong>(Lemma-1)</strong></u>: The free energy exists in the thermodynamic limit: $$\lim_{n \to \infty} F_{n, \beta}$$ exists. <br />
-<u>_Proof_</u>: We will analyze the free energy density $$\phi(t)$$ of the interpolated hamiltonian $$H^t$$ at every $$t \in [0, 1] $$. Note that since $$J_{i, j}$$ are continuously distributed and the expectation is a convex combination of continuous variables, $$\phi(t) $$ is continuous. The change of free energy density as a function of $$t $$ is then given as,
+<u><i>Proof</i></u>: We will analyze the free energy density $$\phi(t)$$ of the interpolated hamiltonian $$H^t$$ at every $$t \in [0, 1] $$. Note that since $$J_{i, j}$$ are continuously distributed and the expectation is a convex combination of continuous variables, $$\phi(t) $$ is continuous. The change of free energy density as a function of $$t $$ is then given as,
 
 $$ \begin{align} \partial_t\phi(t) &= \frac{1}{n + m}\mathbb{E}\left[ \frac{1}{Z_t}\partial_t(Z_t)\right] = \frac{1}{n + m}\mathbb{E}\left[ \frac{1}{Z_t}\left(\sum_{\sigma \in \{\pm 1\}^n}\partial_te^{ H^t(\sigma)}\right)\right] \\ &= \frac{1}{n + m}\mathbb{E}\left[ \langle \partial_t H^t(\sigma)\rangle_t\right]\end{align} $$
 
