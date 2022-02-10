@@ -8,7 +8,7 @@ og_image: /assets/img/content/post-example/Banner.jpg
 
 [//]: # (<img src="{{ "/assets/img/content/post-example/Banner.jpg" | absolute_url }}" alt="bay" class="post-pic"/>)
 <br />
-The goal of this post is to introduce the _Sherrington-Kirkpatrick_ model, which is the canonical starting point in Spin-Glass Theory. This model (along with a slightly generalized family) is one of the first models for which the infamous _Parisi-Variational Principle_ was (formally) proven to be true. It is also a model that instigated the introduction of many other concepts via the _Replica-Symmetry Breaking_ ansatzen such as _Ultrametricity_, the _TAP Equations_, and the _Ghirlanda-Guerra Identities_. It is the prototypical model of a **Mean-Field Spin Glass** and has recently had algorithmic implications, which in conjunction with the growing body of work on the _Overlap-Gap Property_ have shed light on the average-case complexity of a large family of optimization problems[^1].
+The goal of this post is to introduce the _Sherrington-Kirkpatrick_ model, which is the canonical starting point in Spin-Glass Theory. This model (along with a slightly generalized family) is one of the first models for which the infamous _Parisi-Variational Principle_ was (formally) proven to be true. It is also a model that instigated the introduction of many other concepts via the _Replica-Symmetry Breaking_ ansatzen such as _Ultrametricity_, the _TAP Equations_, and the _Ghirlanda-Guerra Identities_. It is the prototypical model of a <strong>Mean-Field Spin Glass</strong> and has recently had algorithmic implications, which in conjunction with the growing body of work on the _Overlap-Gap Property_ have shed light on the average-case complexity of a large family of optimization problems[^1].
 
 <br />
 
@@ -32,7 +32,7 @@ We briefly introduce the Sherrington-Kirkpatrick model as an optimization proble
 <br />
 
 ### An Average-Case Optimization Problem
-Given $$n^2$$ i.i.d. standard normal ($$\mathcal{N}(0, 1)$$) variables $$\{J_{ij}\}_{i, j \in [n]}$$, we are interested in the optimal value of the following optimization problem over the hypercube,
+Given $$n^2$$ i.i.d. standard normal ($$\mathcal{N}(0, 1) $$) variables $$\{J_{ij}\}_{i, j \in [n]}$$, we are interested in the optimal value of the following optimization problem over the hypercube,
 
 $$ \begin{equation} \max_{\sigma \in \{\pm 1\}^n} \frac{1}{\sqrt{n}}\sum_{i, j=1}^n J_{i,j}\sigma_i\sigma_j\, . \end{equation}$$
 
@@ -47,9 +47,9 @@ While this problem seems well defined, we need to nornalize it carefully so that
 ### Covariance and Overlaps
 A simple observation (formalized below) will reveal that the fluctuations (variance) of the term above lead to a divergent limit. Therefore, we must normalize it appropariately. To know what normalization is appropriate, we compute the covariance of the underlying gaussian process explicitly,
 
-$$ \begin{align} \mathbb{E}[H_n(\sigma^1)H_n(\sigma^2)] &= \frac{1}{n}\mathbb{E}\left[ \sum_{i_1, j_1}J_{i_1, j_1}\sigma^1_{i_1}\sigma^2_{j_1}\sum_{i_2, j_2}J_{i_2, j_2}\sigma^1_{i_2}\sigma^2_{j_2}\right] \\ &= \frac{1}{n}\mathbb{E}\left[\sum_{i_1, j_1}J^2_{i_1, j_1}\sigma^1_{i_1}\sigma^2_{i_1}\sigma^1_{j_1}\sigma^2_{j_1}\right] \\ &= \frac{1}{n}(\sum_{i =1}^n \sigma^1_i\sigma^2_i)^2 = n\cdot (\frac{1}{n}\langle \sigma^1, \sigma^2\rangle)^2\, . \end{align} $$
+$$ \begin{align} \mathbb{E}[H_n(\sigma^1)H_n(\sigma^2)] &= \frac{1}{n}\mathbb{E}\left[ \sum_{i_1, j_1}J_{i_1, j_1}\sigma^1_{i_1}\sigma^2_{j_1}\sum_{i_2, j_2}J_{i_2, j_2}\sigma^1_{i_2}\sigma^2_{j_2}\right] \\ &= \frac{1}{n}\mathbb{E}\left[\sum_{i_1, j_1}J^2_{i_1, j_1}\sigma^1_{i_1}\sigma^2_{i_1}\sigma^1_{j_1}\sigma^2_{j_1}\right] \\ &= \frac{1}{n}\left(\sum_{i =1}^n \sigma^1_i\sigma^2_i\right)^2 = n\cdot \left(\frac{1}{n}\langle \sigma^1, \sigma^2\rangle\right)^2\, . \end{align} $$
 
-The above calculation reveals that the covariance of the quantity we wish to maximize is a $$O(n)$$ scaling of the _normalized overlap_ between two configurations $$\sigma^1$$ and $$\sigma^2$$. Since the latter quantity is a constant, this tells us that the extra normalization term we wish to add divides the quantity to optimize by $$n$$. This will yield the final average quantity whose limit we wish to compute precisely,
+The above calculation reveals that the covariance of the quantity we wish to maximize is a $$O(n)$$ scaling of the _normalized overlap_ between two configurations $$\sigma^1 $$ and $$\sigma^2 $$. Since the latter quantity is a constant, this tells us that the extra normalization term we wish to add divides the quantity to optimize by $$n$$. This will yield the final average quantity whose limit we wish to compute precisely,
 
 $$ \begin{equation} \lim_{n \to \infty} \frac{1}{n} \mathbb{E}\left[\max_{\sigma \in \{\pm 1\}^n} H_n(\sigma)\right]\, , \end{equation} $$
 
@@ -69,25 +69,47 @@ The smoothed free energy can be related to the ground state energy in the regime
 
 $$ \begin{equation} \lim_{n \to \infty} \frac{1}{n} \mathbb{E}\left[\max_{\sigma \in \{\pm 1\}^n} H_n(\sigma)\right] \leq \lim_{n \to \infty} \frac{1}{\beta n}\mathbb{E}\left[\log\left(\sum_{\sigma \in \{\pm 1\}^n}e^{\beta H_n(\sigma)}\right)\right] \leq \lim_{n \to \infty} \frac{1}{n} \mathbb{E}\left[\max_{\sigma \in \{\pm 1\}^n} H_n(\sigma)\right] + \frac{\log(2)}{\beta} \, . \end{equation} $$
 
-Note that the above immediately implies that,
+Note that the above immediately implies (via an application of Holder's inequality) that,
 
-$$ \begin{equation} \lim_{n \to \infty} \frac{1}{n} \mathbb{E}\left[\max_{\sigma \in \{\pm 1\}^n} H_n(\sigma)\right] = \lim_{\beta \to \infty}\left(\lim_{n \to \infty} F_{n, \beta}\right)\, , \end{equation} $$
+$$ \begin{equation} \lim_{n \to \infty} \frac{1}{n} \mathbb{E}\left[\max_{\sigma \in \{\pm 1\}^n} H_n(\sigma)\right] = \lim_{\beta \to \infty}\frac{1}{\beta}\left(\lim_{n \to \infty} F_{n, \beta}\right)\, , \end{equation} $$
 
 if we assume that the $$n \to \infty$$ limit (also called the _thermodynamic limit_) of the free energy density exists.
 <br />
 
 ### Guerra-Tonnineli Interpolation
-We now introduce a smooth interpolation between three independent instances of the SK model, and in conjunction with the lemmas of _Fekete_ and _Stein_, use it show that the thermodynamic limit of the free energy density exists.
+We now introduce a smooth interpolation between three independent instances of the SK model, and in conjunction with the lemmas of _Fekete_ and _Stein_, use it show that the thermodynamic limit of the free energy density exists. <br />
+
+Before introducing the interpolation formally, we briefly state _Fekete's_ and _Stein's_ lemmata. The proofs for these are elementary and require no more than basic algebraic manipulations and integration by parts, and are omitted in this blog post[^2].
+
+<u><strong>(Stein's Lemma)</strong></u>: Given a differentiable function $f$ that doesn't grow too fast, and a jointly-gaussian process $$\{g(\sigma)\}_{\sigma \in \Sigma} $$, the following holds,
+
+$$ \begin{equation} \mathbb{E}[g_{\sigma}f(g)] = \sum_{\sigma' \in \Sigma}\mathbb{E}\left[g_{\sigma}g_{\sigma'} \right]\mathbb{E}\left[\partial_{\sigma'}f(g)\right]\, . \end{equation}$$
+
+<u><strong>(Fekete's Lemma)</u></strong>: If a sequence $$\{x_n\}_{n = 1}^{\infty} $$ is _superadditive_ ($$x_n + x_m \leq x_{n + m}\, ,\, \forall n, m \geq 1 $$), then,
+
+$$ \begin{equation} \lim_{n \to \infty} \frac{x_n}{n} = \sup_{n \geq 1}\frac{x_n}{n}\, . \end{equation}$$
+
+We now state the interpolation, and give some intuition about its structure before proving the main lemma which asserts the existence of the limit for the free energy density as $$n \to \infty $$. <br />
 
 <u><strong>(Guerra-Tonnineli Interpolation)</strong></u>: Given three independent instances of the SK model on $$n, m$$ and $$n + m$$ particles, the interpolation is defined $$\forall t \in [0, 1]$$ as follows,
 
 $$ \begin{equation} H^t(\sigma) = \sqrt{t} H_{n + m}(\rho\cdot\tau) + \sqrt{1-t}\left(H_n(\rho) + H_m(\tau)\right)\, . \end{equation} $$
 
-Notice that the interpolation above is equivalent to two independent copies of the SK model of size $$n$$ and $$m$$ at $$t = 0 $$, and becomes a single copy of the SK model of size $$n + m$$ at $$t=1 $$. The square-roots are introduced to keep the variance of a single gaussian interaction in the interpolated gaussians within the graphs of size $$n$$ and $$m$$ to $$1 $$, while slowly increasing the variance of the gaussian interactions _between_ the two graphs from $$0$$ to $$1$$. As we shall see, the interpolation helps prove that the free energy is _superaddditive_ and an application of _Fekete's_ lemma immediately implies the existence of the limit.
+Notice that the interpolation above is equivalent to two independent copies of the SK model of size $$n$$ and $$m$$ at $$t = 0 $$, and becomes a single copy of the SK model of size $$n + m$$ at $$t=1 $$. The square-roots are introduced to keep the variance of a single gaussian interaction in the interpolated gaussians within the graphs of size $$n$$ and $$m$$ to $$1 $$, while slowly increasing the variance of the gaussian interactions _between_ the two graphs from $$0$$ to $$1$$. As we shall see, the interpolation helps prove that the free energy is _superadditive_ and an application of _Fekete's_ lemma immediately implies the existence of the limit.
 
-<u><strong>(Lemma-1)</strong></u>: The free energy exists in the thermodynamic limit: $$\lim_{n \to \infty} F_{n, \beta}$$ exists.
+<u><strong>(Lemma-1)</strong></u>: The free energy exists in the thermodynamic limit: $$\lim_{n \to \infty} F_{n, \beta}$$ exists. <br />
+<u>_Proof_</u>: We will analyze the free energy density $$\phi(t)$$ of the interpolated hamiltonian $$H^t$$ at every $$t \in [0, 1] $$. Note that since $$J_{i, j}$$ are continuously distributed and the expectation is a convex combination of continuous variables, $$\phi(t) $$ is continuous. The change of free energy density as a function of $$t $$ is then given as,
+
+$$ \begin{align} \partial_t\phi(t) &= \frac{1}{n + m}\mathbb{E}\left[ \frac{1}{Z_t}\partial_t(Z_t)\right] = \frac{1}{n + m}\mathbb{E}\left[ \frac{1}{Z_t}\left(\sum_{\sigma \in \{\pm 1\}^n}\partial_te^{ H^t(\sigma)}\right)\right] \\ &= \frac{1}{n + m}\mathbb{E}\left[ \langle \partial_t H^t(\sigma)\rangle_t\right]\end{align} $$
+
+where $$\langle . \rangle_t $$ denotes the average with respect to the Gibbs measure at $$t $$. The above relationship states that the free energy density changes proportional to the average change of the ground state energy of the interpolated energy. The above expression is interpolated by applying a wonderful lemma that allows us to rewrite the expected value of some jointly gaussian vector $$\{x_{\sigma}\} $$ in terms of a term that subtracts the "covariance" between $$\{x_{\sigma}\} $$ and another gaussian vector $$\{y_{\sigma}\} $$ from the "overlap" terms.
+
+<u><strong>(Gaussian Covariance for Gibbs Average, [\[Lemma 1.1, Pa14\]]())</strong></u>: Given two jointly gaussian vectors $$\{x_{\sigma}\} $$ and $$\{y_{\sigma}\} $$, the following can be said about the iterated average of $$x $$,
+
+$$ \begin{equation} \mathbb{E}[\langle x_\sigma \rangle] = \mathbb{E}[\langle \mathbb{E}[x_{\sigma_1}y_{\sigma_1}]\rangle - \langle \mathbb{E}[x_{\sigma_1}y_{\sigma_2}]\rangle]\end{equation}\, . $$
 
 
+The lemma above allows us to re-write the average change in the ground state energy of the interpolated hamiltonian in terms of a covariance term with respect to the hamiltonian itself, which can be exapnded and evaluated in terms of the overlaps.
 <br />
 
 ### Gaussian Concentration
@@ -108,3 +130,5 @@ Notice that the interpolation above is equivalent to two independent copies of t
 #### FOOTNOTES
 
 [^1]: There are many references to this body of work which will be given in due course. Nonetheless, the following two surveys are a nice start: [\[B05\]](http://www.numdam.org/item/SB_2004-2005__47__349_0.pdf), [\[G21\]](https://arxiv.org/pdf/2109.14409.pdf).
+
+[^2]: Stein's Lemma can be proved by a simple integration-by-parts argument for every coordinate $$i $$ in conjunction with Fubini's theorem and the chain-rule. The lemma itself simply asserts that the correlation between a gaussian variable and some function of it is equivalent to a sum of scalings (by the correlations) of the average change in the function. Likewise, Fekete's Lemma boils down to algebraic manipulation of the sequence, where we take the limit infimum of $$x_n/n $$ and compare it to limit infimum of some $$x_m $$ where $$m $$ is chosen to be the supremum as a divisor with a remainder term. The lemma itself merely asserts that for an appropriately growing sequence, the empirical average in the limit simply picks out the largest contributing term.
