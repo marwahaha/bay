@@ -57,7 +57,7 @@ and this quantity will be termed the _Ground State Energy_ of the system. When s
 
 $$ \begin{equation} F_{n, \beta} := \frac{1}{n}\mathbb{E}\left[\log\left(\sum_{\sigma \in \{ \pm 1\}^n} e^{\beta H_n(\sigma)}\right)\right] \, , \end{equation} $$
 
-where the exponential summation term, 
+where the exponential summation term,
 
 $$ \begin{equation} Z_{n, \beta} := \sum_{\sigma \in \{\pm 1\}^n}e^{\beta H_n(\sigma)}\, , \end{equation} $$
 
@@ -73,7 +73,7 @@ Note that the above immediately implies that,
 
 $$ \begin{equation} \lim_{n \to \infty} \frac{1}{n} \mathbb{E}\left[\max_{\sigma \in \{\pm 1\}^n} H_n(\sigma)\right] = \lim_{\beta \to \infty}\left(\lim_{n \to \infty} F_{n, \beta}\right)\, , \end{equation} $$
 
-if we assume that the $$n \to \infty$$ limit (also called the _thermodynamic limit_) of the free energy density exists. 
+if we assume that the $$n \to \infty$$ limit (also called the _thermodynamic limit_) of the free energy density exists.
 <br />
 
 ### Guerra-Tonnineli Interpolation
@@ -83,7 +83,7 @@ We now introduce a smooth interpolation between three independent instances of t
 
 $$ \begin{equation} H^t(\sigma) = \sqrt{t} H_{n + m}(\rho\cdot\tau) + \sqrt{1-t}\left(H_n(\rho) + H_m(\tau)\right)\, . \end{equation} $$
 
-Notice that the interpolation above is equivalent to two independent copies of the SK model of size $$n$$ and $$m$$ at $t = 0$, and becomes a single copy of the SK model of size $$n + m$$ at $$t=1$$. The square-roots are introduced to keep the variance of a single gaussian interaction in the interpolated gaussians within the graphs of size $$n$$ and $$m$$ to $$1$$, while slowly increasing the variance of the gaussian interactions _between_ the two graphs from $$0$$ to $$1$$. As we shall see, the interpolation helps prove that the free energy is _superaddditive_ and an application of _Fekete's_ lemma immediately implies the existence of the limit.
+Notice that the interpolation above is equivalent to two independent copies of the SK model of size $$n$$ and $$m$$ at $$t = 0 $$, and becomes a single copy of the SK model of size $$n + m$$ at $$t=1 $$. The square-roots are introduced to keep the variance of a single gaussian interaction in the interpolated gaussians within the graphs of size $$n$$ and $$m$$ to $$1 $$, while slowly increasing the variance of the gaussian interactions _between_ the two graphs from $$0$$ to $$1$$. As we shall see, the interpolation helps prove that the free energy is _superaddditive_ and an application of _Fekete's_ lemma immediately implies the existence of the limit.
 
 <u><strong>(Lemma-1)</strong></u>: The free energy exists in the thermodynamic limit: $$\lim_{n \to \infty} F_{n, \beta}$$ exists.
 
