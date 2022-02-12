@@ -116,12 +116,12 @@ $$ \begin{align} \frac{1}{n + m}\mathbb{E}\left[ \langle \partial_t H^t(\sigma)\
 The terms inside the expectations can easily be evaluated by taking the derivatives and multiplying to be,
 
 $$ \begin{align} &\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_1) \right] = \mathbb{E}\left[ \frac{1}{2}(H_{n + m}(\sigma_1))^2 - (H_n(\rho_1) + H_m(\tau_1))^2\right] \\
-&= \mathbb{E}\left[(n + m)\left(\frac{\langle\sigma_1, \sigma_1\rangle}{n + m}\right)^2 - n\left(\frac{\langle \rho_1, \rho_1 \rangle}{n}\right)^2 - m\left(\frac{\langle \tau_1, \tau_1 \rangle^2}{m}\right)\right] \\ &= 0\, ,\end{align} $$
+&= (n + m)\left(\frac{\langle\sigma_1, \sigma_1\rangle}{n + m}\right)^2 - n\left(\frac{\langle \rho_1, \rho_1 \rangle}{n}\right)^2 - m\left(\frac{\langle \tau_1, \tau_1 \rangle^2}{m}\right) \\ &= 0\, ,\end{align} $$
 
 where we used the fact that $$H_n $$ and $$H_m $$ are independent to zero out the covariance term in-between them in conjunction with the fact that the [covariance of the underlying gaussian process is the square of its normalized overlaps](#covariance-and-overlaps).
 
 A similar calculation immediately reveals that,
-$$ \begin{align} &\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_2)\right] = \mathbb{E}\left[\frac{1}{2}(H_{n + m}(\sigma_1)H_{n + m}(\sigma_2)) - H_n(\rho_1)H_n(\rho_2) - H_m(\tau_1)H_m(\tau_2)\right] \\ &= \frac{1}{2}\mathbb{E}\left[ (n + m)\left(\frac{\langle \sigma_1, \sigma_2 \rangle}{n + m}\right)^2 - n\left(\frac{\langle \rho_1, \rho_2 \rangle}{n}\right)^2  - m\left(\frac{\langle\tau_1, \tau_2 \rangle}{m}\right)^2\right] \\ &= \frac{1}{2}\mathbb{E}\left[ \frac{n}{n+m}\left(\frac{n}{n + m} - 1\right)\left(\frac{\langle \rho_1, \rho_2 \rangle}{n}\right)^2 + \left(\frac{m}{n + m} - 1\right)\left(\frac{\langle \sigma_1, \sigma_2 \rangle}{m}\right)^2\right]\end{align} $$
+$$ \begin{align} &\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_2)\right] = \mathbb{E}\left[\frac{1}{2}(H_{n + m}(\sigma_1)H_{n + m}(\sigma_2)) - H_n(\rho_1)H_n(\rho_2) - H_m(\tau_1)H_m(\tau_2)\right] \\ &= \frac{1}{2}(n + m)\left(\frac{\langle \sigma_1, \sigma_2 \rangle}{n + m}\right)^2 - n\left(\frac{\langle \rho_1, \rho_2 \rangle}{n}\right)^2  - m\left(\frac{\langle\tau_1, \tau_2 \rangle}{m}\right)^2 \\ &= \frac{1}{2}\frac{n}{n+m}\left(\frac{n}{n + m} - 1\right)\left(\frac{\langle \rho_1, \rho_2 \rangle}{n}\right)^2 + \left(\frac{m}{n + m} - 1\right)\left(\frac{\langle \sigma_1, \sigma_2 \rangle}{m}\right)^2 + \frac{2mn}{m + n}\left(\frac{\langle\rho_1,\rho_2\rangle\langle\tau_1,\tau_2\rangle}{mn}\right)^2 \end{align} $$
 
 Note that the term above is negative since it is equivalent to
 
@@ -130,15 +130,15 @@ $$ \begin{align} \frac{1}{m + n}\left(2AB - mA - nB\right)\, ,\forall n, m \geq 
 where $$A = n\left(\frac{\langle \rho_1, \rho_2\rangle}{n}\right)^2$$ and $$B = m\left(\frac{\langle \tau_1, \tau_2\rangle}{m}\right)^2 $$, and we used the fact that $$\|A\|, \|B\| \leq 1 $$ and 
 $$ \begin{equation} \langle \sigma_1, \sigma_2 \rangle = \frac{n}{m + n}\left(\frac{\langle\rho_1, \rho_2\rangle}{n}\right) + \frac{m}{m + n}\left(\frac{\langle \tau_1, \tau_2 \rangle}{m}\right)\, . \end{equation}$$
 
-Note that the above immediately implies that,
+This immediately implies that,
 
-$$ \begin{equation} \partial_t\phi(t) = \frac{1}{n + m}\mathbb{E}\left[\langle\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_1) \right]\rangle_t - \langle\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_2)\right]\rangle_t\right] = \mathbb{E}\left[\langle\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_2)\right]\rangle_t\right] \geq 0\, . \end{equation} $$
+$$ \begin{align} \partial_t\phi(t) &= \frac{1}{n + m}\mathbb{E}\left[\langle\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_1) \right]\rangle_t - \langle\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_2)\right]\rangle_t\right] \\ &= \frac{-1}{m+n}\mathbb{E}\left[\langle\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_2)\right]\rangle_t\right] = -\mathbb{E}\left[\langle\textsf{g}(\text{overlaps}^2)\rangle_t\right] \geq 0\, , \end{align} $$
 
-The fact that the square of the overlaps is a convex function in conjunction with the observations that,
+since the expectations of non-negative random variables are non-negative. Additionally, these are convex combinations of the squares of the overlap, which are convex functions themselves. Therefore, $$\partial_t\phi(t)$$ is a convex function. Then, the observations that,
 
-$$ \begin{align} \phi(0) = \frac{n}{m + n}F_n + \frac{m}{m + n}F_m \, , \\ \phi(1) = F_{n + m} \, , \end{align} $$
+$$ \begin{align} &\phi(0) = \frac{n}{m + n}F_n + \frac{m}{m + n}F_m \, , \\ &\phi(1) = F_{n + m} \, , \end{align} $$
 
-yields that the free energy is superadditive. This yields that the limit of the free energy density is well-defined in the thermodynamic limit with an application of _Fekete's Lemma_. <br />
+yield that the free energy is superadditive (since $$\partial_t\phi(t) \geq 0 $$ and convexity implies $$\phi(0) \leq \phi(1) $$). This shows that the limit of the free energy density is well-defined in the thermodynamic limit with an application of _Fekete's Lemma_. <br />
 
 ### Gaussian Concentration
 The goal of this section is to "boost" the previous lemma showing that the free energy density of the SK model is well-defined on average to an _almost-surely_ statement. In order to do that it is crucial to prove that there is concentration of the <strong>log-partition</strong> function (under the gaussians).
