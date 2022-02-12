@@ -127,7 +127,7 @@ Note that the term above is negative since it is equivalent to
 
 $$ \begin{align} \frac{1}{m + n}\left(2AB - mA - nB\right)\, ,\forall n, m \geq 1 \end{align} $$
 
-where $$A = n\left(\frac{\langle \rho_1, \rho_2\rangle}{n}\right)^2$$ and $$B = m\left(\frac{\langle \tau_1, \tau_2\rangle}{m}\right)^2 $$, and we used the fact that $$\|A\|, \|B\| \leq 1 $$ and 
+where $$A = n\left(\frac{\langle \rho_1, \rho_2\rangle}{n}\right)^2$$ and $$B = m\left(\frac{\langle \tau_1, \tau_2\rangle}{m}\right)^2 $$, and to assert negativity we used the facts that $$\|A\|, \|B\| \leq 1 $$ and 
 $$ \begin{equation} \langle \sigma_1, \sigma_2 \rangle = \frac{n}{m + n}\left(\frac{\langle\rho_1, \rho_2\rangle}{n}\right) + \frac{m}{m + n}\left(\frac{\langle \tau_1, \tau_2 \rangle}{m}\right)\, . \end{equation}$$
 
 This immediately implies that,
