@@ -104,12 +104,23 @@ $$ \begin{align} \partial_t\phi(t) &= \frac{1}{n + m}\mathbb{E}\left[ \frac{1}{Z
 
 where $$\langle . \rangle_t $$ denotes the average with respect to the Gibbs measure at $$t $$. The above relationship states that the free energy density changes proportional to the average rate of change of the energy of the interpolated hamiltonian. The above expression is interpolated by applying a wonderful lemma that allows us to rewrite the expected value of some jointly gaussian vector $$\{x_{\sigma}\} $$ in terms of a term that subtracts the "covariance" between $$\{x_{\sigma}\} $$ and another gaussian vector $$\{y_{\sigma}\} $$ from the "overlap" terms.
 
-<u><strong>(Gaussian Covariance for Gibbs Average </strong></u>[\[Lemma 1.1, Pa14\]](https://link.springer.com/book/10.1007/978-1-4614-6289-7)<u><strong>)</strong></u>: Given two jointly gaussian vectors $$\{x_{\sigma}\} $$ and $$\{y_{\sigma}\} $$, the following can be said about the iterated average of $$x $$,
+<u><strong>(Gaussian Covariance for Gibbs Average </strong></u>[\[Lemma 1.1, Pa14\]](https://link.springer.com/book/10.1007/978-1-4614-6289-7)<u><strong>)</strong></u>: Given two jointly gaussian vectors $$\{x_{\sigma}\} $$ and $$\{y_{\sigma}\} $$, the following can be said about the iterated average of $$x_{\sigma} $$ (where the average is with respect to the Gibbs for $$\{y_{\sigma}\} $$),
 
 $$ \begin{equation} \mathbb{E}[\langle x_\sigma \rangle] = \mathbb{E}[\langle \mathbb{E}[x_{\sigma_1}y_{\sigma_1}]\rangle - \langle \mathbb{E}[x_{\sigma_1}y_{\sigma_2}]\rangle]\end{equation}\, . $$
 
 
-The lemma above allows us to re-write the average rate of change in the ground state energy of the interpolated hamiltonian in terms of a covariance term with respect to the hamiltonian itself, which can be exapnded and evaluated in terms of the overlaps.
+The lemma above allows us to re-write the average rate of change in the ground state energy of the interpolated hamiltonian in terms of a covariance term with respect to the hamiltonian itself, which can be expanded and evaluated in terms of the overlaps. Setting $$x_{\sigma} = \partial_t H^t(\sigma) $$ and $$y_{\sigma} = H^t(\sigma) $$, we have
+
+$$ \begin{align} \frac{1}{n + m}\mathbb{E}\left[ \langle \partial_t H^t(\sigma)\rangle_t\right] &= \frac{1}{n + m}\mathbb{E}\left[\langle\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_1) \right]\rangle - \langle\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_2)\right]\rangle\right] \end{align}\, .$$
+
+The terms inside the expectations can easily be evaluated by taking the derivatives and multiplying to be,
+
+$$ \begin{align} &\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_1) \right] = \mathbb{E}\left[ \frac{1}{2}(H_{n + m}(\sigma_1))^2 - (H_n(\rho_1) + H_m(\tau_1))^2\right] \\
+&= \mathbb{E}\left[(n + m)\left(\frac{\langle\sigma_1, \sigma_1\rangle^2}{n + m}\right) - n\left(\frac{\langle \rho_1, \rho_1 \rangle^2}{n}\right) - m\left(\frac{\langle \tau_1, \tau_1 \rangle^2}{m}\right)\right] \\ &= 0\, ,\end{align} $$
+where we used the fact that $H_n$ and $H_m$ are independent to zero out the covariance term in-between them in conjunction with the fact that the [covariance of the underlying gaussian process is the square of its normalized overlaps](#covariance-and-overlaps).
+
+A similar calculation immediately reveals that,
+$$ \begin{align} &\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_2)\right] = \mathbb{E}\left[\frac{1}{2}(H_{n + m}(\sigma_1)H_{n + m}(\sigma_2)) - H_n(\rho_1)H_n(\rho_2) - H_m(\tau_1)H_m(\tau_2)\right] \\ &= \frac{1}{2}\mathbb{E}\left[ (n + m)\left(\frac{\langle \sigma_1, \sigma_2 \rangle}{n + m}\right)^2 - n\left(\frac{\langle \rho_1, \rho_2 \rangle}{n}\right)^2  - m\left(\frac{\langle\tau_1, \tau_2 \rangle}{m}\right)^2\right] \\ &= \frac{1}{2}\mathbb{E}\left[ \frac{n}{n+m}(\frac{n}{n + m} - 1)\left(\frac{\langle \rho_1, \rho_2 \rangle}{n}\right)^2\right]\end{align}$$
 <br />
 
 ### Gaussian Concentration
@@ -131,4 +142,4 @@ The lemma above allows us to re-write the average rate of change in the ground s
 
 [^1]: There are many references to this body of work which will be given in due course. Nonetheless, the following two surveys are a nice start: [\[B05\]](http://www.numdam.org/item/SB_2004-2005__47__349_0.pdf), [\[G21\]](https://arxiv.org/pdf/2109.14409.pdf).
 
-[^2]: Stein's Lemma can be proved by a simple integration-by-parts argument for every coordinate $$i $$ in conjunction with Fubini's theorem and the chain-rule. The lemma itself simply asserts that the correlation between a gaussian variable and some function of it is equivalent to a sum of scalings (by the correlations) of the average change in the function. Likewise, Fekete's Lemma boils down to algebraic manipulation of the sequence, where we take the limit infimum of $$x_n/n $$ and compare it to limit infimum of some $$x_m $$ where $$m $$ is chosen to be the supremum as a divisor with a remainder term. The lemma itself merely asserts that for an appropriately growing sequence, the empirical average in the limit simply picks out the largest contributing term.
+[^2]: Stein's Lemma can be proved by a simple integration-by-parts argument for every coordinate $$i $$ in conjunction with Fubini's theorem and the chain-rule. The lemma itself simply asserts that the correlation between a gaussian variable and some function of it is equivalent to a sum of scalings (by the correlations) of the average rate of change of the function. Likewise, Fekete's Lemma boils down to algebraic manipulation of the sequence, where we take the limit infimum of $$x_n/n $$ and compare it to limit infimum of some $$x_m $$ where $$m $$ is chosen to be the supremum as a divisor with a remainder term. The lemma itself merely asserts that for an appropriately growing sequence, the empirical average in the limit simply picks out the largest contributing term.
