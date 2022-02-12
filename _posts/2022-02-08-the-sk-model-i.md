@@ -111,7 +111,7 @@ $$ \begin{equation} \mathbb{E}[\langle x_\sigma \rangle] = \mathbb{E}[\langle \m
 
 The lemma above allows us to re-write the average rate of change in the ground state energy of the interpolated hamiltonian in terms of a covariance term with respect to the hamiltonian itself, which can be expanded and evaluated in terms of the overlaps. Setting $$x_{\sigma} = \partial_t H^t(\sigma) $$ and $$y_{\sigma} = H^t(\sigma) $$, we have
 
-$$ \begin{align} \frac{1}{n + m}\mathbb{E}\left[ \langle \partial_t H^t(\sigma)\rangle_t\right] &= \frac{1}{n + m}\mathbb{E}\left[\langle\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_1) \right]\rangle - \langle\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_2)\right]\rangle\right] \end{align}\, .$$
+$$ \begin{align} \frac{1}{n + m}\mathbb{E}\left[ \langle \partial_t H^t(\sigma)\rangle_t\right] &= \frac{1}{n + m}\mathbb{E}\left[\langle\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_1) \right]\rangle_t - \langle\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_2)\right]\rangle_t\right] \end{align}\, .$$
 
 The terms inside the expectations can easily be evaluated by taking the derivatives and multiplying to be,
 
@@ -132,7 +132,7 @@ $$ \begin{equation} \langle \sigma_1, \sigma_2 \rangle = \frac{n}{m + n}\left(\f
 
 Note that the above immediately implies that,
 
-$$ \begin{equation} \partial_t\phi(t) = \frac{1}{n + m}\mathbb{E}\left[\langle\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_1) \right]\rangle - \langle\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_2)\right]\rangle\right] = \langle\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_2)\right]\rangle\right] \geq 0\, . \end{equation} $$
+$$ \begin{equation} \partial_t\phi(t) = \frac{1}{n + m}\mathbb{E}\left[\langle\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_1) \right]\rangle_t - \langle\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_2)\right]\rangle_t\right] = \mathbb{E}\left[\langle\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_2)\right]\rangle_t\right] \geq 0\, . \end{equation} $$
 
 The fact that the square of the overlaps is a convex function in conjunction with the observations that,
 
