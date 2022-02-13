@@ -141,8 +141,15 @@ $$ \begin{align} &\phi(0) = \frac{n}{m + n}F_n + \frac{m}{m + n}F_m \, , \\ &\ph
 yield that the free energy is superadditive (since $$\partial_t\phi(t) \geq 0 $$ and convexity implies $$\phi(0) \leq \phi(1) $$). This shows that the limit of the free energy density is well-defined in the thermodynamic limit with an application of _Fekete's Lemma_. <br />
 
 ### Gaussian Concentration
-The goal of this section is to "boost" the previous lemma showing that the free energy density of the SK model is well-defined on average to an _almost-surely_ statement. In order to do that it is crucial to prove that there is concentration of the <strong>log-partition</strong> function (under the gaussians).
+The goal of this section is to "boost" the previous lemma showing that the free energy density of the SK model is well-defined on average to an _almost-surely_ statement. In order to do that it is crucial to prove that there is concentration of the <strong>log-partition</strong> function (under the gaussians). To do this, we will use a _gaussian interpolation_ technique (which is very similar to the [Guerra-Tonnineli interpolation](#guerra-tonnineli-interpolation)) in conjunction with some elementary convexity properties.
+
+<u><strong>(Gaussian Concentration Inequality)</strong></u>: Given a $$b$$-lipschitz functkion $$F:\mathbb{R}^n \to \mathbb{R}$$, and a jointly gaussian process $$\{g_i\}_{i=1}^n$$ with bounded covariance $$C$$, the following holds $$\forall \epsilon > 0 $$
+
+$$ \begin{equation} \Pr\left[ |F(g_1,\dots,g_n) - \mathbb{E}\left[F(g_1,\dots,g_n)\right] \geq \epsilon\right] \leq e^{-\frac{\epsilon^2}{b\cdot C}}\, .  \end{equation}$$
+
+_Proof:_ The proof relies on setting up a smooth _gaussian interpolation_ between two independent copies of the underlying gaussian process and then analyzing the moment generating function. 
 <br />
+
 
 ## Aizenman-Sims-Starr Scheme
 <br />
