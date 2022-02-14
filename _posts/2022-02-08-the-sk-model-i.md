@@ -150,6 +150,7 @@ $$ \begin{equation} \Pr_g\left[\left|F(g_1,\dots,g_n) - \mathbb{E}_g\left[F(g_1,
 Note that choosing $$F(\{g_{\sigma}\}) = \log\left(\sum_{\sigma \in \{\pm 1\}^n}e^{g_{\sigma}}\right) = Z_n$$ with $$C = \mathbb{E}[H_n(\sigma)^2] = 1 $$ and $$b = \sqrt{C} = 1$$, immediately yields concentration for the partition function/free energy density as,
 
 $$ \begin{equation} \Pr_g\left[\left|\frac{1}{n}\log\left(Z_n\right) - \mathbb{E}\left[\frac{1}{n}\log(Z_n)\right]\right| \geq \epsilon \right] \leq 2e^{-\frac{\epsilon^2 n}{4}}\, .\end{equation} $$
+
 <br />
 
 
