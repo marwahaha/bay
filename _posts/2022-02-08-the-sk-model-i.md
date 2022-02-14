@@ -40,9 +40,7 @@ The problem above can be seen as asking for the $$\mathsf{MAX}$$-$$\mathsf{CUT}$
 
 $$ \begin{equation} \lim_{n \to \infty} \mathbb{E}\left[\max_{\sigma \in \{\pm 1\}^n} H_n(\sigma) \right]\, . \end{equation}$$
 
-While this problem seems well defined, we need to nornalize it carefully so that the limit we wish to compute does not diverge.
-
-<br />
+While this problem seems well defined, we need to nornalize it carefully so that the limit we wish to compute does not diverge. <br />
 
 ### Covariance and Overlaps
 A simple observation (formalized below) will reveal that the fluctuations (variance) of the term above lead to a divergent limit. Therefore, we must normalize it appropariately. To know what normalization is appropriate, we compute the covariance of the underlying gaussian process explicitly,
@@ -100,7 +98,7 @@ Notice that the interpolation above is equivalent to two independent copies of t
 <u><strong>(Lemma-1)</strong></u>: The free energy exists in the thermodynamic limit: $$\lim_{n \to \infty} F_{n, \beta}$$ exists. <br />
 <u><i>Proof</i></u>: We will analyze the free energy density $$\phi(t)$$ of the interpolated hamiltonian $$H^t$$ at every $$t \in [0, 1] $$. Note that since $$J_{i, j}$$ are continuously distributed and the expectation is a convex combination of continuous variables, $$\phi(t) $$ is continuous. The change of free energy density as a function of $$t $$ is then given as,
 
-$$ \begin{align} \partial_t\phi(t) &= \frac{1}{n + m}\mathbb{E}\left[ \frac{1}{Z_t}\partial_t(Z_t)\right] = \frac{1}{n + m}\mathbb{E}\left[ \frac{1}{Z_t}\left(\sum_{\sigma \in \{\pm 1\}^n}\partial_te^{ H^t(\sigma)}\right)\right] \\ &= \frac{1}{n + m}\mathbb{E}\left[ \langle \partial_t H^t(\sigma)\rangle_t\right]\end{align} $$
+$$ \begin{align} \partial_t\phi(t) &= \frac{1}{n + m}\mathbb{E}\left[ \frac{1}{Z_t}\partial_t(Z_t)\right] = \frac{1}{n + m}\mathbb{E}\left[ \frac{1}{Z_t}\left(\sum_{\sigma \in \{\pm 1\}^n}\partial_te^{ H^t(\sigma)}\right)\right] \\ &= \frac{1}{n + m}\mathbb{E}\left[ \langle \partial_t H^t(\sigma)\rangle_t\right]\, ,\end{align} $$
 
 where $$\langle . \rangle_t $$ denotes the average with respect to the Gibbs measure at $$t $$. The above relationship states that the free energy density changes proportional to the average rate of change of the energy of the interpolated hamiltonian. The above expression is evaluated by applying a wonderful lemma that allows us to rewrite the expected value of some jointly gaussian vector $$\{x_{\sigma}\} $$ in terms of a term that subtracts the "covariance" between $$\{x_{\sigma}\} $$ and another gaussian vector $$\{y_{\sigma}\} $$ from the "overlap" terms[^3].
 
@@ -125,7 +123,7 @@ $$ \begin{align} &\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_2)\right] = 
 
 Note that the term above is negative since it is equivalent to
 
-$$ \begin{align} \frac{1}{m + n}\left(2AB - mA - nB\right)\, ,\forall n, m \geq 1 \end{align} $$
+$$ \begin{align} \frac{1}{m + n}\left(2AB - mA - nB\right)\, ,\forall n, m \geq 1\, , \end{align} $$
 
 where $$A = n\left(\frac{\langle \rho_1, \rho_2\rangle}{n}\right)^2$$ and $$B = m\left(\frac{\langle \tau_1, \tau_2\rangle}{m}\right)^2 $$, and to assert negativity we used the facts that $$|A|, |B| \leq 1 $$ and
 $$ \begin{equation} \langle \sigma_1, \sigma_2 \rangle = \frac{n}{m + n}\left(\frac{\langle\rho_1, \rho_2\rangle}{n}\right) + \frac{m}{m + n}\left(\frac{\langle \tau_1, \tau_2 \rangle}{m}\right)\, . \end{equation}$$
@@ -149,16 +147,16 @@ $$ \begin{equation} \Pr_g\left[\left|F(g_1,\dots,g_n) - \mathbb{E}_g\left[F(g_1,
 
 Note that choosing $$F(\{g_{\sigma}\}) = \log\left(\sum_{\sigma \in \{\pm 1\}^n}e^{g_{\sigma}}\right) = \log(Z_n)$$ with $$C = \mathbb{E}[H_n(\sigma)^2] = 1 $$ and $$b = \sqrt{C} = 1$$, immediately yields concentration for the partition function/free energy density as,
 
-$$ \begin{equation} \Pr_g\left[\left|\frac{1}{n}\log\left(Z_n\right) - \mathbb{E}\left[\frac{1}{n}\log(Z_n)\right]\right| \geq \epsilon \right] \leq 2e^{-\frac{\epsilon^2 n}{4}}\, .\end{equation} $$
+$$ \begin{equation} \Pr_g\left[\left|\frac{1}{n}\log\left(Z_n\right) - \frac{1}{n}\mathbb{E}\left[\log(Z_n)\right]\right| \geq \epsilon \right] \leq 2e^{-\frac{\epsilon^2 n}{4}}\, .\end{equation} $$
 
-With the result above, we can argue that the limit of the _free energy density_ exists _almost-surely_ for large enough system sizes.
-<br />
+With the result above, we can argue that the limit of the _free energy density_ exists _almost-surely_ for large enough system sizes. <br />
 
 ## Aizenman-Sims-Starr Scheme
 We now introduce a scheme that will derive an expression for the change in the free energy of the system when a "cavity" is created, or equivalently, we decrease the size of the input instance by removing one vertex. Rewriting the free energy as a telescoping sum over the cavities then allows one to get an expression for the free energy - This term is known as the _Aizenman-Sims-Starr (ASS) functional_. Unfortunately, it is not possible to show that the limit exists for the ASS functional, but we can use it to _lower bound_ the free energy of the SK model by showing that its $$\lim\inf $$ exists. The close relationship of the Gibbs measure with the free energy is made clear in two ways:
 1. The ASS functional depends on the Gibbs measure, and a telescoping sum shows that the free energy is a Gibbs-averaged quantity.
-2. We will also state a result that reveals a close relationship between the structure of the _overlap distribution_ induced by the Gibbs measure and the _ASS functional_ - As will become clearer later, this is a deep result that hints at a tight connection between the two seemingly different approaches of the _Replica Method_ and _Cavity Method_ used extensively in Statistical Physics.
+2. We will also state a result that reveals a close relationship between the structure of the _overlap distribution_ induced by the Gibbs measure and the _ASS functional_ - As will become clearer later, this is a deep result that hints at a tight connection between the two seemingly different approaches of the _Replica Method_ and _Cavity Method_ used extensively in Statistical Physics. <br />
 
+### The ASS functional
 We begin by introducing the quantity that measures the difference in the free energy on instances where the size differs by one,
 
 $$ \begin{equation} A_j = \mathbb{E}[\log(Z_{j+1})] - \mathbb{E}[\log(Z_j)]\, ,\, \forall j \in \{0,\dots,n-1\}\, . \end{equation} $$
@@ -167,10 +165,41 @@ This immediately yields the following observation,
 
 $$ \begin{equation} F_{n, \beta} = \frac{1}{n}\mathbb{E}[\log(Z_n)] = \frac{1}{n}\sum_{i=0}^{n-1}A_i\, .\end{equation} $$
 
-<br />
+To compute $$A_n $$ we begin by computing $$H_{n + 1} $$ and try to write it as $$H_n $$ plus some other term. This other term will then roughly correspond to the increase in the free energy from the additional of the cavity vertex.
 
-### The ASS functional
-<br />
+$$ \begin{equation} H_{n+1}(\sigma.\tau) = H'_{n}(\sigma) + \tau\cdot y(\sigma) + \frac{1}{\sqrt{n+1}}g_{n+1, n+1}\end{equation} \, ,$$
+
+where,
+
+$$ \begin{align} H'_{n}(\sigma) &= \frac{1}{\sqrt{n+1}}\sum_{i, j = 1}^n g_{i, j}\sigma_i\sigma_j\, , \\ y(\sigma) &= \frac{1}{\sqrt{n+1}}\sum_{i=1}^n(g_{i, n+1} + g_{n+1, i})\sigma_i \, ,\\ &\tau \in \{\pm 1\} \, . \end{align} $$
+
+Note that, upto a different normalization factor, the expression above for $$H_{n+1}(\sigma) $$ establishes the desired recursive formulation. In order to write _directly_ in terms of the hamiltonian $$H_n(\sigma) $$ (as opposed to $$H'_n(\sigma) $$) we use two observations:
+  * The sum of two independent gaussians is another gaussian.
+  * The covariance of a centered gaussian process can characterize it.
+
+To begin, note that,
+$$ \begin{equation}  \mathbb{E}[H'_n(\sigma_1)H'_n(\sigma_2)] = \frac{n^2}{n + 1}\left(\frac{\langle \sigma_1, \sigma_2 \rangle}{n}\right)^2\, . \end{equation} $$
+
+We'd like it to be the case that when we add another centered gaussian process $$\{x_\sigma\} $$ that is normalized appropriately, this covariance will be become _exactly_ $$n $$. So, we need a process with covariance $$\frac{n}{n + 1} $$ times the overlap on $$n $$ vertices that is _independent_ of the gaussians in $H'_n$. Note that such a process can be given by,
+
+$$\begin{equation} x(\sigma) = \frac{1}{\sqrt{n(n + 1)}}\sum_{i, j =1}^ng'_{i, j}\sigma_i\sigma_j\, ,\end{equation} $$
+
+where $$\{g'_{i,j}\} $$ are independent of the gaussian interactions in $$H'_n(\sigma) $$. Therefore, in distribution,
+
+$$ \begin{equation} H_n(\sigma) \overset{d}{=} H'_n(\sigma) + x(\sigma)\, , \end{equation} $$
+
+which yields the final following cavity equation for the _Aizenman-Sims-Starr_ functional,
+
+$$ \begin{align} A_n &= \mathbb{E}[\log(Z_{n+1})] - \mathbb{E}[\log(Z_n)] \\ &= \mathbb{E}\left[\log\left(\sum_{\sigma, \tau}e^{\beta (H'_n(\sigma) + \tau\cdot y(\sigma) + (n + 1)^{-1/2}g_{n+1, n+1})}\right)\right] - \mathbb{E}\left[\log\left(\sum_{\sigma}e^{\beta(H'_n(\sigma) + x(\sigma))}\right)\right] \\ &= \mathbb{E}\left[\log\left(\left\langle \sum_{\tau}e^{\beta \tau\cdot y(\sigma)}\right\rangle'\right)\right] - \mathbb{E}\left[\log\left(\langle e^{\beta x(\sigma)}\rangle'\right)\right] \\ &= \mathbb{E}\left[\log\left(\left\langle 2\cosh(\beta y(\sigma)) \right\rangle'\right)\right] - \mathbb{E}\left[\log\left(\langle e^{\beta x(\sigma)}\rangle'\right)\right]\, ,\end{align} $$
+
+where we used the fact that the self-interacting gaussian term averages to $$0 $$ as the gaussians in consideration are centered, and $$\langle . \rangle' $$ denotes a Gibbs measure with respect to the re-scaled hamiltonian $$H'_n(\sigma) $$ on $$n $$ vertices. A few comments about the functional $$A_n $$ are in order:
+
+* The functional depends on the average with respect to the Gibbs measure $$\langle . \rangle' $$ defined on the (slightly rescaled) SK hamiltonian on $$n $$ vertices.
+* The quantity with respect to which the gibbs measure is made has gaussians that are completely _independent_ of the gaussians in $$x(\sigma) $$ and $$y(\sigma) $$.
+* The gaussian processes $$x(\sigma) $$ and $$y(\sigma) $$ are defined on $$n $$ vertices.
+* The decomposition works because a _common_ quantity on $$n $$ vertices ($$H'_n $$) is found, which allows us to write the free energy on $$n $$ and $$n + 1$$ vertices as the shared process _plus_ some _independent_ gaussian processes.
+
+The laste point is critical: Since we can decouple the hamiltonians on both vertices as a shared gaussian process plus two independent processes, we can actually _average_ (with respect to the Gibbs measure) over the contribution that comes from the cavity vertex, keeping the same iterated average over the Gibbs from both free energy terms that contribute to $$A_n $$.  <br />
 
 ### Invariance Symmetries
 <br />
