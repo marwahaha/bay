@@ -127,7 +127,7 @@ Note that the term above is negative since it is equivalent to
 
 $$ \begin{align} \frac{1}{m + n}\left(2AB - mA - nB\right)\, ,\forall n, m \geq 1 \end{align} $$
 
-where $$A = n\left(\frac{\langle \rho_1, \rho_2\rangle}{n}\right)^2$$ and $$B = m\left(\frac{\langle \tau_1, \tau_2\rangle}{m}\right)^2 $$, and to assert negativity we used the facts that $$\|A\|, \|B\| \leq 1 $$ and
+where $$A = n\left(\frac{\langle \rho_1, \rho_2\rangle}{n}\right)^2$$ and $$B = m\left(\frac{\langle \tau_1, \tau_2\rangle}{m}\right)^2 $$, and to assert negativity we used the facts that $$|A|, |B| \leq 1 $$ and
 $$ \begin{equation} \langle \sigma_1, \sigma_2 \rangle = \frac{n}{m + n}\left(\frac{\langle\rho_1, \rho_2\rangle}{n}\right) + \frac{m}{m + n}\left(\frac{\langle \tau_1, \tau_2 \rangle}{m}\right)\, . \end{equation}$$
 
 This immediately implies that,
@@ -141,13 +141,15 @@ $$ \begin{align} &\phi(0) = \frac{n}{m + n}F_n + \frac{m}{m + n}F_m \, , \\ &\ph
 yield that the free energy is superadditive (since $$\partial_t\phi(t) \geq 0 $$ and convexity implies $$\phi(0) \leq \phi(1) $$). This shows that the limit of the free energy density is well-defined in the thermodynamic limit with an application of _Fekete's Lemma_. <br />
 
 ### Gaussian Concentration
-The goal of this section is to "boost" the previous lemma showing that the free energy density of the SK model is well-defined on average to an _almost-surely_ statement. In order to do that it is crucial to prove that there is concentration of the <strong>log-partition</strong> function (under the gaussians). To do this, we will use a _gaussian interpolation_ technique (which is very similar to the [Guerra-Tonnineli interpolation](#guerra-tonnineli-interpolation)) in conjunction with some elementary convexity properties.
+The goal of this section is to "boost" the previous lemma showing that the free energy density of the SK model is well-defined on average to an _almost-surely_ statement. In order to do that it is crucial to show that there is concentration of the <strong>log-partition</strong> function (under the gaussians). To do this, we will use a gaussian concentration inequality that is proved using a _gaussian interpolation_ technique (which is very similar to the [Guerra-Tonnineli interpolation](#guerra-tonnineli-interpolation)) in conjunction with some elementary convexity properties^[4].
 
 <u><strong>(Gaussian Concentration Inequality)</strong></u>: Given a $$b $$-lipschitz functkion $$F:\mathbb{R}^n \to \mathbb{R} $$, and a jointly gaussian process $$\{g_i\}_{i=1}^n$$ with bounded covariance $$C $$, the following holds $$\forall \epsilon > 0 $$
 
-$$ \begin{equation} \Pr_g\left[\left|F(g_1,\dots,g_n) - \mathbb{E}_g\left[F(g_1,\dots,g_n)\right]\right| \geq \epsilon\right] \leq 2e^{-\frac{\epsilon^2}{4b\cdot C}}\, .  \end{equation}$$
+$$ \begin{equation} \Pr_g\left[\left|F(g_1,\dots,g_n) - \mathbb{E}_g\left[F(g_1,\dots,g_n)\right]\right| \geq \epsilon\right] \leq 2e^{-\frac{\epsilon^2}{4b^2 C}}\, .  \end{equation}$$
 
-_<u>Proof:</u>_ The proof relies on setting up a smooth _gaussian interpolation_ between two independent copies of the underlying gaussian process and then analyzing the moment generating function.
+Note that choosing $$F(\{g_{\sigma}\}) = \log\left(\sum_{\sigma \in \{\pm 1\}^n}e^{g_{\sigma}}\right) = Z_n$$ with $$C = \mathbb{E}[H_n(\sigma)^2] = 1 $$ and $$b = \sqrt{C} = 1$$, immediately yields concentration for the partition function/free energy density as,
+
+$$ \begin{equation} \Pr_g\left[\left|\frac{1}{n}\log\left(Z_n\right) - \mathbb{E}\left[\frac{1}{n}\log(Z_n)\right]\right| \geq \epsilon \right] \leq 2e^{-\frac{\epsilon^2 n}{4}}\, .\end{equation} $$
 <br />
 
 
@@ -169,4 +171,4 @@ _<u>Proof:</u>_ The proof relies on setting up a smooth _gaussian interpolation_
 
 [^2]: Stein's Lemma can be proved by a simple integration-by-parts argument for every coordinate $$i $$ in conjunction with Fubini's theorem and the chain-rule. The lemma itself simply asserts that the correlation between a gaussian variable and some function of it is equivalent to a sum of scalings (by the correlations) of the average rate of change of the function. Likewise, Fekete's Lemma boils down to algebraic manipulation of the sequence, where we take the limit infimum of $$x_n/n $$ and compare it to limit infimum of some $$x_m $$ where $$m $$ is chosen to be the supremum as a divisor with a remainder term. The lemma itself merely asserts that for an appropriately growing sequence, the empirical average in the limit simply picks out the largest contributing term.
 
-[^3]: In [this]() upcoming post, various results from the so-called "Gaussian Toolbox" will be stated and briefly proved. This is a very useful set of techniques to have command over in order to prove properties about mean-field spin glasses, and relate them to the behavior of random instances of sparse CSPs.  
+[^3], [^4]: In [this]() upcoming post, various results from the so-called "Gaussian Toolbox" will be stated and briefly proved. This is a very useful set of techniques to have command over in order to prove properties about mean-field spin glasses, and relate them to the behavior of random instances of sparse CSPs.  
