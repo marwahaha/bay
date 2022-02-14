@@ -143,18 +143,30 @@ yield that the free energy is superadditive (since $$\partial_t\phi(t) \geq 0 $$
 ### Gaussian Concentration
 The goal of this section is to "boost" the previous lemma showing that the free energy density of the SK model is well-defined on average to an _almost-surely_ statement. In order to do that it is crucial to show that there is concentration of the <strong>log-partition</strong> function (under the gaussians). To do this, we will use a gaussian concentration inequality that is proved using a _gaussian interpolation_ technique (which is very similar to the [Guerra-Tonnineli interpolation](#guerra-tonnineli-interpolation)) in conjunction with some elementary convexity properties[^3].
 
-<u><strong>(Gaussian Concentration Inequality)</strong></u>: Given a $$b $$-lipschitz functkion $$F:\mathbb{R}^n \to \mathbb{R} $$, and a jointly gaussian process $$\{g_i\}_{i=1}^n$$ with bounded covariance $$C $$, the following holds $$\forall \epsilon > 0 $$
+<u><strong>(Gaussian Concentration Inequality)</strong></u>: Given a $$b $$-lipschitz function $$F:\mathbb{R}^n \to \mathbb{R} $$, and a jointly gaussian process $$\{g_i\}_{i=1}^n$$ with bounded covariance $$C $$, the following holds $$\forall \epsilon > 0 $$
 
 $$ \begin{equation} \Pr_g\left[\left|F(g_1,\dots,g_n) - \mathbb{E}_g\left[F(g_1,\dots,g_n)\right]\right| \geq \epsilon\right] \leq 2e^{-\frac{\epsilon^2}{4b^2 C}}\, .  \end{equation}$$
 
-Note that choosing $$F(\{g_{\sigma}\}) = \log\left(\sum_{\sigma \in \{\pm 1\}^n}e^{g_{\sigma}}\right) = Z_n$$ with $$C = \mathbb{E}[H_n(\sigma)^2] = 1 $$ and $$b = \sqrt{C} = 1$$, immediately yields concentration for the partition function/free energy density as,
+Note that choosing $$F(\{g_{\sigma}\}) = \log\left(\sum_{\sigma \in \{\pm 1\}^n}e^{g_{\sigma}}\right) = \log(Z_n)$$ with $$C = \mathbb{E}[H_n(\sigma)^2] = 1 $$ and $$b = \sqrt{C} = 1$$, immediately yields concentration for the partition function/free energy density as,
 
 $$ \begin{equation} \Pr_g\left[\left|\frac{1}{n}\log\left(Z_n\right) - \mathbb{E}\left[\frac{1}{n}\log(Z_n)\right]\right| \geq \epsilon \right] \leq 2e^{-\frac{\epsilon^2 n}{4}}\, .\end{equation} $$
 
+With the result above, we can argue that the limit of the _free energy density_ exists _almost-surely_ for large enough system sizes.
 <br />
 
-
 ## Aizenman-Sims-Starr Scheme
+We now introduce a scheme that will derive an expression for the change in the free energy of the system when a "cavity" is created, or equivalently, we decrease the size of the input instance by removing one vertex. Rewriting the free energy as a telescoping sum over the cavities then allows one to get an expression for the free energy - This term is known as the _Aizenman-Sims-Starr (ASS) functional_. Unfortunately, it is not possible to show that the limit exists for the ASS functional, but we can use it to _lower bound_ the free energy of the SK model by showing that its $$\lim\inf $$ exists. The close relationship of the Gibbs measure with the free energy is made clear in two ways:
+1. The ASS functional depends on the Gibbs measure, and a telescoping sum shows that the free energy is a Gibbs-averaged quantity.
+2. We will also state a result that reveals a close relationship between the structure of the _overlap distribution_ induced by the Gibbs measure and the _ASS functional_ - As will become clearer later, this is a deep result that hints at a tight connection between the two seemingly different approaches of the _Replica Method_ and _Cavity Method_ used extensively in Statistical Physics.
+
+We begin by introducing the quantity that measures the difference in the free energy on instances where the size differs by one,
+
+$$ \begin{equation} A_j = \mathbb{E}[\log(Z_{j+1})] - \mathbb{E}[\log(Z_j)]\, ,\, \forall j \in \{0,\dots,n-1\}\, . \end{equation} $$
+
+This immediately yields the following observation,
+
+$$ \begin{equation} F_{n, \beta} = \frac{1}{n}\mathbb{E}[\log(Z_n)] = \frac{1}{n}\sum_{i=0}^{n-1}A_i\, .\end{equation} $$
+
 <br />
 
 ### The ASS functional
