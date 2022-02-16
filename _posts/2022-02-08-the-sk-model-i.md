@@ -79,7 +79,7 @@ We now introduce a smooth interpolation between three independent instances of t
 
 Before introducing the interpolation formally, we briefly state _Fekete's_ and _Stein's_ lemmata. The proofs for these are elementary and require no more than basic algebraic manipulations and integration by parts, and are omitted in this blog post[^2].
 
-<u><strong>(Stein's Lemma)</strong></u>: Given a differentiable function $f$ that doesn't grow too fast, and a jointly-gaussian process $$\{g(\sigma)\}_{\sigma \in \Sigma} $$, the following holds,
+<u><strong>(Stein's Lemma)</strong></u>: Given a differentiable function $$f $$ that doesn't grow too fast, and a jointly-gaussian process $$\{g(\sigma)\}_{\sigma \in \Sigma} $$, the following holds,
 
 $$ \begin{equation} \mathbb{E}[g_{\sigma}f(g)] = \sum_{\sigma' \in \Sigma}\mathbb{E}\left[g_{\sigma}g_{\sigma'} \right]\mathbb{E}\left[\partial_{\sigma'}f(g)\right]\, . \end{equation}$$
 
@@ -199,7 +199,7 @@ where we used the fact that the self-interacting gaussian term averages to $$0 $
 * The gaussian processes $$x(\sigma) $$ and $$y(\sigma) $$ are defined on $$n $$ vertices.
 * The decomposition works because a _common_ quantity on $$n $$ vertices ($$H'_n $$) is found, which allows us to write the free energy on $$n $$ and $$n + 1$$ vertices as the shared process _plus_ some _independent_ gaussian processes.
 
-The laste point is critical: Since we can decouple the hamiltonians on both vertices as a shared gaussian process plus two independent processes, we can actually _average_ (with respect to the Gibbs measure) over the contribution that comes from the cavity vertex, keeping the same iterated average over the Gibbs from both free energy terms that contribute to $$A_n $$.  <br />
+The last point is critical: Since we can decouple the hamiltonians on both vertices as a shared gaussian process plus two independent processes, we can actually _average_ (with respect to the Gibbs measure) over the contribution that comes from the cavity vertex, keeping the same iterated average over the Gibbs from both free energy terms that contribute to $$A_n $$.  <br />
 
 ### Invariance Symmetries
 <br />
