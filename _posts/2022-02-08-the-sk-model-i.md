@@ -102,7 +102,7 @@ $$ \begin{align} \partial_t\phi(t) &= \frac{1}{n + m}\mathbb{E}\left[ \frac{1}{Z
 
 where $$\langle . \rangle_t $$ denotes the average with respect to the Gibbs measure at $$t $$. The above relationship states that the free energy density changes proportional to the average rate of change of the energy of the interpolated hamiltonian. The above expression is evaluated by applying a wonderful lemma that allows us to rewrite the expected value of some jointly gaussian vector $$\{x_{\sigma}\} $$ in terms of a term that subtracts the "covariance" between $$\{x_{\sigma}\} $$ and another gaussian vector $$\{y_{\sigma}\} $$ from the "overlap" terms[^3].
 
-<u><strong>(Gaussian Covariance for Gibbs Average </strong></u>[\[Lemma 1.1, Pa14\]](https://link.springer.com/book/10.1007/978-1-4614-6289-7)<u><strong>)</strong></u>: Given two jointly gaussian vectors $$\{x_{\sigma}\} $$ and $$\{y_{\sigma}\} $$, the following can be said about the iterated average of $$x_{\sigma} $$ (where the average is with respect to the Gibbs for $$\{y_{\sigma}\} $$),
+<u><strong>(Gaussian Covariance for Gibbs Average <a href="https://link.springer.com/book/10.1007/978-1-4614-6289-7">[Lemma 1.1, Pa14]</a>)</strong></u>: Given two jointly gaussian vectors $$\{x_{\sigma}\} $$ and $$\{y_{\sigma}\} $$, the following can be said about the iterated average of $$x_{\sigma} $$ (where the average is with respect to the Gibbs for $$\{y_{\sigma}\} $$),
 
 $$ \begin{equation} \mathbb{E}[\langle x_\sigma \rangle] = \mathbb{E}[\langle \mathbb{E}[x_{\sigma_1}y_{\sigma_1}]\rangle - \langle \mathbb{E}[x_{\sigma_1}y_{\sigma_2}]\rangle]\end{equation}\, . $$
 
