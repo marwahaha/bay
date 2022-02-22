@@ -23,6 +23,8 @@ The goal of this post is to introduce the _Sherrington-Kirkpatrick_ model, which
     * [The ASS Functional](#the-ass-functional)
     * [Invariance Symmetries](#invariance-symmetries)
 3. [Ruelle Probability Cascades](#ruelle-probability-cascades)
+    * [The Parisi Variational Principle](#parisi-variational-principle)
+    * [The RPC Construction](#rpc-construction)
 4. [Footnotes](#footnotes)
 
 <br />
@@ -205,6 +207,32 @@ The last point is critical: Since we can decouple the hamiltonians on both verti
 <br />
 
 ## Ruelle Probability Cascades
+The Ruelle Probability Cascades are a random measure on a separable Hilbert Space. To motivate this structure, it is critical to introduce a statement of the _Parisi Variational Principle_. There are many equivalent statements of the principle, but we will focus on the one that helps motivate the [Rulle Probability Cascades](#ruelle-probability-cascades). The Parisi Variational Principle essentially gives a variational representation of the optimization problem which constitutes finding the free-energy density of the SK model at _any temperature_ $$\beta $$ - In this sense (among others) the Parisi Variational Principle is stronger than the problem we are interested in since we merely need the $$\beta \to \infty $$ limit, as that specifically that corresponds to the $$\mathsf{MAX} $$-$$\mathsf{CUT} $$ problem over the complete graph with i.i.d. standard gaussian weights. With this definition in mind, we will introduce the construction of the Ruelle Probability Cascades. In a future post, we will then introduce the **Guerra RSB bound** to show that one can upper bound the limit of $$H_n $$ as $$n \to \infty $$ with the _Parisi Variational Principle_[^4]. In doing this, the Ruelle Probability Cascades (RPCs) will play a critical role since they will provide an alternative representation of the Parisi Variational Principle.
+
+### The Parisi Variational Principle
+We specify the Parisi Variational Principle after fixing two sequences of parameters that generate the "overlaps" (a sequence $$\{q_i\}^r_{i=0} $$) in the support of a distribution $$\xi $$ along with the cumulative density associated with them given by (though an abuse of notation) by a sequence $$\{\xi_i\}_{i=-1}^r $$. Note that the overlaps are between 0 and 1, so this information can be uniquely by identified by a probability distribution $$\mathcal{D} $$ over the interval $$[0, 1] $$. So, we formally specify this distribution as,
+$$ \begin{equation} 0 = \xi_{-1} < \xi_0 < \dots < \xi_{r-1} < \xi_r = 1\, , \end{equation} $$  
+and
+$$ \begin{equation} 0 = q_0 < q_1 < \dots < q_{r-1} < q_r = 1\, \end{equation} $$
+with the constraint that $$\xi(\{q_a\}) = \xi_{a} - \xi_{a-1} $$ enforcing that we are thinking of $$\xi $$ as a CDF. <br />
+We begin by introducing an interesting sequence of random variables where,
+* A base random variable is defined by a "smoothed" absolute value given to the increase in overlap between two parameters $$q_a $$ and $$q_{a+1} $$ weighted by some standard gaussian variable $$z_{a} $$.
+* The rest of the variables are defined recurively as the average (over a bunch of independent standard gaussians) of a $$\xi $$-weighted sum of prior random variables.
+
+It is not easy to motivate why one would define such a sequence of random variables without some knowledge of the _Replica Method_ and the introduction of the _Replica-Symmetry Breaking_ ansatz that ensues to evaluate a certain modified form of a moment of the free energy of the model under consideration assuming some form of "weights" on overlaps between solutions independent copies of the model.
+
+<u><strong>(Parisi Sequence)</u></strong>: Given i.i.d. standard gaussian random variables $$\{z_a\}_{a=1}^r $$, the _Parisi Sequence_ is a sequence of random variables $$\{X^{\xi}_a\}_{a=1}^r $$ defined recursively as,
+$$ \begin{align} X^{\xi}_r &= \log\left(2\cosh\left(\sum_{1 \leq a \leq r}\sqrt{2}\beta(q_a - q_{a-1})^{1/2}z_a \right)\right)\, ,\\ X^{\xi}_b &= \frac{1}{\xi_b}\log\left(\mathbb{E}_{z_{b+1}}\left[\exp(\xi_{b+1}X^{\xi}_{b+1})\right]\right)\, ,\, 0 \leq b \leq r-1\, .\end{align} $$
+
+The Parisi-Variational Principle is given by taking the last (or first, depending on how one views the sequence) term of the _Parisi Sequence_ $$X^{\xi}_0 $$ minus the temperature normalized variance of the overlap distribution. The _Parisi Sequence_ is obtained as a solution of the so-called Parisi PDEs using the infamous Hopf-Cole Transformation.
+
+<u><strong>(Parisi Variational Principle)</u></strong>: The Parisi Variational Principle is an optimization problem over the space of distributions with support $$[0, 1] $$ and is given for all $$\beta > 0 $$ as,
+$$ \begin{equation} \lim_{n \to \infty} F_{n, \beta} = \inf_{\xi \in \mathcal{D}[0, 1]}\left(X^{\xi}_0 - \beta^2\int_{0}^1t\xi(t)dt\right)\end{equation}\, , $$
+where $$\xi(t) $$ is being interpreted as the CDf of the distribution over the overlaps $$\{q_a\} $$.
+
+The Parisi Variational Principle is claiming that at any finite temperature, the free energy denesity of the SK model in the thermodynamic limit can be expressed as a variational optimization problem over the space of distributions with support $$[0, 1] $$ which minimize a so-called "free entropy" term $$X^{\xi}_0 $$ obtained by solving a PDE and the "variance" of the overlaps induced by the solutions.
+
+### The RPC Construction
 <br />
 
 #### FOOTNOTES
@@ -213,4 +241,6 @@ The last point is critical: Since we can decouple the hamiltonians on both verti
 
 [^2]: Stein's Lemma can be proved by a simple integration-by-parts argument for every coordinate $$i $$ in conjunction with Fubini's theorem and the chain-rule. The lemma itself simply asserts that the correlation between a gaussian variable and some function of it is equivalent to a sum of scalings (by the correlations) of the average rate of change of the function. Likewise, Fekete's Lemma boils down to algebraic manipulation of the sequence, where we take the limit infimum of $$x_n/n $$ and compare it to limit infimum of some $$x_m $$ where $$m $$ is chosen to be the supremum as a divisor with a remainder term. The lemma itself merely asserts that for an appropriately growing sequence, the empirical average in the limit simply picks out the largest contributing term.
 
-[^3]: In [this]() upcoming post, various results from the so-called "Gaussian Toolbox" will be stated and briefly proved. This is a very useful set of techniques to have command over in order to prove properties about mean-field spin glasses, and relate them to the behavior of random instances of sparse CSPs.  
+[^3]: In [this]() upcoming post, various results from the so-called "Gaussian Toolbox" will be stated and briefly proved. This is a very useful set of techniques to have command over in order to prove properties about mean-field spin glasses, and relate them to the behavior of random instances of sparse CSPs.
+
+[^4]: In [this]() upcoming post, we introduce the Guerra-RSB bound and prove that it can be used to show that the Parisi Variaional Principle, represented as an appropriately parameterized RPC, can be used to upper bound the free energy density of the SK model. We will also introduce the famed _Ghirlanda-Guerra_ identities.
