@@ -31,8 +31,8 @@ preprints:
   paperlink: NA
   codelink: NA
 
-- title: CSPs and Linear Combinations of Mean-Field Spin Glasses
-  authors: Antares Chen, Chris Jones, Kunal Marwaha, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+- title: Sparse CSPs, Mean-Field Spin Glasses and Global Properties of Sparse Random Graphs
+  authors: Antares Chen, Chris Jones, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
   codelink: NA
