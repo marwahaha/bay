@@ -222,12 +222,15 @@ We begin by introducing an interesting sequence of random variables where,
 It is not easy to motivate why one would define such a sequence of random variables without some knowledge of the _Replica Method_ and the introduction of the _Replica-Symmetry Breaking_ ansatz that ensues to evaluate a certain modified form of a moment of the free energy of the model under consideration assuming some form of "weights" on overlaps between solutions independent copies of the model.
 
 <u><strong>(Parisi Sequence)</strong></u>: Given i.i.d. standard gaussian random variables $$\{z_a\}_{a=1}^r $$, the _Parisi Sequence_ is a sequence of random variables $$\{X^{\xi}_a\}_{a=1}^r $$ defined recursively as,
+
 $$ \begin{align} X^{\xi}_r &= \log\left(2\cosh\left(\sum_{1 \leq a \leq r}\sqrt{2}\beta(q_a - q_{a-1})^{1/2}z_a \right)\right)\, ,\\ X^{\xi}_b &= \frac{1}{\xi_b}\log\left(\mathbb{E}_{z_{b+1}}\left[\exp(\xi_{b+1}X^{\xi}_{b+1})\right]\right)\, ,\, 0 \leq b \leq r-1\, .\end{align} $$
 
 The Parisi-Variational Principle is given by taking the last (or first, depending on how one views the sequence) term of the _Parisi Sequence_ $$X^{\xi}_0 $$ minus the temperature normalized variance of the overlap distribution. The _Parisi Sequence_ is obtained as a solution of the so-called Parisi PDEs using the infamous Hopf-Cole Transformation.
 
 <u><strong>(Parisi Variational Principle)</strong></u>: The Parisi Variational Principle is an optimization problem over the space of distributions with support $$[0, 1] $$ and is given for all $$\beta > 0 $$ as,
+
 $$ \begin{equation} \lim_{n \to \infty} F_{n, \beta} = \inf_{\xi \in \mathcal{D}[0, 1]}\left(X^{\xi}_0 - \beta^2\int_{0}^1t\xi(t)dt\right)\end{equation}\, , $$
+
 where $$\xi(t) $$ is being interpreted as the CDf of the distribution over the overlaps $$\{q_a\} $$.
 
 The Parisi Variational Principle is claiming that at any finite temperature, the free energy denesity of the SK model in the thermodynamic limit can be expressed as a variational optimization problem over the space of distributions with support $$[0, 1] $$ which minimize a so-called "free entropy" term $$X^{\xi}_0 $$ obtained by solving a PDE and the "variance" of the overlaps induced by the solutions. <br />
