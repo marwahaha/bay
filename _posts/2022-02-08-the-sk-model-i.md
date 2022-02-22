@@ -121,6 +121,7 @@ $$ \begin{align} &\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_1) \right] =
 where we used the fact that $$H_n $$ and $$H_m $$ are independent to zero out the covariance term in-between them in conjunction with the fact that the [covariance of the underlying gaussian process is the square of its normalized overlaps](#covariance-and-overlaps).
 
 A similar calculation immediately reveals that,
+
 $$ \begin{align} &\mathbb{E}\left[\partial_tH^t(\sigma_1)H^t(\sigma_2)\right] = \mathbb{E}\left[\frac{1}{2}(H_{n + m}(\sigma_1)H_{n + m}(\sigma_2)) - H_n(\rho_1)H_n(\rho_2) - H_m(\tau_1)H_m(\tau_2)\right] \\ &= \frac{1}{2}(n + m)\left(\frac{\langle \sigma_1, \sigma_2 \rangle}{n + m}\right)^2 - n\left(\frac{\langle \rho_1, \rho_2 \rangle}{n}\right)^2  - m\left(\frac{\langle\tau_1, \tau_2 \rangle}{m}\right)^2 \\ &= \frac{1}{2}\frac{n}{n+m}\left(\frac{n}{n + m} - 1\right)\left(\frac{\langle \rho_1, \rho_2 \rangle}{n}\right)^2 + \left(\frac{m}{n + m} - 1\right)\left(\frac{\langle \sigma_1, \sigma_2 \rangle}{m}\right)^2 + \frac{2mn}{m + n}\left(\frac{\langle\rho_1,\rho_2\rangle\langle\tau_1,\tau_2\rangle}{mn}\right)^2 \end{align} $$
 
 Note that the term above is negative since it is equivalent to
