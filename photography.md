@@ -56,7 +56,7 @@ slug: /photography
 
 <br/>
 
-<img src="{{ "/assets/img/content/photography/IMG_0287.JPG" | absolute_url }}" alt="bay" class="post-pic"/>
+<img src="{{ "/assets/img/content/photography/IMG_0287.jpeg" | absolute_url }}" alt="bay" class="post-pic"/>
 
 <br/>
 
