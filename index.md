@@ -10,7 +10,7 @@ I am a PhD student at <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.se
 
 This summer, I will be a visiting student at <a href="https://www.unibocconi.eu/wps/wcm/connect/Bocconi/SitoPubblico_EN/Navigation+Tree/Home/faculty+and+research/departments/Decision+Sciences/">Bocconi University</a> in Milan hosted by the wonderful Prof. <a href="https://lucatrevisan.github.io/">Luca Trevisan</a>.
 
-**Broad Research Interests**: Theoretical Computer Science $$\bigcup$$ Mathematical Physics.
+**Broad Research Interests**: Theoretical Computer Science $$\bigcup$$ Mathematical Physics. <br/>
 **Specific Research Interests**: Spin-Glass Theory, Quantum Inapproximability, Spectral Graph Theory, Convex & Non-Convex Optimization, Probabilistic Geometry & Harmonic Analysis.
 
 Previously, I was a Research Engineer at <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.kensho.com%2F&sa=D&sntz=1&usg=AFQjCNFFNoPaarKyKr6fU23OmUQpKrbyxQ">Kensho, Inc.</a> in the Graph-Infrastructure team. I finished my undergraduate studies from <a href="https://www.google.com/url?q=https%3A%2F%2Fphysics.illinois.edu%2F&sa=D&sntz=1&usg=AFQjCNHRHJYVorx2ldFR6JEe1PHQjmt3oA">UIUC</a> with a BS in Physics, and minors in Computer Science & Mathematics.
