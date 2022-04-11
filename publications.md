@@ -7,7 +7,7 @@ publications:
 
 - title: Limitations of Local Quantum Algorithms on Random MAX-k-XOR and Beyond
   authors: Chi-Ning Chou, Peter J. Love, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: [ICALP, 2022](https://icalp2022.irif.fr/)
+  conference: ICALP 2022
   paperlink: https://arxiv.org/pdf/2108.06049.pdf
   codelink: NA
 
