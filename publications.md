@@ -25,14 +25,14 @@ publications:
 
 preprints:
 
-- title: A Sum of Squares Algorithm for Spherical Spin Glasses under fRSB
-  authors: Antares Chen, Tommaso D'Orsi, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+- title: Semi-Definite Relaxations for Mean-Field Spin Glasses under fRSB
+  authors: Tommaso D'Orsi, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
   codelink: NA
 
 - title: Sparse CSPs, Mean-Field Spin Glasses and Global Properties of Sparse Random Graphs
-  authors: Antares Chen, Chris Jones, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  authors: Chris Jones, Kunal Marwaha, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
   codelink: NA
@@ -41,4 +41,4 @@ preprints:
 All my papers can be found on [Semantic Scholar](https://www.semanticscholar.org/author/Juspreet-Singh-Sandhu/2052821753) or [Google Scholar](https://scholar.google.com/citations?user=2G4gViMAAAAJ).
 <br/>
 
-I currently work very closely with the wonderful duo of [Antares Chen](https://antaresc.github.io/) & [Jonathan Shi](https://jshi.science/) on a set of problems at the intersection of <strong> Replica-Symmetry Breaking </strong>, the <strong>Sum-of-Squares</strong> framework, <strong>Spectral Graph Theory</strong>, <strong>Quantum Algorithms</strong> and <strong>Stochastic Analysis</strong>. I've also worked on some problems in the past with [Chi-Ning Chou](https://cnchou.github.io/) and [Emil T. Khabiboulline](https://ekhabiboulline.me/).
+I currently work very closely with the evergreen [Jonathan Shi](https://jshi.science/) on a set of problems at the intersection of <strong> Replica-Symmetry Breaking </strong>, the <strong>Sum-of-Squares</strong> framework, <strong>Spectral Graph Theory</strong>, <strong>Quantum Algorithms</strong> and <strong>Stochastic Analysis</strong>. I've also worked on some problems in the past with [Chi-Ning Chou](https://cnchou.github.io/) and [Emil T. Khabiboulline](https://ekhabiboulline.me/).
