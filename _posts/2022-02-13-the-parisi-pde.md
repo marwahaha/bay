@@ -46,7 +46,7 @@ A jointly gaussian process is basically a collection of gaussian random variable
 ### Gaussian Integration by Parts
 Gaussian integration by parts allows one to understand the correlation between a function of gaussian variables and the gaussian itself. It turns out that if the function is smooth with reasonable growth properties, the correlation between the gaussian and a function that acts on it is simply related to the average rate of change of the function - This observation is codified as _Stein's Lemma_.
 
-<u>**[Stein's Lemma]:**</u> Given a gaussian random variable $$g \sim \mathcal{N}(0, \sigma^2) $$ and a $$C^1 $$ function $f: \mathbb{R} \to \mathbb{R} $$ that satisfies mild growth conditions, the following holds,
+**<u>[Stein's Lemma]</u>:** Given a gaussian random variable $$g \sim \mathcal{N}(0, \sigma^2) $$ and a $$C^1 $$ function $f: \mathbb{R} \to \mathbb{R} $$ that satisfies mild growth conditions, the following holds,
 $$\begin{equation}
   \mathbb{E}[g f(g)] = \sigma^2\mathbb{E}[f'(g)]\, .
 \end{equation} $$
@@ -63,7 +63,7 @@ where $$a = \frac{1}{\sqrt{2\pi\sigma^2}} $$ and we use the fact that $$f $$ has
 
 As it turns out, by an elementary use of Fubini's theorem and a simple orthogonalization argument (making $$g _i $$ independent of the other gaussian vectors in the process), one can extend Stein's Lemma to hold for an arbitrary jointly gaussian process.
 
-<u>**[High-Dimensional Stein's Lemma]:**</u> Given a jointly gaussian process $$\{g _i\}_{i \in [n]} $$ with mean 0 and a covariance matrix $$\textsf{Cov}_{ij} = \mathbb{E}[g_{i}g_j] $$, and a smooth function $$f: \mathbb{R}^{n} \to \mathbb{R} $$ that doesn't grow too fast, the following holds:
+**<u>[High-Dimensional Stein's Lemma]</u>:** Given a jointly gaussian process $$\{g _i\}_{i \in [n]} $$ with mean 0 and a covariance matrix $$\textsf{Cov}_{ij} = \mathbb{E}[g_{i}g_j] $$, and a smooth function $$f: \mathbb{R}^{n} \to \mathbb{R} $$ that doesn't grow too fast, the following holds:
 $$\begin{equation}
   \mathbb{E}[g_if(g_1,\dots,g_n)] = \sum_{j=1}^n\textsf{Cov}_{ij}\mathbb{E}[\partial_jf(g_1,\dots,g_n)]\, .
 \end{equation}$$
@@ -150,7 +150,7 @@ The above expression for $$\phi(x,t) $$ defined piece-wise on each interval with
 ### The Parisi Random Variables
 These are random variables that recursively encode, on intervals between every interval in the support of the Parisi Measure, the solution to the Heat Equation (after linearization). They use the fact that the solution to the heat equation is known to be an averaging over an appropriately scaled gaussian, and then apply this recursively.
 
-<u>**Parisi Sequence:**</u> Given the functional order parameter $$\zeta $$ encoded above in the sequence $$(m_i, q_j)_{i\in[k],j\in[k+1]} $$ and independent mean 0 gaussian random variables $$(z_j)_{j \in k} $$ with variance,
+**<u>Parisi Sequence</u>:** Given the functional order parameter $$\zeta $$ encoded above in the sequence $$(m_i, q_j)_{i\in[k],j\in[k+1]} $$ and independent mean 0 gaussian random variables $$(z_j)_{j \in k} $$ with variance,
 $$
   \mathbb{E}[z^2_j] = \sqrt{2\beta^2(q_{j+1} - q_j)}\, ,
 $$
@@ -164,7 +164,7 @@ $$
 
 Using the above Parisi sequence, the Parisi functional can be written in a very straightforward way (in a form that is different from the one that Parisi originally gave):
 
-<u>**Parisi Functional [Cascade Representation]:**</u> The Parisi functional over $$\zeta \in \mathcal{M}_D[0,1] $$ can be represented using the Parisi Sequence as follows,
+**<u>Parisi Functional [Cascade Representation]:</u>** The Parisi functional over $$\zeta \in \mathcal{M}_D[0,1] $$ can be represented using the Parisi Sequence as follows,
 $$
   \mathcal{P}_\beta(\zeta) = X_0 - \frac{\beta^2}{2}\int_0^1t\zeta(t)dt\, .
 $$
