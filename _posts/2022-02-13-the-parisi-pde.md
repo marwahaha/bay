@@ -46,7 +46,7 @@ A jointly gaussian process is basically a collection of gaussian random variable
 ### Gaussian Integration by Parts
 Gaussian integration by parts allows one to understand the correlation between a function of gaussian variables and the gaussian itself. It turns out that if the function is smooth with reasonable growth properties, the correlation between the gaussian and a function that acts on it is simply related to the average rate of change of the function - This observation is codified as _Stein's Lemma_.
 
-**<u>[Stein's Lemma]</u>:** Given a gaussian random variable $$g \sim \mathcal{N}(0, \sigma^2) $$ and a $$C^1 $$ function $f: \mathbb{R} \to \mathbb{R} $$ that satisfies mild growth conditions, the following holds,
+**<u>[Stein's Lemma]</u>:** Given a gaussian random variable $$g \sim \mathcal{N}(0, \sigma^2) $$ and a $$C^1 $$ function $$f: \mathbb{R} \to \mathbb{R} $$ that satisfies mild growth conditions, the following holds,
 $$\begin{equation}
   \mathbb{E}[g f(g)] = \sigma^2\mathbb{E}[f'(g)]\, .
 \end{equation} $$
