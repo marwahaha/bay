@@ -31,7 +31,7 @@ The goal of this post is to show how the Parisi PDE can be solved _completely ex
 ## Gaussian Distributions
 We are interested in various analytic properties of Gaussian distributions. While the multivariate gaussian distribution (written $$\mathcal{N}(\mu, \sigma^2)^{\otimes n}$$) is a typical instantiation from this family, it will not be general enough for the setting of Spin Glasses. The reason, as we saw in the [previous post](), is that the Gaussian process associated with the random optimization problems of interest has a subtle covariance structure which depends on the overlap between two configurations. We will, therefore, study the analytic properties of _jointly_ gaussian distributions. To do so, we first introduce some standard notation and important definitions.
 
-**<u>[Jointly Gaussian Process]:</u>** A jointly gaussian process $$\{g_\sigma\}_{\sigma \in \Sigma} $$ will be thought of as a vector of gaussian random variables $$(g_{\sigma_1},\dots,g_{\sigma_{|\Sigma|}}) $$ indexed by $$\Sigma $$ (an index set) specified by the mean vector and covariance matrix:
+**<u>[Jointly Gaussian Process]:</u>** A jointly gaussian process $$\{g_\sigma\}_{\sigma \in \Sigma} $$ will be thought of as a vector of gaussian random variables $$(g_{\sigma_1},\dots ,g_{\sigma_{|\Sigma|}}) $$ indexed by $$\Sigma $$ (an index set) specified by the mean vector and covariance matrix:
 
 $$\begin{equation}
   \mu_g = (\mu(g_{\sigma_1}),\dots,\mu(g_{\sigma_{|\Sigma|}}))\, .
@@ -87,10 +87,10 @@ Note, then, that holding $$\{g'_i\} $$ fixed we can compute the expected correla
 
 $$
 \begin{equation}
-  \mathbb{E}_{g_i}[g_if(g_1,\dots,g_n)] = \textsf{Var}_i\cdot\mathbb{E}\left[\partial_if\left(g_1 + \frac{\textsf{Cov}_{i1}}{\textsf{Var}_i}x,\dots,g_n + \frac{\textsf{Cov}_{in}}{\textsf{Var}_i}x\right)\right]\, ,
+  \mathbb{E}_{g_i}[g_if(g_1,\dots,g_n)] = \textsf{Var}_i\cdot\mathbb{E}\left[\partial_if\left(g_1 + \frac{\textsf{Cov}_{i1}}{\textsf{Var}_i}x,\dots,g_n + \frac{\textsf{Cov}_{in}}{\textsf{Var}_i}x\right)\bigg\vert_{x=g_i}\right]\, ,
 \end{equation} $$
 
-and this follows by an application of the standard Stein's Lemma. To complete the argument, one also computes the expectation over $$\{g'_i\} $$ and uses Fubini's theorem followed by the chain rule, which complete the argument.
+and this follows by an application of the standard Stein's Lemma. To complete the argument, one also computes the expectation over $$\{g'_i\} $$ and uses Fubini's theorem followed by the chain rule, which completes the argument.
 
 ### Gaussian Integration with Gibbs Averages
 
