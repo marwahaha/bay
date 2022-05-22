@@ -73,8 +73,9 @@ $$\begin{equation}
 \end{equation}$$
 Note, then, that holding $$\{g'_i\} $$ fixed we can compute the expected correlation between $$g_i $$ and $$f(g_1,\dots,g_n) $$ which yields,
 $$
+\begin{equation}
   \mathbb{E}_{g_i}[g_if(g_1,\dots,g_n)] = \textsf{Var}_i\cdot\mathbb{E}\left[\partial_if\left(g_1 + \frac{\textsf{Cov}_{i1}}{\textsf{Var}_i}x,\dots,g_n + \frac{\textsf{Cov}_{in}}{\textsf{Var}_i}x\right)\right]\, ,
-$$
+\end{equation} $$
 and this follows by an application of the standard Stein's Lemma. To complete the argument, one also computes the expectation over $$\{g'_i\} $$ and uses Fubini's theorem followed by the chain rule, which complete the argument.
 
 ### Gaussian Integration with Gibbs Averages
@@ -90,10 +91,13 @@ and this follows by an application of the standard Stein's Lemma. To complete th
 ## Hopf-Cole Transformation
 We will now intrdouce a simple change of variables that will allow us to go between non-linear Hamilton-Jacobi equations (such as the Parisi PDE) and the standard heat equation - This change of variables is termed as the **Hopf-Cole Transform**. As it will turn out, it is not sufficient to do this just _once_, but rather this needs to be done on a set of intervals on which the support of the Parisi measure is defined. Nonetheless, courtesy a continuity argument by Guerra, it is possible to approximate the Parisi formula to arbitary precision (in Total Variation Distance) using step-functions on a sufficiently large number of intervals as the supoprt of the CDF, thereby allowing us to rewrite the Free-Entropy term $$\phi_\zeta(x, t) $$ in the Parisi formula to explicitly depend on the typical sequence of parameters:
 $$
+\begin{equation}
 m_0 = 0 < m_1 < \dots < m_{k-1} < m_k = 1\, ,
-$$  
+\end{equation} $$  
 $$
+\begin{equation}
 q_0 = 0 < q_1 < \dots < q_{k} < q_{k+1} = 1\, ,
+\end{equation}
 $$
 which will explicitly specify the step function $$\zeta $$. We will denote the set of all non-decreasing step functions with input and output in $$[0,1] $$ by $$\mathcal{M}_{D}[0,1] $$ and the set of _all_ cumulative distribution functions with support in $$[0, 1] $$ by $$\mathcal{M}[0,1] $$.
 
@@ -116,34 +120,48 @@ As it turns out, the continuity argument by Guerra essentially says that we can 
 ### Piece-wise Hopf-Cole Variables
 We will now _linearize_ the clearly non-linear Parisi PDE by applying a wonderful trick that dates back to the 1950s, invented independently by Hopf & Cole to solve the visocsity equation. The transformation is as simple as defining the following function,
 $$
+\begin{equation}
   g(x,t) = e^{c\cdot\phi_\zeta(x,t)}\, , c \in \mathbb{R}\, .
+\end{equation}
 $$
 Another simple thing to do is to _invert the time_ (do a variable substitution with $$t' = (q_{l+1} - t) $$ with $$t \in [q_l, q_{l+1}] $$). The final substitution then yields,
 $$
+\begin{equation}
   \hat{g}(x,t) = e^{c\cdot\phi(x, q_{l+1} - t)}\, ,\, \forall l \in [k]\, ,
+\end{equation}
 $$
 with the initial condition at $$t = q_{l} $$. We start solving the equations from the _last_ interval, and recurse backwards.
 
 We now substitute the above in the Parisi PDE and some algebra along with the chain-rule convinces us that the Parisi PDE reduces to the following heat equation on _every_ interval $$[q_l, q_{l+1}) $$,
 $$
+\begin{equation}
   \partial_t\hat{g}(x,t) = \frac{1}{2}\partial^2_x\hat{g}(x,t)\, .
+\end{equation}
 $$
 Note that for the last (and correspondingly first interval solved) this initial conditional simply turns out to be,
 $$
+\begin{equation}
   \hat{g}(x, 0) = e^{m_l\log(\cosh(\beta x))}\, ,
+\end{equation}
 $$
 where $$l \in [k] $$ and the initial condition will be weighted by the mass $$m_l $$ for each heat equation depending on the interval (and corresponding heat equation) being solved.
 The initial conditions for the later intervals can be calculated by repeating the same calculation. However, more critically, note that for _any_ $$t' \in [0, q_{l+1} - q_l] $$, we can compute the solution for any $$t' $$ by using the solution to the heat equation given by _gaussian interpolation_,
 $$
+\begin{equation}
   \hat{g}(x,t) = \mathbb{E}_{g\sim\mathcal{N}(0,1)}\left[\hat{g}(x + \sqrt{t}g, 0)\right]\, .
+\end{equation}
 $$
 At this point we are done, as taking the inverse Hopf-Cole transform will bring us to the desired function we originally wanted to solve for (which is $$\phi_\zeta(x, t) $$):
 $$
+\begin{equation}
 \phi(x, q_{l+1} - t) = \frac{1}{c}\log(\hat{g}(x,t)) = \frac{1}{m_l}\log\left(\mathbb{E}_{g\sim\mathcal{N}(0,1)}\left[\hat{g}(x + \sqrt{t}g, 0)\right]\right)\, .
+\end{equation}
 $$
 Making the final substitution will give the desired form as follows,
 $$
+\begin{equation}
   \phi(x, t) = \frac{1}{m_l}\log\left(\mathbb{E}_{g\sim\mathcal{N}(0,1)}\left[\hat{g}(x + \sqrt{q_{l+1} - t}\cdot g, 0)\right]\right)\, , \forall t \in [q_l, q_{l+1}]\, .
+\end{equation}
 $$
 The above expression for $$\phi(x,t) $$ defined piece-wise on each interval with $$t \in [q_l, q_{l+1}) $$ for $$l \in [k] $$ gives the so-called "Piece-wise Hopf-Cole Variables".
 
@@ -152,7 +170,9 @@ These are random variables that recursively encode, on intervals between every i
 
 **<u>Parisi Sequence</u>:** Given the functional order parameter $$\zeta $$ encoded above in the sequence $$(m_i, q_j)_{i\in[k],j\in[k+1]} $$ and independent mean 0 gaussian random variables $$(z_j)_{j \in k} $$ with variance,
 $$
+\begin{equation}
   \mathbb{E}[z^2_j] = \sqrt{2\beta^2(q_{j+1} - q_j)}\, ,
+\end{equation}
 $$
 the Parisi Sequence is defined recursively as follows,
 $$
@@ -166,7 +186,9 @@ Using the above Parisi sequence, the Parisi functional can be written in a very 
 
 **<u>Parisi Functional [Cascade Representation]:</u>** The Parisi functional over $$\zeta \in \mathcal{M}_D[0,1] $$ can be represented using the Parisi Sequence as follows,
 $$
+\begin{equation}
   \mathcal{P}_\beta(\zeta) = X_0 - \frac{\beta^2}{2}\int_0^1t\zeta(t)dt\, .
+\end{equation}
 $$
 
  It suffices, due to the continuity argument of Guerra, to optimize the above representation over discrete step-functions to approximate (to arbitrary precision) the original Parisi formulation using the Parisi PDE over continuous measures.
