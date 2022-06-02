@@ -36,7 +36,8 @@ We are interested in various analytic properties of Gaussian distributions. Whil
 $$
 \begin{equation}
 (g_{\sigma_1},\dots ,g_{\sigma_{|\Sigma|}})
-\end{equation}$$
+\end{equation}
+$$
 
 indexed by $$\Sigma $$ (an index set) specified by the mean vector and covariance matrix:
 
@@ -170,7 +171,7 @@ We now substitute the above in the Parisi PDE and some algebra along with the ch
 
 $$
 \begin{equation}
-  \partial_t\hat{g}(x,t) = \frac{1}{2}\partial^2_x\hat{g}(x,t)\, .
+  \partial_t\hat{g}(x,t) = \frac{1}{2}\partial_{xx}\hat{g}(x,t)\, .
 \end{equation}
 $$
 
@@ -210,7 +211,7 @@ $$
 The above expression for $$\phi(x,t) $$ defined piece-wise on each interval with $$t \in [q_l, q_{l+1}) $$ for $$l \in [k] $$ gives the so-called "Piece-wise Hopf-Cole Variables".
 
 ### The Parisi Random Variables
-These are random variables that recursively encode, on intervals between every interval in the support of the Parisi Measure, the solution to the Heat Equation (after linearization). They use the fact that the solution to the heat equation is known to be an averaging over an appropriately scaled gaussian, and then apply this recursively.
+These are random variables that recursively encode, on intervals between every point in the support of the Parisi Measure, the solution to the Heat Equation (after linearization). They use the fact that the solution to the heat equation is known to be an averaging over an appropriately scaled gaussian, and then apply the solution of the appropriately scaled heat kernel (starting from the first one) backwards, using the current one as an initial condition for the next one.
 
 **<u>Parisi Sequence</u>:** Given the functional order parameter $$\zeta $$ encoded above in the sequence $$(m_i, q_j)_{i\in[k],j\in[k+1]} $$ and independent mean 0 gaussian random variables $$(z_j)_{j \in k} $$ with variance,
 
