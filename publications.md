@@ -25,14 +25,26 @@ publications:
 
 preprints:
 
-- title: Semi-Definite Relaxations for Mean-Field Spin Glasses under fRSB
+- title: SoS Optimization for Problems with SoS Certification Lower Bounds &colon; Spherical Spin Glasses
   authors: Tommaso D'Orsi, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
   codelink: NA
 
-- title: Sparse CSPs, Mean-Field Spin Glasses and Global Properties of Sparse Random Graphs
+- title: Connecting Sparse CSPs and Mixed Spin Glasses &colon; Limiting Values and Solution Space-Geometry 
   authors: Chris Jones, Kunal Marwaha, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  conference: In Preparation
+  paperlink: NA
+  codelink: NA
+
+- title: Polynomial Time Sparsification of the Boolean Hypercube
+  authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi, Luca Trevisan
+  conference: In Preparation
+  paperlink: NA
+  codelink: NA
+
+- title: Iterative Maximization of the Generalized TAP Free Energy of the SK Model under fRSB
+  authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
   codelink: NA
