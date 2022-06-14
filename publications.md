@@ -25,13 +25,13 @@ publications:
 
 preprints:
 
-- title: SoS Optimization for Problems with SoS Certification Lower Bounds &colon; Spherical Spin Glasses
+- title: SoS Optimization for Problems with SoS Certification Lower Bounds&colon; Spherical Spin Glasses
   authors: Tommaso D'Orsi, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
   codelink: NA
 
-- title: Connecting Sparse CSPs and Mixed Spin Glasses &colon; Limiting Values and Solution Space-Geometry 
+- title: Connecting Sparse CSPs and Mixed Spin Glasses&colon; Limiting Values and Solution Space-Geometry 
   authors: Chris Jones, Kunal Marwaha, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
