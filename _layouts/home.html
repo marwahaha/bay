@@ -9,15 +9,12 @@
       <div class="wrapper">
         <div class="home">
           <p id="homeimgcontainer" style="text-align: center; float:right; display: block">
-          <figure>
             <img
                 style="margin-bottom: 10px"
                 src="{{ page.profile_picture.src | absolute_url }}"
                 alt="{{ page.profile_picture.alt }}"
                         class="profile-pic"
-                        onmouseover="document.getElementById('frontphotocap').innerHTML='{{page.profile_picture_two.caption}}'; this.src='{{ page.profile_picture_two.src | absolute_url }}';" onmouseout="document.getElementById('frontphotocap').innerHTML='{{page.profile_picture.caption}}'; this.src='{{ page.profile_picture.src | absolute_url }}';" />
-            <figcaption id="frontphotocap">{{page.profile_picture.caption}}</figcaption>
-          </figure>
+                        onmouseover="document.getElementById('homeimgcontainer').innerHTML[0]='{{page.profile_picture_two.caption}}'; this.src='{{ page.profile_picture_two.src | absolute_url }}';" onmouseout="document.getElementById('homeimgcontainer').innerHTML[0]='{{page.profile_picture.caption}}'; this.src='{{ page.profile_picture.src | absolute_url }}';" />
           </p>
 
           {{ content }}
