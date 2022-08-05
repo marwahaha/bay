@@ -104,11 +104,75 @@ and this follows by an application of the standard Stein's Lemma. To complete th
 
 ### Gaussian Interpolation
 
-## The Heat Equation
+A central technique that often shows up many times in the theory of mean-field spin-glasses is the idea of studying the average rate of change of a (reasonably civilized) function $$f $$ of some variables that are drawn from a distribution that smoothly interpolates between two independent gaussian processes $$\{X_i\}_{i=1}^n $$ and $$\{Y_i\}_{i=1}^n $$. In fact, this technique is used explicitly to study the rate of change of free energy density with the underlying hamiltonians at the end points $$t = 0$$ and $$t = 1$$ chosen cleverly to obtain a desired bound. Examples of this include the use of the Guerra-Tonnineli interpolation to show the existence of the limit of the free energy density and the Guerra RSB bound which shows that the free energy density is upper bounded by the value of the Parisi variational principle. We will introduce the general result here, which allows us to express the rate of change of the average value of $$f $$ when it acts on two correlated gaussian processes as a function of the covariances of the two underlying processes and the hessian of $$f $$.
 
-### Separation of Variables
+**<u>[Gaussian-Interpolation Lemma]</u>:** Given a function $$f: \mathbb{R}^n \to \mathbb{R} \in \mathcal{C}^2 $$ with first and second derivatives that don't grow too fast, and two independent, centered gaussian processes $$\{X_i\}_{i=1}^n $$ and $$\{Y_i\}_{i=1}^n $$ with covariances $$\mathbb{E}[X_iX_j] = a_{ij} $$ and $$\mathbb{E}[Y_iY_j] = b_{ij} $$, the following holds,
+$$
+\begin{equation}
+  \frac{d}{dt}\mathbb{E}[f(Z(t))] = \frac{1}{2}\sum_{i, j = 1}^n(a_{ij} - b_{ij})\mathbb{E}\left[\frac{\partial^2 f}{\partial x_i \partial x_j}(Z(t))\right]\, ,
+\end{equation}
+$$
+where $$Z(t) = \sqrt{t}X + \sqrt{1-t}Y $$.
+
+The proof of this lemma involves applying the linearity of the derivative operator, thereby pushing it inside the expectation $$\mathbb{E} $$ and then applying the chain-rule. This renders the quantity in a form that can be easily evaluated by an application of the High-Dimensional Stein's Lemma on the processes $$\partial_t Z(t)$$ and $$Z(t) $$, along with some algebra to compute the desired covariance $$\mathbb{E}[\partial_t Z(t)_i Z(t)_j] = \frac{1}{2}(a_{ij} - b_{ij})$$.
+
+As we shall see, in a stunningly elegant application, the lemma gives a solution to the heat equation that allows one to interpret the heat profile of a point $$x $$ as "diffusing" the initial heat profile of the point ($$F(x, 0) $$) at time $$t $$ with a gaussian of variance $$t $$ (on average).
+
+## The Heat Equation
+We now write down the heat equation (in one dimension) as is canonically stated in the literature. We will first provide a sketch of the solution that follows by the separation-of-variables approach, which is rigorously known to yield an orthonormal basis for linear PDEs. We will then give an alternative and marvelously simple solution, that follows almost immediately due to the previously mentioned Gaussian Interpolation lemma.
+
+**<u>[The 1-Dimensional Heat Equation]</u>:** Given an open interval $$U \subset \mathbb{R} $$ and a function $$g: U \times [0,1] \to \mathbb{R} $$, it solves the heat equation if,
+$$
+\begin{equation}
+  \partial_t g(x,t) = \alpha\cdot\partial^2_{x}g(x,t)\, ,
+\end{equation}
+$$
+given an initial condition $$g(x, 0) $$.
+
+### Separation of Variables & Fourier Series
+The traditional solution for the heat equation is approached by a separation of variables. This is rigorous since the heat equation is a linear PDE. We outline the main steps below.
+Let,
+$$
+\begin{align}
+  g(x,t) = g_1(x)g_2(t)\, .
+\end{align}
+$$
+Substituting the above into the PDE yields that,
+$$
+\begin{equation}
+\frac{1}{\alpha}\cdot\frac{g_1(x)}{\partial_x^2 g_1(x)} = \frac{g_2(t)}{\partial_t g_2(t)}\, .
+\end{equation}
+$$
+As both the left-hand and right-hand sides depend on different variables, for the above to hold it must be the case that the ratios are constant. This leads to two separate ODEs as,
+$$
+\begin{align}
+  g_1(x) = \lambda\cdot\partial^2_xg_1(x)\, , \\
+  g_2(t) = \lambda\cdot\partial_tg_2(t)\, .
+\end{align}
+$$
+It is standard to solve the above ODEs using the exponential ansatz and then use the initial condition. This eventually leads to the explicit solution which amounts to a Fourier expansion of the ansatz,
+$$
+\begin{align}
+  g(x,t) = \sum_{n=1}^\infty \left(\frac{2}{|U|}\int_0^{|U|}g(x,0)\sin\left(\frac{n\pi x}{|U|}\right)dx\right)\sin\left(\frac{n\pi x}{|U|}\right)e^{\left(\frac{-n^2\pi^2\alpha t}{|U|^2}\right)} \, .
+\end{align}
+$$
 
 ### A solution via Gaussian Interpolation
+While the above solution is completely explicit, if we are willing to forersake an explicit _deterministic_ representation for one that can be expressed as an average over time varying gaussian randomness, the gaussian interpolation lemma will provide us a compact and beautiful solution.
+
+Specifically, suppose we have a function $$f: \mathbb{R} \times [0,1] \to \mathbb{R} $$ given as,
+$$
+\begin{equation}
+  f(x,t) = \mathbb{E}_{g \sim \mathcal{N}(0,1)}\left[h(x + \sqrt{t}g)\right]\, ,
+\end{equation}
+$$
+where $$h $$ is a twice-differentiable function whose value at $$h(x, 0) $$ is known as an initial condition. Then, the Gaussian interpolation lemma immediately allows us to compute its time derivative. It yields,
+$$
+\begin{equation}
+  \partial_t f(x,t) = \partial_t \mathbb{E}_{g \sim \mathcal{N}(0,1)}\left[h(x + \sqrt{t}g)\right] = \frac{1}{2}\mathbb{E}_{g \sim \mathcal{N}(0,1)}\partial^2_xh(x + \sqrt{t}g) = \frac{1}{2}\partial^2_x f(x,t)\, .
+\end{equation}
+$$
+Note that the above is just an instantiation of the 1-dimensional heat equation with $$\alpha = \frac{1}{2} $$. To deal with arbitrarily $$\alpha $$ it suffices to change the variance of the gaussian $$g $$ appropriately.
 
 ## Hopf-Cole Transformation
 We will now intrdouce a simple change of variables that will allow us to go between non-linear Hamilton-Jacobi equations (such as the Parisi PDE) and the standard heat equation - This change of variables is termed as the **Hopf-Cole Transform**. As it will turn out, it is not sufficient to do this just _once_, but rather this needs to be done on a set of intervals on which the support of the Parisi measure is defined. Nonetheless, courtesy a continuity argument by Guerra, it is possible to approximate the Parisi formula to arbitary precision (in Total Variation Distance) using step-functions on a sufficiently large number of intervals as the supoprt of the CDF, thereby allowing us to rewrite the Free-Entropy term $$\phi_\zeta(x, t) $$ in the Parisi formula to explicitly depend on the typical sequence of parameters:
