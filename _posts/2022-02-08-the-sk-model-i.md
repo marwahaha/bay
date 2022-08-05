@@ -237,7 +237,6 @@ where $$\xi(t) $$ is being interpreted as the CDf of the distribution over the o
 The Parisi Variational Principle is claiming that at any finite temperature, the free energy denesity of the SK model in the thermodynamic limit can be expressed as a variational optimization problem over the space of distributions with support $$[0, 1] $$ which minimize a so-called "free entropy" term $$X^{\xi}_0 $$ obtained by solving a PDE and the "variance" of the overlaps induced by the solutions. <br />
 
 ### The RPC Construction
-The RPC construction can be motivated quite elegantly by looking at the _Parisi Sequence_ and realizing that the desired sequence of random measures must obey a carefully measured Poisson process.
 
 To that extent, we first define an indexing procedure into an $$\infty $$-ary tree where each of the vertices are indexed by a $$k $$-tuple  if they are at depth $$k $$ in the tree. A path $$\pi(a) $$ from the root of the tree to the vertex $$a $$ at depth $$k $$ can be uniquely identified as,
 

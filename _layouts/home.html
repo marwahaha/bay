@@ -9,11 +9,12 @@
       <div class="wrapper">
         <div class="home">
           <p id="homeimgcontainer" style="text-align: center; float:right; display: block">
-              <img
+            <img
                 style="margin-bottom: 10px"
                 src="{{ page.profile_picture.src | absolute_url }}"
                 alt="{{ page.profile_picture.alt }}"
-                        class="profile-pic" />
+                        class="profile-pic"
+                        onmouseover="this.src='{{ page.profile_picture_two.src | absolute_url }}';" onmuseout="this.src='{{ page.profile_picture.src | absolute_url }}';" />
           </p>
 
           {{ content }}

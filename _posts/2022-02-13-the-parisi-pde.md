@@ -160,9 +160,11 @@ g(x,t) = \sum_{n=1}^\infty \left(\frac{2}{|U|}\int_0^{|U|}g(x,0)\sin\left(\frac{
 While the above solution is completely explicit, if we are willing to forersake an explicit _deterministic_ representation for one that can be expressed as an average over time varying gaussian randomness, the gaussian interpolation lemma will provide us a compact and beautiful solution.
 
 Specifically, suppose we have a function $$f: \mathbb{R} \times [0,1] \to \mathbb{R} $$ given as,
+
 $$\begin{equation}
 f(x,t) = \mathbb{E}_{g \sim \mathcal{N}(0,1)}\left[h(x + \sqrt{t}g)\right]\, ,
 \end{equation} $$
+
 where $$h $$ is a twice-differentiable function whose value at $$h(x, 0) $$ is known as an initial condition. Then, the Gaussian interpolation lemma immediately allows us to compute its time derivative. It yields,
 
 $$\begin{equation}
