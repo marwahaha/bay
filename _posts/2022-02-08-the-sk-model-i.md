@@ -259,7 +259,7 @@ The RPC tree is a formal realization of the so-called ultrametric tree envisione
 
 We first describe the structure of the RPC tree and how to construct the random measure on its leaves.
 
-<u><strong>(RPC Tree Inner Vertices):</u></strong> Given a Parisi order parameter
+<u><strong>(RPC Tree Inner Vertices)</strong></u>: Given a Parisi order parameter
 $$
 \begin{equation}
   \zeta = (\{\xi\}_{i=-1}^r, \{q_i\}_{i=0}^r)\, ,
@@ -281,7 +281,7 @@ where $$\{e_{\alpha_i}\} $$ is a set of orthonormal basis over the underlying Hi
 
 We now define the probabilistic information associated with the inner vertices of the RPC tree. To do this, we first introduce the notion of Poisson-Dirichlet processes.
 
-<u><strong>(Poisson-Dirichlet Process)</u></strong> A Poisson-Dirichlet Point Process with parameter $$\eta $$ is defined as the unique stochastic process $$\{X_l\}_l $$ such that $$\forall A \subseteq \mathbb{R}^n $$,
+<u><strong>(Poisson-Dirichlet Process)</strong></u>: A Poisson-Dirichlet Point Process with parameter $$\eta $$ is defined as the unique stochastic process $$\{X_l\}_l $$ such that $$\forall A \subseteq \mathbb{R}^n $$,
 $$
 \begin{equation}
   \mathbb{P}(X_l \in A) \overset{d}{=} \textsf{Poisson}(\mu(A))\,,
@@ -296,7 +296,7 @@ $$
 
 In order to have a cascading process, we will associate an independent Poisson-Dirichlet point process $$\Pi_{v_{\alpha_1,\dots,\alpha_k}} $$ to every inner vertex with mean measure $$\mu(dx) = \xi_{k}x^{-1-\xi_k}dx $$. In fact, to define the indices of the children of every inner vertex (including the root) we will take a decreasing sequence $$\{u_{\alpha_1,\dots,\alpha_k,n}\}_{n \in \mathbb{N}} $$ and use that to index the children vertices of $$v_{\alpha_1,\dots,\alpha_k} $$. As it turns out, this construction allows us to associate a "weight" $$w_{\alpha_1,\dots,\alpha_k} $$ to every vertex in the tree (including the leaves) and this quantity is almost surely finite, thereby allowing one to define the required random measure on the leaves of the tree at level $$r $$.
 
-<u><strong></u>(Weights to Vertices):</strong> To every inner vertex $$v_{\alpha_1,\dots,\alpha_k} $$ in the RPC tree, a weight
+<u><strong>(Weights to Vertices)</strong></u>: To every inner vertex $$v_{\alpha_1,\dots,\alpha_k} $$ in the RPC tree, a weight
 $$
 \begin{equation}
   w_{\alpha_1,\dots,\alpha_k} := \prod_{\beta \in \pi(\alpha)} u_{\beta}\, ,
@@ -314,7 +314,7 @@ where the sum in the denominator is a normalizing term to make sure that $$w_v $
 
 With the definitions above, we point out one elementary property about RPC trees that will be very useful when moving forward. This property asserts that the "overlap" between two vertices in the tree is given by their lowest common ancestor.
 
-<u><strong>(RPC Overlaps):</u></strong> The overlap between any two vertices $$v_{\alpha_1,\dots,\alpha_k} $$ and $$w_{\beta_1,\dots,v_l} $$ is given as
+<u><strong>(RPC Overlaps)</strong></u>: The overlap between any two vertices $$v_{\alpha_1,\dots,\alpha_k} $$ and $$w_{\beta_1,\dots,v_l} $$ is given as
 $$
 \begin{equation}
   \langle v_{\alpha_1,\dots,\alpha_k}, w_{\beta_1,\dots,\beta_l} \rangle = q_i\, ,
