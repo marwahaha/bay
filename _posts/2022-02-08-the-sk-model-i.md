@@ -205,22 +205,29 @@ where we used the fact that the self-interacting gaussian term averages to $$0 $
 The last point is critical: Since we can decouple the hamiltonians on both vertices as a shared gaussian process plus two independent processes, we can actually _average_ (with respect to the Gibbs measure) over the contribution that comes from the cavity vertex, keeping the same iterated average over the Gibbs from both free energy terms that contribute to $$A_n $$.  <br />
 
 ### Invariance Symmetries
+As it turns out, in a statement that is not too hard to prove but remarkably insightful, the rotational-invariance of the distribution of the so-called overlap matrix can be related in a very precise way to the ASS functional defined above. In doing this, a deep connection between the seemingly unrelated approaches of the Replica method and the Cavity method is uncovered - Namely, that one can use information from finite entries of the overlap matrix to arbitrarily well approximate the ASS functional which is itself a proxy (for at least a lower bound) of the free energy density in the asymptotic limit. This, as it turns out, is not a coincidence, and becomes a critical fact in Panchenko's approach to proving the lower bound:
+$$
+\begin{equation}
+  \lim_{n \to \infty} F_{n, \beta} = \lim_{n \to \infty} A_n \geq \liminf_{n \to \infty} A_n \geq \inf_{\mu}P_\beta(\mu)\, ,
+\end{equation}
+$$
+which is the hard direction in the proof of the Parisi Variational Principle.
 <br />
 
 ## Ruelle Probability Cascades
 The Ruelle Probability Cascades are a class of random measures on a separable Hilbert Space. To motivate this structure, it is critical to introduce a statement of the _Parisi Variational Principle_ (PVP). There are many equivalent statements of the principle, but we will focus on the one that helps see the parallel with the construction of the [Rulle Probability Cascades](#ruelle-probability-cascades) in a relatively transparent manner. The PVP gives a <strong>variational</strong> optimizaton problem, the solution to which yields the precise asymptotic value of the free-energy density of the SK model at _any temperature_ $$\beta $$ - In this sense (among others) the PVP is stronger than the problem we are interested in since we merely need the $$\beta \to \infty $$ limit, as that specifically that corresponds to the $$\mathsf{MAX} $$-$$\mathsf{CUT} $$ problem over the complete graph with i.i.d. standard gaussian weights. With this definition in mind, we will introduce the construction of the Ruelle Probability Cascades. In a future post, we will then introduce the **Guerra RSB bound** to show that one can upper bound the limit of $$\frac{1}{n}\mathbb{E}[\max_{\sigma}H_n] $$ as $$n \to \infty $$ with the _Parisi Variational Principle_[^4]. In doing this, the Ruelle Probability Cascades (RPCs) will play a critical role since they will provide an alternative representation of the PVP which will look _extremely_ similar to the [ASS functional](#the-ass-functional).
 
 ### The Parisi Variational Principle
-We specify the Parisi Variational Principle after fixing two sequences of parameters that generate the "overlaps" (a sequence $$\{q_i\}^r_{i=0} $$) in the support of a distribution $$\xi $$ along with the cumulative density associated with them given by (though an abuse of notation) by a sequence $$\{\xi_i\}_{i=-1}^r $$. Note that the overlaps are between 0 and 1, so this information can be uniquely by identified by a probability distribution $$\mathcal{D} $$ over the interval $$[0, 1] $$. So, we formally specify this distribution as,
+We specify the Parisi Variational Principle after fixing two sequences of parameters that generate the "overlaps" (a sequence $$\{q_i\}^r_{i=0} $$) in the support of a distribution $$\xi $$ along with the cumulative density associated with them given by (through an abuse of notation) a sequence $$\{\xi_i\}_{i=-1}^r $$. Note that the overlaps are between 0 and 1, so this information can be uniquely identified by a probability distribution $$\mathcal{D} $$ over the interval $$[0, 1] $$. So, we formally specify this distribution as,
 $$ \begin{equation} 0 = \xi_{-1} < \xi_0 < \dots < \xi_{r-1} < \xi_r = 1\, , \end{equation} $$  
 and
 $$ \begin{equation} 0 = q_0 < q_1 < \dots < q_{r-1} < q_r = 1\, \end{equation} $$
 with the constraint that $$\xi(\{q_a\}) = \xi_{a} - \xi_{a-1} $$ enforcing that we are thinking of $$\xi $$ as a CDF. <br />
-We begin by introducing an interesting sequence of random variables where,
+We now by a sequence of random variables where,
 * A base random variable is defined by a "smoothed" absolute value given to the increase in overlap between two parameters $$q_a $$ and $$q_{a+1} $$ weighted by some standard gaussian variable $$z_{a} $$.
 * The rest of the variables are defined recurively as the average (over a bunch of independent standard gaussians) of a $$\xi $$-weighted sum of prior random variables.
 
-It is not easy to motivate why one would define such a sequence of random variables without some knowledge of the _Replica Method_ and the introduction of the _Replica-Symmetry Breaking_ ansatz that ensues. In a nutshell: The goal of the _Replica Method_ is to evaluate the free energy density by evaluating a certain modified form of a moment of the partition function. In doing so, some form of "weights" on overlaps between configurations of independent copies of the model are assumed. This generates an overlap matrix, on which a very **specific** structure is imposed through the RSB ansatzen - This specific struture is imposed to make some smoothed saddle-point equations tractable, and these equations under the RSB ansatzen in a certain limiting sense give rise to family of parameters that very closely resemble the Parisi Sequence defined above (and more rigorously below).
+It is not easy to motivate why one would define such a sequence of random variables without some knowledge of the _Replica Method_ and the introduction of the _Replica-Symmetry Breaking_ ansatz that ensues. In a nutshell: The goal of the _Replica Method_ is to calculate the free energy density by evaluating a certain modified form of a moment of the partition function. In doing so, some form of "weights" on overlaps between configurations of independent copies of the model are assumed. This generates an overlap matrix, on which a very **specific** structure is imposed through the RSB ansatzen - This specific struture is imposed to make some smoothed saddle-point equations tractable, and these equations under the RSB ansatzen in a certain limiting sense give rise to the family of parameters that very closely resemble the Parisi Sequence defined above (and more rigorously below).
 
 <u><strong>(Parisi Sequence)</strong></u>: Given i.i.d. standard gaussian random variables $$\{z_a\}_{a=1}^r $$, the _Parisi Sequence_ is a sequence of random variables $$\{X^{\xi}_a\}_{a=1}^r $$ defined recursively as,
 
@@ -248,6 +255,75 @@ $$
 where the root $$\phi $$ of the tree is implicit in the sequence. This allows us to associate a unique path to every vertex in the RPC tree.
 <br />
 
+The RPC tree is a formal realization of the so-called ultrametric tree envisioned by Parisi with probabilistic information attached to every node. This probabilistic information is given by a Poisson-Dirichlet process independently instantiated at each _inner_ node of the tree with mean measure paramterized by the Parsi order parameter. The "cascade" of Poisson-Dirichlet processes associated with every inner vertex then induce a natural random measure on the leaves of the tree which approaches the Gibbs measure in the asymptotic limit.
+
+We first describe the structure of the RPC tree and how to construct the random measure on its leaves.
+
+<u><strong>(RPC Tree Inner Vertices):</u></strong> Given a Parisi order parameter
+$$
+\begin{equation}
+  \zeta = (\{\xi\}_{i=-1}^r, \{q_i\}_{i=0}^r)\, ,
+\end{equation}
+$$
+we define the position of the inner vertices
+$$
+\begin{equation}
+  \{v_{\alpha_1,\dots,\alpha_k}\}_{\alpha_i \in \mathbb{N}^i}\, ,\, \forall k \in [r-1]\, ,
+\end{equation}
+$$
+ of the RPC tree as,
+$$
+\begin{equation}
+  v_{\alpha_1,\dots,\alpha_k} = \sum_{i=0}^{k}\bigg(\sqrt{q_{i+1} - q_i}\bigg)e_{\alpha_i}\, ,
+\end{equation}
+$$
+where $$\{e_{\alpha_i}\} $$ is a set of orthonormal basis over the underlying Hilbert Space.
+
+We now define the probabilistic information associated with the inner vertices of the RPC tree. To do this, we first introduce the notion of Poisson-Dirichlet processes.
+
+<u><strong>(Poisson-Dirichlet Process)</u></strong> A Poisson-Dirichlet Point Process with parameter $$\eta $$ is defined as the unique stochastic process $$\{X_l\}_l $$ such that $$\forall A \subseteq \mathbb{R}^n $$,
+$$
+\begin{equation}
+  \mathbb{P}(X_l \in A) \overset{d}{=} \textsf{Poisson}(\mu(A))\,,
+\end{equation}
+$$
+where,
+$$
+\begin{equation}
+  \mu(A) = \int_{x \in A}\eta x^{-1-\eta}dx\, .
+\end{equation}
+$$
+
+In order to have a cascading process, we will associate an independent Poisson-Dirichlet point process $$\Pi_{v_{\alpha_1,\dots,\alpha_k}} $$ to every inner vertex with mean measure $$\mu(dx) = \xi_{k}x^{-1-\xi_k}dx $$. In fact, to define the indices of the children of every inner vertex (including the root) we will take a decreasing sequence $$\{u_{\alpha_1,\dots,\alpha_k,n}\}_{n \in \mathbb{N}} $$ and use that to index the children vertices of $$v_{\alpha_1,\dots,\alpha_k} $$. As it turns out, this construction allows us to associate a "weight" $$w_{\alpha_1,\dots,\alpha_k} $$ to every vertex in the tree (including the leaves) and this quantity is almost surely finite, thereby allowing one to define the required random measure on the leaves of the tree at level $$r $$.
+
+<u><strong></u>(Weights to Vertices):</strong> To every inner vertex $$v_{\alpha_1,\dots,\alpha_k} $$ in the RPC tree, a weight
+$$
+\begin{equation}
+  w_{\alpha_1,\dots,\alpha_k} := \prod_{\beta \in \pi(\alpha)} u_{\beta}\, ,
+\end{equation}
+$$
+is associated.
+
+Since the sum of these weights along the leaves is finite (almost surely), this allows us to define the random measure in the support of the RPC tree $$\textsf{RPC}(\zeta)$$ simply as,
+$$
+\begin{equation}
+  w_{v} := \frac{\prod_{\beta \in \pi(v)}}{\sum_{\alpha \in \mathbb{N}^r} w_{\alpha}}\, ,
+\end{equation}
+$$
+where the sum in the denominator is a normalizing term to make sure that $$w_v $$ is a measure.
+
+With the definitions above, we point out one elementary property about RPC trees that will be very useful when moving forward. This property asserts that the "overlap" between two vertices in the tree is given by their lowest common ancestor.
+
+<u><strong>(RPC Overlaps):</u></strong> The overlap between any two vertices $$v_{\alpha_1,\dots,\alpha_k} $$ and $$w_{\beta_1,\dots,v_l} $$ is given as
+$$
+\begin{equation}
+  \langle v_{\alpha_1,\dots,\alpha_k}, w_{\beta_1,\dots,\beta_l} \rangle = q_i\, ,
+\end{equation}
+$$
+where $$i = |\pi(\alpha_1,\dots,\alpha_k) \cap \pi(\beta_1,\dots,\beta_l)| $$.
+
+This is an elementary property and the proof follows by substituting the definition of the location of the points. However, it already shows that the geometry of the RPC construction is such that it reflects the hierarchical organization of overlaps of points (leaves) on which $$1 - o_n(1) $$ fraction of the Gibbs measure concentrates. This is in precise agreement with the Parisi ultrametric tree. The RPC tree also has the added bonus of reducing the process of generating the asymptotic Gibbs measure to an object that can be studied by tools from the theory of Poisson-Dirichlet point processes. As it turns out, the RPCs are a _fundamental_ structure in the theory of Mean-Field Spin Glasses as they satisfy some critical properties and provide an alternative structure on which the Parisi variational principle can be recast[^5] - This ends up being essential to the proof of the upper bound as well as the lower bound.
+
 #### FOOTNOTES
 
 [^1]: There are many references to this body of work which will be given in due course. Nonetheless, the following two surveys are a nice start: [\[B05\]](http://www.numdam.org/item/SB_2004-2005__47__349_0.pdf), [\[G21\]](https://arxiv.org/pdf/2109.14409.pdf).
@@ -257,3 +333,5 @@ where the root $$\phi $$ of the tree is implicit in the sequence. This allows us
 [^3]: In [this]() upcoming post, various results from the so-called "Gaussian Toolbox" will be stated and briefly proved. This is a very useful set of techniques to have command over in order to prove properties about mean-field spin glasses, and relate them to the behavior of random instances of sparse CSPs.
 
 [^4]: In [this]() upcoming post, we introduce the Guerra-RSB bound and prove that it can be used to show that the Parisi Variaional Principle, represented as an appropriately parameterized RPC, can be used to upper bound the free energy density of the SK model. We will also introduce the famed _Ghirlanda-Guerra_ identities.
+
+[^5]: In [this]() upcoming post, we will introduce some fundamental properties that the RPC tree satisfies, and then derive an alternative representation of the Parisi Variational Principle which can be stated purely as an optimization of a functional whose random measure is supported over the leaves of a RPC tree.
