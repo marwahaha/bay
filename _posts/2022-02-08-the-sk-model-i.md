@@ -266,6 +266,7 @@ $$
   \zeta = (\{\xi\}_{i=-1}^r, \{q_i\}_{i=0}^r)\, ,
 \end{equation}
 $$
+
 we define the position of the inner vertices
 
 $$
@@ -273,6 +274,7 @@ $$
   \{v_{\alpha_1,\dots,\alpha_k}\}_{\alpha_i \in \mathbb{N}^i}\, ,\, \forall k \in [r-1]\, ,
 \end{equation}
 $$
+
  of the RPC tree as,
 
 $$
@@ -280,6 +282,7 @@ $$
   v_{\alpha_1,\dots,\alpha_k} = \sum_{i=0}^{k}\bigg(\sqrt{q_{i+1} - q_i}\bigg)e_{\alpha_i}\, ,
 \end{equation}
 $$
+
 where $$\{e_{\alpha_i}\} $$ is a set of orthonormal basis over the underlying Hilbert Space.
 
 We now define the probabilistic information associated with the inner vertices of the RPC tree. To do this, we first introduce the notion of Poisson-Dirichlet processes.
@@ -291,6 +294,7 @@ $$
   \mathbb{P}(X_l \in A) \overset{d}{=} \textsf{Poisson}(\mu(A))\,,
 \end{equation}
 $$
+
 where,
 
 $$
@@ -308,6 +312,7 @@ $$
   w_{\alpha_1,\dots,\alpha_k} := \prod_{\beta \in \pi(\alpha)} u_{\beta}\, ,
 \end{equation}
 $$
+
 is associated.
 
 Since the sum of these weights along the leaves is finite (almost surely), this allows us to define the random measure in the support of the RPC tree $$\textsf{RPC}(\zeta)$$ simply as,
@@ -317,6 +322,7 @@ $$
   w_{v} := \frac{\prod_{\beta \in \pi(v)}}{\sum_{\alpha \in \mathbb{N}^r} w_{\alpha}}\, ,
 \end{equation}
 $$
+
 where the sum in the denominator is a normalizing term to make sure that $$w_v $$ is a measure.
 
 With the definitions above, we point out one elementary property about RPC trees that will be very useful when moving forward. This property asserts that the "overlap" between two vertices in the tree is given by their lowest common ancestor.
@@ -328,6 +334,7 @@ $$
   \langle v_{\alpha_1,\dots,\alpha_k}, w_{\beta_1,\dots,\beta_l} \rangle = q_i\, ,
 \end{equation}
 $$
+
 where $$i = |\pi(\alpha_1,\dots,\alpha_k) \cap \pi(\beta_1,\dots,\beta_l)| $$.
 
 This is an elementary property and the proof follows by substituting the definition of the location of the points. However, it already shows that the geometry of the RPC construction is such that it reflects the hierarchical organization of overlaps of points (leaves) on which $$1 - o_n(1) $$ fraction of the Gibbs measure concentrates. This is in precise agreement with the Parisi ultrametric tree. The RPC tree also has the added bonus of reducing the process of generating the asymptotic Gibbs measure to an object that can be studied by tools from the theory of Poisson-Dirichlet point processes. As it turns out, the RPCs are a _fundamental_ structure in the theory of Mean-Field Spin Glasses as they satisfy some critical properties and provide an alternative structure on which the Parisi variational principle can be recast[^5] - This ends up being essential to the proof of the upper bound as well as the lower bound.
