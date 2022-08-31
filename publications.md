@@ -5,7 +5,7 @@ slug: /publications
 
 publications:
 
-- title: Sparse random CSPs and mixed-spin glasses have equivalent overlap gaps
+- title: Sparse Random CSPs and Mixed-Spin Glasses have Equivalent Overlap Gaps
   authors: Chris Jones, Kunal Marwaha, Juspreet Singh Sandhu, Jonathan Shi
   conference: In Submission
   paperlink: NA
