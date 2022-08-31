@@ -5,6 +5,12 @@ slug: /publications
 
 publications:
 
+- title: Sparse random CSPs and mixed-spin glasses have equivalent overlap gaps
+  authors: Chris Jones, Kunal Marwaha, Juspreet Singh Sandhu, Jonathan Shi
+  conference: In Submission
+  paperlink: NA
+  codelink: NA
+
 - title: Limitations of Local Quantum Algorithms on Random MAX-k-XOR and Beyond
   authors: Chi-Ning Chou, Peter J. Love, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: ICALP 2022
@@ -27,12 +33,6 @@ preprints:
 
 - title: SoS Optimization for Problems with SoS Certification Lower Bounds&colon; Spherical Spin Glasses
   authors: Tommaso D'Orsi, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: In Preparation
-  paperlink: NA
-  codelink: NA
-
-- title: Connecting Sparse CSPs and Mixed Spin Glasses&colon; Limiting Values and Solution Space-Geometry 
-  authors: Chris Jones, Kunal Marwaha, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
   codelink: NA
