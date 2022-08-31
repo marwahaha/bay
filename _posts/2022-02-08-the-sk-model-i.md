@@ -206,11 +206,13 @@ The last point is critical: Since we can decouple the hamiltonians on both verti
 
 ### Invariance Symmetries
 As it turns out, in a statement that is not too hard to prove but remarkably insightful, the rotational-invariance of the distribution of the so-called overlap matrix can be related in a very precise way to the ASS functional defined above. In doing this, a deep connection between the seemingly unrelated approaches of the Replica method and the Cavity method is uncovered - Namely, that one can use information from finite entries of the overlap matrix to arbitrarily well approximate the ASS functional which is itself a proxy (for at least a lower bound) of the free energy density in the asymptotic limit. This, as it turns out, is not a coincidence, and becomes a critical fact in Panchenko's approach to proving the lower bound:
+
 $$
 \begin{equation}
   \lim_{n \to \infty} F_{n, \beta} = \lim_{n \to \infty} A_n \geq \liminf_{n \to \infty} A_n \geq \inf_{\mu}P_\beta(\mu)\, ,
 \end{equation}
 $$
+
 which is the hard direction in the proof of the Parisi Variational Principle.
 <br />
 
