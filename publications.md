@@ -5,7 +5,7 @@ slug: /publications
 
 publications:
 
-- title: Sparse Random CSPs and Mixed-Spin Glasses have Equivalent Overlap Gaps
+- title: Random Max-CSPs Inherit Algorithmic Hardness from Spin Glasses
   authors: Chris Jones, Kunal Marwaha, Juspreet Singh Sandhu, Jonathan Shi
   conference: In Submission
   paperlink: NA
