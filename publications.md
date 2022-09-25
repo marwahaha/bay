@@ -6,7 +6,7 @@ slug: /publications
 publications:
 
 - title: Random Max-CSPs Inherit Algorithmic Hardness from Spin Glasses
-  authors: Chris Jones, Kunal Marwaha, Juspreet Singh Sandhu, Jonathan Shi
+  authors: Chris Jones, Kunal Marwaha, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Submission
   paperlink: NA
   codelink: NA
