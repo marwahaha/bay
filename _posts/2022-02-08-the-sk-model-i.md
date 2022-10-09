@@ -337,7 +337,7 @@ $$
 \end{equation}
 $$
 
-where $$i = |\pi(\alpha_1,\dots,\alpha_k) \cap \pi(\beta_1,\dots,\beta_l)| $$.
+where $$i= $$|$$\pi(\alpha_1, \dots ,\alpha_k) \cap \pi(\beta_1, \dots ,\beta_l) $$|.
 
 This is an elementary property and the proof follows by substituting the definition of the location of the points. However, it already shows that the geometry of the RPC construction is such that it reflects the hierarchical organization of overlaps of points (leaves) on which $$1 - o_n(1) $$ fraction of the Gibbs measure concentrates. This is in precise agreement with the Parisi ultrametric tree. The RPC tree also has the added bonus of reducing the process of generating the asymptotic Gibbs measure to an object that can be studied by tools from the theory of Poisson-Dirichlet point processes. As it turns out, the RPCs are a _fundamental_ structure in the theory of Mean-Field Spin Glasses as they satisfy some critical properties and provide an alternative structure on which the Parisi variational principle can be recast[^5] - This ends up being essential to the proof of the upper bound as well as the lower bound.
 
