@@ -37,14 +37,14 @@ preprints:
   paperlink: NA
   codelink: NA
 
-- title: Polynomial Time Sparsification of the Boolean Hypercube
-  authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi, Luca Trevisan
+- title: Modified Hessian Ascent for the Sherrington-Kirkpatrick Model&colon; The fRSB Regime
+  authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
   codelink: NA
 
-- title: Iterative Maximization of the Generalized TAP Free Energy of the SK Model under fRSB
-  authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+- title: Polynomial Time Sparsification of the Boolean Hypercube
+  authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi, Luca Trevisan
   conference: In Preparation
   paperlink: NA
   codelink: NA
