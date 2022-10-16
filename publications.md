@@ -53,4 +53,6 @@ preprints:
 All my papers can be found on [DBLP](https://dblp.org/pid/299/8207.html), [Semantic Scholar](https://www.semanticscholar.org/author/Juspreet-Singh-Sandhu/2052821753) or [Google Scholar](https://scholar.google.com/citations?user=2G4gViMAAAAJ).
 <br/>
 
-I currently work very closely with the evergreen [Jonathan Shi](https://jshi.science/) on a set of problems at the intersection of <strong> Replica-Symmetry Breaking </strong>, the <strong>Sum-of-Squares</strong> framework, <strong>Spectral Graph Theory</strong>, <strong>Quantum Algorithms</strong> and <strong>Stochastic Analysis</strong>. I've also worked on some problems in the past with [Chi-Ning Chou](https://cnchou.github.io/) and [Emil T. Khabiboulline](https://ekhabiboulline.me/).
+I currently work very closely with the evergreen [Jonathan Shi](https://jshi.science/) on obstructing large families of algorithms (such as low-degree polynomials, local quantum algorithms and diffusion dynamics) in the presence of ultrametric-style OGPs, and in designing unifying Sum-of-Squares algorithms for optimizing mean-field spin glasses and Max-CSPs under fRSB. Much of the motivation for our work is to develop a unified theory of typical-instance complexity for combinatorial optimization and understand its ramifications on quantum advantage. 
+
+I've also worked on some problems in the past with [Chi-Ning Chou](https://cnchou.github.io/) and [Emil T. Khabiboulline](https://ekhabiboulline.me/).
