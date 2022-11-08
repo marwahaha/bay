@@ -7,7 +7,7 @@ publications:
 
 - title: Sum-of-Squares Optimization for Spherical Spin Glasses&colon; The fRSB Regime
   authors: Tommaso D'Orsi, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: In Preparation
+  conference: In Submission
   paperlink: NA
   codelink: NA
 
