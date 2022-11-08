@@ -5,6 +5,12 @@ slug: /publications
 
 publications:
 
+- title: Sum-of-Squares Optimization for Spherical Spin Glasses&colon; The fRSB Regime
+  authors: Tommaso D'Orsi, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  conference: In Preparation
+  paperlink: NA
+  codelink: NA
+
 - title: Random Max-CSPs Inherit Algorithmic Hardness from Spin Glasses
   authors: Chris Jones, Kunal Marwaha, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: ITCS 2023
@@ -30,12 +36,6 @@ publications:
   codelink: NA
 
 preprints:
-
-- title: Sum-of-Squares Optimization for Spherical Spin Glasses&colon; The fRSB Regime
-  authors: Tommaso D'Orsi, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: In Preparation
-  paperlink: NA
-  codelink: NA
 
 - title: Modified Hessian Ascent for the Sherrington-Kirkpatrick Model&colon; The fRSB Regime
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
