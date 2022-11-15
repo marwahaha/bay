@@ -56,7 +56,9 @@ preprints:
   codelink: NA
 ---
 
-All my papers can be found on [DBLP](https://dblp.org/pid/299/8207.html), [Semantic Scholar](https://www.semanticscholar.org/author/Juspreet-Singh-Sandhu/2052821753) or [Google Scholar](https://scholar.google.com/citations?user=2G4gViMAAAAJ).
+All my papers can be found on [DBLP](https://dblp.org/pid/299/8207.html) or [Google Scholar](https://scholar.google.com/citations?user=2G4gViMAAAAJ).
 <br/>
 
-I work very closely with [Jonathan Shi](https://jshi.science/) on obstructing algorithms (such as low-degree polynomials (LDPs), local quantum algorithms and diffusion dynamics) in the presence of ultrametric OGPs, and designing unifying sum-of-squares (SoS) algorithms for optimizing spin glasses and Max-CSPs under fRSB. The motivation for our work is to develop a unified theory of typical-instance complexity for optimization and understand its ramifications on quantum advantage, the small-set expansion hypothesis/unique-games conjectures and a possible SoS-ficiation of the proof of the Parisi formula.
+I work very closely with [Jonathan Shi](https://jshi.science/) on obstructing algorithms (such as low-degree polynomials (LDPs), local quantum algorithms and diffusion dynamics) in the presence of ultrametric OGPs, and designing unifying sum-of-squares (SoS) algorithms for optimizing spin glasses and Max-CSPs under fRSB. The motivation for our work is to develop a unified theory of typical-instance complexity for optimization and understand its ramifications on quantum advantage, the small-set expansion hypothesis/unique-games conjecture and a possible SoS version of a proof of the Parisi formula. <br/>
+
+Some questions and techniques that excite me include the <a href="https://arxiv.org/pdf/1309.7495.pdf">qPCP conjecture</a>, <a href="https://arxiv.org/pdf/2110.07847.pdf">ultrametric OGPs</a>, <a href="https://arxiv.org/pdf/2210.03006.pdf">Guerra-Tonnineli interpolations</a>, <a href="https://www.dsteurer.org/paper/expansion.pdf">small-set expansion/unique-games conjectures</a> and <a href="https://arxiv.org/pdf/1512.02337.pdf">analytic sparsity proofs</a>.
