@@ -43,6 +43,13 @@ preprints:
   paperlink: NA
   codelink: NA
 
+- title: Sum-of-Squares optimization for Ising Mean-Field Spin Glasses&colon; The fRSB Regime
+  authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  conference: In Preparation
+  paperlink: NA
+  codelink: NA
+---
+
 - title: Polynomial Time Sparsification of the Boolean Hypercube
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi, Luca Trevisan
   conference: In Preparation
@@ -53,4 +60,4 @@ preprints:
 All my papers can be found on [DBLP](https://dblp.org/pid/299/8207.html), [Semantic Scholar](https://www.semanticscholar.org/author/Juspreet-Singh-Sandhu/2052821753) or [Google Scholar](https://scholar.google.com/citations?user=2G4gViMAAAAJ).
 <br/>
 
-I currently work very closely with the evergreen [Jonathan Shi](https://jshi.science/) on obstructing large families of algorithms (such as low-degree polynomials, local quantum algorithms and diffusion dynamics) in the presence of ultrametric-style OGPs, and in designing unifying Sum-of-Squares algorithms for optimizing mean-field spin glasses and Max-CSPs under fRSB. Much of the motivation for our work is to develop a unified theory of typical-instance complexity for combinatorial optimization and understand its ramifications on quantum advantage.
+I work very closely with [Jonathan Shi](https://jshi.science/) on obstructing algorithms (such as low-degree polynomials (LDPs), local quantum algorithms and diffusion dynamics) in the presence of ultrametric OGPs, and designing unifying sum-of-squares (SoS) algorithms for optimizing spin glasses and Max-CSPs under fRSB. The motivation for our work is to develop a unified theory of typical-instance complexity for optimization and understand its ramifications on quantum advantage, the small-set expansion hypothesis/unique-games conjectures and a possible SoS-ficiation of the proof of the Parisi formula.
