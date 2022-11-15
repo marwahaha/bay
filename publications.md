@@ -48,7 +48,6 @@ preprints:
   conference: In Preparation
   paperlink: NA
   codelink: NA
----
 
 - title: Polynomial Time Sparsification of the Boolean Hypercube
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi, Luca Trevisan
