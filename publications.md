@@ -37,7 +37,7 @@ publications:
 
 preprints:
 
-- title: Modified Hessian Ascent for the Sherrington-Kirkpatrick Model&colon; The fRSB Regime
+- title: Stability of Low-Degree Polynomials on Sparse Max-CSPs
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
