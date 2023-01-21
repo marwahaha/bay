@@ -4,6 +4,8 @@ title: readinggroup
 slug: /readinggroup
 ---
 
+# PHYSICS & COMPUTATION READING GROUP
+
 In _Spring-2023_, there will be a reading group on *Physics and Computation* across Tufts, Harvard and MIT. The focus will be on analytic and probabilistic tools used to study the mathematics and algorithmic tractability of approximating and sampling low-energy states of certain families of classical hamiltonians (spin glasses) and quantum hamiltonians (bosonic/fermionic systems).
 
 **Meeting Time**: Thursdays, 11 AM - 1 PM EST
@@ -13,6 +15,7 @@ In _Spring-2023_, there will be a reading group on *Physics and Computation* acr
 **Organizers**: [Saeed Mehraban](https://sites.google.com/view/saeedmehraban/about), [Juspreet Singh Sandhu](https://juspreetsandhu.me)
 
 ## Talk Schedule
+
 
 - Lecture-1: Motivation & Introduction - Approximability and hardness in physics and computation 
   - Speaker(s): Saeed, Juspreet
@@ -56,6 +59,7 @@ In _Spring-2023_, there will be a reading group on *Physics and Computation* acr
 
 
 ## Relevant Papers
+
 For a survey of Barvinok's method, a good reference are the "Computing Partition Functions" talks from the Simon's workshop on the [geometry of polynomials](https://www.youtube.com/watch?v=TUjCLXPqW2Y&list=PLgKuh-lKre13XzHXH_rnq0ptd3ahU5TfB). A good historical reference for the overlap-gap property and its use in obstructing algorithms on random optimization problems is the [survey by Gamarnik](https://arxiv.org/pdf/2109.14409.pdf). A more technical survey is the one by [Auffinger, Montanari and Subag](https://arxiv.org/pdf/2206.10217.pdf).
 
 ### Deterministic Counting and Approximation of Quantum Hamiltonians
