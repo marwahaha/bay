@@ -5,10 +5,16 @@ slug: /publications
 
 publications:
 
-- title: Sparse random CSPs and mixed-spin glasses have equivalent overlap gaps
-  authors: Chris Jones, Kunal Marwaha, Juspreet Singh Sandhu, Jonathan Shi
+- title: Sum-of-Squares Optimization for Spherical Spin Glasses&colon; The fRSB Regime
+  authors: Tommaso D'Orsi, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Submission
   paperlink: NA
+  codelink: NA
+
+- title: Random Max-CSPs Inherit Algorithmic Hardness from Spin Glasses
+  authors: Chris Jones, Kunal Marwaha, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  conference: ITCS 2023
+  paperlink: https://arxiv.org/pdf/2210.03006.pdf
   codelink: NA
 
 - title: Limitations of Local Quantum Algorithms on Random MAX-k-XOR and Beyond
@@ -31,8 +37,14 @@ publications:
 
 preprints:
 
-- title: SoS Optimization for Problems with SoS Certification Lower Bounds&colon; Spherical Spin Glasses
-  authors: Tommaso D'Orsi, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+- title: Stability of Low-Degree Polynomials on Sparse Max-CSPs
+  authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  conference: In Preparation
+  paperlink: NA
+  codelink: NA
+
+- title: Sum-of-Squares optimization for Ising Mean-Field Spin Glasses&colon; The fRSB Regime
+  authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
   codelink: NA
@@ -42,15 +54,11 @@ preprints:
   conference: In Preparation
   paperlink: NA
   codelink: NA
-
-- title: Iterative Maximization of the Generalized TAP Free Energy of the SK Model under fRSB
-  authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: In Preparation
-  paperlink: NA
-  codelink: NA
 ---
 
-All my papers can be found on [Semantic Scholar](https://www.semanticscholar.org/author/Juspreet-Singh-Sandhu/2052821753) or [Google Scholar](https://scholar.google.com/citations?user=2G4gViMAAAAJ).
+All my papers can be found on [DBLP](https://dblp.org/pid/299/8207.html) or [Google Scholar](https://scholar.google.com/citations?user=2G4gViMAAAAJ).
 <br/>
 
-I currently work very closely with the evergreen [Jonathan Shi](https://jshi.science/) on a set of problems at the intersection of <strong> Replica-Symmetry Breaking </strong>, the <strong>Sum-of-Squares</strong> framework, <strong>Spectral Graph Theory</strong>, <strong>Quantum Algorithms</strong> and <strong>Stochastic Analysis</strong>. I've also worked on some problems in the past with [Chi-Ning Chou](https://cnchou.github.io/) and [Emil T. Khabiboulline](https://ekhabiboulline.me/).
+I work very closely with [Jonathan Shi](https://jshi.science/) on obstructing many algorithms in the presence of ultrametric OGPs and designing unifying sum-of-squares (SoS) relaxations for spin glasses and random Max-CSPs. The motivation is to develop a unified theory of typical-instance complexity for optimization and understand its ramifications on quantum advantage, the small-set expansion hypothesis/unique-games conjecture, and a possible SoS version of a proof of the Parisi formula. <br/>
+
+Some questions and techniques that excite me include the <a href="https://arxiv.org/pdf/1309.7495.pdf">qPCP conjecture</a>, <a href="https://arxiv.org/pdf/2110.07847.pdf">ultrametric OGPs</a>, <a href="https://arxiv.org/pdf/2210.03006.pdf">Guerra-Tonnineli interpolations</a>, <a href="https://www.dsteurer.org/paper/expansion.pdf">small-set expansion/unique-games conjectures</a> and <a href="https://arxiv.org/pdf/1512.02337.pdf">analytic sparsity proofs</a>.
