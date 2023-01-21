@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: readinggroup
 title: Reading Groups
 slug: /readinggroup
 ---
