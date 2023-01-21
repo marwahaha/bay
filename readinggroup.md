@@ -1,6 +1,6 @@
 ---
 layout: readinggroup
-title: Reading Groups
+title: readinggroup
 slug: /readinggroup
 ---
 
