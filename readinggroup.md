@@ -1,7 +1,7 @@
 ---
 layout: readinggroup
 title: Reading Groups
-slug: /readinggroup
+slug: /reading group
 ---
 
 In _Spring-2023_, there will be a reading group on *Physics and Computation* across Tufts, Harvard and MIT. The focus will be on analytic and probabilistic tools used to study the mathematics and algorithmic tractability of approximating and sampling low-energy states of certain families of classical hamiltonians (spin glasses) and quantum hamiltonians (bosonic/fermionic systems).
