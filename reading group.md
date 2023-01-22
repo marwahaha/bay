@@ -67,6 +67,7 @@ For a survey of Barvinok's method, a good reference are the "Computing Partition
 - Approximating the Permanent of a Random Matrix with Vanishing Mean [EM18](https://arxiv.org/pdf/1711.09457.pdf).
 
 ### Analysis and Probability in Mean-Field Spin-Glasses
+#### Interpolations, Ultrametricity and the TAP Approach
 - The Thermodynamic Limit in Mean Field Spin Glass Models [GT02](https://arxiv.org/pdf/cond-mat/0204280.pdf).
 - Broken Replica Symmetry Bounds in the Mean Field Spin Glass Model [Gue02](https://arxiv.org/pdf/cond-mat/0205123.pdf).
 - The Parisi Formula [Tal06](https://annals.math.princeton.edu/wp-content/uploads/annals-v163-n1-p04.pdf).
@@ -79,6 +80,7 @@ For a survey of Barvinok's method, a good reference are the "Computing Partition
   - The Thouless-Anderson-Palmer Equation in Spin Glass Theory [Bol08](https://anr-malin.sciencesconf.org/data/pages/Aussois_2.pdf).
 - The Generalized TAP Free Energy I, II [CPS18](https://arxiv.org/pdf/1812.05066.pdf), [CPS21](https://arxiv.org/pdf/1903.01030.pdf).
 
+#### Analytic Properties of the Parisi Formula
 - On Differentiability of the Parisi Formula [Pan08](https://arxiv.org/pdf/0709.1514.pdf).
 - On Properties of Parisi Measures [AC13](https://arxiv.org/pdf/1303.3573.pdf).
 - The Parisi Formula has a Unique Minimizer [AC14](https://arxiv.org/pdf/1402.5132.pdf).
