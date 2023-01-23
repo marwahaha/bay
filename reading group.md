@@ -90,9 +90,9 @@ For a survey of Barvinok's method, a good reference are the "Computing Partition
 ### Overlap Concentration, Low-Degree Stability and Overlap-Gap Properties: Algorithmic Hardness
 - Limits of Local Algorithms over Sparse Random Graphs [[GJ14]](https://arxiv.org/pdf/1304.1831.pdf).
 - Local Algorithms For Independent Sets Are Half-Optimal [[VR17]](https://arxiv.org/pdf/1402.0485.pdf).
-- Suboptimality of Local Algorithms for a Class of Max-Cut Problems [CGPR19](https://arxiv.org/pdf/1707.05386.pdf).
+- Suboptimality of Local Algorithms for a Class of Max-Cut Problems [[CGPR19]](https://arxiv.org/pdf/1707.05386.pdf).
 - The Overlap Gap Property and Approximate Message Passing Algorithms for p-Spin Models [[GJ21]](https://projecteuclid.org/journals/annals-of-probability/volume-49/issue-1/The-overlap-gap-property-and-approximate-message-passing-algorithms-for/10.1214/20-AOP1448.short).
 - Hardness of Random Optimization Problems for Boolean Circuits, Low-Degree Polynomials, and Langevin Dynamics [[GJW20]](https://arxiv.org/pdf/2004.12063.pdf).
 - Tight Lipschitz Hardness for Optimizing Mean Field Spin Glasses [[HS21]](https://arxiv.org/pdf/2110.07847.pdf).
-- Limitations of Local Quantum Algorithms on Random Max-k-XOR and Beyond [[CLS22]](https://arxiv.org/pdf/2108.06049.pdf).
+- Limitations of Local Quantum Algorithms on Random Max-k-XOR and Beyond [[CLSS22]](https://arxiv.org/pdf/2108.06049.pdf).
 - Random Max-CSPs Inherit Algorithmic Hardness from Spin Glasses [[JMSS22]](https://arxiv.org/pdf/2210.03006.pdf).
