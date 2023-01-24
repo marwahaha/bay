@@ -1,9 +1,3 @@
----
-layout: readinggroup
-title: readinggroup
-slug: /readinggroup
----
-
 ## PHYSICS & COMPUTATION READING GROUP
 
 This will be a reading group across Tufts, Harvard and MIT. The focus will be on analytic and probabilistic tools used to study the mathematical properties and algorithmic tractability of approximating (and sampling from statistics of) low-energy states of certain families of classical hamiltonians (spin glasses) and quantum hamiltonians (bosonic/fermionic systems).
