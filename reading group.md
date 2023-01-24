@@ -1,4 +1,4 @@
-## PHYSICS & COMPUTATION READING GROUP
+# PHYSICS & COMPUTATION READING GROUP
 
 This will be a reading group across Tufts, Harvard and MIT. The focus will be on analytic and probabilistic tools used to study the mathematical properties and algorithmic tractability of approximating (and sampling from statistics of) low-energy states of certain families of classical hamiltonians (spin glasses) and quantum hamiltonians (bosonic/fermionic systems).
 
@@ -8,7 +8,7 @@ This will be a reading group across Tufts, Harvard and MIT. The focus will be on
 
 **Organizers**: [Saeed Mehraban](https://sites.google.com/view/saeedmehraban/about), [Juspreet Singh Sandhu](https://juspreetsandhu.me)
 
-## Talk Schedule
+# Talk Schedule
 
 - Lecture-1: Motivation & Introduction - Approximability and hardness in physics and computation 
   - Speaker(s): Saeed, Juspreet
@@ -51,17 +51,17 @@ This will be a reading group across Tufts, Harvard and MIT. The focus will be on
   - Date: TBA
 
 
-## Relevant Papers
+# Relevant Papers
 
 For a survey of Barvinok's method, a good reference are the "Computing Partition Functions" talks from the Simon's workshop on the [geometry of polynomials](https://www.youtube.com/watch?v=TUjCLXPqW2Y&list=PLgKuh-lKre13XzHXH_rnq0ptd3ahU5TfB). A good historical reference for the overlap-gap property and its use in obstructing algorithms on random optimization problems is the survey by Gamarnik [[G21]](https://arxiv.org/pdf/2109.14409.pdf). A more technical survey is the one by Auffinger, Montanari and Subag [[AMS22]](https://arxiv.org/pdf/2206.10217.pdf). The three most accessible and comprehensive texts on the proof of the Parisi formula along with the applications of these techniques to solve other problems in mathematical and statistical physics are the ones by Talagrand ([[Vol. 1]](https://link.springer.com/book/10.1007/978-3-642-15202-3),[[Vol. 2]](https://link.springer.com/book/10.1007/978-3-642-22253-5)) and Panchenko [[Pan13]](https://link.springer.com/book/10.1007/978-1-4614-6289-7).
 
-### Deterministic Counting and Approximation of Quantum Hamiltonians
+## Deterministic Counting and Approximation of Quantum Hamiltonians
 - Classical Algorithms, Correlation Decay, and Complex Zeros of Partition Functions of Quantum Many-Body Systems [[HMS19]](https://arxiv.org/pdf/1910.09071.pdf). 
 - Approximating the Determinant of Well-Conditioned Matrices by Shallow Circuits [[AEM19]](https://arxiv.org/pdf/1912.03824.pdf).
 - Approximating the Permanent of a Random Matrix with Vanishing Mean [[EM18]](https://arxiv.org/pdf/1711.09457.pdf).
 
-### Analysis and Probability in Mean-Field Spin-Glasses
-#### Interpolations, Ultrametricity and the TAP Approach
+## Analysis and Probability in Mean-Field Spin-Glasses
+### Interpolations, Ultrametricity and the TAP Approach
 - The Thermodynamic Limit in Mean Field Spin Glass Models [[GT02]](https://arxiv.org/pdf/cond-mat/0204280.pdf).
 - Broken Replica Symmetry Bounds in the Mean Field Spin Glass Model [[Gue02]](https://arxiv.org/pdf/cond-mat/0205123.pdf).
 - The Parisi Formula [[Tal06]](https://annals.math.princeton.edu/wp-content/uploads/annals-v163-n1-p04.pdf).
@@ -74,14 +74,14 @@ For a survey of Barvinok's method, a good reference are the "Computing Partition
   - The Thouless-Anderson-Palmer Equation in Spin Glass Theory [[Bol08]](https://anr-malin.sciencesconf.org/data/pages/Aussois_2.pdf).
 - The Generalized TAP Free Energy I, II [[CPS18]](https://arxiv.org/pdf/1812.05066.pdf), [[CPS21]](https://arxiv.org/pdf/1903.01030.pdf).
 
-#### Analytic Properties of the Parisi Formula
+### Analytic Properties of the Parisi Formula
 - On Differentiability of the Parisi Formula [[Pan08]](https://arxiv.org/pdf/0709.1514.pdf).
 - On Properties of Parisi Measures [[AC13]](https://arxiv.org/pdf/1303.3573.pdf).
 - The Parisi Formula has a Unique Minimizer [[AC14]](https://arxiv.org/pdf/1402.5132.pdf).
 - Variational Representations for the Parisi Functional and the Two-Dimensional Guerra-Talagrand Bound [[C16]](https://arxiv.org/pdf/1501.06635.pdf).
 - The SK model is Infinite Step Replica Symmetry Breaking at Zero Temperature [[ACZ20]](https://arxiv.org/pdf/1703.06872.pdf).
 
-### Overlap Concentration, Low-Degree Stability and Overlap-Gap Properties: Algorithmic Hardness
+## Overlap Concentration, Low-Degree Stability and Overlap-Gap Properties: Algorithmic Hardness
 - Limits of Local Algorithms over Sparse Random Graphs [[GJ14]](https://arxiv.org/pdf/1304.1831.pdf).
 - Local Algorithms For Independent Sets Are Half-Optimal [[VR17]](https://arxiv.org/pdf/1402.0485.pdf).
 - Suboptimality of Local Algorithms for a Class of Max-Cut Problems [[CGPR19]](https://arxiv.org/pdf/1707.05386.pdf).
