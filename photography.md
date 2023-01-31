@@ -4,6 +4,14 @@ title: Photography
 slug: /photography
 ---
 
+<img src="{{ "/assets/img/content/photography/Namsan_Hanok.JPG" | absolute_url }}" alt="bay" class="post-pic"/>
+
+<br/>
+
+<img src="{{ "/assets/img/content/photography/Seoul_Hanok.JPG" | absolute_url }}" alt="bay" class="post-pic"/>
+
+<br/>
+
 <img src="{{ "/assets/img/content/photography/IMG_0043.JPG" | absolute_url }}" alt="bay" class="post-pic"/>
 
 <br/>
