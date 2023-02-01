@@ -4,7 +4,7 @@ This will be a reading group across Tufts, Harvard and MIT. The focus will be on
 
 **Meeting Time**: Thursdays, 11 AM - 1 PM EST
 
-**Location**: TBA; Zoom link available upon request
+**Location**: [Zoom room](https://harvard.zoom.us/j/2185567693?pwd=TzBGeHZIRWJRWXp3OVdOdzF6Qk1uZz09)
 
 **Organizers**: [Saeed Mehraban](https://sites.google.com/view/saeedmehraban/about), [Juspreet Singh Sandhu](https://juspreetsandhu.me)
 
