@@ -55,12 +55,12 @@ This will be a reading group across Tufts, Harvard and MIT. The focus will be on
 For a survey of Barvinok's method, a good reference is the monograph "Combinatorics and Complexity of Partition Functions" by [Barvinok](https://link.springer.com/book/10.1007/978-3-319-51829-9). Another source are the talks on "Computing Partition Functions" from the Simon's workshop on the [geometry of polynomials](https://www.youtube.com/watch?v=TUjCLXPqW2Y&list=PLgKuh-lKre13XzHXH_rnq0ptd3ahU5TfB). A good historical reference for the overlap-gap property and its use in obstructing algorithms on random optimization problems is the survey by Gamarnik [[G21]](https://arxiv.org/pdf/2109.14409.pdf). A more technical survey is the one by Auffinger, Montanari and Subag [[AMS22]](https://arxiv.org/pdf/2206.10217.pdf). The three most accessible and comprehensive texts on the proof of the Parisi formula along with the applications of these techniques to solve other problems in mathematical and statistical physics are the ones by Talagrand ([[Vol. 1]](https://link.springer.com/book/10.1007/978-3-642-15202-3),[[Vol. 2]](https://link.springer.com/book/10.1007/978-3-642-22253-5)) and Panchenko [[Pan13]](https://link.springer.com/book/10.1007/978-1-4614-6289-7).
 
 ## Deterministic Counting and Approximation of Quantum Hamiltonians
-- Statistical Theory of Equations of State and Phase Transitions. I. Theory of Condensation [YL52](https://journals.aps.org/pr/abstract/10.1103/PhysRev.87.404).
-- Completely Analytical Interactions: Constructive Description [DS87](https://link.springer.com/article/10.1007/BF01011153).
-- Polynomial-Time Approximation Algorithms for the Ising Model [JS93](https://www.math.cmu.edu/~af1p/Teaching/MCC17/Papers/JSIsing.pdf).
+- Statistical Theory of Equations of State and Phase Transitions. I. Theory of Condensation [[YL52]](https://journals.aps.org/pr/abstract/10.1103/PhysRev.87.404).
+- Completely Analytical Interactions: Constructive Description [[DS87]](https://link.springer.com/article/10.1007/BF01011153).
+- Polynomial-Time Approximation Algorithms for the Ising Model [[JS93]](https://www.math.cmu.edu/~af1p/Teaching/MCC17/Papers/JSIsing.pdf).
 - A Polynomial-Time Approximation Algorithm for the Permanent of a Matrix with Nonnegative Entries [[JSV]](https://faculty.cc.gatech.edu/~vigoda/Permanent.pdf).
 - The Ising Partition Function: Zeros and Deterministic Approximation [[LSS19]](https://link.springer.com/article/10.1007/s10955-018-2199-2).
-- Deterministic Polynomial-Time Approximation Algorithms for Partition Functions and Graph Polynomials [PR17](https://arxiv.org/pdf/1607.01167.pdf).
+- Deterministic Polynomial-Time Approximation Algorithms for Partition Functions and Graph Polynomials [[PR17]](https://arxiv.org/pdf/1607.01167.pdf).
 - Classical Algorithms, Correlation Decay, and Complex Zeros of Partition Functions of Quantum Many-Body Systems [[HMS19]](https://arxiv.org/pdf/1910.09071.pdf). 
 - Approximating the Determinant of Well-Conditioned Matrices by Shallow Circuits [[AEM19]](https://arxiv.org/pdf/1912.03824.pdf).
 - Approximating the Permanent of a Random Matrix with Vanishing Mean [[EM18]](https://arxiv.org/pdf/1711.09457.pdf).
