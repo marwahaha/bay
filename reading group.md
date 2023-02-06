@@ -13,7 +13,6 @@ This will be a reading group across Tufts, Harvard and MIT. The focus will be on
 # Talk Schedule
 
 - Lecture-1: Motivation & Introduction - Approximability and hardness in physics and computation
-   
   - Speaker(s): Saeed, Juspreet
   - Date: 02/02/2023
 
