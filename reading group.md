@@ -12,41 +12,44 @@ This will be a reading group across Tufts, Harvard and MIT. The focus will be on
 
 # Talk Schedule
 
-- Lecture-1: Motivation & Introduction - Approximability and hardness in physics and computation 
+- Lecture-1: Motivation & Introduction - Approximability and hardness in physics and computation
+   
   - Speaker(s): Saeed, Juspreet
   - Date: 02/02/2023
 
-- Lecture-2: Barvinok's method
-  - Speaker: Saeed
-  - Date: 02/09/2023
+**_No meeting on 02/09/2023, on account of the QIP conference scheduled 02/04/2023 through 02/10/2023_**
 
-- Lecture-3: Deterministic counting and approximation of the permanent and partition functions I 
+- Lecture-2: Barvinok's method
   - Speaker: Saeed
   - Date: 02/16/2023
 
-- Lecture-4: Deterministic counting and approximation of the permanent and partition functions II
+- Lecture-3: Deterministic counting and approximation of the permanent and partition functions I 
   - Speaker: Saeed
   - Date: 02/23/2023
 
-- Lecture-5: Overlap concentration in spin glasses and sparse random Max-CSPs I 
-  - Speaker: Juspreet
+- Lecture-4: Deterministic counting and approximation of the permanent and partition functions II
+  - Speaker: Saeed
   - Date: 03/02/2023
 
-- Lecture-6: Overlap concentration in spin glasses and sparse random Max-CSPs II
+- Lecture-5: Overlap concentration in spin glasses and sparse random Max-CSPs I 
   - Speaker: Juspreet
   - Date: 03/09/2023
 
-- Lecture-7: Matrix sum-of-squares optimization for spherical spin glasses
+- Lecture-6: Overlap concentration in spin glasses and sparse random Max-CSPs II
   - Speaker: Juspreet
   - Date: 03/16/2023
 
-- Lecture-8: Stability of low-degree polynomials & Langevin dynamics
+- Lecture-7: Matrix sum-of-squares optimization for spherical spin glasses
   - Speaker: Juspreet
   - Date: 03/23/2023
 
-- Lecture-9: _Open Discussion Session_: Bridging the gap between different approximation techniques
-  - Moderators: Saeed, Juspreet
+- Lecture-8: Stability of low-degree polynomials & Langevin dynamics
+  - Speaker: Juspreet
   - Date: 03/30/2023
+
+- Lecture-9: _Open Discussion Session_- Bridging the gap between different approximation techniques
+  - Moderators: Saeed, Juspreet
+  - Date: 04/06/2023
 
 - Lecture-10: TBA
   - Speaker: TBA
