@@ -5,7 +5,7 @@ slug: /publications
 
 publications:
 
-- title: Sum-of-Squares Optimization for Spherical Spin Glasses&colon; The fRSB Regime
+- title: Sum-of-Squares Thermodynamics I&colon; Spherical Spin Glasses
   authors: Tommaso D'Orsi, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Submission
   paperlink: NA
@@ -37,13 +37,13 @@ publications:
 
 preprints:
 
-- title: Stability of Low-Degree Polynomials on Sparse Max-CSPs
+- title: Stable Algorithms for Sparse Random Max-CSPs
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
   codelink: NA
 
-- title: Sum-of-Squares optimization for Ising Mean-Field Spin Glasses&colon; The fRSB Regime
+- title: Sum-of-Squares Thermodynamics II&colon; Ising Mixed Spin Glasses
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
