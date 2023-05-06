@@ -6,8 +6,8 @@ slug: /publications
 publications:
 
 - title: Sum-of-Squares Thermodynamics I&colon; Spherical Spin Glasses
-  authors: Tommaso D'Orsi, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: In Submission
+  authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  conference: Submitted, FOCS 2023
   paperlink: NA
   codelink: NA
 
@@ -25,13 +25,13 @@ publications:
 
 - title: Efficient Quantum Voting with Information-Theoretic Security
   authors: Emil T. Khabiboulline, <u>Juspreet Singh Sandhu</u>, Marco Ugo Gambetta, Mikhail D. Lukin, Johannes Borregaard
-  conference: In Submission
+  conference: Under Revision, PRX Quantum
   paperlink: https://arxiv.org/pdf/2112.14242.pdf
   codelink: NA
 
 - title: A General Framework for Analyzing Stochastic Dynamics in Learning Algorithms
   authors: Chi-Ning Chou, <u>Juspreet Singh Sandhu</u>, Mien Brabeeba Wang, Tiancheng Yu
-  conference: In Submission
+  conference: Submitted, JMLR
   paperlink: https://arxiv.org/pdf/2006.06171.pdf
   codelink: NA
 
