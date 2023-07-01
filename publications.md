@@ -7,7 +7,7 @@ publications:
 
 - title: Sum-of-Squares Thermodynamics I&colon; Spherical Spin Glasses
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: Submitted, FOCS 2023
+  conference: Submitted, SODA 2024
   paperlink: NA
   codelink: NA
 
