@@ -5,7 +5,7 @@ slug: /publications
 
 publications:
 
-- title: Sum-of-Squares Thermodynamics I&colon; Spherical Spin Glasses
+- title: Spin-Glass Geometry and Sum-of-Squares I&colon; Spherical Case
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: Submitted, SODA 2024
   paperlink: NA
@@ -43,7 +43,7 @@ preprints:
   paperlink: NA
   codelink: NA
 
-- title: Sum-of-Squares Thermodynamics II&colon; Ising Mixed Spin Glasses
+- title: Spin-Glass Geometry and Sum-of-Squares II&colon; Ising Case
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
