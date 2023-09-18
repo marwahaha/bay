@@ -10,7 +10,7 @@ profile_picture_two:
   caption: 서울, January 2019.
 ---
 
-Starting November 2023, I will be a post-doctoral scholar in the department of computer science at UC Santa Cruz hosted by the wonderful Prof. <a href="https://people.ucsc.edu/~akolla/">Alexandra Kolla</a>.
+Starting November 2023, I will be a post-doctoral scholar at <a href="https://tcs.soe.ucsc.edu/trg">UC Santa Cruz</a> hosted by the wonderful Prof. <a href="https://people.ucsc.edu/~akolla/">Alexandra Kolla</a>.
 
 I did my PhD at <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.seas.harvard.edu%2Fcomputer-science&sa=D&sntz=1&usg=AFQjCNGjg26QHPZ0TDV_KVdv3VHJ0ZsKYg">Harvard University</a>, where I was fortunate to be advised by Prof. <a href="https://www.google.com/url?q=https%3A%2F%2Fsites.google.com%2Fview%2Ftuftsqi&sa=D&sntz=1&usg=AFQjCNHcsMTHG5jtH46FfNZ8OHvDqzM97w">Peter Love</a> and co-advised by Prof. <a href="https://www.boazbarak.org/">Boaz Barak</a> and was part of the <a href="https://toc.seas.harvard.edu/toc-people-original">Theory of Computation</a> and <a href="">Quantum Information Theory</a> groups. 
  
