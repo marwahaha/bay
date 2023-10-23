@@ -5,7 +5,7 @@ slug: /publications
 
 publications:
 
-- title: High-Entropy Filtrated Distributions &amp; Sum-of-Squares &colon; Spherical Case
+- title: High-Entropy Filtrated Distributions &amp; Sum-of-Squares&colon; Spherical Case
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Submission, STOC 2024
   paperlink: NA
