@@ -43,14 +43,14 @@ preprints:
   paperlink: NA
   codelink: NA
 
-- title: Spin-Glass Geometry and Sum-of-Squares II&colon; Ising Case
+- title: Mirror Hessian Ascent&colon; SK Model &amp; Bounded-Degree CSPs
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
   codelink: NA
 
 - title: Polynomial Time Sparsification of the Boolean Hypercube
-  authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi, Luca Trevisan
+  authors: Alexandra Kolla, <u>Juspreet Singh Sandhu</u>, Jonathan Shi, Luca Trevisan
   conference: In Preparation
   paperlink: NA
   codelink: NA
@@ -59,6 +59,6 @@ preprints:
 My papers can be found on [DBLP](https://dblp.org/pid/299/8207.html) or [Google Scholar](https://scholar.google.com/citations?user=2G4gViMAAAAJ).
 <br/>
 
-I work with [Jonathan Shi](https://jshi.science/) on obstructing algorithms in the presence of ultrametric OGPs and designing unifying sum-of-squares (SoS) relaxations for spin glasses and CSPs. Questions/techniques that excite me include the <a href="https://arxiv.org/pdf/1309.7495.pdf">qPCP conjecture</a>, <a href="https://arxiv.org/pdf/2110.07847.pdf">ultrametric OGPs</a>, <a href="https://arxiv.org/pdf/2210.03006.pdf">Guerra-Tonnineli interpolations</a>, <a href="https://www.dsteurer.org/paper/expansion.pdf">small-set expansion/unique-games conjectures</a> and <a href="https://arxiv.org/pdf/1512.02337.pdf">analytic sparsity proofs</a>. <br/>
+I work with [Jonathan Shi](https://jshi.science/) on obstructing algorithms in the presence of ultrametric OGPs and designing unifying sum-of-squares relaxations for spin glasses, operator-valued polynomials & CSPs. Questions/techniques that excite me include the <a href="https://arxiv.org/pdf/1309.7495.pdf">qPCP conjecture</a>, <a href="https://arxiv.org/pdf/2110.07847.pdf">ultrametric OGPs</a>, <a href="https://arxiv.org/pdf/2210.03006.pdf">Guerra-Tonnineli interpolations</a>, <a href="https://www.dsteurer.org/paper/expansion.pdf">small-set expansion/unique-games conjectures</a> and <a href="https://arxiv.org/pdf/1512.02337.pdf">analytic sparsity proofs</a>. <br/>
 
 More broadly, my interests lie at the confluence of _Discrete & Continuous Optimization_, _Random Matrix Theory_ & _Free Probability Theory_, _Stochastic Analysis_, _Operator Algebras_ & _Non-Commutative Pseudo-Moment Hierarchies_.
