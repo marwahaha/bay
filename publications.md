@@ -5,9 +5,9 @@ slug: /publications
 
 publications:
 
-- title: High-Entropy Filtrated Distributions &amp; Sum-of-Squares&colon; Spherical Case
+- title: Sum-of-Squares Optimization in the Absence of Pointwise-Proofs&colon; Spherical Case
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: In Submission, STOC 2024
+  conference: Submitted
   paperlink: NA
   codelink: NA
 
@@ -31,7 +31,7 @@ publications:
 
 - title: A General Framework for Analyzing Stochastic Dynamics in Learning Algorithms
   authors: Chi-Ning Chou, <u>Juspreet Singh Sandhu</u>, Mien Brabeeba Wang, Tiancheng Yu
-  conference: Submitted, JMLR
+  conference: Submitted
   paperlink: https://arxiv.org/pdf/2006.06171.pdf
   codelink: NA
 
