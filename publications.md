@@ -5,7 +5,7 @@ slug: /publications
 
 publications:
 
-- title: Sum-of-Squares Optimization in the Absence of Pointwise-Proofs&colon; Spherical Case
+- title: A Sum-of-Squares Hierarchy in the Absence of Pointwise-Proofs&colon; Spherical Case
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: Submitted
   paperlink: NA
