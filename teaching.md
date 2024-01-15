@@ -1,4 +1,4 @@
-During Winter-2024, I will be teaching a seminar course on a recent result with [Jonathan Shi](https://www.jshi.science/#Overview) in which we develop a new Sum-of-Squares hierarchy for random optimization. The class is [CSE-280](https://juspreetsandhu.me/cse280): Sum-of-Squares and Gaussian Processes.
+During Winter-2024, I will be teaching a seminar course on a recent result with [Jonathan Shi](https://www.jshi.science/#Overview) in which we develop a new Sum-of-Squares hierarchy for random optimization. The class is [CSE-280: Sum-of-Squares and Gaussian Processes](https://juspreetsandhu.me/cse280).
 
 
 I have been fortunate in my time as a PhD to be a Teaching Fellow for many classes. A few of those are listed below:
