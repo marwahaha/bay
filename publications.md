@@ -5,7 +5,13 @@ slug: /publications
 
 publications:
 
-- title: A Sum-of-Squares Hierarchy in the Absence of Pointwise-Proofs&colon; Spherical Case
+- title: A Sum-of-Squares Hierarchy in the Absence of Pointwise-Proofs II&colon; Rounding High-Entropy Steps
+   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+   conference: Submitted
+   paperlink: NA
+   codelink: NA
+
+- title: A Sum-of-Squares Hierarchy in the Absence of Pointwise-Proofs I&colon; Energy Certificates
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: Submitted
   paperlink: NA
