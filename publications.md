@@ -14,7 +14,7 @@ publications:
 - title: A Sum-of-Squares Hierarchy in the Absence of Pointwise-Proofs I&colon; Energy Certificates
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: Submitted
-  paperlink: NA
+  paperlink: https://arxiv.org/pdf/2401.14383.pdf
   codelink: NA
 
 - title: Random Max-CSPs Inherit Algorithmic Hardness from Spin Glasses
