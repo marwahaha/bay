@@ -21,13 +21,13 @@ publications:
   authors: Chris Jones, Kunal Marwaha, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: ITCS 2023
   paperlink: https://arxiv.org/pdf/2210.03006.pdf
-  codelink: NA
+  codelink: https://www.youtube.com/watch?v=Y4_21NpO0bM
 
 - title: Limitations of Local Quantum Algorithms on Random MAX-k-XOR and Beyond
   authors: Chi-Ning Chou, Peter J. Love, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: ICALP 2022
   paperlink: https://arxiv.org/pdf/2108.06049.pdf
-  codelink: NA
+  codelink: https://icalp2022.irif.fr/?page_id=42
 
 - title: Efficient Quantum Voting with Information-Theoretic Security
   authors: Emil T. Khabiboulline, <u>Juspreet Singh Sandhu</u>, Marco Ugo Gambetta, Mikhail D. Lukin, Johannes Borregaard
