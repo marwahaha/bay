@@ -6,28 +6,28 @@ slug: /publications
 publications:
 
 - title: A Sum-of-Squares Hierarchy in the Absence of Pointwise-Proofs II&colon; Rounding High-Entropy Steps
-   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-   conference: Submitted
-   paperlink: NA
-   codelink: NA
+  authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  conference: Submitted
+  paperlink: NA
+  codelink: NA
 
 - title: A Sum-of-Squares Hierarchy in the Absence of Pointwise-Proofs I&colon; Energy Certificates
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: Submitted
-  paperlink: NA
+  paperlink: https://arxiv.org/pdf/2401.14383.pdf
   codelink: NA
 
 - title: Random Max-CSPs Inherit Algorithmic Hardness from Spin Glasses
   authors: Chris Jones, Kunal Marwaha, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: ITCS 2023
   paperlink: https://arxiv.org/pdf/2210.03006.pdf
-  codelink: NA
+  codelink: https://www.youtube.com/watch?v=Y4_21NpO0bM
 
 - title: Limitations of Local Quantum Algorithms on Random MAX-k-XOR and Beyond
   authors: Chi-Ning Chou, Peter J. Love, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: ICALP 2022
   paperlink: https://arxiv.org/pdf/2108.06049.pdf
-  codelink: NA
+  codelink: https://icalp2022.irif.fr/?page_id=42
 
 - title: Efficient Quantum Voting with Information-Theoretic Security
   authors: Emil T. Khabiboulline, <u>Juspreet Singh Sandhu</u>, Marco Ugo Gambetta, Mikhail D. Lukin, Johannes Borregaard
