@@ -55,11 +55,6 @@ preprints:
   paperlink: NA
   codelink: NA
 
-- title: Potential Hessian Ascent&colon; Sherrington-Kirkpatrick Model &amp; Random Tensors
-  authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: In Submission
-  paperlink: NA
-  codelink: NA
 
 - title: Polynomial Time Sparsification of the Boolean Hypercube
   authors: Alexandra Kolla, <u>Juspreet Singh Sandhu</u>, Jonathan Shi, Luca Trevisan
