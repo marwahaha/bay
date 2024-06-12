@@ -5,13 +5,19 @@ slug: /publications
 
 publications:
 
-- title: A Sum-of-Squares Hierarchy in the Absence of Pointwise-Proofs II&colon; Rounding High-Entropy Steps
+- title: Potential Hessian Ascent&colon; Sherrington-Kirkpatrick Model &amp; Random Tensors
+  authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  conference: In Submission
+  paperlink: NA 
+  codelink: NA
+
+- title: Sum-of-Squares &amp; Gaussian Processes II&colon; Rounding 
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: Submitted
   paperlink: NA
   codelink: NA
 
-- title: A Sum-of-Squares Hierarchy in the Absence of Pointwise-Proofs I&colon; Energy Certificates
+- title: Sum-of-Squares &amp; Gaussian Processes I&colon; Certification
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: Submitted
   paperlink: https://arxiv.org/pdf/2401.14383.pdf
@@ -49,9 +55,9 @@ preprints:
   paperlink: NA
   codelink: NA
 
-- title: Mirror Hessian Ascent&colon; SK Model &amp; Bounded-Degree CSPs
-  authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: In Preparation
+- title: Potential Hessian Ascent&colon; Sherrington-Kirkpatrick Model &amp; Random Tensors
+  authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  conference: In Submission
   paperlink: NA
   codelink: NA
 
