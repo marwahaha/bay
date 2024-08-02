@@ -61,7 +61,7 @@ preprints:
   paperlink: NA
   codelink: NA
 
-- title: The asymptotic limit of the random permanent
+- title: The Asymptotic Limit of the Random Permanent
   authors: Saeed Mehraban, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
