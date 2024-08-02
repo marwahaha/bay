@@ -41,7 +41,7 @@ publications:
   paperlink: https://arxiv.org/pdf/2006.06171.pdf
   codelink: NA
 
-working papers:
+preprints:
 
 - title: Sum-of-Squares &amp; Gaussian Processes II&colon; Rounding 
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
@@ -76,4 +76,5 @@ I primarily work with:
 * [Saeed Mehraban](https://sites.google.com/view/saeedmehraban/about) on developing and extending probabilistic techniques from mathematical spin-glass theory with complex-analytic ideas to systematically study the mathematical and algorithmic questions surrouring the "random permanent" problem.
 * [Alexandra Kolla](https://people.ucsc.edu/~akolla/) and [Zack Jorquera](https://zackjorquera.github.io/) on initiating the algorithmic study of certain families of local quantum hamiltonians using the non-commutative sum-of-squares hierarchy.
 <br/>
+
 More broadly, I am interested in using/developing ideas and techniques from free probability, stochastic analysis, optimal transport, harmonic analysis and sum-of-squares hiearchies to solve problems in theoretical computer science and mathematical physics.
