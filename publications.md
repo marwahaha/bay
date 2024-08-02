@@ -49,7 +49,7 @@ preprints:
   paperlink: NA
   codelink: NA
 
-- title: Potential Hessian Ascent II &amp; Mixed p-Spin Models
+- title: Potential Hessian Ascent II&colon; Mixed p-Spin Models
   authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
