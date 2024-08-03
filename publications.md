@@ -74,4 +74,4 @@ My papers can be found on [DBLP](https://dblp.org/pid/299/8207.html) or [Google 
 * [Alexandra Kolla](https://people.ucsc.edu/~akolla/) and [Zack Jorquera](https://zackjorquera.github.io/) on initiating the algorithmic study of certain families of local quantum hamiltonians using the non-commutative sum-of-squares hierarchy.
 <br/>
 
-More broadly, I am interested in using/developing ideas and techniques from free probability, stochastic analysis, optimal transport, harmonic analysis and sum-of-squares hierarchies to solve problems in theoretical computer science and mathematical physics.
+More broadly, I am interested in using/developing ideas and techniques in _free probability_, _stochastic analysis_, _optimal transport_, _harmonic analysis_ and _sum-of-squares hierarchies_ to solve problems in **theoretical computer science** and **mathematical physics**.
