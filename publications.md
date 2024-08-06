@@ -8,7 +8,7 @@ publications:
 - title: Potential Hessian Ascent&colon; The Sherrington-Kirkpatrick Model 
   authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: Submitted
-  paperlink: NA 
+  paperlink: https://arxiv.org/pdf/2408.02360 
   codelink: NA
 
 - title: Sum-of-Squares &amp; Gaussian Processes I&colon; Certification
