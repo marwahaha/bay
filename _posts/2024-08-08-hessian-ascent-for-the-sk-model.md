@@ -138,11 +138,11 @@ analogous to what is given in [[Eq. 1.27, CPS18]](https://arxiv.org/abs/1812.050
 
 #### FOOTNOTES
 
-[^1]: The main contribution of [SS24]() is the introduction of a new hierarchy over HES processes, and the hierarchy is termed the HES SoS hierarchy. The reason for choosing these processes is many-fold, and is explained in the paper's introduction. However, in large part, this paper was born out of the desire to understand what exactly made the _search_ problem of finding near-optima of spin-glasses significantly easier than the _certification_ problem.
+[^1]: The main contribution of [[SS24]]() is the introduction of a new hierarchy over HES processes, and the hierarchy is termed the HES SoS hierarchy. The reason for choosing these processes is many-fold, and is explained in the paper's introduction. However, in large part, this paper was born out of the desire to understand what exactly made the _search_ problem of finding near-optima of spin-glasses significantly easier than the _certification_ problem.
 
 [^2]: The fRSB condition is an imposition on the support of the probability measure $$\mu $$ that optimizes the Parisi formula $$P_\beta(\mu) $$. It states that the density associated with $$\mu $$ is fully-supported in a sub-interval $$[0, q^*_\beta] $$. Equivalently, $$\mu $$ is strictly increasing in $$[0, q^*_\beta] $$.
 
-[^3]: In [this]() upcoming post, various results from the so-called "Gaussian Toolbox" will be stated and briefly proved. This is a very useful set of techniques to have command over in order to prove properties about mean-field spin glasses, and relate them to the behavior of random instances of sparse CSPs.
+[^3]: In [this](https://arxiv.org/abs/2401.14383) upcoming post, various results from the so-called "Gaussian Toolbox" will be stated and briefly proved. This is a very useful set of techniques to have command over in order to prove properties about mean-field spin glasses, and relate them to the behavior of random instances of sparse CSPs.
 
 [^4]: In [this]() upcoming post, we introduce the Guerra-RSB bound and prove that it can be used to show that the Parisi Variaional Principle, represented as an appropriately parameterized RPC, can be used to upper bound the free energy density of the SK model. We will also introduce the famed _Ghirlanda-Guerra_ identities.
 
