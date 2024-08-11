@@ -14,7 +14,7 @@ Recently, [David](https://davidjekel.com/), [Jonathan](https://www.jshi.science/
 **<u>In a nutshell</u>**: [[JSS24]](https://arxiv.org/abs/2408.02360) introduces and analyzes a Hessian ascent algorithm for the SK model, the update rules of which are motivated (in part) to resolve a conjecture of Eliran Subag [[Sub18, Pg. 8, Ising Spins]](https://arxiv.org/abs/1812.04588). Subag gave an (essentially) equivalent algorithm for the same models on the sphere. Due to various technical reasons stemming from geometry, the analysis and conceptual understanding for the Hessian ascent algorithm on the cube is significantly more demanding than it is on the sphere.
 
 At a high-level the algorithm is fairly simple:
-* Set $$\sigma_0 = (0,\dots,0) $$.
+* Set the starting point $$\sigma_0 = (0,\dots,0), $$ and step-size $$\eta = \text{small} $$.
 * For $$i \in [K] $$:
     * Set $$Q_i = \text{smooth projector on to top-eigenspace of TAP-corrected Hessian} $$.
     * Set $$\sigma_i = \sigma_{i-1} + \sqrt{\eta}z $$, where $$z \sim \mathcal{N}(0,Q^2_i) $$.
