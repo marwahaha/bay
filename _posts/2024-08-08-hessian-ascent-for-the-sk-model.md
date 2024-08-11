@@ -34,7 +34,7 @@ In the decades hence, great works of mathematics have proven the Parisi formula 
 1. [The Sherrington-Kirkpatrick Model](#the-sherrington-kirkpatrick-model)
    * [The Parisi formula and Auffinger-Chen Representation](#the-parisi-formula-and-auffinger-chen-representation)
    * [The generalized TAP free energy](#the-generalized-tap-free-energy)
-   * [Saddle-point conditions and the algorithm](#saddle-point-conditions-for-the-algorithm)
+   * [Critical points and the algorithm](#critical-points-and-the-algorithm)
    * [A primal theory for the Parisi PDE via convex duality](#a-primal-theory-for-the-parisi-pde-via-convex-duality)
 2. [Proof Sketch](#proof-sketch)
     * [Spectral properties of the TAP-corrected Hessian](#spectral-properties-of-tap-corrected-hessian)
@@ -57,7 +57,7 @@ We briefly introduce the Sherrington-Kirkpatrick model as an optimization proble
 
 ### The generalized TAP free energy
 
-### Saddle-point conditions and the algorithm
+### Critical points and the algorithm
 
 ### A primal theory for the Parisi PDE via convex duality
 
