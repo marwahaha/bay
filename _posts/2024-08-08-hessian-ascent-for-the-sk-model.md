@@ -38,7 +38,7 @@ The details of what the "TAP corrected Hessian" of the SK model are will be intr
 
     Comparing this with the definition of a HES distribution [[Definition 1.2, SS24]](https://arxiv.org/abs/2401.14383) makes it readily apparent that the update rule of the Hessian ascent algorithm is likely to be captured by a HES process, implying feasibility.
 
-    _<u>Note</u>_: It is somewhat surprising that such certificates are possible given the strong lower bounds against the standard SoS hierarchy to certify the injective tensor norm of a random tensor; the hierarchy introduced by us circumvents this issue by working with a proof system over a parameterized family of probability measures, rather than working _pointwise_. I will write another blog-post explaining some of the technical contributions of [[SS24]](https://arxiv.org/abs/2401.14383) and how the work motivated (for historical reasons) the current Hessian ascent algorithm on the SK model[^1].
+    _<u>Note</u>_: It is somewhat surprising that such certificates are possible given the strong lower bounds against the standard SoS hierarchy to certify the injective tensor norm of a random tensor [[BGL16]](https://arxiv.org/abs/1605.00903); the hierarchy introduced by us circumvents this issue by working with a proof system over a parameterized family of probability measures (HES distributions), rather than working _pointwise_. I will write another blog-post explaining some of the technical contributions of [[SS24]](https://arxiv.org/abs/2401.14383) and how the work motivated (for historical reasons) the current Hessian ascent algorithm on the SK model[^1].
 
 3. <u>Ultimately, give a principled, mathematically rigorous and domain-generalized derivation of the Parisi formula</u>.
 
