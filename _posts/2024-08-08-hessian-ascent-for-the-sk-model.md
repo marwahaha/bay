@@ -123,19 +123,27 @@ Au contraire, as we saw, the Hessian ascent algorithm remains _squarely_ in the 
 ### The generalized TAP free energy
 In the previous subsection, we introduced the Parisi formula, the Auffinger-Chen representation, and mentioned how they work in a dual space. We then stated that, given the fact that the TAP correction involves a FL dual to the solution of the Parisi PDE, for various reasons in the analysis of the Hessian ascent algorithm, we will need to develop a primal version of the Parisi PDE and AC SDE.
 
-We now table the development of this _primal_ PDE and SDE to [1.3](#a-primal-theory-for-the-parisi-pde-via-convex-duality), and first write down the form of the generalized TAP free energy on the cube introduced in [[CPS18]](https://arxiv.org/abs/1812.05066v2). We will briefly interpret the generalized TAP correction and write down its gradient at a critical point, yielding the generalized TAP equation. Then, observe that jumping from one critical point (where the gradient is $$0 $$) to the next entails moving along the _kernel_ of the _Hessian_ of the generalized TAP free energy. It will turn out that, in order to move along a path of critical points of the generalized TAP equation by moving into this kernel, one will automatically be forced to climb the top-eigenspace of,
+We now table the development of this _primal_ PDE and SDE to the last subsection, and first write down the form of the generalized TAP free energy on the cube introduced in [[CPS18]](https://arxiv.org/abs/1812.05066v2). We will briefly interpret the generalized TAP correction and write down its gradient at a critical point, yielding the generalized TAP equation. Then, observe that jumping from one critical point (where the gradient is $$0 $$) to the next entails moving along the _kernel_ of the _Hessian_ of the generalized TAP free energy. It will turn out that, in order to move along a path of critical points of the generalized TAP equation by moving into this kernel, one will automatically be forced to climb the top-eigenspace of,
 
 $$ \begin{equation} \nabla^2\bigg(\langle \sigma, A \sigma\rangle - \text{FL dual to }\Phi(t,x)\bigg) = A - \nabla^2\left(\text{FL dual to }\Phi(t,x)\right)\, .\end{equation} $$
 
-For largely historical reasons (when Jonathan and I were working on the project in the early days, we were thinking of this convex duality via the lens of mirror maps) we will use a _convex_ dual, while [[CPS18]](https://arxiv.org/abs/1812.05066v2) use a _concave_ dual to define the generalized TAP free energy correction term. This is actually convenient, because at the critical point,
+For largely historical reasons[^3] we will use a _convex_ dual, while [[CPS18]](https://arxiv.org/abs/1812.05066v2) use a _concave_ dual to define the generalized TAP free energy correction term. Let us begin by defining the FL dual to the solution $$\Phi $$ of the Parisi PDE,
+
+$$\begin{equation} \Lambda(t,y) = \sup_{x \in \mathbb{R}}\left(xy - \Phi(t,x)\right) \end{equation}\,, $$
+
+for every $$t \in [0, 1] $$. It is well known that $$\Phi $$ is strictly convex in $$x $$ [[Section 2, CPS18]](https://arxiv.org/abs/1812.05066v2), and using this it is not hard to ascertain the following facts:
+* The maximizer of the FL dual is unique for every $$y \in [-1,1] $$ and obeys the relationship $$y = \partial_x \Phi(t,x) $$.
+* In fact, the maps $$y = \partial_x \Phi(t,x) $$ and $$x = \partial_y \Lambda(t,y) $$ define change of coordinates from $$\mathbb{R} \to \{-1,1\} $$ and vice-versa. They are inverse functions of each other, except for some minor issues that arise on the corners where $$\Lambda = \Phi^{-1} $$ blows up. To overcome this, a regularization to the FL dual is introduced (see [[Section 2, SS24]]() and [1.3]()).
+
+The use of the convex dual actually ends up being convenient, because at a critical point $$\sigma $$,
 
 $$ \begin{equation} \frac{1}{n}\nabla H(\sigma) = -\nabla\mathsf{TAP}(\sigma)\,, \end{equation} $$
 
-and our choice of convex duality gives the following form for the TAP correction term,
+and our choice of FL dual gives the following form for the TAP correction term,
 
 $$ \begin{equation} \mathsf{TAP}_{\text{emp}}(\sigma) = -\int \Lambda(t,\sigma) d(\text{emp}(\sigma)) - \beta^2\int_{\frac{1}{n}\|\sigma\|^2_2}^1 t\mu(t)dt\, , \end{equation} $$
 
-analogous to what is given in [[Eq. 1.27, CPS18]](https://arxiv.org/abs/1812.05066v2). The generalized TAP equation for mean-field spin glasses on the cube is introduced in [[Theorem 2, CPS18]](https://arxiv.org/abs/1812.05066v2). Since, at a critical point,
+analogous to what is given in [[Eq. 1.27, CPS18]](https://arxiv.org/abs/1812.05066v2). The generalized TAP equation for mean-field spin glasses on the cube is introduced in [[Theorem 2, CPS18]](https://arxiv.org/abs/1812.05066v2). Since, at a critical point, 
 
 ### A primal theory for the Parisi PDE via convex duality
 
