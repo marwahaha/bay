@@ -102,11 +102,21 @@ This is perhaps one reason why the approximate-message passing (AMP) algorithms 
 Au contraire, as we will see, the Hessian ascent algorithm remains _squarely_ in the primal space, leading to a very simple update rule as well as a very clean conceptual interpretation a-la Subag's principle mentioned in the introduction.
 
 ### The generalized TAP free energy
-In the previous subsection, we introduced the Parisi formula, the Auffinger-Chen representation, and why, given the fact that the TAP correction involves a FL dual to the solution of the Parisi PDE, we need to develop a primal version of the Parisi PDE and AC SDE to nail down certain things in the analysis of the Hessian ascent algorithm introduced in [JSS24](https://arxiv.org/abs/2408.02360).
+In the previous subsection, we introduced the Parisi formula, the Auffinger-Chen representation, and mentioned how they work in a dual space. We then stated that, given the fact that the TAP correction involves a FL dual to the solution of the Parisi PDE, for various reasons in the analysis of the Hessian ascent algorithm, we will need to develop a primal version of the Parisi PDE and AC SDE.
 
-### The Parisi formula and Auffinger-Chen Representation
+We now table the development of this _primal_ PDE and SDE to the last subsection, and first write down the form of the generalized TAP free energy on the cube introduced in [[CPS18]](https://arxiv.org/abs/1812.05066v2). We will briefly interpret the generalized TAP correction and write down its gradient at a critical point, yielding the generalized TAP equation. Then, observe that jumping from one critical point (where the gradient is $$0 $$) to the next entails moving along the _kernel_ of the _Hessian_ of the generalized TAP free energy. It will turn out that, in order to move along a path of critical points of the generalized TAP equation by moving into this kernel, one will automatically be forced to climb the top-eigenspace of,
 
-### The generalized TAP free energy
+$$ \begin{equation} \nabla^2\bigg(\langle \sigma, A \sigma\rangle - \text{FL dual to }\Phi(t,x)\bigg) = A - \nabla^2\left(\text{FL dual to }\Phi(t,x)\right)\, .\end{equation} $$
+
+For largely historical reasons (when Jonathan and I were working on the project in the early days, we were thinking of this convex duality via the lens of mirror maps) we will use a _convex_ dual, while [[CPS18]](https://arxiv.org/abs/1812.05066v2) use a _concave_ dual to define the generalized TAP free energy correction term. This is actually convenient, because at the critical point,
+
+$$ \begin{equation} \frac{1}{n}\nabla H(\sigma) = -\nabla\mathsf{TAP}(\sigma)\,, \end{equation} $$
+
+and our choice of convex duality gives the following form for the TAP correction term,
+
+$$ \begin{equation} \mathsf{TAP}_{\text{emp}}(\sigma) = -\int \Lambda(t,\sigma) d(\text{emp}(\sigma)) - \beta^2\int_{\frac{1}{n}\|\sigma\|^2_2}^1 t\mu(t)dt\, , \end{equation} $$
+
+analogous to what is given in [[Eq. 1.27, CPS18]](https://arxiv.org/abs/1812.05066v2). The generalized TAP equation for mean-field spin glasses on the cube is introduced in [[Theorem 2, CPS18]](https://arxiv.org/abs/1812.05066v2). Since, at a critical point,
 
 ### Critical points and the algorithm
 
@@ -128,7 +138,7 @@ In the previous subsection, we introduced the Parisi formula, the Auffinger-Chen
 
 #### FOOTNOTES
 
-[^1]: There are many references to this body of work which will be given in due course. Nonetheless, the following two surveys are a nice start: [\[B05\]](http://www.numdam.org/item/SB_2004-2005__47__349_0.pdf), [\[G21\]](https://arxiv.org/pdf/2109.14409.pdf).
+[^1]: The fRSB condition is an imposition on the support of the probability measure $$\mu $$ that optimizes the Parisi formula $$P_\beta(\mu) $$. It states that the density associated with $$\mu $$ is fully-supported in a sub-interval $$[0, q^*_\beta] $$. Equivalently, $$\mu $$ is strictly increasing in $$[0, q^*_\beta] $$.
 
 [^2]: Stein's Lemma can be proved by a simple integration-by-parts argument for every coordinate $$i $$ in conjunction with Fubini's theorem and the chain-rule. The lemma itself simply asserts that the correlation between a gaussian variable and some function of it is equivalent to a sum of scalings (by the correlations) of the average rate of change of the function. Likewise, Fekete's Lemma boils down to algebraic manipulation of the sequence, where we take the limit infimum of $$x_n/n $$ and compare it to limit infimum of some $$x_m $$ where $$m $$ is chosen to be the supremum as a divisor with a remainder term. The lemma itself merely asserts that for an appropriately growing sequence, the empirical average in the limit simply picks out the largest contributing term.
 
