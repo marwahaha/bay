@@ -2,7 +2,7 @@
 layout: post
 title:  "Hessian Ascent for the SK Model"
 date:   2024-08-08 11:15:40
-blurb: "Hessian ascent via Free Probability and convergence to the primal Auffinger-Chen SDE"
+blurb: "Optimizing the SK model via free probability and convex duality"
 og_image: /assets/img/content/post-example/Banner.jpg
 ---
 
