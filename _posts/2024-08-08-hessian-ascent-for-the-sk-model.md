@@ -15,7 +15,7 @@ Recently, [David](https://davidjekel.com/), [Jonathan](https://www.jshi.science/
 
 At a high-level the algorithm is fairly simple:
 * Set the starting point $$\sigma_0 = (0,\dots,0), $$ and step-size $$\eta = \text{small} $$.
-* For $$i \in [K] $$:
+* For $$i \in [K = O(1/\eta)] $$:
     * Set $$Q_i = \text{smooth projector on to top-eigenspace of TAP-corrected Hessian orthogonal to }\sigma_{i-1} $$.
     * Set $$\sigma_i = \sigma_{i-1} + \sqrt{\eta}z $$, where $$z \sim \mathcal{N}(0,Q^2_i) $$.
 * Return $$\sigma_K $$ after truncating it and rounding it to $$\{-1,1\}^n $$.
