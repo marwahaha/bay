@@ -33,7 +33,7 @@ The main motivations for rigorously developing and analyzing this algorithm are 
 
     _<u>Note</u>_: It is somewhat surprising that such certificates are possible given the strong lower bounds against the standard SoS hierarchy to certify the injective tensor norm of a random tensor; the hierarchy introduced by us circumvents this issue by working with a proof system over a parameterized family of probability measures, rather than working _pointwise_. I will write another blog-post explaining some of the technical contributions of [[SS24]](https://arxiv.org/abs/2401.14383) and how the work motivated (for historical reasons) the current Hessian ascent algorithm on the SK model[^1].
 
-3. <u>Ultimately, give a _principled_, _mathematically rigorous_ and _domain-generalized_ derivation of the Parisi formula</u>.
+3. <u>Ultimately, give a principled, mathematically rigorous and domain-generalized derivation of the Parisi formula</u>.
 
     The Parisi formula was originally derived with non-rigorous physicist methods: the replica trick at the heart of the formula involves writing a combinatorial expression valid for positive integers $$k $$, then for each $$k $$ taking its limit as the system size $$n $$ goes to infinity, and finally taking the continuum limit as $$k $$ goes to zero... even though the expression was originally only valid for values of $$k $$ that were integers!
 
