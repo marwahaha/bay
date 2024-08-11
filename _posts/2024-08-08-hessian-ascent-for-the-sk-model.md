@@ -39,6 +39,9 @@ The main motivations for rigorously developing and analyzing this algorithm are 
 
     In the decades hence, various great works in probability theory and analysis have proven the Parisi formula true. However, they have accomplished this with a "trapdoor" style of proof: first knowing the form of the Parisi formula, they are able to construct arguments tailored to it---the Ruelle Probability Cascades, for example, are an extremely clever way to generate expected values of the form $$F_{j+1} := \frac{1}{m_j}\log \mathbb{E} e^{F_j}$$... but you would only think to use them after Parisi already wrote down his magical formula involving expressions of that form. Instead, we ultimately seek a principled (and mathematically rigorous) _derivation_ of the Parisi formula over a large set of high-dimensional domains, such that the right algorithm (and algorithmic thresholds) should simply fall out of the clarity of the derivation itself.
 
+
+    The result on the Hessian ascent algorithm for the SK model does not, in and of itself, make any deep progress towards this goal. However, the derivation of the primal Parisi PDE and Auffinger-Chen SDE that ensue in the work give certain hints on how to use geometry to possibly generalize these PDEs to larger domains, and one can imagine that this might lead to a "guess" for generalized Parisi-type formulae.
+
 #### Table of Contents
 1. [The Sherrington-Kirkpatrick Model](#the-sherrington-kirkpatrick-model)
    * [The Parisi formula and Auffinger-Chen Representation](#the-parisi-formula-and-auffinger-chen-representation)
@@ -151,7 +154,7 @@ analogous to what is given in [[Eq. 1.27, CPS18]](https://arxiv.org/abs/1812.050
 
 [^2]: The fRSB condition is an imposition on the support of the probability measure $$\mu $$ that optimizes the Parisi formula $$P_\beta(\mu) $$. It states that the density associated with $$\mu $$ is fully-supported in a sub-interval $$[0, q^*_\beta] $$. Equivalently, $$\mu $$ is strictly increasing in $$[0, q^*_\beta] $$.
 
-[^3]: In [this](https://arxiv.org/abs/2401.14383) upcoming post, various results from the so-called "Gaussian Toolbox" will be stated and briefly proved. This is a very useful set of techniques to have command over in order to prove properties about mean-field spin glasses, and relate them to the behavior of random instances of sparse CSPs.
+[^3]: When Jonathan and I were working on the project in the early days, we were thinking of this convex duality via the lens of mirror maps. It turns out that, because of the underlying convex duality, there is a connection to be made here through the information geometry of the underlying Hessian being akin to a (flat) Bregmannian manifold. However, this is beyond the scope of this post and something we are investigating in ongoing work.
 
 [^4]: In [this]() upcoming post, we introduce the Guerra-RSB bound and prove that it can be used to show that the Parisi Variaional Principle, represented as an appropriately parameterized RPC, can be used to upper bound the free energy density of the SK model. We will also introduce the famed _Ghirlanda-Guerra_ identities.
 
