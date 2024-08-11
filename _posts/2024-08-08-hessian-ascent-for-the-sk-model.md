@@ -25,7 +25,7 @@ The details of what the "TAP corrected Hessian" of the SK model are will be intr
 
     Ideally, the algorithm should implement the same principle on the cube that Subag's algorithm implements on the sphere, leading to a unified principle to optimize (to the conjectured limit for $$\mathsf{poly}(n) $$-time algorithms) random polynomials over _any_ "reasonable" underlying domain $$D $$.
 
-    The Hessian ascent algorithm designed in this paper accomplishes this on the cube, the same way it was done on the sphere by Subag, and demonstrates that the universal principle is to:
+    The Hessian ascent algorithm designed in this paper accomplishes this on the cube (and resolves Subag's conjecture affirmatively) in the same way it was done on the sphere by Subag, and demonstrates that the universal principle is to:
     > Maximize the objective plus the so-called generalized TAP correction term in small, orthogonal increments starting from the center and eventually ending up at the boundary.
 
     As it turns out, this generalized TAP correction is a precise measure of entropy, and its derivatives are understood by a particular partial differential equation (which is closely related to the famous Parisi PDE). Deriving and understanding the properties of this PDE, which has an initial condition given by the entropy of the Bernoulli-$$1/2 $$ random variable, is critical in a part of the energy analysis for the algorithm.
