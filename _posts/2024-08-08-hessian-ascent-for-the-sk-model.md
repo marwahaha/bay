@@ -48,6 +48,7 @@ The details of what the "TAP corrected Hessian" of the SK model are will be intr
 
 
     The result on the Hessian ascent algorithm for the SK model does not, in and of itself, make any deep progress towards this goal. However, the derivation of the primal Parisi PDE and Auffinger-Chen SDE that ensue in this result give certain hints on how to use geometry to possibly generalize these PDEs to larger domains, and one can imagine that this might lead to a "guess" for generalized Parisi-type formulae.
+<br>
 
 #### Table of Contents
 1. [The Sherrington-Kirkpatrick Model](#the-sherrington-kirkpatrick-model)
