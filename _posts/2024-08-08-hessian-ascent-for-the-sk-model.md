@@ -54,11 +54,17 @@ We briefly introduce the Sherrington-Kirkpatrick model as an optimization proble
 
 ### The Parisi formula and Auffinger-Chen Representation
 The Parisi formula was proposed by Giorgio Parisi in 1979 to give the asymptotic free energy density of the Sherrington-Kirkpatrick (SK) model. It was first rigorously proved in a series of works by Guerra and Talagrand, the culmination of which was in the hard direction of the proof by Talagrand. The model is given by the following cost function,
+
 $$ \begin{equation} H(\sigma) = \langle \sigma, A\sigma\rangle\,,\end{equation}$$
+
 where $A$ is a random matrix with i.i.d. $$\mathcal{N}(0,1/n) $$ entries. It can be shown by standard concentration arguments for Lipschitz functions of Gaussians that the maximum value of this cost function is concentrated around $$\mathbb{E}[\max_{\sigma \in \{-1,1\}^n}H(\sigma)] $$. The expected value is given by the zero-temperature limit of the famous Parisi formula. The Parisi formula for the SK model at inverse temperature $$\beta = 1/T $$ is given by,
-$$ \begin{equation} P_\beta(\mu) = \Phi_\mu(0,0) - \beta^2\int_0^1t\mu(t)dt\,,\end{equation}$$
+
+$$ \begin{equation} P_\beta(\mu) = \Phi_\mu(0,0) - \beta^2\int_0^1t\mu(t)dt\,,\end{equation} $$
+
 where $$\mu(.) $$ is a cumulative-distribution function for a probability measure with support in $$[0,1] $$ and $$\Phi_\mu $$ is the solution to the following parabolic PDE,
+
 $$ \begin{equation} \partial_t \Phi_\mu(t,x) + \beta^2\left(\partial_xx \Phi(t,x) + \mu(t)(\partial_x \Phi(t,x))^2\right)= 0\,,\end{equation}$$
+
 with initial condition $$\Phi(1,x) = \log(2\cosh(x)) $$. Various properties about the solutions of this equation, and a zero temperature variant of it, are known. The main two points for a reader of this post about this PDE are:
 1) Its solution exists, is well-posed, and has various pleasant regularity properties: namely, the spatial derivatives are Lipschitz, and the mixed derivatives have regularity depending on the properties of $$\mu $$.
 2) $$\Phi $$ is actually the Fenchel-Legendre (FL) dual (in $x$) of an entropic function, and the initial condition $$\Phi(1,x) $$ in particular is the FL dual of the Bernoulli-$1/2$ entropy.
@@ -67,19 +73,25 @@ These observations suggest that, somehow, the Parisi formula is rewriting the (a
 1. Understand the time derivative of the FL dual to $$\Phi $$ at various points. Doing this requires getting a Parisi-like PDE, but in the space _dual_ to $x$. For technical reasons, this requires writing a PDE in this dual space, but for a FL dual for a function $$\Phi_\gamma $$ which is a "smoothening" of $$\Phi $$.
 
 We will revisit this point in the final subsection of this section. For now, we just conclude by precisely stating how the Parisi formula gives the limiting optimal value for our Hamiltonian of interest:
-$$ \begin{equation} \lim_{n \to \infty}\frac{1}{n}\mathbb{E}\left[\max_{\sigma \in \{-1,1\}^n} H(\sigma)\right] = \lim_{\beta \to \infty} \frac{1}{\beta} \inf_{\mu} P_\beta(\mu)\,. \end{equation}$$
+
+$$ \begin{equation} \lim_{n \to \infty}\frac{1}{n}\mathbb{E}\left[\max_{\sigma \in \{-1,1\}^n} H(\sigma)\right] = \lim_{\beta \to \infty} \frac{1}{\beta} \inf_{\mu} P_\beta(\mu)\,. \end{equation} $$
 
 Again, in the analysis of the Hessian ascent algorithm, there is need to:
 1. Explicitly analyze the expected value (under the algorithm's randomness) of the FL dual to $$\Phi(t,X_t) $$ where $$t = q^*_\beta $$, such that $$q^*_\beta \to 1 $$ sufficiently fast as $$\beta \to \infty $$ , and
 2. Demonstrate that, with high probability over the input and algorithm's randomness, the diagonal matrix $$D(t,\sigma) $$ corresponding to the Hessian of the TAP-correction term satisfies (under the fRSB condition) the equality
+
 $$ \begin{equation} 2\beta^2 \frac{1}{n}\mathsf{Tr}[D(t,\sigma)^{-2}] = 1\,.\end{equation} $$
 
 It turns out that, for achieving the point above, we need a _stochastic control_ reformulation of (the FL dual to) $$\Phi $$. Using the SDE underlying this representation, the computation of the quantity in the first point is made tractable, and demonstrating that the second point is true requires showing that the coordinates of every iterate of the algorithm converge to this SDE that underlies this reformulation.
 
 This reformulation as a _stochastic optimal control_ problem is known as the Auffinger-Chen representation, and it gives a rewrite for the Parisi PDE. More specifically, if $$\Phi $$ is a solution to the Parisi PDE, then,
+
 $$ \begin{equation} \Phi(0,x) = \max_{\{X_s\}_{0 \le s \le 1}}\left(\mathbb{E}\left[\Phi\left(1, x + 2\beta\int_0^1\mu(s)X_s ds + \sqrt{2}\beta z\right) - \beta^2\int_0^1\mu(s)\mathbb{E}[X^2_s]ds\right]\right)\, ,\end{equation} $$
+
 where $$z \sim \mathcal{N}(0,1) $$, and the maximizer of the above is unique and given by the strong solution to the following Ito drift-diffusion process,
+
 $$ \begin{equation} dX_s = 2\beta^2 \mu(t)\partial_x \Phi(s,X_s)ds + \sqrt{2}\beta dW_s\,, \,\,\, X_0 = 0\,. \end{equation}$$
+
 In fact, as it will turn out, we will need to write down a new SDE coresponding to the one above that runs in the "dual" space, where the iterates of our Hessian ascent algorithm reside. This is born directly out of the fact that the quantities in the generalized TAP correction correspond to the FL dual of the solution to the Parisi PDE. With the dual SDE (introduced with the "dual" Parisi-like PDE in the final subsection of this section) in hand, we can use some Ito calculus to compute the first quantity and use convergence of the empirical distribution of the coordinates of the iterate the Hessian ascent algorithm in Wasserstein distance to the "dual" version of the AC SDE to obtain the second statement.
 
 It is reasonable to wonder I have put quotations around the word _dual_ in every invocation so far: this is because it is, in fact, the iterates of the Hessian ascent algorithm that are actually (after truncation) in the _primal_ space (which is $$[-1,1]^n $$) and, somewhat mysteriously, it is the Parisi PDE and AC SDE that are in the _dual_ space. Some clarification about this is afforded in a recent paper by Mouratt [[Mou23]](https://arxiv.org/abs/2308.10715).
