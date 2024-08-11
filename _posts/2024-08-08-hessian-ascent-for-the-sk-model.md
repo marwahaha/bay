@@ -54,7 +54,6 @@ The details of what the "TAP corrected Hessian" of the SK model are will be intr
 1. [The Sherrington-Kirkpatrick Model](#the-sherrington-kirkpatrick-model)
    * [The Parisi formula and Auffinger-Chen Representation](#the-parisi-formula-and-auffinger-chen-representation)
    * [The generalized TAP free energy](#the-generalized-tap-free-energy)
-   * [Critical points and the algorithm](#critical-points-and-the-algorithm)
    * [A primal theory for the Parisi PDE via convex duality](#a-primal-theory-for-the-parisi-pde-via-convex-duality)
 2. [Proof Sketch](#proof-sketch)
     * [Spectral properties of the TAP-corrected Hessian](#spectral-properties-of-tap-corrected-hessian)
@@ -94,7 +93,7 @@ These observations suggest that, somehow, the Parisi formula is rewriting the (a
 
 Doing this requires getting a Parisi-like PDE, but in the space _dual_ to $$x $$. For technical reasons, this requires writing a PDE in this dual space, but for a FL dual for a function $$\Phi_\gamma $$ which is a "smoothening" of $$\Phi $$.
 
-We will revisit this point in the [1.4](#a-primal-theory-for-the-parisi-pde-via-convex-duality). For now, we just conclude by precisely stating how the Parisi formula gives the limiting optimal value for our Hamiltonian of interest:
+We will revisit this point in the [1.3](#a-primal-theory-for-the-parisi-pde-via-convex-duality). For now, we just conclude by precisely stating how the Parisi formula gives the limiting optimal value for our Hamiltonian of interest:
 
 $$ \begin{equation} \lim_{n \to \infty}\frac{1}{n}\mathbb{E}\left[\max_{\sigma \in \{-1,1\}^n} H(\sigma)\right] = \lim_{\beta \to \infty} \frac{1}{\beta} \inf_{\mu} P_\beta(\mu)\,. \end{equation} $$
 
@@ -119,12 +118,12 @@ In fact, as hinted at above, we will need to write down a new SDE corresponding 
 It is reasonable to wonder why I have put quotations around the word _dual_ in every invocation so far: this is because, in fact, the iterates of the Hessian ascent algorithm are actually (after truncation) in the _primal_ space (which is $$[-1,1]^n $$) and, somewhat mysteriously, it is the Parisi PDE and AC SDE that are in the _dual_ space. Some clarification about this is afforded in a recent paper by Mouratt [[Mou23]](https://arxiv.org/abs/2308.10715).
 
 This is perhaps one reason why the approximate-message passing (AMP) algorithms previously used to optimize these problems are somewhat opqaue to a particularly neat conceptual interpretation: the iterates $$\{u_k\}_{k} $$ of the AMP algorithm [[Mon19]](https://arxiv.org/abs/1812.10897) are updated by discretizing the AC SDE, taking a single step of the discretized SDE, then updating the current iterate by multiplying the Hessian of the objective with a non-linearity evaluated at this new step rescaled by the current iterate value coordinatewise, and finally correcting the whole computation by subtracting a term known as the _Onsager correction_. Upon running these complicated updates for a sufficient number of iterations, these iterates are then again rescaled (by a small parameter $$\sqrt{\delta} $$) and transformed (yet) again (non-linearly) into the _primal_ space, where the iterates are truncated and rounded onto the hypercube. <br>
-Au contraire, as we saw (and will see again in some more detail in [1.3](#critical-points-and-the-algorithm)), the Hessian ascent algorithm remains _squarely_ in the primal space, leading to a very simple update rule as well as a very clean conceptual interpretation a-la Subag's principle mentioned in the introduction.
+Au contraire, as we saw, the Hessian ascent algorithm remains _squarely_ in the primal space, leading to a very simple update rule as well as a very clean conceptual interpretation a-la Subag's principle mentioned in the introduction.
 
 ### The generalized TAP free energy
 In the previous subsection, we introduced the Parisi formula, the Auffinger-Chen representation, and mentioned how they work in a dual space. We then stated that, given the fact that the TAP correction involves a FL dual to the solution of the Parisi PDE, for various reasons in the analysis of the Hessian ascent algorithm, we will need to develop a primal version of the Parisi PDE and AC SDE.
 
-We now table the development of this _primal_ PDE and SDE to [1.4](#a-primal-theory-for-the-parisi-pde-via-convex-duality), and first write down the form of the generalized TAP free energy on the cube introduced in [[CPS18]](https://arxiv.org/abs/1812.05066v2). We will briefly interpret the generalized TAP correction and write down its gradient at a critical point, yielding the generalized TAP equation. Then, observe that jumping from one critical point (where the gradient is $$0 $$) to the next entails moving along the _kernel_ of the _Hessian_ of the generalized TAP free energy. It will turn out that, in order to move along a path of critical points of the generalized TAP equation by moving into this kernel, one will automatically be forced to climb the top-eigenspace of,
+We now table the development of this _primal_ PDE and SDE to [1.3](#a-primal-theory-for-the-parisi-pde-via-convex-duality), and first write down the form of the generalized TAP free energy on the cube introduced in [[CPS18]](https://arxiv.org/abs/1812.05066v2). We will briefly interpret the generalized TAP correction and write down its gradient at a critical point, yielding the generalized TAP equation. Then, observe that jumping from one critical point (where the gradient is $$0 $$) to the next entails moving along the _kernel_ of the _Hessian_ of the generalized TAP free energy. It will turn out that, in order to move along a path of critical points of the generalized TAP equation by moving into this kernel, one will automatically be forced to climb the top-eigenspace of,
 
 $$ \begin{equation} \nabla^2\bigg(\langle \sigma, A \sigma\rangle - \text{FL dual to }\Phi(t,x)\bigg) = A - \nabla^2\left(\text{FL dual to }\Phi(t,x)\right)\, .\end{equation} $$
 
@@ -137,8 +136,6 @@ and our choice of convex duality gives the following form for the TAP correction
 $$ \begin{equation} \mathsf{TAP}_{\text{emp}}(\sigma) = -\int \Lambda(t,\sigma) d(\text{emp}(\sigma)) - \beta^2\int_{\frac{1}{n}\|\sigma\|^2_2}^1 t\mu(t)dt\, , \end{equation} $$
 
 analogous to what is given in [[Eq. 1.27, CPS18]](https://arxiv.org/abs/1812.05066v2). The generalized TAP equation for mean-field spin glasses on the cube is introduced in [[Theorem 2, CPS18]](https://arxiv.org/abs/1812.05066v2). Since, at a critical point,
-
-### Critical points and the algorithm
 
 ### A primal theory for the Parisi PDE via convex duality
 
