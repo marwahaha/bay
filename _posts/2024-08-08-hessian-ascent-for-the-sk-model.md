@@ -165,7 +165,7 @@ $$ \begin{equation} \approx \frac{2\beta^2}{n}\sum_i \partial_{x_ix_i}\Phi(q,x_i
 
 where we use the fact that whenever $$\partial_{xx}\Phi(t,x) > 0 $$, its reciprocal is well-defined and equal to $$\partial_{yy} \Lambda(t,y) $$ when $$x $$ and $$y $$ satisfy the change of coordinates implied by FL duality (that is, they are critical points in their respective bases). This identity is called the [Crouzeix identity in convex analysis](), and is an important observation in working out the details of the primal Parisi theory ([1.3]())  as well as understanding the conceptual basis on which the free-probabilistic analysis of the Hessian proceeds.
 
-As it turns out, the desired value will be achieved in the _top-eigenspace_ of the TAP corrected Hessian (see [2.1]()) and, therefore, we will need an inductive argument where we can construct a covariance matrix $$Q^2(\sigma) $$ matrix, such that $$Q(\sigma) $$ smoothly projects into the top eigenspace of,
+As it turns out, the desired value will be achieved in the _top-eigenspace_ of the TAP corrected Hessian (see [2.1]()) and, therefore, we will need an inductive argument where we can construct a covariance matrix $$Q^2(\sigma) $$, such that $$Q(\sigma) $$ smoothly projects into the top eigenspace of,
 
 $$ \begin{equation} \text{TAP-corrected Hessian} = 2\beta A_{\text{sym}} - D(q,\sigma) \overset{d}{=} \sqrt{2}\beta\,\mathsf{GOE}(n) - D(q,\sigma)\,. \end{equation} $$
 
