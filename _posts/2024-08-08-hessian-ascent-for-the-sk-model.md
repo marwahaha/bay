@@ -186,11 +186,11 @@ $$ \begin{equation} \sigma_{k+1} = \sigma_k + \eta^{1/2}Q(\sigma_k)w\,,\,\,\, w 
 
 converges to the primal version of the AC SDE that we desire, conditioned on $$\sigma_k $$ being a critical point (and having empirical coordinate distribution sufficiently close to the primal AC SDE itself). Without this, various points in the analysis are soft (including the two points mentioned in the [(1.1)]()).
 
-Consequently, in [2.2]() we will show that given the choice of the iterate coming from an (appropriately rescaled) eigenvector in the top-eigenspace of the TAP-corrected Hessian, the empirical distribution of the coordinates of its iterates will converge (in Wasserstein-$$2 $$ distance) to the _primal_ version of the AC SDE (with high probability).
+Consequently, in [(2.2)]() we will show that given that the update comes from an (appropriately rescaled) eigenvector in the top-eigenspace of the TAP-corrected Hessian, the empirical distribution of the coordinates of its iterates will converge (in Wasserstein-$$2 $$ distance) to the _primal_ version of the AC SDE (with high probability).
 
 At this point, it then remains for us to demonstrate the following inductive steps:
 1. Under the condition that $$(2\beta^2)/n \mathsf{Tr}[D^{-2}(t,\sigma)] = 1 $$, we can (efficiently) compute a matrix $$Q(\sigma) $$ which projects into the top-eigenspace of $$2\beta\,A_{\text{sym}} - D(t,\sigma) $$ with diagonals that are $$\approx D(t,\sigma)^{-2} $$ (see [2.1]()) to choose the update $$\Delta\sigma := \sqrt{\eta}\,Q(\sigma)w$$ with $$w \sim \mathcal{N}(0, \mathsf{Id}_n) $$, and
-2. Provided that $$\Delta\sigma $$ is chosen as above, it is the case that $$\mathsf{Wass}_2(\mathsf{emp}(\sigma_j), Y_j) \le \mathsf{small}_j $$ for every $$j \in [K] $$.
+2. Provided that $$\Delta\sigma $$ is chosen as above at every step, it is the case that $$\mathsf{Wass}_2(\mathsf{emp}(\sigma_j), Y_j) \le \mathsf{small}_j $$ for every $$j \in [K] $$.
 
 ### A primal theory for the Parisi PDE via convex duality
 
