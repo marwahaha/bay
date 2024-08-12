@@ -13,7 +13,7 @@ Recently, [David](https://davidjekel.com/), [Jonathan](https://www.jshi.science/
 
 **<u>In a nutshell</u>**: [[JSS24]](https://arxiv.org/abs/2408.02360) introduces and analyzes a Hessian ascent algorithm for the SK model, the update rules of which are motivated (in part) to resolve a conjecture of Eliran Subag [[Sub18, Pg. 8, Ising Spins]](https://arxiv.org/abs/1812.04588). Subag gave an (essentially) equivalent algorithm for the same models on the sphere. Due to various technical reasons stemming from geometry, the analysis and conceptual understanding for the Hessian ascent algorithm on the cube is significantly more demanding than it is on the sphere.
 
-At a high-level the algorithm is fairly simple:
+At a high-level, the algorithm is fairly simple:
 * Set the starting point $$\sigma_0 = (0,\dots,0), $$ and step-size $$\eta = \text{small} $$.
 * For $$i \in [K = O(1/\eta)] $$:
     * Set $$Q_i = \text{smooth projector on to top-eigenspace of TAP-corrected Hessian orthogonal to }\sigma_{i-1} $$.
@@ -133,7 +133,9 @@ $$\begin{equation} \Lambda(t,y) = \sup_{x \in \mathbb{R}}\left(xy - \Phi(t,x)\ri
 
 for every $$t \in [0, 1] $$. It is well known that $$\Phi $$ is strictly convex in $$x $$ [[Section 2, CPS18]](https://arxiv.org/abs/1812.05066v2), and using this it is not hard to ascertain the following facts:
 * The maximizer of the FL dual is unique for every $$y \in [-1,1] $$ and obeys the relationship $$y = \partial_x \Phi(t,x) $$.
-* In fact, the maps $$y = \partial_x \Phi(t,x) $$ and $$x = \partial_y \Lambda(t,y) $$ define change of coordinates from $$\mathbb{R} \to \{-1,1\} $$ and vice-versa. They are inverse functions of each other, except for some minor issues that arise on the corners where $$\Lambda = \Phi^{-1} $$ blows up. To overcome this, a regularization to the FL dual is introduced (see [[Section 2, SS24]]() and [1.3]()).
+* In fact, the maps $$y = \partial_x \Phi(t,x) $$ and $$x = \partial_y \Lambda(t,y) $$ define a change of coordinates from $$\mathbb{R} \to \{-1,1\} $$ and vice-versa. There are two points to notice here:
+    * The derivatives of $$\Phi $$ and $$\Lambda $$ are maps that take us between (convexly) dual spaces. While the generalized TAP energy, involving $$\Lambda $$ stays in the primal space, the standard Parisi machinery is in the dual space. This implies that, beneath the entire framework, there is some unifying principle of convex geometry at work.
+    * They are inverse functions of each other, except for some minor issues that arise on the corners where $$\Lambda = \Phi^{-1} $$ blows up. To overcome this, a regularization to the FL dual is introduced (see [[Section 2, SS24]]() and [1.3]()). In fact, the algorithm actually follows this _regularized_ FL dual that has desirable smoothness properties around the corners of the cube. As we shall see, we will demonstrate (in [1.3]()) that this regualized FL dual stays uniformly close to $$\Lambda $$ inside the cube, and is negligible outside, meaning the errors introduced are manageable.
 
 The use of the convex dual actually ends up being convenient, because at a critical point $$\sigma $$,
 
@@ -143,7 +145,39 @@ and our choice of FL dual gives the following form for the TAP correction term,
 
 $$ \begin{equation} \mathsf{TAP}_{\text{emp}}(\sigma) = -\int \Lambda(t,\sigma) d(\text{emp}(\sigma)) - \beta^2\int_{\frac{1}{n}\|\sigma\|^2_2}^1 t\mu(t)dt\, , \end{equation} $$
 
-analogous to what is given in [[Eq. 1.27, CPS18]](https://arxiv.org/abs/1812.05066v2). The generalized TAP equation for mean-field spin glasses on the cube is introduced in [[Theorem 2, CPS18]](https://arxiv.org/abs/1812.05066v2). Since, at a critical point, 
+analogous to what is given in [[Eq. 1.27, CPS18]](https://arxiv.org/abs/1812.05066v2). The generalized TAP equation for mean-field spin glasses on the cube is introduced in [[Theorem 2, CPS18]](https://arxiv.org/abs/1812.05066v2). Using the explicit representation of the generalized TAP equation along with the facts about the FL duals above, some calculus yields that the critical points $$\sigma $$ satisfy the following eigenvector equation,
+
+$$ \begin{equation}  \left(\beta A - \left(2\beta^2\int_q^1 \mu(t)dt\right)\mathsf{Id}\right)\sigma = \left(\partial_{\sigma_1}\Lambda(q,\sigma_1),\dots,\partial_{\sigma_n}\Lambda(q,\sigma_n)\right)\,, \end{equation} $$
+
+where $$q = \frac{1}{n}\|\sigma\|^2_2 $$. The representation above is equivalent to [[Remark 6, CPS18]](). Now comes the critical part: We would like to have an algorithm that follows small (orthogonal) updates, such that, _every_ point is a critical point along the path. This means that we _must_ actually proceed in a direction where the Hessian of the TAP equation (projected orthogonal to the current location) is zero. Equivalently, we must stay in the kernel of the Hessian projected orthogonal to the current iterate.
+
+After taking the gradient of the above equation, applying chain rule, using the FL duality rewrites, and discarding terms that are rank-$$1 $$ or along the current iterate ($$\sigma $$), we arrive that the Hessian must satisfy the following condition,
+
+$$ \begin{equation} 2\beta A_{\text{sym}} - \sum_{i} \partial_{\sigma_i\sigma_i}\Lambda(q,\sigma_i) e_ie_i^{\mathsf{T}} - \frac{2\beta^2}{n}\sum_{i \in [n]}\partial_{x_ix_i}\Phi(q,x_i)\mathsf{Id} = 0\end{equation}\,, $$
+
+where $$A_{\text{sym}} = (A + A^{\mathsf{T}})/2 $$ is distributed as $$\sqrt{2}\,\mathsf{GOE}(n) $$. Therefore, _if_ we are at a critical point $$\sigma $$ and we wish to make a small $$\approx \eta $$ sized increment that jumps to the next TAP state (critical point), it is critical that the quadratic form with the matrix in the Hessian term above be (approximately) $$0 $$. This basically implies that we want to take states in the eigenspace of
+
+$$ \begin{equation} 2\beta A_{\text{sym}} - D(q,\sigma) \end{equation} $$
+
+with value
+
+$$ \begin{equation} \approx \frac{2\beta^2}{n}\sum_i \partial_{x_ix_i}\Phi(q,x_i) = \frac{2\beta^2}{n}\mathsf{Tr}[D^{-1}(q,\sigma)]\, , \end{equation}$$
+
+where we use the fact that whenever $$\partial_{xx}\Phi(t,x) > 0 $$, its reciprocal is well-defined and equal to $$\partial_{yy} \Lambda(t,y) $$ when $$x $$ and $$y $$ satisfy the change of coordinates implied by FL duality (that is, they are critical points in their respective bases). This identity is called the [Crouzeix identity in convex analysis](), and is an important observation in working out the details of the primal Parisi theory ([1.3]())  as well as understanding the conceptual basis on which the free-probabilistic analysis of the Hessian proceeds.
+
+As it turns out, the desired value will be the top-part of the TAP corrected Hessian (see [2.1]()) and, therefore, we will need an inductive argument, where we can construct a covariance matrix $$Q^2(\sigma) $$ matrix for $$Q(\sigma) $$, which smoothly projects into the top eigenspace of,
+
+$$ \begin{equation} \text{TAP-corrected Hessian} = 2\beta A_{\text{sym}} - D(q,\sigma) \overset{d}{=} \sqrt{2}\beta\,\mathsf{GOE}(n) - D(q,\sigma)\,. \end{equation} $$
+
+We _will_ be able to accomplish this, _conditioned_ on the fact that,
+
+$$ \begin{equation} \frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}(q,\sigma)] = 1\, \end{equation} $$,
+
+which will in-turn require that $$\sigma $$ be a critical point. This will, further, require that the empirical ditribution of the coordinates of $$\sigma $$ behave like the AC SDE in _primal_ space. Proving this will require the assumption of fRSB, along with the last step being taken in the direction of the top-eigenspace of the TAP-corrected Hessian, and so on and so forth.
+
+Therefore, we will set up an inductive argument, where the first step will go along the direction of the top-eigenspace of the Hessian orthogonal to the all-$$0 $$ vector (which means there is no restriction) and since the primal version of the AC SDE starts at $$0 $$, it will trivially satsify the identity required.
+
+After this, in [2.2](), we will show that given the choice of the iterate coming from an (appropriately rescaled) eigenvector in the top-eigenspace of the TAP-corrected Hessian, the empirical distribution of the coordinates of its iterates will converge (in Wasserstein-$$2 $$ distance) to the _primal_ version of the AC SDE (with high probability).
 
 ### A primal theory for the Parisi PDE via convex duality
 
