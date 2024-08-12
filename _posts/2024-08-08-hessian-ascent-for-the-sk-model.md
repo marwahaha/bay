@@ -155,9 +155,9 @@ $$ \begin{equation}  \left(\beta A - \left(2\beta^2\int_q^1 \mu(t)dt\right)\math
 
 where $$q = \frac{1}{n}\|\sigma\|^2_2 $$. The representation above is equivalent to [[Remark 6, CPS18]](). Now comes the crucial part: We would like to have an algorithm that follows small (orthogonal) updates, such that, _every_ point is a critical point along the path. This means that we _must_ actually proceed in a direction where the Hessian of the TAP equation (projected orthogonal to the current location) is zero. Equivalently, we must stay in the kernel of the Hessian projected orthogonal to the current iterate.
 
-After taking the gradient of the above equation, applying chain rule, using the FL duality rewrites, and discarding terms that are rank-$$1 $$ or along the current iterate ($$\sigma $$), we arrive at the fact that the Hessian must satisfy the following condition,
+After taking the gradient of the above equation, applying chain rule, using the FL duality rewrites, and discarding terms that are rank-$$1 $$ or along the current iterate ($$\sigma $$), we arrive at the fact that the update $$\Delta \sigma $$ Hessian must satisfy the following condition,
 
-$$ \begin{equation} 2\beta A_{\text{sym}} - \sum_{i} \partial_{\sigma_i\sigma_i}\Lambda(q,\sigma_i) e_ie_i^{\mathsf{T}} - \frac{2\beta^2}{n}\sum_{i \in [n]}\partial_{x_ix_i}\Phi(q,x_i)\mathsf{Id} = 0\end{equation}\,, $$
+$$ \begin{equation} \Delta\sigma\left(2\beta A_{\text{sym}} - \sum_{i} \partial_{\sigma_i\sigma_i}\Lambda(q,\sigma_i) e_ie_i^{\mathsf{T}} - \frac{2\beta^2}{n}\sum_{i \in [n]}\partial_{x_ix_i}\Phi(q,x_i)\mathsf{Id}\right)\Delta\sigma \approx 0\end{equation}\,, $$
 
 where $$A_{\text{sym}} = (A + A^{\mathsf{T}})/2 $$ is distributed as $$\sqrt{2}\,\mathsf{GOE}(n) $$. Therefore, _if_ we are at a critical point $$\sigma $$ and we wish to make a small $$\approx \eta $$ sized increment that jumps to the next TAP state (critical point), it is non-negotiable that the quadratic form with the matrix in the Hessian term above be (approximately) $$0 $$. This basically implies that we want to take (small) steps in the eigenspace of
 
@@ -177,11 +177,11 @@ We _will_ be able to accomplish this, _conditioned_ on the fact that,
 
 $$ \begin{equation} \frac{2\beta^2}{n}\mathsf{Tr}[D'^{-2}(q,\sigma)] = 1\,, \end{equation} $$
 
-which will in-turn require a re-normalization of the diagonal matrix that comes from the TAP correction. To have this be the case, we will choose the final diagonal corretion matrix as,
+which will in-turn require a re-normalization of the diagonal matrix that comes from the TAP correction. To have this be the case, we will choose the final diagonal correction matrix as,
 
 $$ \begin{equation} D(t,\sigma) = \left(\frac{2\beta^2}{n}\sum_{i \in [n]}\partial_{\sigma_i,\sigma_i}\Lambda(t,\sigma_i)^{-2}\right)^{1/2}D'(t,\sigma)\,. \, \end{equation} $$
 
-It will be shown in [(2.1)]() that this is the right scaling to obtain the desired eigenvalue in the top-eigenspace of $$2\beta A_{\text{sym}} - D'(t,\sigma) $$. At this point, the critical task is to arrange the (efficient) construction of a matrix $$Q(\sigma) $$ that projects into this tope eigenspace _and_ has diagonal entries behave roughly like $$D'(t,\sigma)^{-2} $$. You may (correctly) inquire:
+It will be shown in [(2.1)]() that this is the right scaling to obtain the desired eigenvalue in the top-eigenspace of $$2\beta A_{\text{sym}} - D'(t,\sigma) $$. At this point, the critical task is to arrange the (efficient) construction of a matrix $$Q(\sigma) $$ that projects into this top eigenspace _and_ has diagonal entries behave roughly like $$D'(t,\sigma)^{-2} $$. You may (correctly) inquire:
 > Why must the diagonal entries of square-root of the covariance matrix behave akin to $$D(t,\sigma)^{-2} $$?
 
 The answer is that without this arrangement, we will not be able to demonstrate that the empirical distribution of the coordinates of
@@ -215,7 +215,7 @@ Unfortunately, for $$\Lambda $$ itself, one obtains that $$\partial_y \Lambda = 
 We now focus on continuity estimates for $$\Lambda $$, which will be especially important in estimating how well $$\Lambda_\gamma $$ approximates the former in the solid cube (uniformly). To obtain these, we use a stochastic expression for $$\partial_x \Phi $$ (see [[Lemma 2.3, JSS24]()]) as an average over a function of the process $$X_t $$ that solves the AC SDE. This allows us to obtain regularity estimates for $$\partial_x \Phi(t,x) $$ and $$\partial_{xx} \Phi(t,x) $$ slightly more refined than those written down in the literature (see [[Proposition 2, AC15]](), [[JT16]](), [[Chapter-14.7, Tal11]]()). For accomplishing this, the idea is simple:
 > Using the stochastic expression for $$\partial_x \Phi(t,x) = \mathbb{E}[\tanh(X_1)]$$ provided by [JT'16], wield Ito calculus with an application of Gronwall's inequality to bound the MGF of $$X_t $$. Then, use bounds for hyperbolic functions to sharpen the estimates from the literature.
 
-Using the coordinate change of $$y = \partial_x \Phi $$ and $$x = \partial_y \Lambda $$ one can transfer these bounds to the primal space and obtain Lipschitz estimates for $$\Lambda $$ itself, and these estimates are fairly tight around the corners $$-1 $$ and $$1 $$ [[Proposition 2.6, JSS24]](). For instance, using the coordinate transfer scheme in conjunction with the MGF bound above, we can show that
+Using the coordinate change of $$y = \partial_x \Phi $$ and $$x = \partial_y \Lambda $$ one can transfer these bounds to the primal space and obtain Lipschitz estimates for $$\Lambda $$ itself, and these estimates are fairly tight around the corners $$-1 $$ and $$1 $$ [[Proposition 2.6, JSS24]](). For instance, using the coordinate transfer scheme in conjunction with the MGF bound strategy outlined above, we can show that
 
 $$ \begin{equation} |\partial_y \Lambda(t,y)| \le \frac{1}{2}\log\left(\frac{2}{1-|y|}\right) + 4\beta^2(1-t)\, , \end{equation} $$
 
