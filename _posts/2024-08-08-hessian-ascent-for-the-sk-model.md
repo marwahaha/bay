@@ -89,31 +89,35 @@ with initial condition $$\Phi(1,x) = \log(2\cosh(x)) $$. Various properties abou
 2. $$\Phi $$ is actually the Fenchel-Legendre (FL) dual (in $$x $$) of an entropic function, and the initial condition $$\Phi(1,x) $$ in particular is the FL dual of the Bernoulli-$$1/2 $$ entropy.
 
 These observations suggest that, somehow, the Parisi formula is rewriting the (asymptotic) free energy density of the SK model in terms of an entropy term and an internal energy term. This intuition is made more precise (and clear) in the generalized TAP representation. The relevance of the Parisi PDE stems from point 2. above, since the FL dual to $$\Phi $$ shows up in the generalized TAP correction term. Consequently, in the analysis of the Hessian ascent algorithm, there is a need to:
-1. Understand the time derivative of the FL dual to $$\Phi $$ at various points.
+1. Understand the time derivative of the FL dual to $$\Phi $$ at various points. Specifically, we will need to understand
 
-Doing this requires getting a Parisi-like PDE, but in the space _dual_ to $$x $$. For technical reasons, this requires writing a PDE in this dual space, but for a FL dual for a function $$\Phi_\gamma $$ which is a "smoothening" of $$\Phi $$.
+    $$ \begin{equation} \int_{t'}^{t' + \Delta t'}\partial_t \Lambda(t,\sigma_t)dt\,,\end{equation} $$
+
+    and doing this requires getting a Parisi-like PDE, but in the space _dual_ to $$x $$. For technical reasons, we will actually look at $$\int \partial_t \Lambda_\gamma dt $$, where $$\Lambda_\gamma $$ is a $$\gamma $$-regularized version of the FL dual to $$\Phi $$ (see [(1.3)]()). This requires writing a PDE in this dual space, but for a FL dual for a function $$\Phi_\gamma $$ which is a "smoothening" of $$\Phi $$.
 
 We will revisit this point in the [1.3](#a-primal-theory-for-the-parisi-pde-via-convex-duality). For now, we just conclude by precisely stating how the Parisi formula gives the limiting optimal value for our Hamiltonian of interest:
 
 $$ \begin{equation} \lim_{n \to \infty}\frac{1}{n}\mathbb{E}\left[\max_{\sigma \in \{-1,1\}^n} H(\sigma)\right] = \lim_{\beta \to \infty} \frac{1}{\beta} \inf_{\mu} P_\beta(\mu)\,. \end{equation} $$
 
-As it turns out, getting a "dual" version of the Parisi PDE is not quite sufficient. In fact, in the analysis of the Hessian ascent algorithm, there is also a need to:
-1. Explicitly analyze the expected value (under the algorithm's randomness) of the FL dual to $$\Phi(t,X_t) $$ where $$t = q^*_\beta $$, such that $$q^*_\beta \to 1 $$ sufficiently fast as $$\beta \to \infty $$ , and
-2. Demonstrate that, with high probability over the input and algorithm's randomness, the diagonal matrix $$D(t,\sigma) $$ corresponding to the Hessian of the TAP-correction term satisfies (under the fRSB condition[^2]) the equality
+As it turns out, getting a "dual" version of the Parisi PDE is not quite sufficient. In fact, in the analysis of the performance of the Hessian ascent algorithm, there is also a need to:
+1. Explicitly analyze the expected value (under the algorithm's randomness) of the FL dual to $$\Phi(t,\sigma_t) $$ where $$t = q^*_\beta $$, such that $$q^*_\beta \to 1 $$ sufficiently fast as $$\beta \to \infty $$ , and
+2. Demonstrate that, under fRSB[^2], a particular term that comes from the primal Parisi PDE and (roughly) measures the "difference in average length corrected by a small regularization factor and the expected length" is small. Specifically, we need to show that,
 
-$$ \begin{equation} 2\beta^2 \frac{1}{n}\mathsf{Tr}[D(t,\sigma)^{-2}] = 1\,.\end{equation} $$
+    $$ \begin{equation} \sum_{i=1}^n \left((\mathsf{id} - \gamma\partial_{\sigma_i}\Lambda_\gamma(t,\cdot))(\sigma_i)\right)^2 - t\,n \le \mathsf{small}\, , \end{equation} $$
 
-To successfully deal with the two points mentioned above, we need a _stochastic control_ reformulation of (the FL dual to) $$\Phi $$. Using the SDE underlying this representation, the computation of the quantity in the first point is made tractable, and demonstrating that the second point is true requires showing that the empirical distribution of the coordinates of every iterate of the algorithm converge to the SDE that underlies this reformulation.
+    where $$\Lambda_\gamma $$ (again) represents a $$\gamma $$-regularized FL dual to $$\Phi $$.  
 
-For $$\Phi $$ itself, this reformulation as a _stochastic optimal control_ problem is known as the **Auffinger-Chen representation**, and it gives a rewrite for the Parisi PDE. More specifically, if $$\Phi $$ is a solution to the Parisi PDE, then,
+To successfully deal with the two points mentioned above, we need a reformulation of **the FL dual to $$\Phi $$** as an _optimal stochastic control_ problem. Using the SDE underlying this representation, the computation of the quantity in the first point is made tractable, and demonstrating that the second point is true requires showing that the empirical distribution of the coordinates of every iterate of the algorithm converge to the SDE that underlies this reformulation.
 
-$$ \begin{equation} \Phi(0,x) = \max_{\{X_s\}_{0 \le s \le 1}}\left(\mathbb{E}\left[\Phi\left(1, x + X_s\right) - \beta^2\int_0^1\mu(s)\mathbb{E}[X^2_s]ds\right]\right)\, ,\end{equation} $$
+For $$\Phi $$ itself, this reformulation as a _stochastic optimal control_ problem is known as the **Auffinger-Chen representation** [[AC15]](). It gives a rewrite for the Parisi PDE. More specifically, if $$\Phi $$ is a solution to the Parisi PDE, then,
 
-where $$z \sim \mathcal{N}(0,1) $$, and the maximizer of the above is unique and given by the strong solution to the following Ito drift-diffusion process,
+$$ \begin{equation} \Phi(0,x) = \mathbb{E}\left[\Phi\left(1, x + X_s\right) - \beta^2\int_0^1\mu(s)\mathbb{E}[X^2_s]ds\right]\, ,\end{equation} $$
+
+where $$X_s $$ is given by the strong solution to the following Ito drift-diffusion process,
 
 $$ \begin{equation} dX_s = 2\beta^2 \mu(t)\partial_x \Phi(s,X_s)ds + \sqrt{2}\beta dW_s\,, \,\,\, X_0 = 0\,. \end{equation}$$
 
-In fact, as hinted at above, we will need to write down a new SDE corresponding to the one above that runs in the "dual" space, where the iterates of our Hessian ascent algorithm reside. This is born directly out of the fact that the quantities in the generalized TAP correction correspond to the FL dual of the solution to the Parisi PDE. With the "dual" SDE (introduced with the "dual" Parisi-like PDE in the final subsection of this section) in hand, we can use some Ito calculus to compute the first quantity, and, use convergence of the empirical distribution of the coordinates of every iterate of the Hessian ascent algorithm (whp) in Wasserstein distance to the "dual" version of the AC SDE to obtain the second statement.
+As hinted at above, we will need to write down a new SDE corresponding to the Auffinger-Chen (AC) SDE above that runs in the "dual" space, where the iterates of our Hessian ascent algorithm reside. This is born directly out of the fact that the quantities in the generalized TAP correction correspond to the FL dual of the solution to the Parisi PDE. With the "dual" SDE (introduced with the "dual" Parisi-like PDE in [(1.3)]()) in hand, we can use some Ito calculus to compute the first quantity, and, use convergence of the empirical distribution of the coordinates of every iterate of the Hessian ascent algorithm (whp) in Wasserstein distance to the "dual" version of the AC SDE to obtain the second statement.
 
 It is reasonable to wonder why I have put quotations around the word _dual_ in every invocation so far: this is because, in fact, the iterates of the Hessian ascent algorithm are actually (after truncation) in the _primal_ space (which is $$[-1,1]^n $$) and, somewhat mysteriously, it is the Parisi PDE and AC SDE that are in the _dual_ space. Some clarification about this is afforded in a recent paper by Mouratt [[Mou23]](https://arxiv.org/abs/2308.10715).
 
