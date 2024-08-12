@@ -195,8 +195,23 @@ At this point, it then remains for us to demonstrate the following inductive ste
 ### A primal theory for the Parisi PDE via convex duality
 
 Having built up to the the two main properties that we will need to prove to conduct a successful analysis of the algorithm, we now focus on building the analytic tools that will be used (time and again) in the proofs of these two properties. These tools are:
-1. The introduction of a $$\gamma $$-_regularized_ (or $$\gamma $$-smoothened) FL dual to $$\Phi $$, along with its regularity properties. In particular, we would like that for (sufficiently) large $$\beta $$, the regularized FL dual is a uniformly good approximate for $$\Lambda $$ with "sane" derivatives, especially near the corners of the hypercube.
+1. The introduction of a $$\gamma $$-_regularized_ (or $$\gamma $$-smoothened) FL dual to $$\Phi $$, termed $$\Lambda_\gamma $$, along with its regularity properties. In particular, we would like that for (sufficiently) large $$\beta $$, the regularized FL dual is a uniformly good approximate for $$\Lambda $$ with "sane" derivatives, especially near the corners of the hypercube.
 2. The introduction of the primal version of the Parisi PDE and the AC SDE, written for $$\Lambda_\gamma $$ and $$\Lambda $$, along with bounds in Wasserstein distance bounds between these.
+
+We begin by stating the definition of $$\Lambda_\gamma $$,
+
+$$ \begin{equation} \Lambda_\gamma(t,y) = \sup_{x \in \mathbb{R}}\left(xy - \Phi_\gamma(t,x)\right) = \sup_{x \in \mathbb{R}}\left(xy - \Phi(t,x) - \frac{\gamma}{2}x^2\right)\,. \end{equation} $$
+
+By similar convex analytic reasons as the ones hinted at in [[1.2]](),
+
+$$ \begin{equation} \partial_y\Lambda_\gamma = \partial_x\Phi_\gamma^{-1} = \left(\partial_x \Phi + \gamma x\right)^{-1}\,. \end{equation} $$
+
+Unfortunately, for $$\Lambda $$ itself, one obtains that $$\partial_y \Lambda = (\partial_x \Phi)^{-1} $$ which goes to $$\infty $$ as $$y \to 1 $$. This is the main reason for introducing the regularization.
+
+Thus, having justified the regularization, we use a stochastic expression for $$\partial_x \Phi $$ (see [[Lemma 2.3, JSS24]()]) to obtain regularity estimates for $$\partial_x \Phi(t,x) $$ and $$\partial_{xx} \Phi(t,x) $$ slightly more refined than those written down in the literature (see [[Proposition 2, AC15]](), [[JT16]](), [[Chapter-14.7, Tal11]]()). To do this, the idea is simple:
+> Using the stochastic expression for $$\partial_x \Phi(t,x) $$ in terms of the AC SDE provided by [JT'16], wield Ito calculus to bound the MGF of the AC SDE and then use bounds for hyperbolic functions to sharpen the estimates from the literature.
+
+Using the relationship between $$\partial_y \Lambda $$ and $$\partial_x $$, one can then use these bounds to obtain Lipschitz estimates for $$\Lambda $$ itself, and these estimates are fairly tight around the corners $$-1 $$ and $$1 $$.
 
 ## Proof Sketch
 
