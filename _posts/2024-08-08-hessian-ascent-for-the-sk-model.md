@@ -208,10 +208,10 @@ $$ \begin{equation} \partial_y\Lambda_\gamma = \partial_x\Phi_\gamma^{-1} = \lef
 
 Unfortunately, for $$\Lambda $$ itself, one obtains that $$\partial_y \Lambda = (\partial_x \Phi)^{-1} $$ which goes to $$\infty $$ as $$y \to -1/1 $$. This is the main reason for introducing the regularization.
 
-Thus, having justified the regularization, we use a stochastic expression for $$\partial_x \Phi $$ (see [[Lemma 2.3, JSS24]()]) to obtain regularity estimates for $$\partial_x \Phi(t,x) $$ and $$\partial_{xx} \Phi(t,x) $$ slightly more refined than those written down in the literature (see [[Proposition 2, AC15]](), [[JT16]](), [[Chapter-14.7, Tal11]]()). To do this, the idea is simple:
-> Using the stochastic expression for $$\partial_x \Phi(t,x) $$ in terms of the AC SDE provided by [JT'16], wield Ito calculus to bound the MGF of $$X_t $$ and then use bounds for hyperbolic functions to sharpen the estimates from the literature.
+We now focus on continuity estimates for $$\Lambda $$, which will be especially important in estimating how well $$\Lambda_\gamma $$ approximates the former in the solid cube (uniformly). To obtain these, we use a stochastic expression for $$\partial_x \Phi $$ (see [[Lemma 2.3, JSS24]()]) as an average over a function of the process $$X_t $$ that solves the AC SDE. To do this, we first obtain regularity estimates for $$\partial_x \Phi(t,x) $$ and $$\partial_{xx} \Phi(t,x) $$ slightly more refined than those written down in the literature (see [[Proposition 2, AC15]](), [[JT16]](), [[Chapter-14.7, Tal11]]()). To do this, the idea is simple:
+> Using the stochastic expression for $$\partial_x \Phi(t,x) = \mathbb{E}[\tanh(X_1)]$$ provided by [JT'16], wield Ito calculus with an application of Gronwall's inequality to bound the MGF of $$X_t $$. Then, use bounds for hyperbolic functions to sharpen the estimates from the literature.
 
-Using the coordinate change of $$y = \partial_x \Phi $$ and $$x = \partial_y \Lambda $$ one can transfer these bounds to the primal space and obtain Lipschitz estimates for $$\Lambda $$ itself, and these estimates are fairly tight around the corners $$-1 $$ and $$1 $$ [[Proposition 2.6, JSS24]](). For instance, we can show that,
+Using the coordinate change of $$y = \partial_x \Phi $$ and $$x = \partial_y \Lambda $$ one can transfer these bounds to the primal space and obtain Lipschitz estimates for $$\Lambda $$ itself, and these estimates are fairly tight around the corners $$-1 $$ and $$1 $$ [[Proposition 2.6, JSS24]](). For instance, using the coordinate transfer scheme in conjunction with the MGF bound above, we can show that
 
 $$ \begin{equation} |\partial_y \Lambda(t,y)| \le \frac{1}{2}\log\left(\frac{2}{1-|y|}\right) + 4\beta^2(1-t)\, , \end{equation} $$
 
@@ -241,7 +241,7 @@ $$ \begin{equation} |\Lambda(t,y') - \Lambda(t,y)| \le \frac{1}{2}|y-y'|\left(\l
 
 [^2]: The fRSB condition is an imposition on the support of the probability measure $$\mu $$ that optimizes the Parisi formula $$P_\beta(\mu) $$. It states that the density associated with $$\mu $$ is fully-supported in a sub-interval $$[0, q^*_\beta] $$. Equivalently, $$\mu $$ is strictly increasing in $$[0, q^*_\beta] $$.
 
-[^3]: When Jonathan and I were working on the project in the early days, we were thinking of this convex duality via the lens of mirror maps. It turns out that, because of the underlying convex duality, there is a connection to be made here through the information geometry of the underlying Hessian being akin to a (flat) Bregmannian manifold. However, this is beyond the scope of this post and something we are investigating in ongoing work.
+[^3]: When David, Jonathan and I were working on the project in the early days, we were thinking of this convex duality via the lens of mirror maps. It turns out that, because of the underlying convex duality, there is a connection to be made here through the information geometry of the underlying Hessian being akin to a (flat) Bregmannian manifold. However, this is beyond the scope of this post and something we are investigating in ongoing work.
 
 [^4]: In [this]() upcoming post, we introduce the Guerra-RSB bound and prove that it can be used to show that the Parisi Variaional Principle, represented as an appropriately parameterized RPC, can be used to upper bound the free energy density of the SK model. We will also introduce the famed _Ghirlanda-Guerra_ identities.
 
