@@ -107,7 +107,7 @@ To successfully deal with the two points mentioned above, we need a _stochastic 
 
 For $$\Phi $$ itself, this reformulation as a _stochastic optimal control_ problem is known as the **Auffinger-Chen representation**, and it gives a rewrite for the Parisi PDE. More specifically, if $$\Phi $$ is a solution to the Parisi PDE, then,
 
-$$ \begin{equation} \Phi(0,x) = \max_{\{X_s\}_{0 \le s \le 1}}\left(\mathbb{E}\left[\Phi\left(1, x + 2\beta\int_0^1\mu(s)X_s ds + \sqrt{2}\beta z\right) - \beta^2\int_0^1\mu(s)\mathbb{E}[X^2_s]ds\right]\right)\, ,\end{equation} $$
+$$ \begin{equation} \Phi(0,x) = \max_{\{X_s\}_{0 \le s \le 1}}\left(\mathbb{E}\left[\Phi\left(1, x + X_s\right) - \beta^2\int_0^1\mu(s)\mathbb{E}[X^2_s]ds\right]\right)\, ,\end{equation} $$
 
 where $$z \sim \mathcal{N}(0,1) $$, and the maximizer of the above is unique and given by the strong solution to the following Ito drift-diffusion process,
 
@@ -157,36 +157,46 @@ $$ \begin{equation} 2\beta A_{\text{sym}} - \sum_{i} \partial_{\sigma_i\sigma_i}
 
 where $$A_{\text{sym}} = (A + A^{\mathsf{T}})/2 $$ is distributed as $$\sqrt{2}\,\mathsf{GOE}(n) $$. Therefore, _if_ we are at a critical point $$\sigma $$ and we wish to make a small $$\approx \eta $$ sized increment that jumps to the next TAP state (critical point), it is critical that the quadratic form with the matrix in the Hessian term above be (approximately) $$0 $$. This basically implies that we want to take (small) steps in the eigenspace of
 
-$$ \begin{equation} 2\beta A_{\text{sym}} - D(q,\sigma) \end{equation} $$
+$$ \begin{equation} 2\beta A_{\text{sym}} - D'(q,\sigma) \end{equation} $$
 
 with value
 
-$$ \begin{equation} \approx \frac{2\beta^2}{n}\sum_i \partial_{x_ix_i}\Phi(q,x_i) = \frac{2\beta^2}{n}\mathsf{Tr}[D^{-1}(q,\sigma)]\, , \end{equation}$$
+$$ \begin{equation} \approx \frac{2\beta^2}{n}\sum_i \partial_{x_ix_i}\Phi(q,x_i) = \frac{2\beta^2}{n}\mathsf{Tr}[D'^{-1}(q,\sigma)]\, , \end{equation}$$
 
 where we use the fact that whenever $$\partial_{xx}\Phi(t,x) > 0 $$, its reciprocal is well-defined and equal to $$\partial_{yy} \Lambda(t,y) $$ when $$x $$ and $$y $$ satisfy the change of coordinates implied by FL duality (that is, they are critical points in their respective bases). This identity is called the [Crouzeix identity in convex analysis](), and is an important observation in working out the details of the primal Parisi theory ([1.3]())  as well as understanding the conceptual basis on which the free-probabilistic analysis of the Hessian proceeds.
 
 As it turns out, the desired value will be achieved in the _top-eigenspace_ of the TAP corrected Hessian (see [2.1]()) and, therefore, we will need an inductive argument where we can construct a covariance matrix $$Q^2(\sigma) $$, such that $$Q(\sigma) $$ smoothly projects into the top eigenspace of,
 
-$$ \begin{equation} \text{TAP-corrected Hessian} = 2\beta A_{\text{sym}} - D(q,\sigma) \overset{d}{=} \sqrt{2}\beta\,\mathsf{GOE}(n) - D(q,\sigma)\,. \end{equation} $$
+$$ \begin{equation} \text{TAP-corrected Hessian} = 2\beta A_{\text{sym}} - D'(q,\sigma) \overset{d}{=} \sqrt{2}\beta\,\mathsf{GOE}(n) - D'(q,\sigma)\,. \end{equation} $$
 
 We _will_ be able to accomplish this, _conditioned_ on the fact that,
 
-$$ \begin{equation} \frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}(q,\sigma)] = 1\,, \end{equation} $$
+$$ \begin{equation} \frac{2\beta^2}{n}\mathsf{Tr}[D'^{-2}(q,\sigma)] = 1\,, \end{equation} $$
 
-which will in-turn require that $$\sigma $$ be a critical point. For $$\sigma $$ to have been a critical point will require that the empirical distribution of the coordinates of $$\sigma $$ behave like the AC SDE in _primal_ space. Proving _this_ will require the assumption of fRSB, along with the last step being taken in the direction of the top-eigenspace of the TAP-corrected Hessian, and so on and so forth.
+which will in-turn require a re-normalization of the diagonal matrix that comes from the TAP correction. To have this be the case, we will choose the final diagonal corretion matrix as,
 
-Therefore, we will set up an inductive argument, where the first step will go along the direction of the top-eigenspace of the Hessian orthogonal to the all-$$0 $$ vector (which means there is no restriction) and since the primal version of the AC SDE starts at $$0 $$, it will satisfy the identity that,
+$$ \begin{equation} D(t,\sigma) = \left(\frac{2\beta^2}{n}\sum_{i \in [n]}\partial_{\sigma_i,\sigma_i}\Lambda(t,\sigma_i)^{-2}\right)^{1/2}D'(t,\sigma)\,. \, \end{equation} $$
 
-$$ \begin{equation} \frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}(0,0)] = 2\beta^2 \partial_{xx}\Phi(t,x)^2\vert_{t=0, x =0} = 1\, , \end{equation} $$
+It will be shown in [(2.1)]() that this is the right scaling to obtain the desired eigenvalue in the top-eigenspace of $$2\beta A_{\text{sym}} - D'(t,\sigma) $$. At this point, the critical task is to arrange the (efficient) construction of a matrix $$Q(\sigma) $$ that projects into this tope eigenspace _and_ has diagonal entries behave roughly like $$D'(t,\sigma)^{-2} $$. You may (correctly) inquire:
+> Why must the diagonal entries of square-root of the covariance matrix behave akin to $$D(t,\sigma)^{-2} $$?
 
-where we use the Crouzeix identity, and the last equality can be inferred in multiple ways, but the easiest is the proof of [[Lemma 3.3, Mon19]](https://arxiv.org/pdf/1812.10897) with $$t = 0$$ and $$X_0 = 0$$.
+The answer is that without this arrangement, we will not be able to demonstrate that the empirical distribution of the coordinates of
 
-After this, in [2.2](), we will show that given the choice of the iterate coming from an (appropriately rescaled) eigenvector in the top-eigenspace of the TAP-corrected Hessian, the empirical distribution of the coordinates of its iterates will converge (in Wasserstein-$$2 $$ distance) to the _primal_ version of the AC SDE (with high probability).
+$$ \begin{equation} \sigma_{k+1} = \sigma_k + \eta^{1/2}Q(\sigma_k)w\,,\,\,\, w \sim \mathcal{N}(0,\mathsf{Id})\, , \end{equation} $$
 
-At this point, with the base cases in hand, it remains for us to demonstrate the following inductive steps:
-1. Under the condition on
+converges to the primal version of the AC SDE that we desire, conditioned on $$\sigma_k $$ being a critical point (and having empirical coordinate distribution sufficiently close to the primal AC SDE itself). Without this, various points in the analysis are soft (including the two points mentioned in the [(1.1)]()).
+
+Consequently, in [2.2]() we will show that given the choice of the iterate coming from an (appropriately rescaled) eigenvector in the top-eigenspace of the TAP-corrected Hessian, the empirical distribution of the coordinates of its iterates will converge (in Wasserstein-$$2 $$ distance) to the _primal_ version of the AC SDE (with high probability).
+
+At this point, it then remains for us to demonstrate the following inductive steps:
+1. Under the condition that $$(2\beta^2)/n \mathsf{Tr}[D^{-2}(t,\sigma)] = 1 $$, we can (efficiently) compute a matrix $$Q(\sigma) $$ which projects into the top-eigenspace of $$2\beta\,A_{\text{sym}} - D(t,\sigma) $$ with diagonals that are $$\approx D(t,\sigma)^{-2} $$ (see [2.1]()) to choose the update $$\Delta\sigma := \sqrt{\eta}\,Q(\sigma)w$$ with $$w \sim \mathcal{N}(0, \mathsf{Id}_n) $$, and
+2. Provided that $$\Delta\sigma $$ is chosen as above, it is the case that $$\mathsf{Wass}_2(\mathsf{emp}(\sigma_j), Y_j) \le \mathsf{small}_j $$ for every $$j \in [K] $$.
 
 ### A primal theory for the Parisi PDE via convex duality
+
+Having built up to the the two main properties that we will need to prove to conduct a successful analysis of the algorithm, we now focus on building the analytic tools that will be used (time and again) in the proofs of these two properties. These tools are:
+1. The introduction of a $$\gamma $$-_regularized_ (or $$\gamma $$-smoothened) FL dual to $$\Phi $$, along with its regularity properties. In particular, we would like that for (sufficiently) large $$\beta $$, the regularized FL dual is a uniformly good approximate for $$\Lambda $$ with "sane" derivatives, especially near the corners of the hypercube.
+2. The introduction of the primal version of the Parisi PDE and the AC SDE, written for $$\Lambda_\gamma $$ and $$\Lambda $$ with bounds in Wasserstein distance bounds between these.
 
 ## Proof Sketch
 
