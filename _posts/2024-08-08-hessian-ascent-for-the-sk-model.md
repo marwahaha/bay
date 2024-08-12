@@ -111,7 +111,7 @@ To successfully deal with the two points mentioned above, we need a reformulatio
 
 For $$\Phi $$ itself, this reformulation as a _stochastic optimal control_ problem is known as the **Auffinger-Chen representation** [[AC15]](). It gives a rewrite for the Parisi PDE. More specifically, if $$\Phi $$ is a solution to the Parisi PDE, then,
 
-$$ \begin{equation} \Phi(0,x) = \mathbb{E}\left[\Phi\left(1, x + X_s\right) - \beta^2\int_0^1\mu(s)\mathbb{E}[X^2_s]ds\right]\, ,\end{equation} $$
+$$ \begin{equation} \Phi(0,x) = \mathbb{E}\left[\Phi\left(1, x + X_1\right) - \beta^2\int_0^1\mu(s)(\partial_x \Phi(s,X_s))^2 ds\right]\, ,\end{equation} $$
 
 where $$X_s $$ is given by the strong solution to the following Ito drift-diffusion process,
 
