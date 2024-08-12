@@ -149,13 +149,13 @@ analogous to what is given in [[Eq. 1.27, CPS18]](https://arxiv.org/abs/1812.050
 
 $$ \begin{equation}  \left(\beta A - \left(2\beta^2\int_q^1 \mu(t)dt\right)\mathsf{Id}\right)\sigma = \left(\partial_{\sigma_1}\Lambda(q,\sigma_1),\dots,\partial_{\sigma_n}\Lambda(q,\sigma_n)\right)\,, \end{equation} $$
 
-where $$q = \frac{1}{n}\|\sigma\|^2_2 $$. The representation above is equivalent to [[Remark 6, CPS18]](). Now comes the critical part: We would like to have an algorithm that follows small (orthogonal) updates, such that, _every_ point is a critical point along the path. This means that we _must_ actually proceed in a direction where the Hessian of the TAP equation (projected orthogonal to the current location) is zero. Equivalently, we must stay in the kernel of the Hessian projected orthogonal to the current iterate.
+where $$q = \frac{1}{n}\|\sigma\|^2_2 $$. The representation above is equivalent to [[Remark 6, CPS18]](). Now comes the crucial part: We would like to have an algorithm that follows small (orthogonal) updates, such that, _every_ point is a critical point along the path. This means that we _must_ actually proceed in a direction where the Hessian of the TAP equation (projected orthogonal to the current location) is zero. Equivalently, we must stay in the kernel of the Hessian projected orthogonal to the current iterate.
 
 After taking the gradient of the above equation, applying chain rule, using the FL duality rewrites, and discarding terms that are rank-$$1 $$ or along the current iterate ($$\sigma $$), we arrive at the fact that the Hessian must satisfy the following condition,
 
 $$ \begin{equation} 2\beta A_{\text{sym}} - \sum_{i} \partial_{\sigma_i\sigma_i}\Lambda(q,\sigma_i) e_ie_i^{\mathsf{T}} - \frac{2\beta^2}{n}\sum_{i \in [n]}\partial_{x_ix_i}\Phi(q,x_i)\mathsf{Id} = 0\end{equation}\,, $$
 
-where $$A_{\text{sym}} = (A + A^{\mathsf{T}})/2 $$ is distributed as $$\sqrt{2}\,\mathsf{GOE}(n) $$. Therefore, _if_ we are at a critical point $$\sigma $$ and we wish to make a small $$\approx \eta $$ sized increment that jumps to the next TAP state (critical point), it is critical that the quadratic form with the matrix in the Hessian term above be (approximately) $$0 $$. This basically implies that we want to take (small) steps in the eigenspace of
+where $$A_{\text{sym}} = (A + A^{\mathsf{T}})/2 $$ is distributed as $$\sqrt{2}\,\mathsf{GOE}(n) $$. Therefore, _if_ we are at a critical point $$\sigma $$ and we wish to make a small $$\approx \eta $$ sized increment that jumps to the next TAP state (critical point), it is non-negotiable that the quadratic form with the matrix in the Hessian term above be (approximately) $$0 $$. This basically implies that we want to take (small) steps in the eigenspace of
 
 $$ \begin{equation} 2\beta A_{\text{sym}} - D'(q,\sigma) \end{equation} $$
 
