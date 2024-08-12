@@ -175,9 +175,16 @@ $$ \begin{equation} \frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}(q,\sigma)] = 1\,, \end{
 
 which will in-turn require that $$\sigma $$ be a critical point. For $$\sigma $$ to have been a critical point will require that the empirical distribution of the coordinates of $$\sigma $$ behave like the AC SDE in _primal_ space. Proving _this_ will require the assumption of fRSB, along with the last step being taken in the direction of the top-eigenspace of the TAP-corrected Hessian, and so on and so forth.
 
-Therefore, we will set up an inductive argument, where the first step will go along the direction of the top-eigenspace of the Hessian orthogonal to the all-$$0 $$ vector (which means there is no restriction) and since the primal version of the AC SDE starts at $$0 $$, it will trivially satisfy the identity required.
+Therefore, we will set up an inductive argument, where the first step will go along the direction of the top-eigenspace of the Hessian orthogonal to the all-$$0 $$ vector (which means there is no restriction) and since the primal version of the AC SDE starts at $$0 $$, it will satisfy the identity that,
+
+$$ \begin{equation} \frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}(0,0)] = 2\beta^2 \partial_{xx}\Phi(t,x)^2\vert_{t=0, x =0} = 1\, , \end{equation} $$
+
+where we use the Crouzeix identity, and the last equality can be inferred in multiple ways, but the easiest is the proof of [[Lemma 3.3, Mon19]](https://arxiv.org/pdf/1812.10897) with $$t = 0$$ and $$X_0 = 0$$.
 
 After this, in [2.2](), we will show that given the choice of the iterate coming from an (appropriately rescaled) eigenvector in the top-eigenspace of the TAP-corrected Hessian, the empirical distribution of the coordinates of its iterates will converge (in Wasserstein-$$2 $$ distance) to the _primal_ version of the AC SDE (with high probability).
+
+At this point, with the base cases in hand, it remains for us to demonstrate the following inductive steps:
+1. Under the condition on
 
 ### A primal theory for the Parisi PDE via convex duality
 
