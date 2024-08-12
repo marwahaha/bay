@@ -209,9 +209,12 @@ $$ \begin{equation} \partial_y\Lambda_\gamma = \partial_x\Phi_\gamma^{-1} = \lef
 Unfortunately, for $$\Lambda $$ itself, one obtains that $$\partial_y \Lambda = (\partial_x \Phi)^{-1} $$ which goes to $$\infty $$ as $$y \to 1 $$. This is the main reason for introducing the regularization.
 
 Thus, having justified the regularization, we use a stochastic expression for $$\partial_x \Phi $$ (see [[Lemma 2.3, JSS24]()]) to obtain regularity estimates for $$\partial_x \Phi(t,x) $$ and $$\partial_{xx} \Phi(t,x) $$ slightly more refined than those written down in the literature (see [[Proposition 2, AC15]](), [[JT16]](), [[Chapter-14.7, Tal11]]()). To do this, the idea is simple:
-> Using the stochastic expression for $$\partial_x \Phi(t,x) $$ in terms of the AC SDE provided by [JT'16], wield Ito calculus to bound the MGF of the AC SDE and then use bounds for hyperbolic functions to sharpen the estimates from the literature.
+> Using the stochastic expression for $$\partial_x \Phi(t,x) $$ in terms of the AC SDE provided by [JT'16], wield Ito calculus to bound the MGF of $$X_t $$ and then use bounds for hyperbolic functions to sharpen the estimates from the literature.
 
-Using the relationship between $$\partial_y \Lambda $$ and $$\partial_x $$, one can then use these bounds to obtain Lipschitz estimates for $$\Lambda $$ itself, and these estimates are fairly tight around the corners $$-1 $$ and $$1 $$.
+Using the coordinate change of $$y = \partial_x \Phi $$ and $$x = \partial_y \Lambda $$ one can transfer, one can use these bounds to obtain Lipschitz estimates for $$\Lambda $$ itself, and these estimates are fairly tight around the corners $$-1 $$ and $$1 $$ [[Proposition 2.6, JSS24]](). For instance, we can show that,
+
+$$ \begin{equation} |\partial_y \Lambda(t,y)| \le \frac{1}{2}\log\left(\frac{2}{1-|y|}\right) + 4\beta^2(1-t)\, , \end{equation} $$
+which tells us that the gradient of $$\Lambda $$ blows up logarithmically as $$y \to -1/1 $$.
 
 ## Proof Sketch
 
