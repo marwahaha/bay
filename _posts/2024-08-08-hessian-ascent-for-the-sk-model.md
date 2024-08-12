@@ -155,9 +155,9 @@ $$ \begin{equation}  \left(\beta A - \left(2\beta^2\int_q^1 \mu(t)dt\right)\math
 
 where $$q = \frac{1}{n}\|\sigma\|^2_2 $$. The representation above is equivalent to [[Remark 6, CPS18]](). Now comes the crucial part: We would like to have an algorithm that follows small (orthogonal) updates, such that, _every_ point is a critical point along the path. This means that we _must_ actually proceed in a direction where the Hessian of the TAP equation (projected orthogonal to the current location) is zero. Equivalently, we must stay in the kernel of the Hessian projected orthogonal to the current iterate.
 
-After taking the gradient of the above equation, applying chain rule, using the FL duality rewrites, and discarding terms that are rank-$$1 $$ or along the current iterate ($$\sigma $$), we arrive at the fact that the update $$\Delta \sigma $$ Hessian must satisfy the following condition,
+After taking the gradient of the above equation, applying chain rule, using the FL duality rewrites, and discarding terms that are rank-$$1 $$ or along the current iterate ($$\sigma $$), we arrive at the fact that the update $$\Delta \sigma $$ must satisfy the following condition vis-a-vis the Hessian of the TAP equation,
 
-$$ \begin{equation} \Delta\sigma\left(2\beta A_{\text{sym}} - \sum_{i} \partial_{\sigma_i\sigma_i}\Lambda(q,\sigma_i) e_ie_i^{\mathsf{T}} - \frac{2\beta^2}{n}\sum_{i \in [n]}\partial_{x_ix_i}\Phi(q,x_i)\mathsf{Id}\right)\Delta\sigma \approx 0\end{equation}\,, $$
+$$ \begin{equation} \Delta\sigma\left(2\beta A_{\text{sym}} -\underbrace{\sum_{i} \partial_{\sigma_i\sigma_i}\Lambda(q,\sigma_i) e_ie_i^{\mathsf{T}}}_{D'(t,\sigma)} - \frac{2\beta^2}{n}\sum_{i \in [n]}\partial_{x_ix_i}\Phi(q,x_i)\mathsf{Id}\right)\Delta\sigma \approx 0\end{equation}\,, $$
 
 where $$A_{\text{sym}} = (A + A^{\mathsf{T}})/2 $$ is distributed as $$\sqrt{2}\,\mathsf{GOE}(n) $$. Therefore, _if_ we are at a critical point $$\sigma $$ and we wish to make a small $$\approx \eta $$ sized increment that jumps to the next TAP state (critical point), it is non-negotiable that the quadratic form with the matrix in the Hessian term above be (approximately) $$0 $$. This basically implies that we want to take (small) steps in the eigenspace of
 
@@ -167,7 +167,7 @@ with value
 
 $$ \begin{equation} \approx \frac{2\beta^2}{n}\sum_i \partial_{x_ix_i}\Phi(q,x_i) = \frac{2\beta^2}{n}\mathsf{Tr}[D'^{-1}(q,\sigma)]\, , \end{equation}$$
 
-where we use the fact that whenever $$\partial_{xx}\Phi(t,x) > 0 $$, its reciprocal is well-defined and equal to $$\partial_{yy} \Lambda(t,y) $$ when $$x $$ and $$y $$ satisfy the change of coordinates implied by FL duality (that is, they are critical points in their respective bases). This identity is called the [Crouzeix identity in convex analysis](), and is an important observation in working out the details of the primal Parisi theory ([1.3]())  as well as understanding the conceptual basis on which the free-probabilistic analysis of the Hessian proceeds.
+where we use the fact that whenever $$\partial_{xx}\Phi(t,x) > 0 $$, its reciprocal is well-defined and equal to $$\partial_{yy} \Lambda(t,y) $$ when $$x $$ and $$y $$ satisfy the change of coordinates implied by FL duality (that is, they are critical points in their respective bases). This identity is called the [Crouzeix identity in convex analysis](), and is an important observation in working out the details of the primal Parisi theory ([1.3]())  as well as understanding the conceptual basis on which the free-probabilistic analysis of the TAP-corrected Hessian proceeds.
 
 As it turns out, the desired value will be achieved in the _top-eigenspace_ of the TAP corrected Hessian (see [2.1]()) and, therefore, we will need an inductive argument where we can construct a covariance matrix $$Q^2(\sigma) $$, such that $$Q(\sigma) $$ smoothly projects into the top eigenspace of,
 
@@ -181,20 +181,20 @@ which will in-turn require a re-normalization of the diagonal matrix that comes 
 
 $$ \begin{equation} D(t,\sigma) = \left(\frac{2\beta^2}{n}\sum_{i \in [n]}\partial_{\sigma_i,\sigma_i}\Lambda(t,\sigma_i)^{-2}\right)^{1/2}D'(t,\sigma)\,. \, \end{equation} $$
 
-It will be shown in [(2.1)]() that this is the right scaling to obtain the desired eigenvalue in the top-eigenspace of $$2\beta A_{\text{sym}} - D'(t,\sigma) $$. At this point, the critical task is to arrange the (efficient) construction of a matrix $$Q(\sigma) $$ that projects into this top eigenspace _and_ has diagonal entries behave roughly like $$D'(t,\sigma)^{-2} $$. You may (correctly) inquire:
+It will be shown in [(2.1)]() that this is the right scaling to obtain the desired eigenvalue in the top-eigenspace of $$2\beta A_{\text{sym}} - D'(t,\sigma) $$. Having achieved an understanding of what space we want to project to at every step, the remaining critical task is to arrange the (efficient) construction of a matrix $$Q(\sigma) $$ that projects into this top eigenspace _and_ has diagonal entries that behave roughly like $$D'(t,\sigma)^{-2} $$. You may (correctly) inquire:
 > Why must the diagonal entries of square-root of the covariance matrix behave akin to $$D(t,\sigma)^{-2} $$?
 
 The answer is that without this arrangement, we will not be able to demonstrate that the empirical distribution of the coordinates of
 
 $$ \begin{equation} \sigma_{k+1} = \sigma_k + \eta^{1/2}Q(\sigma_k)w\,,\,\,\, w \sim \mathcal{N}(0,\mathsf{Id})\, , \end{equation} $$
 
-converges to the primal version of the AC SDE that we desire, conditioned on $$\sigma_k $$ being a critical point (and having empirical coordinate distribution sufficiently close to the primal AC SDE itself). Without this, various points in the analysis are soft (including the two points mentioned in the [(1.1)]()).
+converges to the primal version of the AC SDE that we desire, where $$\sigma_k $$ is a critical point (and having empirical coordinate distribution sufficiently close to the primal AC SDE itself). Without this, various points in the analysis remain intractable (including the two points mentioned in the [(1.1)]()).
 
 Consequently, in [(2.2)]() we will show that given that the update comes from an (appropriately rescaled) eigenvector in the top-eigenspace of the TAP-corrected Hessian, the empirical distribution of the coordinates of its iterates will converge (in Wasserstein-$$2 $$ distance) to the _primal_ version of the AC SDE (with high probability).
 
 At this point, it then remains for us to demonstrate the following inductive steps:
 1. Under the condition that $$(2\beta^2)/n \mathsf{Tr}[D^{-2}(t,\sigma)] = 1 $$, we can (efficiently) compute a matrix $$Q(\sigma) $$ which projects into the top-eigenspace of $$2\beta\,A_{\text{sym}} - D(t,\sigma) $$ with diagonals that are $$\approx D(t,\sigma)^{-2} $$ (see [2.1]()) to choose the update $$\Delta\sigma := \sqrt{\eta}\,Q(\sigma)w$$ with $$w \sim \mathcal{N}(0, \mathsf{Id}_n) $$, and
-2. Provided that $$\Delta\sigma $$ is chosen as above at every step, it is the case that $$\mathsf{Wass}_2(\mathsf{emp}(\sigma_j), Y_j) \le \mathsf{small}_j $$ for every $$j \in [K] $$.
+2. Provided that $$\Delta\sigma $$ is chosen as above at every step, it is the case that $$\mathsf{Wass}_2(\mathsf{emp}(\sigma_j), Y_j) \le \mathsf{small}_j $$ for every $$j \in [K] $$, where $$Y_j $$ is generated by the primal AC SDE process.
 
 ### A primal theory for the Parisi PDE via convex duality
 
@@ -243,7 +243,7 @@ $$ \begin{equation} |\Lambda(t,y') - \Lambda(t,y)| \le \frac{1}{2}|y-y'|\left(\l
 
 [^1]: The main contribution of [[SS24]]() is the introduction of a new hierarchy over HES processes, and the hierarchy is termed the HES SoS hierarchy. The reason for choosing these processes is many-fold, and is explained in the paper's introduction. However, in large part, this paper was born out of the desire to understand what exactly made the _search_ problem of finding near-optima of spin-glasses significantly easier than the _certification_ problem.
 
-[^2]: The fRSB condition is an imposition on the support of the probability measure $$\mu $$ that optimizes the Parisi formula $$P_\beta(\mu) $$. It states that the density associated with $$\mu $$ is fully-supported in a sub-interval $$[0, q^*_\beta] $$. Equivalently, $$\mu $$ is strictly increasing in $$[0, q^*_\beta] $$.
+[^2]: The fRSB condition is an imposition on the support of the probability measure induced by $$\mu $$ that optimizes the Parisi formula $$P_\beta(\mu) $$. It states that the density associated with $$\mu $$ is fully-supported in a sub-interval $$[0, q^*_\beta] $$. Equivalently, $$\mu $$ is strictly increasing in $$[0, q^*_\beta] $$.
 
 [^3]: When David, Jonathan and I were working on the project in the early days, we were thinking of this convex duality via the lens of mirror maps. It turns out that, because of the underlying convex duality, there is a connection to be made here through the information geometry of the underlying Hessian being akin to a (flat) Bregmannian manifold. However, this is beyond the scope of this post and something we are investigating in ongoing work.
 
