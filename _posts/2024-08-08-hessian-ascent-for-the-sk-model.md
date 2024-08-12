@@ -20,7 +20,7 @@ At a high-level, the algorithm is fairly simple:
     * Set $$\sigma_i = \sigma_{i-1} + \sqrt{\eta}z $$, where $$z \sim \mathcal{N}(0,Q^2_i) $$.
 * Return $$\sigma_K $$ after truncating it and rounding it to $$\{-1,1\}^n $$.
 
-The details of what the "TAP corrected Hessian" of the SK model are will be introduced later, and do not matter for now. The main points are the simplicity of the update rules, and the fact that we are following the top-eigenspace of a certain Hessian matrix induced by the SK model. With this high-level description in hand, we now briefly explain that the main motivations for rigorously developing and analyzing this algorithm are to:
+The details of what the "TAP corrected Hessian" of the SK model are will be introduced later, and do not matter for now. The main points are the simplicity of the update rules, and the fact that we are following the top-eigenspace of a certain Hessian matrix induced by the SK model. With this high-level description in hand, we now briefly explain what the main motivations for rigorously developing and analyzing this algorithm are.
 1. <u>Give a conceptually simple and purely spectral algorithm for these models on the cube</u>.
 
     Ideally, the algorithm should implement the same principle on the cube that Subag's algorithm implements on the sphere, leading to a unified principle to optimize (to the conjectured limit for $$\mathsf{poly}(n) $$-time algorithms) random polynomials over _any_ "reasonable" underlying domain $$D $$.
