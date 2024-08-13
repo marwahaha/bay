@@ -67,9 +67,9 @@ The details of what the "TAP corrected Hessian" of the SK model are will be intr
 
 ## The Sherrington-Kirkpatrick Model
 We briefly introduce the Sherrington-Kirkpatrick model as an optimization problem. We describe the expected limit of the optimal value, as a standard Gaussian concentration inequality implies that the value is extremely concentrated around its expectation. This limit exists almost-surely, and is captured by the famous Parisi formula at zero temperature. This formula has a long history in the statistical physics and probability theory literature (see [Bolthausen's overview of the proof of the Parisi formula]()) that we will not spend much time on in this post. For us, the critical facts are that:
-* The Parisi formula is a variational formula over certain measures, and that it is strictly convex over this space having a unique minimizer. Furthermore, one can efficiently find this minimizer since the variational formula is independent of $$n $$.
-* The Parisi formula can be rewritten in terms of an optimal stochastic control problem, and this rewrite is called the Auffinger-Chen representation. It essentially says that the Parisi formula is given by the (expected) value of a function that solves a certain PDE, evaluated over a _specific_ Ito drift-diffusion process, plus a quadratic variation correction term.
-* There is (yet) another alternative representation for the Parisi formula which _extends_ into the interior of the solution domain. This quantity, developed rigorously and systematically by Subag [[Sub18]]() for the sphere, and then again by Chen, Panchenko and Subag [[CPS18]]() for the cube, is the heart of the algorithmic design principle mentioned above. In fact, Subag is able to use the ideas related to this representation to give a derivation of the Parisi formula on the sphere (known as the Crisanti-Sommers formula) from _first principles_. Unfortunately, this is (seemingly) not quite yet in reach for the cube. Nonetheless, there is remarkable structural similarity between the generalized TAP equation on the sphere and the cube in terms of its component terms, and this is enough to demonstrate how Subag's conjecture about step-wise optimization on the cube and our resolution of it follow naturally from this equation.
+* The Parisi formula is a variational formula over certain measures, and that it is strictly convex over this space having a unique minimizer. Furthermore, one can efficiently find this minimizer since the variational formula is independent of $$n $$ (though, still infinite-dimensional, and requiring a clever technique of [[JT16]]()).
+* The Parisi formula can be rewritten in terms of an optimal stochastic control problem, and this rewrite is called the Auffinger-Chen representation. It essentially says that the Parisi formula is given by the (expected) value of a certain function, evaluated over a _specific_ Ito drift-diffusion process, plus a quadratic variation correction term.
+* There is (yet) another alternative representation for the Parisi formula which _extends_ into the interior of the solution domain. This quantity, developed rigorously and systematically by Subag [[Sub18]]() for the sphere, and then again by Chen, Panchenko and Subag [[CPS18]]() for the cube, is the heart of the algorithmic design principle mentioned above. In fact, Subag is able to use the ideas related to this representation to give a derivation of the Parisi formula on the sphere (known as the Crisanti-Sommers formula) from _first principles_. Unfortunately, this is (seemingly) not quite yet in reach for the cube. Nonetheless, there is remarkable structural similarity between the generalized TAP equation on the sphere and the cube in the way of its component terms, and this is enough to demonstrate how Subag's conjecture about step-wise optimization on the cube and our resolution of it follow naturally from this equation.
 
 ### The Parisi formula and Auffinger-Chen Representation
 The Parisi formula was proposed by Giorgio Parisi in 1979 to give the asymptotic free energy density of the Sherrington-Kirkpatrick (SK) model. It was first rigorously proved in a series of works by Guerra and Talagrand, the culmination of which was in the hard direction of the proof by Talagrand. The model is given by the following cost function,
@@ -169,7 +169,7 @@ $$ \begin{equation} \approx \frac{2\beta^2}{n}\sum_i \partial_{x_ix_i}\Phi(q,x_i
 
 where we use the fact that whenever $$\partial_{xx}\Phi(t,x) > 0 $$, its reciprocal is well-defined and equal to $$\partial_{yy} \Lambda(t,y) $$ when $$x $$ and $$y $$ satisfy the change of coordinates implied by FL duality (that is, they are critical points in their respective bases). This identity is called the [Crouzeix identity in convex analysis](), and is an important observation in working out the details of the primal Parisi theory ([1.3]())  as well as understanding the conceptual basis on which the free-probabilistic analysis of the TAP-corrected Hessian proceeds.
 
-As it turns out, the desired value will be achieved in the _top-eigenspace_ of the TAP corrected Hessian (see [2.1]()) and, therefore, we will need an inductive argument where we can construct a covariance matrix $$Q^2(\sigma) $$, such that $$Q(\sigma) $$ smoothly projects into the top eigenspace of,
+As it turns out, the desired value will be achieved in the _top-eigenspace_ of the TAP corrected Hessian (see [2.1]()) and, therefore, we will need an iterative argument where we can construct a covariance matrix $$Q^2(\sigma) $$, such that $$Q(\sigma) $$ smoothly projects into the top eigenspace of,
 
 $$ \begin{equation} \text{TAP-corrected Hessian} = 2\beta A_{\text{sym}} - D'(q,\sigma) \overset{d}{=} \sqrt{2}\beta\,\mathsf{GOE}(n) - D'(q,\sigma)\,. \end{equation} $$
 
@@ -177,7 +177,7 @@ We _will_ be able to accomplish this, _conditioned_ on the fact that,
 
 $$ \begin{equation} \frac{2\beta^2}{n}\mathsf{Tr}[D'^{-2}(q,\sigma)] = 1\,, \end{equation} $$
 
-which will in-turn require a re-normalization of the diagonal matrix that comes from the TAP correction. To have this be the case, we will choose the final diagonal correction matrix as,
+which will in-turn require a re-normalization of $$D'(t,\sigma) $$. To have this be the case, we will choose the final diagonal correction matrix as,
 
 $$ \begin{equation} D(t,\sigma) = \left(\frac{2\beta^2}{n}\sum_{i \in [n]}\partial_{\sigma_i,\sigma_i}\Lambda(t,\sigma_i)^{-2}\right)^{1/2}D'(t,\sigma)\,. \, \end{equation} $$
 
@@ -200,19 +200,23 @@ At this point, it then remains for us to demonstrate the following inductive ste
 
 Having built up to the the two main properties that we will need to prove to conduct a successful analysis of the algorithm, we now focus on building the analytic tools that will be used (time and again) in the proofs of these two properties. These tools are:
 1. The introduction of a $$\gamma $$-_regularized_ (or $$\gamma $$-smoothened) FL dual to $$\Phi $$, termed $$\Lambda_\gamma $$, along with its regularity properties. In particular, we would like that for (sufficiently) large $$\beta $$, the regularized FL dual is a uniformly good approximate for $$\Lambda $$ with "sane" derivatives, especially near the corners of the hypercube.
-2. The introduction of the primal version of the Parisi PDE and the AC SDE, written for $$\Lambda_\gamma $$ and $$\Lambda $$, along with bounds in Wasserstein distance bounds between these.
+2. The introduction of the primal version of the Parisi PDE and the AC SDE, written for $$\Lambda_\gamma $$ and $$\Lambda $$, along with Wasserstein distance bounds between these.
 
 We begin by stating the definition of $$\Lambda_\gamma $$,
 
 $$ \begin{equation} \Lambda_\gamma(t,y) = \sup_{x \in \mathbb{R}}\left(xy - \Phi_\gamma(t,x)\right) = \sup_{x \in \mathbb{R}}\left(xy - \Phi(t,x) - \frac{\gamma}{2}x^2\right)\,. \end{equation} $$
 
-By similar convex analytic reasons as the ones hinted at in [[1.2]](),
+By similar convex analytic reasons as the ones hinted at in [[1.2]](), we have that,
 
-$$ \begin{equation} \partial_y\Lambda_\gamma = \partial_x\Phi_\gamma^{-1} = \left(\partial_x \Phi + \gamma x\right)^{-1}\,. \end{equation} $$
+$$ \begin{equation} \partial_y\Lambda_\gamma = \partial_x\Phi_\gamma^{-1} = \left(\partial_x \Phi + \gamma x\right)^{-1}\,, \end{equation} $$
 
-Unfortunately, for $$\Lambda $$ itself, one obtains that $$\partial_y \Lambda = (\partial_x \Phi)^{-1} $$ which goes to $$\infty $$ as $$y \to -1/1 $$. This is the main reason for introducing the regularization.
+and
 
-We now focus on continuity estimates for $$\Lambda $$, which will be especially important in estimating how well $$\Lambda_\gamma $$ approximates the former in the solid cube (uniformly). To obtain these, we use a stochastic expression for $$\partial_x \Phi $$ (see [[Lemma 2.3, JSS24]()]) as an average over a function of the process $$X_t $$ that solves the AC SDE. This allows us to obtain regularity estimates for $$\partial_x \Phi(t,x) $$ and $$\partial_{xx} \Phi(t,x) $$ slightly more refined than those written down in the literature (see [[Proposition 2, AC15]](), [[JT16]](), [[Chapter-14.7, Tal11]]()). For accomplishing this, the idea is simple:
+$$ \begin{equation} y = \partial_x \Phi(t,x) + \gamma x\,. \end{equation} $$
+
+Unfortunately, for $$\Lambda $$ itself, one obtains that $$\partial_y \Lambda = (\partial_x \Phi)^{-1} $$ which goes to $$\infty $$ when $$|y| > 1 $$. This is the main reason for introducing the regularization.
+
+_Estimates for $$\Lambda $$_: We now focus on continuity estimates for $$\Lambda $$, which will be especially important in estimating how well $$\Lambda_\gamma $$ approximates the former in the solid cube (uniformly). To obtain these, we use a stochastic expression for $$\partial_x \Phi $$ (see [[Lemma 2.3, JSS24]()]) as an average over a function of the process $$X_t $$ that solves the AC SDE. This allows us to obtain regularity estimates for $$\partial_x \Phi(t,x) $$ and $$\partial_{xx} \Phi(t,x) $$ slightly more refined than those written down in the literature (see [[Proposition 2, AC15]](), [[JT16]](), [[Chapter-14.7, Tal11]]()). For accomplishing this, the idea is simple:
 > Using the stochastic expression for $$\partial_x \Phi(t,x) = \mathbb{E}[\tanh(X_1)]$$ provided by [JT'16], wield Ito calculus with an application of Gronwall's inequality to bound the MGF of $$X_t $$. Then, use bounds for hyperbolic functions to sharpen the estimates from the literature.
 
 Using the coordinate change of $$y = \partial_x \Phi $$ and $$x = \partial_y \Lambda $$ one can transfer these bounds to the primal space and obtain Lipschitz estimates for $$\Lambda $$ itself, and these estimates are fairly tight around the corners $$-1 $$ and $$1 $$ [[Proposition 2.6, JSS24]](). For instance, using the coordinate transfer scheme in conjunction with the MGF bound strategy outlined above, we can show that
@@ -223,7 +227,19 @@ which tells us that the gradient of $$\Lambda $$ blows up logarithmically as $$y
 
 $$ \begin{equation} |\Lambda(t,y') - \Lambda(t,y)| \le \frac{1}{2}|y-y'|\left(\log\left(\frac{2}{|y - y'|}\right) + 1 + 8\beta^2(1-t)\right)\,. \end{equation} $$
 
+_Inf-convolution and convergence of $$\Lambda_\gamma \to \Lambda $$_: By definition, it is clear that $$\Lambda_\gamma = \Lambda $$ when $$\gamma = 0 $$. However, for the analysis, we need a quantitative estimate on the uniform convergence of the former to the latter. In doing this, we use the fact that, by definition, $$\Lambda_\gamma $$ is a convolution of the concave function $$-\gamma/2x^2$$ with the function $$\Phi $$ and, therefore, will obey an **inf-convolution** rule for FL duals. This, in conjunction with the continuity estimates for $$\Lambda $$ above, will allow us to obtain the desired quantitative uniform convergence estimates.
 
+The _inf-convolution_ formula tells us that,
+
+$$ \begin{equation} \Lambda_\gamma(t,y) = \inf_{y' \in [-1,1]} \left(\Lambda(t,y') + \frac{1}{2\gamma}(y'-y)^2\right)\, .\end{equation} $$
+
+This is proved by noticing that since $$\partial_x \Phi $$ is strictly increasing in $$x $$, so is $$\partial_y \Lambda = (\partial_x \Phi)^{-1} $$; this implies that $$(y + \gamma \partial_y\Lambda(t,y)) $$ is also strictly increasing and so there is a unique point $$y' $$, such that, $$y' + \partial_y\Lambda(t,y') = y $$, which is a critical point of the function inside the infimum to minimize.
+
+The FL dual of a strictly convex function is strictly convex, and so the function inside the infimum is strictly convex with the point argued above as the unique minimizer. At this point one can use the coordinate change maps along with some algebra to conclude that the minimizer $$y' $$ is, in fact,
+
+$$ \begin{equation} y' = y - \gamma\partial_y\Lambda_\gamma(t,y)\,. \end{equation} $$    
+
+Now, using the modulus of continuity estimate for 
 
 ## Proof Sketch
 
