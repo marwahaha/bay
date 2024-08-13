@@ -265,8 +265,15 @@ $$ \begin{equation} \partial_t \Lambda_\gamma(t,y) = \beta^2\left(\frac{1}{\part
 Recall that in [(1.1)]() we mentioned that it would be critical to understand the term $$\int_{t'}^{t'+\Delta t}\partial_t\Lambda(t,y)dt $$. Using the PDE above, we can express the time derivative above in terms of the spatial derivatives, and this will be important in the Taylor expansion analysis that bounds the fluctuations of the modified objective function at each step. In fact, in the Taylor expansion analysis, we will isolate the RHS of the PDE into three components:
 * The first will consist of the $$\frac{1}{\partial_{y,y}\Lambda_\gamma(t,y)} $$ term, and this will be a critical factor in terms of its interaction with the Hessian term (as we also saw in [(1.1)]()).
 * The second will consist of just $$\gamma $$, and if $$\Delta t$$ is sufficiently small (along with $$\gamma $$ itself being small), this will simply be a small error term at each time step.
-* The third and final term will be handled, as also mentioned in [(1.1)](), using convergence of the iterates to the AC SDE and shown to be sufficiently small at every step.
-<br>
+* The third and final term will be handled, as also mentioned in [(1.1)](), using convergence of the iterates to the primal AC SDE and shown to be sufficiently small at every step.
+
+Using a bit of Ito calculus, as is done in [[Proposition 2.10, JSS24]](https://arxiv.org/pdf/2408.02360), the following primal AC SDEs for $$\Lambda $$ and $$\Lambda_\gamma $$ are obtained,
+
+$$ \begin{equation} dY_t = \frac{\sqrt{2}\beta}{\partial_{y,y}\Lambda(t,y)}dW_t\,, Y_0 = 0\,\,\,\text{and}\,\,\,\,\, dY^{\gamma}_t = \frac{\sqrt{2}\beta}{\partial_{y,y}\Lambda_\gamma(t,y)}dW_t\,,\,Y^{\gamma}_0 = 0\,.\end{equation} $$
+
+Then, using the estimates for the derivatives of $$\Lambda $$ and $$\Lambda_\gamma $$ (as briefly mentioned below) as Lipschitz bounds in conjunction with Gronwall's inequality (again)[^5] and some Ito calculus, one obtains the following final bound [[Lemma 2.17, JSS24](https://arxiv.org/pdf/2408.02360)],
+
+$$ \begin{equation} \| Y^{\gamma}_t - Y_t\|^2_{L^2} \le 2\gamma^2\left(e^{10\beta^2 t} - 1\right) \,.\end{equation} $$
 
 
 ## Proof Sketch
@@ -293,4 +300,4 @@ Recall that in [(1.1)]() we mentioned that it would be critical to understand th
 
 [^4]: In a previous [post](https://juspreetsandhu.me/2022/02/08/the-sk-model-i#ruelle-probability-cascades), I described a _part_ of the RPC construction and the details afforded there are gentle and sufficient enough to understand the main ingredients in their construction, as well as their purpose. A slightly more detailed overview of the construction, along with how exactly the representation gets used in the [Hopf-Cole transform]() to solve the Parisi PDE for _atomic_ measures is provided in [[Appendix C, JSS24]](https://arxiv.org/pdf/2408.02360) and can be read by the interested reader. The estimates for the derivatives are proved between [[Lemma 2.12 & Lemma 2.13, JSS24]](https://arxiv.org/pdf/2408.02360) and stated in [[Proposition 2.11, JSS24]](https://arxiv.org/pdf/2408.02360).  
 
-[^5]: In [this]() upcoming post, we will introduce some fundamental properties that the RPC tree satisfies, and then derive an alternative representation of the Parisi Variational Principle which can be stated purely as an optimization of a functional whose random measure is supported over the leaves of a RPC tree.
+[^5]: For converting Lipschitz bounds into estimates of how much error propagates over a period of time, [Gronwall's inequality]() is an indispensable tool that we use in Sections 2 & 5 of the paper. The comination of Ito's lemma & Gronwall's inequality allows us to, in fact, more or less have a mechanistic procedure for converting Lipschitz estimates into error bounds of various sorts. 
