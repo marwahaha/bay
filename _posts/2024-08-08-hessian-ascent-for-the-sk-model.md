@@ -214,7 +214,7 @@ and
 
 $$ \begin{equation} y = \partial_x \Phi(t,x) + \gamma x\,. \end{equation} $$
 
-Unfortunately, for $$\Lambda $$ itself, one obtains that $$\partial_y \Lambda = (\partial_x \Phi)^{-1} $$ which goes to $$\infty $$ when $$|y| > 1 $$. This is the main reason for introducing the regularization.
+Unfortunately, for $$\Lambda $$ itself, one obtains that $$\partial_y \Lambda = (\partial_x \Phi)^{-1} $$ which goes to $$\infty $$ when $$y > 1 $$ or $$y < -1 $$. This is the main reason for introducing the regularization.
 
 _Estimates for $$\Lambda $$_: We now focus on continuity estimates for $$\Lambda $$, which will be especially important in estimating how well $$\Lambda_\gamma $$ approximates the former in the solid cube (uniformly). To obtain these, we use a stochastic expression for $$\partial_x \Phi $$ (see [[Lemma 2.3, JSS24]()]) as an average over a function of the process $$X_t $$ that solves the AC SDE. This allows us to obtain regularity estimates for $$\partial_x \Phi(t,x) $$ and $$\partial_{xx} \Phi(t,x) $$ slightly more refined than those written down in the literature (see [[Proposition 2, AC15]](), [[JT16]](), [[Chapter-14.7, Tal11]]()). For accomplishing this, the idea is simple:
 > Using the stochastic expression for $$\partial_x \Phi(t,x) = \mathbb{E}[\tanh(X_1)]$$ provided by [JT'16], wield Ito calculus with an application of Gronwall's inequality to bound the MGF of $$X_t $$. Then, use bounds for hyperbolic functions to sharpen the estimates from the literature.
@@ -239,7 +239,7 @@ The FL dual of a strictly convex function is strictly convex, and so the functio
 
 $$ \begin{equation} y' = y - \gamma\partial_y\Lambda_\gamma(t,y)\,. \end{equation} $$    
 
-Now, using the modulus of continuity estimate for 
+Now, using the modulus of continuity estimate for $$\Lambda $$ provided above in conjunction
 
 ## Proof Sketch
 
