@@ -275,6 +275,19 @@ Then, using the estimates for the derivatives of $$\Lambda $$ and $$\Lambda_\gam
 
 $$ \begin{equation} \| Y^{\gamma}_t - Y_t\|^2_{L^2} \le 2\gamma^2\left(e^{10\beta^2 t} - 1\right) \,.\end{equation} $$
 
+This estimate will be crucially used to understand the accumulation of error we obtain from following the Hessian of a TAP corrected energy with $$\Lambda_\gamma $$, as opposed to the true TAP corrected energy which invokes $$\Lambda $$ directly.
+
+_<u>Derivative estimates</u>_: We now conclude the first post with a small statement that gives various estimates for the derivatives of $$\Lambda_\gamma $$.
+
+The spatial derivatives are bounded as,
+
+$$ \begin{equation} \frac{1}{1+\gamma} \le \partial_{y,y}\Lambda \le \frac{1}{\gamma}\,,\,|\partial_{y,y,y}\Lambda| \le \frac{2}{\gamma^2} \,,\end{equation} $$
+
+and the spatial and temporal Lipschitz estimates for the driver of the "smoothed" primal AC SDE are,
+
+$$ \begin{equation}|\partial_y\left(\frac{1}{\partial_{y,y}\Lambda}\right)| \le 2\,,\,|\partial_t\left(\frac{1}{\partial_{y,y}\Lambda(t,y)}\right)| \le 14\beta^2 \,.\end{equation} $$
+
+These estimates are stated with careful formal precision in [[Proposition 2.11, JSS24]()]
 
 ## Proof Sketch
 
@@ -300,4 +313,4 @@ $$ \begin{equation} \| Y^{\gamma}_t - Y_t\|^2_{L^2} \le 2\gamma^2\left(e^{10\bet
 
 [^4]: In a previous [post](https://juspreetsandhu.me/2022/02/08/the-sk-model-i#ruelle-probability-cascades), I described a _part_ of the RPC construction and the details afforded there are gentle and sufficient enough to understand the main ingredients in their construction, as well as their purpose. A slightly more detailed overview of the construction, along with how exactly the representation gets used in the [Hopf-Cole transform]() to solve the Parisi PDE for _atomic_ measures is provided in [[Appendix C, JSS24]](https://arxiv.org/pdf/2408.02360) and can be read by the interested reader. The estimates for the derivatives are proved between [[Lemma 2.12 & Lemma 2.13, JSS24]](https://arxiv.org/pdf/2408.02360) and stated in [[Proposition 2.11, JSS24]](https://arxiv.org/pdf/2408.02360).  
 
-[^5]: For converting Lipschitz bounds into estimates of how much error propagates over a period of time, [Gronwall's inequality]() is an indispensable tool that we use in Sections 2 & 5 of the paper. The comination of Ito's lemma & Gronwall's inequality allows us to, in fact, more or less have a mechanistic procedure for converting Lipschitz estimates into error bounds of various sorts. 
+[^5]: For converting Lipschitz bounds into estimates of how much error propagates over a period of time, [Gronwall's inequality]() is an indispensable tool that we use in Sections 2 & 5 of the paper. The comination of Ito's lemma & Gronwall's inequality allows us to, in fact, more or less have a mechanistic procedure for converting Lipschitz estimates into error bounds of various sorts.
