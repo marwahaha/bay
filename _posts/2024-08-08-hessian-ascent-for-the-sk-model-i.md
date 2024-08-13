@@ -93,7 +93,7 @@ These observations suggest that, somehow, the Parisi formula is rewriting the (a
 
     and doing this requires getting a Parisi-like PDE, but in the space _dual_ to $$x $$. For technical reasons, we will actually look at $$\int \partial_t \Lambda_\gamma dt $$, where $$\Lambda_\gamma $$ is a $$\gamma $$-regularized version of the FL dual to $$\Phi $$ (see [(1.3)]()). This requires writing a PDE in this dual space, but for a FL dual for a function $$\Phi_\gamma $$ which is a "smoothening" of $$\Phi $$.
 
-We will revisit this point in the [(1.3)](#a-primal-theory-for-the-parisi-pde-via-convex-duality). For now, we just conclude by precisely stating how the Parisi formula gives the limiting optimal value for our Hamiltonian of interest:
+We will revisit this point in [(1.3)](#a-primal-theory-for-the-parisi-pde-via-convex-duality). For now, we just conclude by precisely stating how the Parisi formula gives the limiting optimal value for our Hamiltonian of interest:
 
 $$ \begin{equation} \lim_{n \to \infty}\frac{1}{n}\mathbb{E}\left[\max_{\sigma \in \{-1,1\}^n} H(\sigma)\right] = \lim_{\beta \to \infty} \frac{1}{\beta} \inf_{\mu} P_\beta(\mu)\,. \end{equation} $$
 
@@ -229,7 +229,7 @@ which tells us that the gradient of $$\Lambda $$ blows up logarithmically as $$y
 
 $$ \begin{equation} |\Lambda(t,y') - \Lambda(t,y)| \le \frac{1}{2}|y-y'|\left(\log\left(\frac{2}{|y - y'|}\right) + 1 + 8\beta^2(1-t)\right)\,. \end{equation} $$
 
-_<u>Inf-convolution and convergence of </u>$$\Lambda_\gamma \to \Lambda $$_: By definition, it is clear that $$\Lambda_\gamma = \Lambda $$ when $$\gamma = 0 $$. However, for the analysis, we need a quantitative estimate on the uniform convergence of the former to the latter. In doing this, we use the fact that, by definition, $$\Lambda_\gamma $$ is a convolution of the concave function $$-\gamma/2x^2$$ with the function $$\Phi $$ and, therefore, will obey an **inf-convolution** rule for FL duals. This, in conjunction with the continuity estimates for $$\Lambda $$ above, will allow us to obtain the desired quantitative uniform convergence estimates.
+_<u>Inf-convolution and convergence of </u>$$\Lambda_\gamma \to \Lambda $$_: By definition, it is clear that $$\Lambda_\gamma = \Lambda $$ when $$\gamma = 0 $$. However, for the analysis, we need a quantitative estimate on the uniform convergence of the former to the latter. In doing this, we use the fact that, by definition, $$\Lambda_\gamma $$ is a convolution of the concave function $$-\frac{\gamma}{2}x^2$$ with the function $$\Phi $$ and, therefore, will obey an **inf-convolution** rule for FL duals. This, in conjunction with the continuity estimates for $$\Lambda $$ above, will allow us to obtain the desired quantitative uniform convergence estimates.
 
 The _inf-convolution_ formula tells us that,
 
