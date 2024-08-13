@@ -105,7 +105,7 @@ As it turns out, getting a "dual" version of the Parisi PDE is not quite suffici
 
     where $$\Lambda_\gamma $$ (again) represents a $$\gamma $$-regularized FL dual to $$\Phi $$.  
 
-To successfully deal with the two points mentioned above, we need a reformulation of $$\Lambda $$ as an _optimal stochastic control_ problem. Using the SDE underlying this representation, the computation of the quantity in the first point is made tractable, and demonstrating that the second point is true requires showing that the empirical distribution of the coordinates of every iterate of the algorithm converge to the SDE that underlies this reformulation.
+To successfully deal with the two points mentioned above, we need a reformulation of $$\Lambda $$ (and $$\Lambda_\gamma $$) as an _optimal stochastic control_ problem. Using the SDE underlying this representation, the computation of the quantity in the first point is made tractable, and demonstrating that the second point is true requires showing that the empirical distribution of the coordinates of every iterate of the algorithm converge to the SDE that underlies this reformulation.
 
 For $$\Phi $$ itself, this reformulation as a _stochastic optimal control_ problem is known as the **Auffinger-Chen representation** [[AC15]](). It gives a rewrite for the Parisi PDE. More specifically, if $$\Phi $$ is a solution to the Parisi PDE, then,
 
