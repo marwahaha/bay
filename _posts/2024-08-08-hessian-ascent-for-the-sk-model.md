@@ -167,7 +167,7 @@ with value
 
 $$ \begin{equation} \approx \frac{2\beta^2}{n}\sum_i \partial_{x_ix_i}\Phi(q,x_i) = \frac{2\beta^2}{n}\mathsf{Tr}[D'^{-1}(q,\sigma)]\, , \end{equation}$$
 
-where we use the fact that whenever $$\partial_{xx}\Phi(t,x) > 0 $$, its reciprocal is well-defined and equal to $$\partial_{yy} \Lambda(t,y) $$ when $$x $$ and $$y $$ satisfy the change of coordinates implied by FL duality (that is, they are critical points in their respective bases). This identity is called the [Crouzeix identity in convex analysis](), and is an important observation in working out the details of the primal Parisi theory ([1.3]())  as well as understanding the conceptual basis on which the free-probabilistic analysis of the TAP-corrected Hessian proceeds.
+where we use the fact that whenever $$\partial_{xx}\Phi(t,x) > 0 $$, its reciprocal is well-defined and equal to $$\partial_{yy} \Lambda(t,y) $$ when $$x $$ and $$y $$ satisfy the change of coordinates implied by FL duality (that is, they are critical points in their respective bases). This identity is called the [Crouzeix identity in convex analysis](https://link.springer.com/article/10.1007/BF01584350), and is an important observation in working out the details of the primal Parisi theory ([1.3]())  as well as understanding the conceptual basis on which the free-probabilistic analysis of the TAP-corrected Hessian proceeds.
 
 As it turns out, the desired value will be achieved in the _top-eigenspace_ of the TAP corrected Hessian (see [2.1]()) and, therefore, we will need an iterative argument where we can construct a covariance matrix $$Q^2(\sigma) $$, such that $$Q(\sigma) $$ smoothly projects into the top eigenspace of,
 
@@ -216,7 +216,7 @@ $$ \begin{equation} y = \partial_x \Phi(t,x) + \gamma x\,. \end{equation} $$
 
 Unfortunately, for $$\Lambda $$ itself, one obtains that $$\partial_y \Lambda = (\partial_x \Phi)^{-1} $$ which goes to $$\infty $$ when $$y > 1 $$ or $$y < -1 $$. This is the main reason for introducing the regularization.
 
-_Estimates for $$\Lambda $$_: We now focus on continuity estimates for $$\Lambda $$, which will be especially important in estimating how well $$\Lambda_\gamma $$ approximates the former in the solid cube (uniformly). To obtain these, we use a stochastic expression for $$\partial_x \Phi $$ (see [[Lemma 2.3, JSS24]()]) as an average over a function of the process $$X_t $$ that solves the AC SDE. This allows us to obtain regularity estimates for $$\partial_x \Phi(t,x) $$ and $$\partial_{xx} \Phi(t,x) $$ slightly more refined than those written down in the literature (see [[Proposition 2, AC15]](), [[JT16]](), [[Chapter-14.7, Tal11]]()). For accomplishing this, the idea is simple:
+_<u>Estimates for $$\Lambda $$</u>_: We now focus on continuity estimates for $$\Lambda $$, which will be especially important in estimating how well $$\Lambda_\gamma $$ approximates the former in the solid cube (uniformly). To obtain these, we use a stochastic expression for $$\partial_x \Phi $$ (see [[Lemma 2.3, JSS24]()]) as an average over a function of the process $$X_t $$ that solves the AC SDE. This allows us to obtain regularity estimates for $$\partial_x \Phi(t,x) $$ and $$\partial_{xx} \Phi(t,x) $$ slightly more refined than those written down in the literature (see [[Proposition 2, AC15]](), [[JT16]](), [[Chapter-14.7, Tal11]]()). For accomplishing this, the idea is simple:
 > Using the stochastic expression for $$\partial_x \Phi(t,x) = \mathbb{E}[\tanh(X_1)]$$ provided by [JT'16], wield Ito calculus with an application of Gronwall's inequality to bound the MGF of $$X_t $$. Then, use bounds for hyperbolic functions to sharpen the estimates from the literature.
 
 Using the coordinate change of $$y = \partial_x \Phi $$ and $$x = \partial_y \Lambda $$ one can transfer these bounds to the primal space and obtain Lipschitz estimates for $$\Lambda $$ itself, and these estimates are fairly tight around the corners $$-1 $$ and $$1 $$ [[Proposition 2.6, JSS24]](). For instance, using the coordinate transfer scheme in conjunction with the MGF bound strategy outlined above, we can show that
@@ -227,7 +227,7 @@ which tells us that the gradient of $$\Lambda $$ blows up logarithmically as $$y
 
 $$ \begin{equation} |\Lambda(t,y') - \Lambda(t,y)| \le \frac{1}{2}|y-y'|\left(\log\left(\frac{2}{|y - y'|}\right) + 1 + 8\beta^2(1-t)\right)\,. \end{equation} $$
 
-_Inf-convolution and convergence of $$\Lambda_\gamma \to \Lambda $$_: By definition, it is clear that $$\Lambda_\gamma = \Lambda $$ when $$\gamma = 0 $$. However, for the analysis, we need a quantitative estimate on the uniform convergence of the former to the latter. In doing this, we use the fact that, by definition, $$\Lambda_\gamma $$ is a convolution of the concave function $$-\gamma/2x^2$$ with the function $$\Phi $$ and, therefore, will obey an **inf-convolution** rule for FL duals. This, in conjunction with the continuity estimates for $$\Lambda $$ above, will allow us to obtain the desired quantitative uniform convergence estimates.
+_<u>Inf-convolution and convergence of $$\Lambda_\gamma \to \Lambda $$</u>_: By definition, it is clear that $$\Lambda_\gamma = \Lambda $$ when $$\gamma = 0 $$. However, for the analysis, we need a quantitative estimate on the uniform convergence of the former to the latter. In doing this, we use the fact that, by definition, $$\Lambda_\gamma $$ is a convolution of the concave function $$-\gamma/2x^2$$ with the function $$\Phi $$ and, therefore, will obey an **inf-convolution** rule for FL duals. This, in conjunction with the continuity estimates for $$\Lambda $$ above, will allow us to obtain the desired quantitative uniform convergence estimates.
 
 The _inf-convolution_ formula tells us that,
 
@@ -235,11 +235,20 @@ $$ \begin{equation} \Lambda_\gamma(t,y) = \inf_{y' \in [-1,1]} \left(\Lambda(t,y
 
 This is proved by noticing that since $$\partial_x \Phi $$ is strictly increasing in $$x $$, so is $$\partial_y \Lambda = (\partial_x \Phi)^{-1} $$; this implies that $$(y + \gamma \partial_y\Lambda(t,y)) $$ is also strictly increasing and so there is a unique point $$y' $$, such that, $$y' + \partial_y\Lambda(t,y') = y $$, which is a critical point of the function inside the infimum to minimize.
 
-The FL dual of a strictly convex function is strictly convex, and so the function inside the infimum is strictly convex with the point argued above as the unique minimizer. At this point one can use the coordinate change maps along with some algebra to conclude that the minimizer $$y' $$ is, in fact,
+At this point, substituting
 
-$$ \begin{equation} y' = y - \gamma\partial_y\Lambda_\gamma(t,y)\,. \end{equation} $$    
+$$ \begin{equation} y = y' + \gamma\partial_y\Lambda_\gamma(t,y)\,, \end{equation} $$    
 
-Now, using the modulus of continuity estimate for $$\Lambda $$ provided above in conjunction
+into the expression for $$\Lambda_\gamma = xy - \Phi_\gamma(t,x)$$ and some algebra concludes the inf-convolution formula. We now combine the inf-convolution formula with the uniform continuity estimates obtained for $$\Lambda $$ above to immediately conclude (with some algebra) that
+
+$$ \begin{equation} \Lambda - (1+4\beta^2)(2\beta^2\gamma)^{(4\beta^2)/(1+4\beta^2)}\le \Lambda_\gamma \le \Lambda\,, \end{equation}$$
+
+which will be a perfectly fine estimate for a choice of $$\gamma $$ that is exponentially small in $$\beta $$, and $$\beta = O(1/\epsilon) $$, with $$\epsilon > 0 $$ coming from the desired $$(1-\epsilon) $$-approximation ratio.
+
+At this point, we are ready to state the three main concluding results from this section:
+* The (smoothed) primal Parisi PDE and AC SDE in terms of $$\Lambda_\gamma $$,
+* The $$L^2 $$-distance between the processes generated by the AC SDE of $$\Lambda $$ and $$\Lambda_\gamma $$, and
+* Various estimates for the derivatives of $$\Lambda_\gamma $$ that are proved using the RPC representation for $$\Phi $$ that I will not discuss in this post[^4].  
 
 ## Proof Sketch
 
@@ -263,6 +272,6 @@ Now, using the modulus of continuity estimate for $$\Lambda $$ provided above in
 
 [^3]: When David, Jonathan and I were working on the project in the early days, we were thinking of this convex duality via the lens of mirror maps. It turns out that, because of the underlying convex duality, there is a connection to be made here through the information geometry of the underlying Hessian being akin to a (flat) Bregmannian manifold. However, this is beyond the scope of this post and something we are investigating in ongoing work.
 
-[^4]: In [this]() upcoming post, we introduce the Guerra-RSB bound and prove that it can be used to show that the Parisi Variaional Principle, represented as an appropriately parameterized RPC, can be used to upper bound the free energy density of the SK model. We will also introduce the famed _Ghirlanda-Guerra_ identities.
+[^4]: In a previous [post](https://juspreetsandhu.me/2022/02/08/the-sk-model-i#ruelle-probability-cascades), I described a _part_ of the RPC construction and the details afforded there are gentle and sufficient enough to understand the main ingredients in their construction, as well as their purpose. A slightly more detailed overview of the construction, along with how exactly the representation gets used in the [Hopf-Cole transform]() to solve the Parisi PDE for _atomic_ measures is provided in [[Appendix C, JSS24]](https://arxiv.org/pdf/2408.02360) and can be read by the interested reader. The estimates are proved between [[Lemma 2.12 & Lemma 2.13]](https://arxiv.org/pdf/2408.02360) and stated in [[Proposition 2.11]](https://arxiv.org/pdf/2408.02360).  
 
 [^5]: In [this]() upcoming post, we will introduce some fundamental properties that the RPC tree satisfies, and then derive an alternative representation of the Parisi Variational Principle which can be stated purely as an optimization of a functional whose random measure is supported over the leaves of a RPC tree.
