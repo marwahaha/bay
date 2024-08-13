@@ -13,9 +13,11 @@ Recently, [David](https://davidjekel.com/), [Jonathan](https://www.jshi.science/
 
 This work might seem somewhat opaque and technical to the broader TCS (and even probabilist) audience, so I have decided to write a **3-part** blog post explaining the background, motivation, proof structure and main technical innovations of this result, as well as its relationships to other works in the literature and the open questions it naturally induces.
 
-The goal is to guide a reader through this work, and a little bit through its ancestor work [[SS24]](https://arxiv.org/abs/2401.14383), focusing on the broader implications of this work and its relevance in the literature.    
+The goal is to guide a reader through this work, and a little bit through its ancestor work [[SS24]](https://arxiv.org/abs/2401.14383), focusing on the broader implications of this work and its relevance in the literature.  
 
-**<u>In a nutshell</u>**: [[JSS24]](https://arxiv.org/abs/2408.02360) introduces and analyzes a Hessian ascent algorithm for the SK model, the update rules of which are motivated (in part) to resolve a conjecture of Eliran Subag [[Sub18, Pg. 8, Ising Spins]](https://arxiv.org/abs/1812.04588). Subag gave an (essentially) equivalent algorithm for the same models on the sphere. Due to various technical reasons stemming from geometry, the analysis and conceptual understanding for the Hessian ascent algorithm on the cube is significantly more demanding than it is on the sphere.
+We begin by introducing relevant past work: the Sherrington-Kirkpatrick model and the Parisi formula and their analyses via the Auffinger-Chen stochastic differential equation (SDE) and the generalized TAP free energy. We then motivate the derivation of the algorithm from the generalized TAP free energy, and sketch the development of the _primal_ theory for the Parisi PDE (and Auffinger-Chen SDE) that is used heavily in the proofs of the two main statements. In later posts we will give a sketch of our proof that Hessian ascent maximizes the generalized TAP free energy and discuss connections and open questions.  
+
+**<u>The paper in a nutshell</u>**: [[JSS24]](https://arxiv.org/abs/2408.02360) introduces and analyzes a Hessian ascent algorithm for the SK model, the update rules of which are motivated (in part) to resolve a conjecture of Eliran Subag [[Sub18, Pg. 8, Ising Spins]](https://arxiv.org/abs/1812.04588). Subag gave an (essentially) equivalent algorithm for the same models on the sphere. Due to various technical reasons stemming from geometry, the analysis and conceptual understanding for the Hessian ascent algorithm on the cube is significantly more demanding than it is on the sphere.
 
 At a high-level, the algorithm is fairly simple:
 * Set the starting point $$\sigma_0 = (0,\dots,0), $$ and step-size $$\eta = \text{small} $$.
@@ -53,8 +55,6 @@ The details of what the "TAP corrected Hessian" of the SK model are will be intr
 
     The result on the Hessian ascent algorithm for the SK model does not, in and of itself, make any deep progress towards this goal. However, the derivation of the primal Parisi PDE and Auffinger-Chen SDE that ensue in this result give certain hints on how to use geometry to possibly generalize these PDEs to larger domains, and one can imagine that this might lead to a "guess" for generalized Parisi-type formulae.
 <br>
-
-We begin by introducing relevant past work: the Sherrington-Kirkpatrick model and the Parisi formula and their analyses via the Auffinger-Chen stochastic differential equation (SDE) and the generalized TAP free energy. We then motivate the derivation of the algorithm from the generalized TAP free energy, and sketch the development of the _primal_ theory for the Parisi PDE (and Auffinger-Chen SDE) that is used heavily in the proofs of the two main statements. In later posts we will give a sketch of our proof that Hessian ascent maximizes the generalized TAP free energy and discuss connections and open questions.
 
 #### Table of Contents
 1. [The Sherrington-Kirkpatrick Model](#the-sherrington-kirkpatrick-model)
