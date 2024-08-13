@@ -67,9 +67,9 @@ The details of what the "TAP corrected Hessian" of the SK model are will be intr
 
 ## The Sherrington-Kirkpatrick Model
 We briefly introduce the Sherrington-Kirkpatrick model as an optimization problem. We describe the expected limit of the optimal value, as a standard Gaussian concentration inequality implies that the value is extremely concentrated around its expectation. This limit exists almost-surely, and is captured by the famous Parisi formula at zero temperature. This formula has a long history in the statistical physics and probability theory literature (see [Bolthausen's overview of the proof of the Parisi formula]()) that we will not spend much time on in this post. For us, the critical facts are that:
-* The Parisi formula is a variational formula over certain measures, and that it is strictly convex over this space having a unique minimizer. Furthermore, one can efficiently find this minimizer since the variational formula is independent of $$n $$ (though, still infinite-dimensional, and requiring a clever technique of [[JT16]]()).
+* The Parisi formula is a variational formula over certain measures, and that it is strictly convex over this space having a unique minimizer. Furthermore, one can efficiently find this minimizer since the variational formula is independent of $$n $$ (though, still infinite-dimensional, and requiring a clever technique of [[JT16]](https://arxiv.org/abs/1502.04398)).
 * The Parisi formula can be rewritten in terms of an optimal stochastic control problem, and this rewrite is called the Auffinger-Chen representation. It essentially says that the Parisi formula is given by the (expected) value of a certain function, evaluated over a _specific_ Ito drift-diffusion process, plus a quadratic variation correction term.
-* There is (yet) another alternative representation for the Parisi formula which _extends_ into the interior of the solution domain. This quantity, developed rigorously and systematically by Subag [[Sub18]]() for the sphere, and then again by Chen, Panchenko and Subag [[CPS18]]() for the cube, is the heart of the algorithmic design principle mentioned above. In fact, Subag is able to use the ideas related to this representation to give a derivation of the Parisi formula on the sphere (known as the Crisanti-Sommers formula) from _first principles_. Unfortunately, this is (seemingly) not quite yet in reach for the cube. Nonetheless, there is remarkable structural similarity between the generalized TAP equation on the sphere and the cube in the way of its component terms, and this is enough to demonstrate how Subag's conjecture about step-wise optimization on the cube and our resolution of it follow naturally from this equation.
+* There is (yet) another alternative representation for the Parisi formula which _extends_ into the interior of the solution domain. This quantity, developed rigorously and systematically by Subag [[Sub18]](https://arxiv.org/abs/1804.10576) for the sphere, and then again by Chen, Panchenko and Subag [[CPS18]](https://arxiv.org/abs/1812.05066v2) for the cube, is the heart of the algorithmic design principle mentioned above. In fact, Subag is able to use the ideas related to this representation to give a derivation of the Parisi formula on the sphere (known as the Crisanti-Sommers formula) from _first principles_. Unfortunately, this is (seemingly) not quite yet in reach for the cube. Nonetheless, there is remarkable structural similarity between the generalized TAP equation on the sphere and the cube in the way of its component terms, and this is enough to demonstrate how Subag's conjecture about step-wise optimization on the cube and our resolution of it follow naturally from this equation.
 <br>
 
 
@@ -97,7 +97,7 @@ These observations suggest that, somehow, the Parisi formula is rewriting the (a
 
     and doing this requires getting a Parisi-like PDE, but in the space _dual_ to $$x $$. For technical reasons, we will actually look at $$\int \partial_t \Lambda_\gamma dt $$, where $$\Lambda_\gamma $$ is a $$\gamma $$-regularized version of the FL dual to $$\Phi $$ (see [(1.3)]()). This requires writing a PDE in this dual space, but for a FL dual for a function $$\Phi_\gamma $$ which is a "smoothening" of $$\Phi $$.
 
-We will revisit this point in the [1.3](#a-primal-theory-for-the-parisi-pde-via-convex-duality). For now, we just conclude by precisely stating how the Parisi formula gives the limiting optimal value for our Hamiltonian of interest:
+We will revisit this point in the [(1.3)](#a-primal-theory-for-the-parisi-pde-via-convex-duality). For now, we just conclude by precisely stating how the Parisi formula gives the limiting optimal value for our Hamiltonian of interest:
 
 $$ \begin{equation} \lim_{n \to \infty}\frac{1}{n}\mathbb{E}\left[\max_{\sigma \in \{-1,1\}^n} H(\sigma)\right] = \lim_{\beta \to \infty} \frac{1}{\beta} \inf_{\mu} P_\beta(\mu)\,. \end{equation} $$
 
@@ -157,7 +157,7 @@ analogous to what is given in [[Eq. 1.27, CPS18]](https://arxiv.org/abs/1812.050
 
 $$ \begin{equation}  \left(\beta A - \left(2\beta^2\int_q^1 \mu(t)dt\right)\mathsf{Id}\right)\sigma = \left(\partial_{\sigma_1}\Lambda(q,\sigma_1),\dots,\partial_{\sigma_n}\Lambda(q,\sigma_n)\right)\,, \end{equation} $$
 
-where $$q = \frac{1}{n}\|\sigma\|^2_2 $$. The representation above is equivalent to [[Remark 6, CPS18]](). Now comes the crucial part: We would like to have an algorithm that follows small (orthogonal) updates, such that, _every_ point is a critical point along the path. This means that we _must_ actually proceed in a direction where the Hessian of the TAP equation (projected orthogonal to the current location) is zero. Equivalently, we must stay in the kernel of the Hessian projected orthogonal to the current iterate.
+where $$q = \frac{1}{n}\|\sigma\|^2_2 $$. The representation above is equivalent to [[Remark 6, CPS18]](https://arxiv.org/abs/1812.05066v2). Now comes the crucial part: We would like to have an algorithm that follows small (orthogonal) updates, such that, _every_ point is a critical point along the path. This means that we _must_ actually proceed in a direction where the Hessian of the TAP equation (projected orthogonal to the current location) is zero. Equivalently, we must stay in the kernel of the Hessian projected orthogonal to the current iterate.
 
 After taking the gradient of the above equation, applying chain rule, using the FL duality rewrites, and discarding terms that are rank-$$1 $$ or along the current iterate ($$\sigma $$), we arrive at the fact that the update $$\Delta \sigma $$ must satisfy the following condition vis-a-vis the Hessian of the TAP equation,
 
@@ -173,7 +173,7 @@ $$ \begin{equation} \approx \frac{2\beta^2}{n}\sum_i \partial_{x_ix_i}\Phi(q,x_i
 
 where we use the fact that whenever $$\partial_{xx}\Phi(t,x) > 0 $$, its reciprocal is well-defined and equal to $$\partial_{yy} \Lambda(t,y) $$ when $$x $$ and $$y $$ satisfy the change of coordinates implied by FL duality (that is, they are critical points in their respective bases). This identity is called the [Crouzeix identity in convex analysis](https://link.springer.com/article/10.1007/BF01584350), and is an important observation in working out the details of the primal Parisi theory ([1.3]())  as well as understanding the conceptual basis on which the free-probabilistic analysis of the TAP-corrected Hessian proceeds.
 
-As it turns out, the desired value will be achieved in the _top-eigenspace_ of the TAP corrected Hessian (see [2.1]()) and, therefore, we will need an iterative argument where we can construct a covariance matrix $$Q^2(\sigma) $$, such that $$Q(\sigma) $$ smoothly projects into the top eigenspace of,
+As it turns out, the desired value will be achieved in the _top-eigenspace_ of the TAP corrected Hessian (see [(2.1)](https://juspreetsandhu.me/2024/08/08/hessian-ascent-for-the-sk-model-ii)) and, therefore, we will need an iterative argument where we can construct a covariance matrix $$Q^2(\sigma) $$, such that $$Q(\sigma) $$ smoothly projects into the top eigenspace of,
 
 $$ \begin{equation} \text{TAP-corrected Hessian} = 2\beta A_{\text{sym}} - D'(q,\sigma) \overset{d}{=} \sqrt{2}\beta\,\mathsf{GOE}(n) - D'(q,\sigma)\,. \end{equation} $$
 
@@ -185,7 +185,7 @@ which will in-turn require a re-normalization of $$D'(t,\sigma) $$. To have this
 
 $$ \begin{equation} D(t,\sigma) = \left(\frac{2\beta^2}{n}\sum_{i \in [n]}\partial_{\sigma_i,\sigma_i}\Lambda(t,\sigma_i)^{-2}\right)^{1/2}D'(t,\sigma)\,. \, \end{equation} $$
 
-It will be shown in [(2.1)]() that this is the right scaling to obtain the desired eigenvalue in the top-eigenspace of $$2\beta A_{\text{sym}} - D'(t,\sigma) $$. Having achieved an understanding of what space we want to project to at every step, the remaining critical task is to arrange the (efficient) construction of a matrix $$Q(\sigma) $$ that projects into this top eigenspace _and_ has diagonal entries that behave roughly like $$D'(t,\sigma)^{-2} $$. You may (correctly) inquire:
+It will be shown in [(2.1)](https://juspreetsandhu.me/2024/08/08/hessian-ascent-for-the-sk-model-ii) that this is the right scaling to obtain the desired eigenvalue in the top-eigenspace of $$2\beta A_{\text{sym}} - D'(t,\sigma) $$. Having achieved an understanding of what space we want to project to at every step, the remaining critical task is to arrange the (efficient) construction of a matrix $$Q(\sigma) $$ that projects into this top eigenspace _and_ has diagonal entries that behave roughly like $$D'(t,\sigma)^{-2} $$. You may (correctly) inquire:
 > Why must the diagonal entries of square-root of the covariance matrix behave akin to $$D(t,\sigma)^{-2} $$?
 
 The answer is that without this arrangement, we will not be able to demonstrate that the empirical distribution of the coordinates of
@@ -194,7 +194,7 @@ $$ \begin{equation} \sigma_{k+1} = \sigma_k + \eta^{1/2}Q(\sigma_k)w\,,\,\,\, w 
 
 converges to the primal version of the AC SDE that we desire, where $$\sigma_k $$ is a critical point (and having empirical coordinate distribution sufficiently close to the primal AC SDE itself). Without this, various points in the analysis remain intractable (including the two points mentioned in the [(1.1)]()).
 
-Consequently, in [(2.2)]() we will show that given that the update comes from an (appropriately rescaled) eigenvector in the top-eigenspace of the TAP-corrected Hessian, the empirical distribution of the coordinates of its iterates will converge (in Wasserstein-$$2 $$ distance) to the _primal_ version of the AC SDE (with high probability).
+Consequently, in [(2.2)](https://juspreetsandhu.me/2024/08/08/hessian-ascent-for-the-sk-model-ii) we will show that given that the update comes from an (appropriately rescaled) eigenvector in the top-eigenspace of the TAP-corrected Hessian, the empirical distribution of the coordinates of its iterates will converge (in Wasserstein-$$2 $$ distance) to the _primal_ version of the AC SDE (with high probability).
 
 At this point, it then remains for us to demonstrate the following inductive steps:
 1. Under the condition that $$(2\beta^2)/n \mathsf{Tr}[D^{-2}(t,\sigma)] = 1 $$, we can (efficiently) compute a matrix $$Q(\sigma) $$ which projects into the top-eigenspace of $$2\beta\,A_{\text{sym}} - D(t,\sigma) $$ with diagonals that are $$\approx D(t,\sigma)^{-2} $$ (see [2.1]()) to choose the update $$\Delta\sigma := \sqrt{\eta}\,Q(\sigma)w$$ with $$w \sim \mathcal{N}(0, \mathsf{Id}_n) $$, and
@@ -212,7 +212,7 @@ We begin by stating the definition of $$\Lambda_\gamma $$,
 
 $$ \begin{equation} \Lambda_\gamma(t,y) = \sup_{x \in \mathbb{R}}\left(xy - \Phi_\gamma(t,x)\right) = \sup_{x \in \mathbb{R}}\left(xy - \Phi(t,x) - \frac{\gamma}{2}x^2\right)\,. \end{equation} $$
 
-By similar convex analytic reasons as the ones hinted at in [[1.2]](), we have that,
+By similar convex analytic reasons as the ones hinted at in [(1.2)](#the-generalized-tap-free-energy), we have that,
 
 $$ \begin{equation} \partial_y\Lambda_\gamma = \partial_x\Phi_\gamma^{-1} = \left(\partial_x \Phi + \gamma x\right)^{-1}\,, \end{equation} $$
 
@@ -222,7 +222,7 @@ $$ \begin{equation} y = \partial_x \Phi(t,x) + \gamma x\,. \end{equation} $$
 
 Unfortunately, for $$\Lambda $$ itself, one obtains that $$\partial_y \Lambda = (\partial_x \Phi)^{-1} $$ which goes to $$\infty $$ when $$y > 1 $$ or $$y < -1 $$. This is the main reason for introducing the regularization.
 
-_<u>Estimates for </u>$$\Lambda $$_: We now focus on continuity estimates for $$\Lambda $$, which will be especially important in estimating how well $$\Lambda_\gamma $$ approximates the former in the solid cube (uniformly). To obtain these, we use a stochastic expression for $$\partial_x \Phi $$ (see [[Lemma 2.3, JSS24]()]) as an average over a function of the process $$X_t $$ that solves the AC SDE. This allows us to obtain regularity estimates for $$\partial_x \Phi(t,x) $$ and $$\partial_{xx} \Phi(t,x) $$ slightly more refined than those written down in the literature (see [[Proposition 2, AC15]](), [[JT16]](), [[Chapter-14.7, Tal11]]()). For accomplishing this, the idea is simple:
+_<u>Estimates for </u>$$\Lambda $$_: We now focus on continuity estimates for $$\Lambda $$, which will be especially important in estimating how well $$\Lambda_\gamma $$ approximates the former in the solid cube (uniformly). To obtain these, we use a stochastic expression for $$\partial_x \Phi $$ (see [[Lemma 2.3, JSS24](https://arxiv.org/pdf/2408.02360)]) as an average over a function of the process $$X_t $$ that solves the AC SDE. This allows us to obtain regularity estimates for $$\partial_x \Phi(t,x) $$ and $$\partial_{xx} \Phi(t,x) $$ slightly more refined than those written down in the literature (see [[Proposition 2, AC15]](https://arxiv.org/pdf/1402.5132), [[JT16]](https://arxiv.org/abs/1502.04398), [[Chapter-14.7, Tal11]](https://link.springer.com/book/10.1007/978-3-642-22253-5)). For accomplishing this, the idea is simple:
 > Using the stochastic expression for $$\partial_x \Phi(t,x) = \mathbb{E}[\tanh(X_1)]$$ provided by [JT'16], wield Ito calculus with an application of Gronwall's inequality to bound the MGF of $$X_t $$. Then, use bounds for hyperbolic functions to sharpen the estimates from the literature.
 
 Using the coordinate change of $$y = \partial_x \Phi $$ and $$x = \partial_y \Lambda $$ one can transfer these bounds to the primal space and obtain Lipschitz estimates for $$\Lambda $$ itself, and these estimates are fairly tight around the corners $$-1 $$ and $$1 $$ [[Proposition 2.6, JSS24]](). For instance, using the coordinate transfer scheme in conjunction with the MGF bound strategy outlined above, we can show that
@@ -262,10 +262,10 @@ Using the Crouzeix identity, the coordinate transforms implied by the FL duality
 
 $$ \begin{equation} \partial_t \Lambda_\gamma(t,y) = \beta^2\left(\frac{1}{\partial_{y,y}\Lambda_\gamma(t,y)} - \gamma + \mu(t)\left(y - \gamma \partial_y \Lambda(t,y)\right)^2\right)\end{equation}\,. $$
 
-Recall that in [(1.1)]() we mentioned that it would be critical to understand the term $$\int_{t'}^{t'+\Delta t}\partial_t\Lambda(t,y)dt $$. Using the PDE above, we can express the time derivative above in terms of the spatial derivatives, and this will be important in the Taylor expansion analysis that bounds the fluctuations of the modified objective function at each step. In fact, in the Taylor expansion analysis, we will isolate the RHS of the PDE into three components:
-* The first will consist of the $$\frac{1}{\partial_{y,y}\Lambda_\gamma(t,y)} $$ term, and this will be a critical factor in terms of its interaction with the Hessian term (as we also saw in [(1.1)]()).
+Recall that in [(1.1)](#the-parisi-formula-and-auffinger-chen-representation) we mentioned that it would be critical to understand the term $$\int_{t'}^{t'+\Delta t}\partial_t\Lambda(t,y)dt $$. Using the PDE above, we can express the time derivative above in terms of the spatial derivatives, and this will be important in the Taylor expansion analysis that bounds the fluctuations of the modified objective function at each step. In fact, in the Taylor expansion analysis, we will isolate the RHS of the PDE into three components:
+* The first will consist of the $$\frac{1}{\partial_{y,y}\Lambda_\gamma(t,y)} $$ term, and this will be a critical factor in terms of its interaction with the Hessian term (as we also saw in [(1.1)](#the-parisi-formula-and-auffinger-chen-representation)).
 * The second will consist of just $$\gamma $$, and if $$\Delta t$$ is sufficiently small (along with $$\gamma $$ itself being small), this will simply be a small error term at each time step.
-* The third and final term will be handled, as also mentioned in [(1.1)](), using convergence of the iterates to the primal AC SDE and shown to be sufficiently small at every step.
+* The third and final term will be handled, as also mentioned in [(1.1)](#the-parisi-formula-and-auffinger-chen-representation), using convergence of the iterates to the primal AC SDE and shown to be sufficiently small at every step.
 
 Using a bit of Ito calculus, as is done in [[Proposition 2.10, JSS24]](https://arxiv.org/pdf/2408.02360), the following primal AC SDEs for $$\Lambda $$ and $$\Lambda_\gamma $$ are obtained,
 
@@ -287,25 +287,11 @@ and the spatial and temporal Lipschitz estimates for the driver of the "smoothed
 
 $$ \begin{equation}|\partial_y\left(\frac{1}{\partial_{y,y}\Lambda}\right)| \le 2\,,\,|\partial_t\left(\frac{1}{\partial_{y,y}\Lambda(t,y)}\right)| \le 14\beta^2 \,.\end{equation} $$
 
-These estimates are stated with careful formal precision in [[Proposition 2.11, JSS24]()]
-
-## Proof Sketch
-
-### Spectral properties of the TAP-corrected Hessian
-
-### Empirical distribution of the coordinates of the iterates
-
-### Fluctuations of the generalized TAP free energy under fRSB
-
-## Connections via HES SoS Hierarchy and Geometry
-
-### Unified high-entropy process certificates
-
-### Generalizing the Parisi theory in primal space
+These estimates are stated with careful formal precision in [[Proposition 2.11, JSS24](https://arxiv.org/pdf/2408.02360)] and rely primarily on the representation of $$\Phi $$ using the RPCs, and working with the polynomial representations induced by them.
 
 #### FOOTNOTES
 
-[^1]: The main contribution of [[SS24]]() is the introduction of a new hierarchy over HES processes, and the hierarchy is termed the HES SoS hierarchy. The reason for choosing these processes is many-fold, and is explained in the paper's introduction. However, in large part, this paper was born out of the desire to understand what exactly made the _search_ problem of finding near-optima of spin-glasses significantly easier than the _certification_ problem.
+[^1]: The main contribution of [[SS24]](https://arxiv.org/abs/2401.14383) is the introduction of a new hierarchy over HES processes, and the hierarchy is termed the HES SoS hierarchy. The reason for choosing these processes is many-fold, and is explained in the paper's introduction. However, in large part, this paper was born out of the desire to understand what exactly made the _search_ problem of finding near-optima of spin-glasses significantly easier than the _certification_ problem.
 
 [^2]: The fRSB condition is an imposition on the support of the probability measure induced by $$\mu $$ that optimizes the Parisi formula $$P_\beta(\mu) $$. It states that the density associated with $$\mu $$ is fully-supported in a sub-interval $$[0, q^*_\beta] $$. Equivalently, $$\mu $$ is strictly increasing in $$[0, q^*_\beta] $$.
 
@@ -313,4 +299,4 @@ These estimates are stated with careful formal precision in [[Proposition 2.11, 
 
 [^4]: In a previous [post](https://juspreetsandhu.me/2022/02/08/the-sk-model-i#ruelle-probability-cascades), I described a _part_ of the RPC construction and the details afforded there are gentle and sufficient enough to understand the main ingredients in their construction, as well as their purpose. A slightly more detailed overview of the construction, along with how exactly the representation gets used in the [Hopf-Cole transform]() to solve the Parisi PDE for _atomic_ measures is provided in [[Appendix C, JSS24]](https://arxiv.org/pdf/2408.02360) and can be read by the interested reader. The estimates for the derivatives are proved between [[Lemma 2.12 & Lemma 2.13, JSS24]](https://arxiv.org/pdf/2408.02360) and stated in [[Proposition 2.11, JSS24]](https://arxiv.org/pdf/2408.02360).  
 
-[^5]: For converting Lipschitz bounds into estimates of how much error propagates over a period of time, [Gronwall's inequality]() is an indispensable tool that we use in Sections 2 & 5 of the paper. The comination of Ito's lemma & Gronwall's inequality allows us to, in fact, more or less have a mechanistic procedure for converting Lipschitz estimates into error bounds of various sorts.
+[^5]: For converting Lipschitz bounds into estimates of how much error propagates over a period of time, [Gronwall's inequality](https://en.wikipedia.org/wiki/Gr%C3%B6nwall%27s_inequality) is an indispensable tool that we use in Sections 2 & 5 of the paper. The combination of Ito's lemma & Gronwall's inequality allows us to, in fact, more or less have a mechanistic procedure for converting Lipschitz estimates into error bounds of various sorts.
