@@ -277,11 +277,11 @@ _<u>Derivative estimates</u>_: We now conclude the first post with a small state
 
 The spatial derivatives are bounded as,
 
-$$ \begin{equation} \frac{1}{1+\gamma} \le \partial_{y,y}\Lambda \le \frac{1}{\gamma}\,,\,|\partial_{y,y,y}\Lambda| \le \frac{2}{\gamma^2} \,,\end{equation} $$
+$$ \begin{equation} \frac{1}{1+\gamma} \le \partial_{y,y}\Lambda_\gamma \le \frac{1}{\gamma}\,,\,|\partial_{y,y,y}\Lambda_\gamma| \le \frac{2}{\gamma^2} \,,\end{equation} $$
 
 and the spatial and temporal Lipschitz estimates for the driver of the "smoothed" primal AC SDE are,
 
-$$ \begin{equation}|\partial_y\left(\frac{1}{\partial_{y,y}\Lambda}\right)| \le 2\,,\,|\partial_t\left(\frac{1}{\partial_{y,y}\Lambda(t,y)}\right)| \le 14\beta^2 \,.\end{equation} $$
+$$ \begin{equation}|\partial_y\left(\frac{1}{\partial_{y,y}\Lambda_\gamma}\right)| \le 2\,,\,|\partial_t\left(\frac{1}{\partial_{y,y}\Lambda_\gamma}\right)| \le 14\beta^2 \,.\end{equation} $$
 
 These estimates are stated with careful formal precision in [[Proposition 2.11, JSS24](https://arxiv.org/pdf/2408.02360)] and rely primarily on the representation of $$\Phi $$ using the RPCs, and working with the polynomial representations induced by them.
 
