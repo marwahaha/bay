@@ -31,5 +31,14 @@ $on-laptop: 800px;
   }
 }
 
+// Margins and stuff, courtesy Jonathan.
+div.post {
+max-width: 85ch;
+  padding: 3em 1em;
+  margin: auto;
+  line-height: 1.50;
+  font-size: 1.25em;
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "base", "layout", "site", "work", "blog", "post", "404";
