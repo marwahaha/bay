@@ -13,10 +13,7 @@ Recently, [David](https://davidjekel.com/), [Jonathan](https://www.jshi.science/
 
 This work might seem somewhat opaque and technical to the broader TCS (and even probabilist) audience, so I have decided to write a **3-part** blog post explaining the background, motivation, proof structure and main technical innovations of this result, as well as its relationships to other works in the literature and the open questions it naturally induces.
 
-The goal is to guide a reader through this work, and a little bit through its ancestor work [[SS24]](https://arxiv.org/abs/2401.14383), focusing on the broader implications of this work and its relevance in the literature. Here is the rough plan for each blog post:
-1. [Part-1](https://juspreetsandhu.me/2024/08/08/hessian-ascent-for-the-sk-model-i): We motivate the construction of the algorithm, introduce the relevant background, and given a systematic derivation from which the design of the algorithm falls out. We then spend some time introducing and reviewing the development of a _primal_ theory for the relevant analytic toolkit that is used heavily in the analysis of the algorithm.
-2. [Part-2](https://juspreetsandhu.me/2024/08/08/hessian-ascent-for-the-sk-model-ii): As becomes clear by the end of the first blog post, there are two main technical statements that we need to prove to analyze the performance of the algorithm. In this blog post, we use the _primal_ theory developed prior to map out the proof sketches for both these statements. The analysis is mathematically rich and insightful, using ideas from free probability, convergence of empirical distributions and the analysis of SDEs.
-3. [Part-3](https://juspreetsandhu.me/2024/08/08/hessian-ascent-for-the-sk-model-iii):    
+The goal is to guide a reader through this work, and a little bit through its ancestor work [[SS24]](https://arxiv.org/abs/2401.14383), focusing on the broader implications of this work and its relevance in the literature.    
 
 **<u>In a nutshell</u>**: [[JSS24]](https://arxiv.org/abs/2408.02360) introduces and analyzes a Hessian ascent algorithm for the SK model, the update rules of which are motivated (in part) to resolve a conjecture of Eliran Subag [[Sub18, Pg. 8, Ising Spins]](https://arxiv.org/abs/1812.04588). Subag gave an (essentially) equivalent algorithm for the same models on the sphere. Due to various technical reasons stemming from geometry, the analysis and conceptual understanding for the Hessian ascent algorithm on the cube is significantly more demanding than it is on the sphere.
 
@@ -57,19 +54,14 @@ The details of what the "TAP corrected Hessian" of the SK model are will be intr
     The result on the Hessian ascent algorithm for the SK model does not, in and of itself, make any deep progress towards this goal. However, the derivation of the primal Parisi PDE and Auffinger-Chen SDE that ensue in this result give certain hints on how to use geometry to possibly generalize these PDEs to larger domains, and one can imagine that this might lead to a "guess" for generalized Parisi-type formulae.
 <br>
 
+We begin by introducing relevant past work: the Sherrington-Kirkpatrick model and the Parisi formula and their analyses via the Auffinger-Chen stochastic differential equation (SDE) and the generalized TAP free energy. We then motivate the derivation of the algorithm from the generalized TAP free energy, and sketch the development of the _primal_ theory for the Parisi PDE (and Auffinger-Chen SDE) that is used heavily in the proofs of the two main statements. In later posts we will give a sketch of our proof that Hessian ascent maximizes the generalized TAP free energy and discuss connections and open questions.
+
 #### Table of Contents
 1. [The Sherrington-Kirkpatrick Model](#the-sherrington-kirkpatrick-model)
    * [The Parisi formula and Auffinger-Chen Representation](#the-parisi-formula-and-auffinger-chen-representation)
    * [The generalized TAP free energy](#the-generalized-tap-free-energy)
    * [A primal theory for the Parisi PDE via convex duality](#a-primal-theory-for-the-parisi-pde-via-convex-duality)
-2. [Proof Sketch](#proof-sketch)
-    * [Spectral properties of the TAP-corrected Hessian](#spectral-properties-of-tap-corrected-hessian)
-    * [Empirical distribution of the coordinates of the iterates](#empirical-distribution-of-the-coordinates-of-the-iterates)
-    * [Fluctuations of the generalized TAP free energy under fRSB](#fluctuations-of-the-generalized-tap-free-energy-under-frsb)
-3. [Connections via HES SoS Hierarchy and Geometry](#connections-via-hes-sos-hierarchy-and-geometry)
-    * [Unified high-entropy process certificates](#unified-high-entropy-process-certificates)
-    * [Generalizing the Parisi theory in primal space](#generalizing-the-parisi-theory-in-primal-space)
-4. [Footnotes](#footnotes)
+2. [Footnotes](#footnotes)
 <br>
 
 ## The Sherrington-Kirkpatrick Model
