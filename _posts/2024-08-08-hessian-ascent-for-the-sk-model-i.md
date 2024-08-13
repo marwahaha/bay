@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Hessian Ascent for the SK Model"
+title:  "Hessian Ascent for the SK Model I"
 date:   2024-08-08 11:15:40
 blurb: "Optimizing the SK model via free probability and convex duality"
 og_image: /assets/img/content/post-example/Banner.jpg
