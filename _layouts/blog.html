@@ -1,3 +1,10 @@
+---
+my_array:
+  - Paper Expositions
+  - Probability, Spin Glasses and Complex Analysis
+  - Operator Algebras, Groups and Representations
+---
+
 <!DOCTYPE html>
 <html>
   {% include head.html %}
@@ -12,8 +19,7 @@
           {{ content }}
 
           <p class="blog-post-list">
-            {% assign sections = ["Paper Expositions", "Probability, Spin Glasses and Complex Analysis", "Operator Algebras, Groups and Representations"] %}
-            {% for section in sections %}
+            {% for section in page.my_array %}
               {% for post in site.posts %}
               
                 <span class=“blog-category”>{{ section }}</span>
