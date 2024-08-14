@@ -176,7 +176,7 @@ The answer is that without this arrangement, we will not be able to demonstrate 
 
 $$ \begin{equation} \sigma_{k+1} = \sigma_k + \eta^{1/2}Q(\sigma_k)w\,,\,\,\, w \sim \mathcal{N}(0,\mathsf{Id})\, , \end{equation} $$
 
-converges to the primal version of the AC SDE that we desire, where $$\sigma_k $$ is a critical point (and having empirical coordinate distribution sufficiently close to the primal AC SDE itself). Without this, various points in the analysis remain intractable (including the two points mentioned in the [(1.1)]()).
+converges to the primal version of the AC SDE that we desire, where $$\sigma_k $$ is a critical point (and having empirical coordinate distribution sufficiently close to the primal AC SDE itself). Without this, the computation of certain quantities that are critical to the analysis, such as those mentioned in [(1.1)](#the-parisi-formula-and-auffinger-chen-representation), remains intractable.
 
 Consequently, in [(2.2)](https://juspreetsandhu.me/2024/08/08/hessian-ascent-for-the-sk-model-ii) we will show that given that the update comes from an (appropriately rescaled) eigenvector in the top-eigenspace of the TAP-corrected Hessian, the empirical distribution of the coordinates of its iterates will converge (in Wasserstein-$$2 $$ distance) to the _primal_ version of the AC SDE (with high probability).
 
