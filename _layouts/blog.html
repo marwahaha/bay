@@ -1,3 +1,10 @@
+---
+my_array:
+  - Paper Expositions
+  - Probability, Spin Glasses and Complex Analysis
+  - Operator Algebras, Groups and Representations
+---
+
 <!DOCTYPE html>
 <html>
   {% include head.html %}
@@ -12,17 +19,25 @@
           {{ content }}
 
           <p class="blog-post-list">
-            {% for post in site.posts %}
-
-              {% if post.draft != true %}
-                <span class="blog-post-date">{{ post.date | date: "%-m/%-d/%y" }}</span>
-                <a href="{{ post.url | replace:".html","" | prepend: site.baseurl }}" class="blog-post-title">
-                  {{ post.title }}
-                </a>
-                <br />
-
-              {% endif %}
-
+            {% for section in layout.my_array %}
+              <span class="blog-category">{{ section }}</span>
+              <ul class="blog-category-list" style="list-style-type:none"> 
+              {% for post in site.posts %}
+              
+                {% if post.section == section %}
+                  <li class="blog-post-list"> {% if post.draft != true %}
+                  <span class="blog-post-date">{{ post.date | date: "%-m/%-d/%y" }}</span>
+                  <a href="{{ post.url | replace:".html","" | prepend: site.baseurl }}" class="blog-post-title">
+                    {{ post.title }}
+                  </a>{% endif %}
+                  </li>
+        
+                {% endif %}
+                
+              {% endfor %}
+              </ul>
+              <br/>
+          
             {% endfor %}
           </p>
         </div>
