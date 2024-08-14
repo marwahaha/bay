@@ -91,7 +91,7 @@ These observations suggest that, somehow, the Parisi formula is rewriting the (a
 
     $$ \begin{equation} \int_{t'}^{t' + \Delta t'}\partial_t \Lambda(t,\sigma_t)dt\,,\end{equation} $$
 
-    where $$\Lambda $$ is the FL dual to $$\Phi $$. This requires getting a Parisi-like PDE, but in the space _dual_ to $$x $$. For technical reasons, we will actually look at $$\int \partial_t \Lambda_\gamma dt $$, where $$\Lambda_\gamma $$ is a $$\gamma $$-regularized version of the FL dual to $$\Phi $$ (see [(1.3)]()). This requires writing a PDE in this dual space, but for a FL dual for a function $$\Phi_\gamma $$ which is a "smoothening" of $$\Phi $$.
+    where $$\Lambda $$ is the FL dual to $$\Phi $$. This requires getting a Parisi-like PDE, but in the space _dual_ to $$x $$. For technical reasons, we will actually look at $$\int \partial_t \Lambda_\gamma dt $$, where $$\Lambda_\gamma $$ is a $$\gamma $$-regularized version of the FL dual to $$\Phi $$ (see [(1.3)]()). This requires writing a PDE in this "dual" space, but for a FL dual for a function $$\Phi_\gamma $$ which is a "smoothening" of $$\Phi $$.
 
 We will revisit this point in [(1.3)](#a-primal-theory-for-the-parisi-pde-via-convex-duality). For now, we just conclude by precisely stating how the Parisi formula gives the limiting optimal value for our Hamiltonian of interest:
 
