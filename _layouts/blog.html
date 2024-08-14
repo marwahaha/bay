@@ -19,17 +19,16 @@
                 <ul class=“blog-category-list”>
                 {% if post.section == section %}
                   <li> <{% if post.draft != true %}
-                <span class="blog-post-date">{{ post.date | date: "%-m/%-d/%y" }}</span>
-                <a href="{{ post.url | replace:".html","" | prepend: site.baseurl }}" class="blog-post-title">
-                  {{ post.title }}
-                </a></li>
+                  <span class="blog-post-date">{{ post.date | date: "%-m/%-d/%y" }}</span>
+                  <a href="{{ post.url | replace:".html","" | prepend: site.baseurl }}" class="blog-post-title">
+                    {{ post.title }}
+                  </a>< {% endif %}/li>
                 <br />
-
+                
                 {% endif %}
-                  {% endfor}
                 </ul>
                 
-              {% endfor}
+              {% endfor %}
 
             {% endfor %}
           </p>
