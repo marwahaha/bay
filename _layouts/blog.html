@@ -19,11 +19,11 @@ my_array:
           {{ content }}
 
           <p class="blog-post-list">
-            {% for section in page.my_array %}
+            {% for section in layout.my_array %}
+              <span class=“blog-category”>{{ section }}</span>
+              <ul class=“blog-category-list”>
               {% for post in site.posts %}
               
-                <span class=“blog-category”>{{ section }}</span>
-                <ul class=“blog-category-list”>
                 {% if post.section == section %}
                   <li> <{% if post.draft != true %}
                   <span class="blog-post-date">{{ post.date | date: "%-m/%-d/%y" }}</span>
@@ -31,12 +31,12 @@ my_array:
                     {{ post.title }}
                   </a>{% endif %}
                   </li>
-                <br/>
-                
+                  <br/>
+        
                 {% endif %}
-                </ul>
                 
               {% endfor %}
+              </ul>
 
             {% endfor %}
           </p>
