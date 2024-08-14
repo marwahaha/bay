@@ -22,7 +22,8 @@
                   <span class="blog-post-date">{{ post.date | date: "%-m/%-d/%y" }}</span>
                   <a href="{{ post.url | replace:".html","" | prepend: site.baseurl }}" class="blog-post-title">
                     {{ post.title }}
-                  </a>< {% endif %}/li>
+                  </a>{% endif %}
+                  </li>
                 <br/>
                 
                 {% endif %}
