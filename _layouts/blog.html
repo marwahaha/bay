@@ -12,7 +12,7 @@
           {{ content }}
 
           <p class="blog-post-list">
-            {% sections = ["Paper Expositions", "Probability, Spin Glasses and Complex Analysis", "Operator Algebras, Groups and Representations"] %}
+            {% assign sections = ["Paper Expositions", "Probability, Spin Glasses and Complex Analysis", "Operator Algebras, Groups and Representations"] %}
             {% for section in sections %}
               {% for post in site.posts %}
               
