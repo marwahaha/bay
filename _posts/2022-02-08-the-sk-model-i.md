@@ -1,5 +1,6 @@
 ---
 layout: post
+section: "Probability, Spin Glasses and Complex Analysis"
 title:  "The SK Model I"
 date:   2022-02-08 11:15:40
 blurb: "The Aizenman-Sims-Starr Representation & Ruelle Probability Cascades"

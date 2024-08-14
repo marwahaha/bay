@@ -1,5 +1,6 @@
 ---
 layout: post
+section: "Probability, Spin Glasses and Complex Analysis"
 title:  "The Parisi PDE"
 date:   2022-02-12 11:15:40
 blurb: "Gaussian Interpolation, The Heat Equation & Hopf-Cole Transformation"

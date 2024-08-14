@@ -1,5 +1,6 @@
 ---
 layout: post
+section: "Operator Algebras, Groups and Representations"
 title:  "Representations of Finite Groups and Character Theory"
 date:   2023-11-14 11:15:40
 blurb: "Irreducible representations, Schur's orthogonality relations & Group Algebra"
