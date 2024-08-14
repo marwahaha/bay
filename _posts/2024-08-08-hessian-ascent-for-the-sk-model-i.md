@@ -137,7 +137,7 @@ and our choice of FL dual gives the following form for the TAP correction term,
 
 $$ \begin{equation} \mathsf{TAP}_{\text{emp}}(\sigma) = -\int \Lambda(t,\sigma) d(\text{emp}(\sigma)) - \beta^2\int_{\frac{1}{n}\|\sigma\|^2_2}^1 t\mu(t)dt\, , \end{equation} $$
 
-analogous to what is given in [[Eq. 1.27, CPS18]](https://arxiv.org/abs/1812.05066v2). The generalized TAP equation for mean-field spin glasses on the cube is introduced in [[Theorem 2, CPS18]](https://arxiv.org/abs/1812.05066v2). Using the explicit representation of the generalized TAP equation along with the facts about the FL duals above, some calculus yields that the critical points $$\sigma $$ satisfy the following eigenvector equation,
+analogous to what is given in [[Eq. 1.27, CPS18]](https://arxiv.org/abs/1812.05066v2). The generalized TAP equation for mean-field spin glasses on the cube is introduced in [[Theorem 2, CPS18]](https://arxiv.org/abs/1812.05066v2). Using the explicit representation of the generalized TAP equation along with the facts about the FL duals above, some calculus yields that the critical points $$\sigma $$ satisfy the following linear equation,
 
 $$ \begin{equation}  \left(\beta A - \left(2\beta^2\int_q^1 \mu(t)dt\right)\mathsf{Id}\right)\sigma = \left(\partial_{\sigma_1}\Lambda(q,\sigma_1),\dots,\partial_{\sigma_n}\Lambda(q,\sigma_n)\right)\,, \end{equation} $$
 
