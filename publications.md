@@ -55,13 +55,13 @@ preprints:
   paperlink: NA
   codelink: NA
 
-- title: Algorithms for a UGC-like Quantum Hamiltonian
+- title: A Quantum Unique-Games Hamiltonian
   authors: Zachary Jorquera, Alexandra Kolla, Steven Kordonowy, <u>Juspreet Singh Sandhu</u>, Stuart Wayland
   conference: In Preparation
   paperlink: NA
   codelink: NA
 
-- title: The Asymptotic Limit of the Random Permanent
+- title: Complex-valued Random Hamiltonians &amp; Gaussian Interpolation
   authors: Saeed Mehraban, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
