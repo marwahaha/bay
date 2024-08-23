@@ -13,7 +13,7 @@ This is the second blog past in a **3-part** series on a recent result [[JSS24]]
 
 A quick recap of what we accomplished in the first blog post:
 1. We briefly went over the various representations of the Parisi formula, and then derived the Hessian ascent algorithm from the generalized TAP free energy.
-2. We then motivated the two main statements we need to prove to demonstrate the success of our algorithm. We concluded by developing a _primal_ theory for the Parisi PDE and AC SDE, which will be quintessential in the proofs of these statements.
+2. We then motivated the two main statements we need to prove to demonstrate the success of our algorithm. We concluded by developing a _primal_ theory for the Parisi PDE and AC SDE, which will be quintessential in the proofs of the convergence of the .
 <br>
 
 #### Table of Contents
@@ -35,7 +35,7 @@ We proceed in chronological fashion, first giving a construction of $$Q $$ and s
 #### Projecting into the top-eigenspace
 To project into the top-part of the spectrum of $$\nabla^2 \mathsf{TAP} $$, we will create an operator whose eigenspectrum is subtracted from the (idealized) operator norm of $$\nabla^2 \mathsf{TAP} $$ and then inverted. Intuitively, this should make the large eigenvalues more important than the small eigenvalues, while preserving the eigenvectors. Sans normalization and a projection away from the current iterate $$\sigma_j $$, therefore, a candidate choice is,
 
-$$ \begin{equation} P(D)^2 := b\left(b^2\mathsf{Id} + (a(D) - (2\beta A_{sym} - D))\right)^{-1}\,, \end{equation} $$
+$$ \begin{equation} P(D)^2 := b\left(b^2\mathsf{Id} + (\widetilde{a(D)} - (2\beta A_{sym} - D))\right)^{-1}\,, \end{equation} $$
 
 where $$\widetilde{a(D)} $$ is (approximately) the maximum value of the spectrum of $$\sqrt{2}\beta S - D(j\eta,\sigma_j) $$, and $$S $$ is an operator whose empirical eigenspectrum is the semi-circular law. As we shall see, $$b $$ will be chosen to be sufficiently small (but non-zero). It is not hard to see that as $$b \to 0 $$, the eigenvalues farthest from $$a(D) $$ will receive the smallest weight, and the ones closest to $$\widetilde{a(D)} $$ will receive the largest. Two quick points:
 * This choice of $$\widetilde{a(D)} $$ implicitly suggests that we will compare $$2\beta A_{sym} $$ with $$\sqrt{2}\beta S $$; indeed, this is one of the key parts in the proof strategy.
