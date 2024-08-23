@@ -9,7 +9,7 @@ og_image: /assets/img/content/post-example/Banner.jpg
 
 [//]: # (<img src="{{ "/assets/img/content/post-example/Banner.jpg" | absolute_url }}" alt="bay" class="post-pic"/>)
 
-This is the second blog past in a **3-part** series on a recent result [[JSS24]]() by [David](), [Jonathan](https://jshi.science/) and me. The first blog post can be found [here]().
+This is the second blog past in a **3-part** series on a recent result [[JSS24]](https://arxiv.org/abs/2408.02360) by [David](https://davidjekel.com/), [Jonathan](https://jshi.science/) and me. The first blog post can be found [here]().
 
 A quick recap of what we accomplished in the first blog post:
 1. We briefly went over the various representations of the Parisi formula, and then derived the Hessian ascent algorithm from the generalized TAP free energy.
@@ -62,7 +62,6 @@ $$ \begin{equation} \frac{1}{n} \|P(D) -  \Pi_{\delta'}\left(2\beta A_{sym} - D\
 where $$\Pi_{\delta'}\left(\sqrt{2}\beta S - D\right) $$ is a projector into the top-$$\delta' n$$ dimensional eigenspace of the spectrum of $$2\beta A_{sym} - D $$.
 
 We will now give overviews of the proofs for the two statements above. Giving the actual detailed proofs would require introducing various technical facts and auxiliary lemmata about non-commutative $$\mathcal{L}^p $$ spaces, the Cauchy-Stieljtes transform, the $$R $$-transform and analytic subordination. Consequently, we will try to sketch the main ideas with the minimal possible references to the formalism.
-
 
 
 #### Approximating the diagonal of the projector
