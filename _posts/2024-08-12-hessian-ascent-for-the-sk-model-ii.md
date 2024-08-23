@@ -57,9 +57,13 @@ $$ \begin{equation} \left| \widetilde{a(D)} - \frac{2\beta^2}{n}\mathsf{Tr}[D^{-
 
 By putting the two statements above together with the observation that $$P(D)^2 $$ projects into the top-eigenspace of $$\sqrt{2}\beta S - D $$, one can reasonably believe that
 
-$$ \begin{equation} \frac{1}{n} \|P(D)^2 -  \Pi_{\delta'}\left(2\beta A_{sym} - D\right)\|_2^2 \le \mathsf{small} \,, \end{equation} $$
+$$ \begin{equation} \frac{1}{n} \|P(D) -  \Pi_{\delta'}\left(2\beta A_{sym} - D\right)\|_2^2 \le \mathsf{small} \,, \end{equation} $$
 
 where $$\Pi_{\delta'}\left(\sqrt{2}\beta S - D\right) $$ is a projector into the top-$$\delta' n$$ dimensional eigenspace of the spectrum of $$2\beta A_{sym} - D $$.
+
+We will now give overviews of the proofs for the two statements above. Giving the actual detailed proofs would require introducing various technical facts and auxiliary lemmata about non-commutative $$\mathcal{L}^p $$ spaces, the Cauchy-Stieljtes transform, the $$R $$-transform and analytic subordination. Consequently, we will try to sketch the main ideas with the minimal possible references to the formalism.
+
+
 
 #### Approximating the diagonal of the projector
 We now formally choose the distortion parameter $$b = \beta n^{-.01} $$. With this choice, we infer that the diagonal entries of $$P(D)^ 2$$ behave desirably, with high probability.
