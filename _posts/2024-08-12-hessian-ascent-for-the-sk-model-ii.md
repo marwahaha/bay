@@ -42,7 +42,7 @@ where $$\widetilde{a(D)} $$ is (approximately) the maximum value of the spectrum
   * We will use Gaussian concentration to compare $$P^2(D) $$ with its expected value (under the Gaussian randomness), and show that this deviation is desirably small.
   * We will then show that the expected value $$\mathbb{E}[P(D)^2] $$ is close to the "idealized" value of
 
-  $$ \begin{equation} P^2_{S}(D) := b\left(b^2\mathsf{Id} + (\widetilde{a(D)} - (\sqrt{2}\beta S - D))^2\right)^{-1}\,. \end{equation} $$
+  $$ \begin{equation} P_{S}(D)^2 := b\left(b^2\mathsf{Id} + (\widetilde{a(D)} - (\sqrt{2}\beta S - D))^2\right)^{-1}\,. \end{equation} $$
 
 * The scalar $$b $$ will be chosen to be sufficiently small so that it does not cause $$P^2(D) $$ to deviate too much from projecting into the desired top-eigenspace. However, it will be non-zero all the same, so that the operator $$P^2 (D) $$ continues to be well-defined.
 
