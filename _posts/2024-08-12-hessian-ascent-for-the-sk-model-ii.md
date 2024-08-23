@@ -46,7 +46,7 @@ where $$\widetilde{a(D)} $$ is (approximately) the maximum value of the spectrum
 
 * The scalar $$b $$ will be chosen to be sufficiently small so that it does not cause $$P^2(D) $$ to deviate too much from projecting into the desired top-eigenspace. However, it will be non-zero all the same, so that the operator $$P^2 (D) $$ continues to be well-defined.
 
-Let us now write a brief and informal statement that summarizes two (of the three) key qualities the operator $$P(D)^2 $$[^1] will have. In the statement below, we will assume that $$\frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}] = 1$$.
+Let us now write a brief and informal statement that summarizes two (of the three) key qualities the operator $$P(D)^2 $$ will have[^1]. In the statement below, we will assume that $$\frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}] = 1$$.
 
 $$ \begin{align*} \text{[Idealized operator norm]:}& \quad\quad \| \sqrt{2}\beta S - D\|_{\mathsf{op}} = \frac{2\beta^2}{n}\mathsf{Tr}[D^{-1}]\,. \\
 \text{[Large-overlap with top-eigenspace]:} & \quad\quad \frac{1}{n}\left\langle P(D)^2,(\widetilde{a(D)}-(2\beta A_{sym} - D))^2\right\rangle \le \frac{O_\beta(\mathsf{Tr}[D^{-4}])}{n^{1.03}}\,. \end{align*} $$
