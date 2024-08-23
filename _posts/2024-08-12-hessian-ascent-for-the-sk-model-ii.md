@@ -35,14 +35,14 @@ We proceed in chronological fashion, first giving a construction of $$Q $$ and s
 #### Projecting into the top-eigenspace
 To project into the top-part of the spectrum of $$\nabla^2 \mathsf{TAP} $$, we will create an operator whose eigenspectrum is subtracted from the (idealized) operator norm of $$\nabla^2 \mathsf{TAP} $$ and then inverted. Intuitively, this should make the large eigenvalues more important than the small eigenvalues, while preserving the eigenvectors. Sans normalization and a projection away from the current iterate $$\sigma_j $$, therefore, a candidate choice is,
 
-$$ \begin{equation} P(D)^2 := b\left(b^2\mathsf{Id} + (\widetilde{a(D)} - (2\beta A_{sym} - D))\right)^{-1}\,, \end{equation} $$
+$$ \begin{equation} P(D)^2 := b\left(b^2\mathsf{Id} + (\widetilde{a(D)} - (2\beta A_{sym} - D))^2\right)^{-1}\,, \end{equation} $$
 
 where $$\widetilde{a(D)} $$ is (approximately) the maximum value of the spectrum of $$\sqrt{2}\beta S - D(j\eta,\sigma_j) $$, and $$S $$ is an operator whose empirical eigenspectrum is the semi-circular law. As we shall see, $$b $$ will be chosen to be sufficiently small (but non-zero). It is not hard to see that as $$b \to 0 $$, the eigenvalues farthest from $$a(D) $$ will receive the smallest weight, and the ones closest to $$\widetilde{a(D)} $$ will receive the largest. Two quick points:
 * This choice of $$\widetilde{a(D)} $$ implicitly suggests that we will compare $$2\beta A_{sym} $$ with $$\sqrt{2}\beta S $$; indeed, this is one of the key parts in the proof strategy.
   * We will use Gaussian concentration to compare $$P^2(D) $$ with its expected value (under the Gaussian randomness), and show that this deviation is desirably small.
   * We will then show that the expected value $$\mathbb{E}[P(D)^2] $$ is close to the "idealized" value of
 
-  $$ \begin{equation} P^2_{S}(D) := b\left(b^2\mathsf{Id} + (\widetilde{a(D)} - (\sqrt{2}\beta S - D))\right)^{-1}\,. \end{equation} $$
+  $$ \begin{equation} P^2_{S}(D) := b\left(b^2\mathsf{Id} + (\widetilde{a(D)} - (\sqrt{2}\beta S - D))^2\right)^{-1}\,. \end{equation} $$
 
 * The scalar $$b $$ will be chosen to be sufficiently small so that it does not cause $$P^2(D) $$ to deviate too much from projecting into the desired top-eigenspace. However, it will be non-zero all the same, so that the operator $$P^2 (D) $$ continues to be well-defined.
 
