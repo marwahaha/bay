@@ -34,7 +34,7 @@ We now begin sketching the proof overview for the first main statement. As state
 We proceed in chronological fashion, first giving a construction of $$Q $$ and showing it projects into the top-eigenspace, and then proving that this construction leads to diagonal entries with the desired behavior.
 
 #### Projecting into the top-eigenspace
-To project into the top-part of the spectrum of $$\nabla^2 \mathsf{TAP} $$, we will create an operator whose eigenspectrum is subtracted from the (idealized) operator norm of $$\nabla^2 \mathsf{TAP} $$ and then inverted. Intuitively, this should make the large eigenvalues more important than the small eigenvalues, while preserving the eigenvectors. Sans normalization, therefore, a candidate choice is,
+To project into the top-part of the spectrum of $$\nabla^2 \mathsf{TAP} $$, we will create an operator whose eigenspectrum is subtracted from the (idealized) operator norm of $$\nabla^2 \mathsf{TAP} $$ and then inverted. Intuitively, this should make the large eigenvalues more important than the small eigenvalues, while preserving the eigenvectors. Sans normalization and a projection away from the current iterate $$\sigma_j $$, therefore, a candidate choice is,
 
 $$ \begin{equation} P(D)^2 := b\left(b^2\mathsf{Id} + (a(D) - (2\beta A_{sym} - D))\right)^{-1}\,, \end{equation} $$
 
@@ -48,12 +48,23 @@ where $$a(D) $$ is the maximum value of the spectrum of $$\sqrt{2}\beta S - D(j\
 
 Let us now write a brief and informal statement that summarizes two (of the three) key qualities the operator $$P(D)^2 $$ will have. In the statement below, we will assume that $$\frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}] = 1$$.
 
-$$ \begin{align*} \text{[Idealized operator norm]:}& \quad\quad \left| a(D) - \frac{2\beta^2}{n}\mathsf{Tr}[D^{-1}] \right| \le \frac{O_\beta\left(\mathsf{Tr}[D^{-3}]\right)}{n^{1.02}}\,. \\
-\text{[Large-overlap with top-eigenspace]:} & \quad\quad \frac{1}{n}\left\langle P(D)^2,(a(D)-(2\beta A_{sym} - D))^2\right\rangle \le \frac{O_\beta(\mathsf{Tr}[D^{-4}])}{n^{1.03}}\,. \end{align*} $$
+$$ \begin{align*} \text{[Idealized operator norm]:}& \quad\quad \| \sqrt{2}\beta S - D\|_{\mathsf{op}} = \frac{2\beta^2}{n}\mathsf{Tr}[D^{-1}]\,. \\
+\text{[Large-overlap with top-eigenspace]:} & \quad\quad \frac{1}{n}\left\langle P(D)^2,(\widetilde{a(D)}-(2\beta A_{sym} - D))^2\right\rangle \le \frac{O_\beta(\mathsf{Tr}[D^{-4}])}{n^{1.03}}\,. \end{align*} $$
 
-In the statement abovem the notation $$O_\beta() $$ suppresses the dependencies on $$\beta = O(1/\epsilon)$$ for terms that decay sufficiently fast in $$n $$. Furthermore, we will choose the distortion parameter $$b = \beta n^{-.01} $$.
+The notation $$O_\beta() $$ suppresses the dependencies on $$\beta = O(1/\epsilon)$$ for terms that decay sufficiently fast in $$n $$. For technical reasons, $$\widetilde{a(D)} $$ is not _exactly_ $$\|\sqrt{2}\beta S - D\|_{\mathsf{op}} $$, but a _small_ perturbation around it whereby,
+
+$$ \begin{equation} \left| \widetilde{a(D)} - \frac{2\beta^2}{n}\mathsf{Tr}[D^{-1}] \right| \le \frac{O_\beta\left(\mathsf{Tr}[D^{-3}]\right)}{n^{1.02}}\,. \end{equation} $$
+
+By putting the two statements above together with the observation that $$P(D)^2 $$ projects into the top-eigenspace of $$\sqrt{2}\beta S - D $$, one can reasonably believe that
+
+$$ \begin{equation} \frac{1}{n} \|P(D)^2 -  \Pi_{\delta'}\left(2\beta A_{sym} - D\right)\|_2^2 \le \mathsf{small} \,, \end{equation} $$
+
+where $$\Pi_{\delta'}\left(\sqrt{2}\beta S - D\right) $$ is a projector into the top-$$\delta' n$$ dimensional eigenspace of the spectrum of $$2\beta A_{sym} - D $$.
 
 #### Approximating the diagonal of the projector
+We now formally choose the distortion parameter $$b = \beta n^{-.01} $$. With this choice, we infer that the diagonal entries of $$P(D)^ 2$$ behave desirably, with high probability.
+
+$$ \begin{equation} \text{[Diagonal entries]} \end{equation} $$
 
 ### Empirical distribution of the coordinates of the iterates
 
