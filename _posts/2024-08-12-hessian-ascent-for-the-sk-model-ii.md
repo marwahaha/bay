@@ -13,7 +13,7 @@ This is the second blog past in a **3-part** series on a recent result [[JSS24]]
 
 A quick recap of what we accomplished in the first blog post:
 1. We briefly went over the various representations of the Parisi formula, and then derived the Hessian ascent algorithm from the generalized TAP free energy.
-2. We then motivated the two main statements we need to prove to demonstrate the success of our algorithm. We concluded by developing a _primal_ theory for the Parisi PDE and AC SDE, which will be quintessential in the proofs of the convergence of the .
+2. We then motivated the two main statements we need to prove to demonstrate the success of our algorithm. We concluded by developing a _primal_ theory for the Parisi PDE and AC SDE, which will be quintessential at various points in the main arguments.
 <br>
 
 #### Table of Contents
@@ -61,8 +61,28 @@ $$ \begin{equation} \frac{1}{n} \|P(D) -  \Pi_{\delta'}\left(2\beta A_{sym} - D\
 
 where $$\Pi_{\delta'}\left(\sqrt{2}\beta S - D\right) $$ is a projector into the top-$$\delta' n$$ dimensional eigenspace of the spectrum of $$2\beta A_{sym} - D $$.
 
-We will now give overviews of the proofs for the two statements above. Giving the actual detailed proofs would require introducing various technical facts and auxiliary lemmata about non-commutative $$\mathcal{L}^p $$ spaces, the Cauchy-Stieljtes transform, the $$R $$-transform and analytic subordination. Consequently, to ensure that the broader TCS audience can follow along, we will try to sketch the main ideas with minimal possible reference to the underlying formalism[^2].
+We will now give overviews of the proofs for the two statements above. Giving the actual detailed proofs would require introducing various definitions, technical facts and auxiliary lemmata about non-commutative $$\mathcal{L}^p $$ spaces, the Cauchy-Stieljtes transform, the $$R $$-transform and analytic subordination. Consequently, to ensure that the broader TCS audience can follow along, we will try to sketch the main ideas with minimal possible reference to the underlying formalism. That being said, it is simply impossible to explain even the ideas without invoking some basic terminology[^2]. Therefore, those readers that are satisfied with the two statements above may freely skip the rest of this subsection without any loss of ability to following the remaining two subsections in this post.
 
+_Idealized Operator Norm_: We will reason about this by computing the _explicit_ form of a particular function[^3] which reduces the resolvent of the sum of two (free) matrices to the resolvent[^4] of just one matrix evaluated at a shifted argument. This is a standard fact, borrowed from [[Bia98]](), and says that:
+
+$$ \begin{equation} \exists! f: \mathbb{H} \to \mathbb{H}, \text{s.t.},\,\text{i) }f(z) = z + O(1)\text{ for z large enough, and ii) }g_{X+Y}(z) = g_X(f(z))\,.   \end{equation} $$
+
+First, using the fact that the $$R $$-transform is defined as $$r_X(z) = g^{-1}_X(z) - 1/z $$, and that for of a sum of two (asymptotically) free matrices, it simplifies to $$r_{X+Y}(z) = r_X(z) + r_Y(z) $$, one quickly obtains that
+
+$$ \begin{equation} z = g_{\sqrt{2}\beta S - D}\left(g^{-1}_{-D}(z) + r_{\sqrt{2}\beta S}(z)\right)\,, \end{equation} $$
+
+for $$z $$ in a neighborhood around $$0 $$. <br>
+Then, combining the above equation with the fact that the $$R $$-transform of a semi-circular operator with variance $$2\beta^2 $$ is $$2\beta^2 z $$, and that $$g^{-1}_{-D}(z) $$ will be in a neighborhood of $$\infty $$, one can deduce that,
+
+$$ \begin{equation} g_{-D}(w) = g_{\sqrt{2}\beta S - D}(w + 2\beta^2 g_{-D}(w))\, ,\end{equation} $$
+
+where we use the fact that $$w = g^{-1}_{-D}(z) $$, for $$w $$ in a neighborhood of $$\infty $$. At this point, since $$w $$ is sufficiently large, one can apply the magical fact of [[Bia98]]() and conclude that, for $$w = f(z) $$,
+
+$$ \begin{equation}  g_{\sqrt{2}\beta S - D}(w + 2\beta^2g_{-D}(w)) = g_{- D}(w) = g_{-D}(f(z)) = g_{\sqrt{2}\beta S - D}(z)\, ,\end{equation} $$
+
+at which point one can easily use the injectivity of $$g $$ itself to conclude that $$f^{-1}(z) = z + 2\beta^2 g_{-D}(z) $$, as well as the fact that $$f(\cdot) $$ is injective.
+
+_Large-overlap with top-eigenspace_:
 
 #### Approximating the diagonal of the projector
 We now formally choose the distortion parameter $$b = \beta n^{-.01} $$. With this choice, we infer that the diagonal entries of $$P(D)^ 2$$ behave desirably, with high probability.
@@ -75,11 +95,11 @@ $$ \begin{equation} \text{[Diagonal entries]} \end{equation} $$
 
 #### FOOTNOTES
 
-[^1]: Those familiar with resolvent formalism will immediately notice that $$P^2(D) $$ is nothing but the (negative of the) imaginary part of the _resolvent_ $$g_{2\beta A_{sym} - D} $$, evaluated at a purely imaginary point $$ib $$, which is a slight perturbation from $$0 $$. Since, for a compactly supported measure, which we expect the empirical eigenspectrum of $$\sqrt{2}\beta A_{sym} - D $$ to converge to, the Cauchy transform (which is equivalent to the resolvent) is invertible everywhere except at poles, this is a loss-less way of studying analytic properties of the spectrum.
+[^1]: Those familiar with resolvent formalism will immediately notice that $$P^2(D) $$ is nothing but the (negative of the) imaginary part of the _resolvent_ $$g_{2\beta A_{sym} - D} $$, evaluated at a purely imaginary point $$ib $$, which is a slight perturbation from $$0 $$. Since, for a compactly supported measure, which we expect the empirical eigenspectrum of $$2\beta A_{sym} - D $$ to converge to, the Cauchy transform (which is equivalent to the resolvent) is invertible everywhere except at poles, this is a loss-less way of studying analytic properties of the spectrum.
 
-[^2]: Shortly, I will introduce the relevant complex-analytic basics and the relevant free-probability notions in a separate blog-post. In the very same blog-post, I will provide sufficient background so that a motivated reader can actually follow most of the proofs in detail (_except_ for the proof which reasons about the projection of $$P(D)^2 $$ onto the diagonal sub-algebra, which I will introduce in yet another post). For the impatient reader, [[Section 4.1, JSS24](https://arxiv.org/pdf/2408.02360)] should also act as an intense, but reasonably accessible proxy.
+[^2]: I will introduce the relevant complex-analytic basics and the relevant free-probability notions in a separate blog-post. In the very same blog-post, I will provide sufficient background so that a motivated reader can actually follow most of the proofs in detail (_except_ for the proof which reasons about the projection of $$P(D)^2 $$ onto the diagonal sub-algebra, which I will introduce in yet another post). For the impatient reader, [[Section 4.1, JSS24](https://arxiv.org/pdf/2408.02360)] should also act as an intense, but reasonably accessible proxy.
 
-[^3]: When David, Jonathan and I were working on the project in the early days, we were thinking of this convex duality via the lens of mirror maps. It turns out that, because of the underlying convex duality, there is a connection to be made here through the information geometry of the underlying Hessian being akin to a (flat) Bregmannian manifold. However, this is beyond the scope of this post and something we are investigating in ongoing work.
+[^3]: A function such as this is known in the literature as a **subordination** function. In fact, this function can be extended and shown to be analytic on $$\bar{\mathbb{H}} $$. It allows one to, in some sense, "separate" the support of the spectrum of the two freely independent operators by pushing the domain of one inside the resolvent to be significantly farther than the other.
 
 [^4]: In a previous [post](https://juspreetsandhu.me/2022/02/08/the-sk-model-i#ruelle-probability-cascades), I described a _part_ of the RPC construction and the details afforded there are gentle and sufficient enough to understand the main ingredients in their construction, as well as their purpose. A slightly more detailed overview of the construction, along with how exactly the representation gets used in the [Hopf-Cole transform]() to solve the Parisi PDE for _atomic_ measures is provided in [[Appendix C, JSS24]](https://arxiv.org/pdf/2408.02360) and can be read by the interested reader. The estimates for the derivatives are proved between [[Lemma 2.12 & Lemma 2.13, JSS24]](https://arxiv.org/pdf/2408.02360) and stated in [[Proposition 2.11, JSS24]](https://arxiv.org/pdf/2408.02360).  
 
