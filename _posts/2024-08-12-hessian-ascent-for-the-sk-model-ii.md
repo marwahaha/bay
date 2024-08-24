@@ -63,7 +63,7 @@ where $$\Pi_{\delta'}\left(\sqrt{2}\beta S - D\right) $$ is a projector into the
 
 We will now give overviews of the proofs for the two statements above. Giving the actual detailed proofs would require introducing various definitions, technical facts and auxiliary lemmata about non-commutative $$\mathcal{L}^p $$ spaces, the Cauchy-Stieljtes transform, the $$R $$-transform and analytic subordination. Consequently, to ensure that the broader TCS audience can follow along, we will try to sketch the main ideas with minimal possible reference to the underlying formalism. That being said, it is simply impossible to explain even the ideas without invoking some basic terminology[^2]. Therefore, those readers that are satisfied with the two statements above may freely skip the rest of this subsection without any loss of ability to following the remaining two subsections in this post.
 
-_Idealized Operator Norm_: We will reason about this by computing the _explicit_ form of a particular function[^3] which reduces the resolvent of the sum of two (free) matrices to the resolvent[^4] of just one matrix evaluated at a shifted argument. This is a standard fact, borrowed from [[Bia98]](), and says that:
+_Idealized Operator Norm_: We will reason about this by computing the _explicit_ form of a particular function[^3] which reduces the resolvent[^4] of the sum of two (free) matrices to the resolvent of just one matrix evaluated at a shifted argument. This is a standard fact, borrowed from [[Bia98]](), and says that:
 
 $$ \begin{equation} \exists! f: \mathbb{H} \to \mathbb{H}, \text{s.t.},\,\text{i) }f(z) = z + O(1)\text{ for z large enough, and ii) }g_{X+Y}(z) = g_X(f(z))\,.   \end{equation} $$
 
