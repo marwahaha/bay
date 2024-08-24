@@ -80,7 +80,9 @@ where we use the fact that $$w = g^{-1}_{-D}(z) $$, for $$w $$ in a neighborhood
 
 $$ \begin{equation}  g_{\sqrt{2}\beta S - D}(w + 2\beta^2g_{-D}(w)) = g_{- D}(w) = g_{-D}(f(z)) = g_{\sqrt{2}\beta S - D}(z)\, .\end{equation} $$
 
-Then, using the injectivity of $$g $$ itself, it straightforwardly follows that $$f^{-1}(z) = z + 2\beta^2 g_{-D}(z) $$ and that $$f(\cdot) $$ is injective.
+Then, using the injectivity of $$g $$ itself, it straightforwardly follows that $$f^{-1}(z) = z + 2\beta^2 g_{-D}(z) $$ and that $$f(\cdot) $$ is injective. And, with some more effort, one can conclude that,
+
+$$ \begin{equation} z \in \mathsf{dom}(f^{-1}) \iff  \mathsf{Im}\left(z + 2\beta^2 g_{-D}(z)\right) > 0\,.\end{equation} $$
 
 _Large-overlap with top-eigenspace_:
 
