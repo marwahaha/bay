@@ -76,7 +76,7 @@ Then, combining the above equation with the fact that the $$R $$-transform of a 
 
 $$ \begin{equation} g_{-D}(w) = g_{\sqrt{2}\beta S - D}(w + 2\beta^2 g_{-D}(w))\, ,\end{equation} $$
 
-where we use the fact that $$w = g^{-1}_{-D}(z) $$, for $$w $$ in a neighborhood of $$\infty $$. At this point, since $$w $$ is sufficiently large, one can apply the magical fact of [[Bia98]]() and conclude that, for $$w = f(z) $$,
+where we use the fact that $$w = g^{-1}_{-D}(z) $$, for $$w $$ in a neighborhood of $$\infty $$. At this point, since $$w $$ is sufficiently large[^5], one can apply the magical fact of [[Bia98]]() and conclude that, for $$w = f(z) $$,
 
 $$ \begin{equation}  g_{\sqrt{2}\beta S - D}(w + 2\beta^2g_{-D}(w)) = g_{- D}(w) = g_{-D}(f(z)) = g_{\sqrt{2}\beta S - D}(z)\, ,\end{equation} $$
 
@@ -101,6 +101,6 @@ $$ \begin{equation} \text{[Diagonal entries]} \end{equation} $$
 
 [^3]: A function such as this is known in the literature as a **subordination** function. In fact, this function can be extended and shown to be analytic on $$\bar{\mathbb{H}} $$. It allows one to, in some sense, "separate" the support of the spectrum of the two freely independent operators by pushing the domain of one inside the resolvent to be significantly farther than the other.
 
-[^4]: In a previous [post](https://juspreetsandhu.me/2022/02/08/the-sk-model-i#ruelle-probability-cascades), I described a _part_ of the RPC construction and the details afforded there are gentle and sufficient enough to understand the main ingredients in their construction, as well as their purpose. A slightly more detailed overview of the construction, along with how exactly the representation gets used in the [Hopf-Cole transform]() to solve the Parisi PDE for _atomic_ measures is provided in [[Appendix C, JSS24]](https://arxiv.org/pdf/2408.02360) and can be read by the interested reader. The estimates for the derivatives are proved between [[Lemma 2.12 & Lemma 2.13, JSS24]](https://arxiv.org/pdf/2408.02360) and stated in [[Proposition 2.11, JSS24]](https://arxiv.org/pdf/2408.02360).  
+[^4]: See [here](https://en.wikipedia.org/wiki/Resolvent_formalism) for a definition of the resolvent, and a statement of the famous resolvent identity.
 
-[^5]: For converting Lipschitz bounds into estimates of how much error propagates over a period of time, [Gronwall's inequality](https://en.wikipedia.org/wiki/Gr%C3%B6nwall%27s_inequality) is an indispensable tool that we use in Sections 2 & 5 of the paper. The combination of Ito's lemma & Gronwall's inequality allows us to, in fact, more or less have a mechanistic procedure for converting Lipschitz estimates into error bounds of various sorts.
+[^5]: It is a classical fact known in free probability theory that a semi-circular operator $$S $$ and an element $$D \in \text{M}_n(\mathbb{C}) $$ with $$\| D\|_{\mathsf{op}} \le O(1)$$ are asymptotically free.
