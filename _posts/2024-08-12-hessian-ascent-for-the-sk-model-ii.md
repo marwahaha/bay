@@ -66,7 +66,7 @@ We will now give overviews of the proofs for the two statements above. Giving th
 _Idealized Operator Norm_: We first locate the maximum of the bulk spectrum of $$\sqrt{2}\beta S - D $$. Let us lay down the strategy to do so:
 1. First, we compute the _explicit_ form of a particular function[^3] which reduces the resolvent[^4] of the sum of two (free) matrices $$X $$ and $$Y $$ to the resolvent of just one matrix $$X $$ evaluated at a shifted argument. This is a standard (and first-half of a remarkable) fact borrowed from [[Bia98]](), and says that:
 
-$$ \begin{equation} \exists! f: \mathbb{H} \to \mathbb{H}, \text{s.t.},\,\text{i) }f(z) = z + O(1)\text{ for z large enough, and ii) }g_{X+Y}(z) = g_X(f(z))\,.   \end{equation} $$
+    $$ \begin{equation} \exists! f: \mathbb{H} \to \mathbb{H}, \text{s.t.},\,\text{i) }f(z) = z + O(1)\text{ for z large enough, and ii) }g_{X+Y}(z) = g_X(f(z))\,.   \end{equation} $$
 
 2. Using the explicit form of $$f^{-1} $$ for our specific case with $$X = -D $$ and $$Y = \sqrt{2}\beta S $$ we will conclude that, under a normalizaiton assumption about the trace of $$D^{-2} $$, the function $$f^{-1} $$ is strictly monotone in a certain region of the complex plane and, therefore, invertible.
 
