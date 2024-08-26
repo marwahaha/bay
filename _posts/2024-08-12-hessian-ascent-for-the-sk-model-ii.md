@@ -80,9 +80,15 @@ where we use the fact that $$w = g^{-1}_{-D}(z) $$, for $$w $$ in a neighborhood
 
 $$ \begin{equation}  g_{\sqrt{2}\beta S - D}(w + 2\beta^2g_{-D}(w)) = g_{- D}(w) = g_{-D}(f(z)) = g_{\sqrt{2}\beta S - D}(z)\, .\end{equation} $$
 
-Then, using the injectivity of $$g $$ itself, it straightforwardly follows that $$f^{-1}(z) = z + 2\beta^2 g_{-D}(z) $$ and that $$f(\cdot) $$ is injective. And, with some more effort, one can conclude that,
+Then, using the injectivity of $$g $$ itself, it straightforwardly follows that:
+* $$f^{-1}(z) = z + 2\beta^2 g_{-D}(z) $$, and
+* $$f(\cdot) $$ is injective.
+
+With some more effort, one can conclude that,
 
 $$ \begin{equation} z \in \mathsf{dom}(f^{-1}) \iff  \mathsf{Im}\left(z + 2\beta^2 g_{-D}(z)\right) > 0\,.\end{equation} $$
+
+Consequently, the domain of $$f^{-1} $$ is a subset of the upper-half (complex) plane where the imaginary part of $$2\beta^2 g_{-D}(z) $$ is "countered" by the imaginary part of $$z $$ itself. It will be possible to strengthen this observation, under the assumption that $$\frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}] = 1 $$, and conclude that  $$\mathsf{sgn}\left(\mathsf{Im}(z)\right) = \mathsf{sgn}\left(\mathsf{Im}(f^{-1})\right) $$. Combining this fact with some more algebra allows one to conclude that $$f^{-1} $$ is injective on $$\{z = x + iy \mid x \in (0,\infty), y \in \mathbb{R} \} $$.
 
 _Large-overlap with top-eigenspace_:
 
