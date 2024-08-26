@@ -63,11 +63,17 @@ where $$\Pi_{\delta'}\left(\sqrt{2}\beta S - D\right) $$ is a projector into the
 
 We will now give overviews of the proofs for the two statements above. Giving the actual detailed proofs would require introducing various definitions, technical facts and auxiliary lemmata about non-commutative $$\mathcal{L}^p $$ spaces, the Cauchy-Stieljtes transform, the $$R $$-transform and analytic subordination. Consequently, to ensure that the broader TCS audience can follow along, we will try to sketch the main ideas with minimal possible reference to the underlying formalism. That being said, it is simply impossible to explain even the ideas without invoking some basic terminology[^2]. Therefore, those readers that are satisfied with the two statements above may freely skip the rest of this subsection without any loss of ability to following the remaining two subsections in this post.
 
-_Idealized Operator Norm_: We will reason about this by computing the _explicit_ form of a particular function[^3] which reduces the resolvent[^4] of the sum of two (free) matrices to the resolvent of just one matrix evaluated at a shifted argument. This is a standard fact, borrowed from [[Bia98]](), and says that:
+_Idealized Operator Norm_: We first locate the maximum of the bulk spectrum of $$\sqrt{2}\beta S - D $$. Let us lay down the strategy to do so:
+1. First, we compute the _explicit_ form of a particular function[^3] which reduces the resolvent[^4] of the sum of two (free) matrices $$X $$ and $$Y $$ to the resolvent of just one matrix $$X $$ evaluated at a shifted argument. This is a standard (and first-half of a remarkable) fact borrowed from [[Bia98]](), and says that:
 
 $$ \begin{equation} \exists! f: \mathbb{H} \to \mathbb{H}, \text{s.t.},\,\text{i) }f(z) = z + O(1)\text{ for z large enough, and ii) }g_{X+Y}(z) = g_X(f(z))\,.   \end{equation} $$
 
-First, using the fact that the $$R $$-transform is defined as $$r_X(z) = g^{-1}_X(z) - 1/z $$, and that for of a sum of two (asymptotically) free matrices, it simplifies to $$r_{X+Y}(z) = r_X(z) + r_Y(z) $$, one quickly obtains that
+2. Using the explicit form of $$f^{-1} $$ for our specific case with $$X = -D $$ and $$Y = \sqrt{2}\beta S $$ we will conclude that, under a normalizaiton assumption about the trace of $$D^{-2} $$, the function $$f^{-1} $$ is strictly monotone in a certain region of the complex plane and, therefore, invertible.
+
+3. At this point, we will reason about the analytic behavior of the resolvent of $$\sqrt{2}\beta S-D $$ at the shifted argument. In particular, we will demonstrate that the resolvent is analytic in $$\left(2\beta^2 g_{-D}(0), \infty\right) $$ to obtain an upper bound and then do some approximation to obtain a matching lower bound.
+
+
+First, we use the fact that the $$R $$-transform is defined as $$r_X(z) = g^{-1}_X(z) - 1/z $$, and that for of a sum of two (asymptotically) free matrices, it simplifies to $$r_{X+Y}(z) = r_X(z) + r_Y(z) $$, to quickly obtain that
 
 $$ \begin{equation} z = g_{\sqrt{2}\beta S - D}\left(g^{-1}_{-D}(z) + r_{\sqrt{2}\beta S}(z)\right)\,, \end{equation} $$
 
@@ -88,7 +94,7 @@ With some more effort, one can conclude that,
 
 $$ \begin{equation} z \in \mathsf{dom}(f^{-1}) \iff  \mathsf{Im}\left(z + 2\beta^2 g_{-D}(z)\right) > 0\,.\end{equation} $$
 
-Consequently, the domain of $$f^{-1} $$ is a subset of the upper-half (complex) plane where the imaginary part of $$2\beta^2 g_{-D}(z) $$ is "countered" by the imaginary part of $$z $$ itself. It will be possible to strengthen this observation, under the assumption that $$\frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}] = 1 $$, and conclude that  $$\mathsf{sgn}\left(\mathsf{Im}(z)\right) = \mathsf{sgn}\left(\mathsf{Im}(f^{-1})\right) $$. Combining this fact with some more algebra allows one to conclude that $$f^{-1} $$ is injective on $$\{z = x + iy \mid x \in (0,\infty), y \in \mathbb{R} \} $$.
+Consequently, the domain of $$f^{-1} $$ is a subset of the upper-half (complex) plane where the imaginary part of $$2\beta^2 g_{-D}(z) $$ is "countered" by the imaginary part of $$z $$ itself. It will be possible to strengthen this observation, under the assumption that $$\frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}] = 1 $$, and conclude that  $$\mathsf{sgn}\left(\mathsf{Im}(z)\right) = \mathsf{sgn}\left(\mathsf{Im}(f^{-1})\right) $$. Combining this fact with basic properties about the resolvent allows one to conclude that $$f^{-1} $$ is injective on $$\{z = x + iy \mid x \in (0,\infty), y \in \mathbb{R} \} $$.
 
 _Large-overlap with top-eigenspace_:
 
