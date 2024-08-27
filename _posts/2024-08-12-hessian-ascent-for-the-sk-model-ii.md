@@ -82,11 +82,11 @@ Then, combining the above equation with the fact that the $$R $$-transform of a 
 
 $$ \begin{equation} g_{-D}(w) = g_{\sqrt{2}\beta S - D}(w + 2\beta^2 g_{-D}(w))\, ,\end{equation} $$
 
-where we use the fact that $$w = g^{-1}_{-D}(z) $$, for $$w $$ in a neighborhood of $$\infty $$. At this point, since $$w $$ is sufficiently large[^5], one can apply the magical fact of [[Bia98]]() and conclude that, for $$w = f(z) $$,
+where we define $$w = g^{-1}_{-D}(z) $$. At this point, since $$w $$ is sufficiently large[^5], one can apply the magical fact of [[Bia98]]() and conclude that, for $$w = f(z) $$,
 
 $$ \begin{equation}  g_{\sqrt{2}\beta S - D}(w + 2\beta^2g_{-D}(w)) = g_{- D}(w) = g_{-D}(f(z)) = g_{\sqrt{2}\beta S - D}(z)\, .\end{equation} $$
 
-Then, using the injectivity of $$g $$ itself, it straightforwardly follows that:
+Then, using the injectivity of $$g_{\sqrt{2}\beta S - D} $$ itself, it straightforwardly follows that:
 * $$f^{-1}(z) = z + 2\beta^2 g_{-D}(z) $$, and
 * $$f(\cdot) $$ is injective.
 
