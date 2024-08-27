@@ -94,9 +94,13 @@ With some more effort, one can conclude that,
 
 $$ \begin{equation} z \in \mathsf{dom}(f^{-1}) \iff  \mathsf{Im}\left(z + 2\beta^2 g_{-D}(z)\right) > 0\,.\end{equation} $$
 
-Consequently, the domain of $$f^{-1} $$ is a subset of the upper-half (complex) plane where the imaginary part of $$2\beta^2 g_{-D}(z) $$ is "countered" by the imaginary part of $$z $$ itself. It will be possible to strengthen this observation, under the assumption that $$\frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}] = 1 $$, and conclude that  $$\mathsf{sgn}\left(\mathsf{Im}(z)\right) = \mathsf{sgn}\left(\mathsf{Im}(f^{-1})\right) $$. Combining this fact with basic properties about the resolvent allows one to conclude that $$f^{-1} $$ is injective on $$\{z = x + iy \mid x \in (0,\infty), y \in \mathbb{R} \} $$.
+Consequently, the domain of $$f^{-1} $$ is a subset of the upper-half (complex) plane where the imaginary part of $$2\beta^2 g_{-D}(z) $$ is "countered" by the imaginary part of $$z $$ itself. It will be possible to strengthen this observation, under the assumption that $$\frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}] = 1 $$, and conclude that  $$\mathsf{sgn}\left(\mathsf{Im}(z)\right) = \mathsf{sgn}\left(\mathsf{Im}(f^{-1})\right) $$. Combining this fact with basic properties about the resolvent allows one to conclude that $$f^{-1} $$ is injective on $$A = \{z = x + iy \mid x \in (0,\infty), y \in \mathbb{R} \} $$.
 
-_Large-overlap with top-eigenspace_:
+At this point, the upper bound follows by using the injectivity of $$f^{-1} $$ in the desired region to conlcude that $$g_{-D}\circ f^{-1} $$ agree on the region of injectivity, and that $$g_{-D}\circ f^{-1} = g_{\sqrt{2}\beta S - D} $$ is analytic on the region $$f^{-1}(A) $$. It is a standard property of the Cauchy-Stieljtes transform that $$f^{-1}(A) = \left(\frac{2\beta^2}{n}\mathsf{Tr}[D^{-1}], \infty\right)$$ cannot, then, be in the support of the spectral measure of $$\sqrt{2}\beta S - D $$.
+
+To obtain the lower bound, we do a Taylor expansion of $$f^{-1} $$ near $$0 $$, observing that the first derivative is $$0 $$ and the second derivative is _strictly_ greater than $$0 $$. Using these observations, in conjunction with a Taylor expansion argument then demonstrates that the values of $$g_{\sqrt{2}\beta S - D} $$ do not agree on $$(f^{-1}(0)-\delta, f^{-1}(0)) $$ for a sufficiently small $$\delta $$, meaning that it is not analytic in the neighborhood. This closes the argument.
+
+_Large-overlap with top-eigenspace_: We now focus on formally showing that the matrix $$P(D)^2 $$ will have large overlap with the top-eigenspace of the shifted Hessian. To do this, we will see that control over the diagonal of $$P(D)^2 $$ will become crucial.
 
 #### Approximating the diagonal of the projector
 We now formally choose the distortion parameter $$b = \beta n^{-.01} $$. With this choice, we infer that the diagonal entries of $$P(D)^ 2$$ behave desirably, with high probability.
