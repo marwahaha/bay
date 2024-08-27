@@ -57,18 +57,18 @@ $$ \begin{equation} \left| \widetilde{a(D)} - \frac{2\beta^2}{n}\mathsf{Tr}[D^{-
 
 By putting the two statements above together with the observation that $$P(D)^2 $$ projects into the top-eigenspace of $$\sqrt{2}\beta S - D $$, one can reasonably believe that
 
-$$ \begin{equation} \frac{1}{n} \|P(D) -  \Pi_{\delta'}\left(2\beta A_{sym} - D\right)\|_2^2 \le \mathsf{small} \,, \end{equation} $$
+$$ \begin{equation} \frac{1}{n} \|P(D) -  \Pi_{\delta'}\left(2\beta A_{sym} - D\right)\|_F^2 \le \mathsf{small} \,, \end{equation} $$
 
 where $$\Pi_{\delta'}\left(\sqrt{2}\beta S - D\right) $$ is a projector into the top-$$\delta' n$$ dimensional eigenspace of the spectrum of $$2\beta A_{sym} - D $$.
 
-We will now give overviews of the proofs for the two statements above. Giving the actual detailed proofs would require introducing various definitions, technical facts and auxiliary lemmata about non-commutative $$\mathcal{L}^p $$ spaces, the Cauchy-Stieljtes transform, the $$R $$-transform and analytic subordination. Consequently, to ensure that the broader TCS audience can follow along, we will try to sketch the main ideas with minimal possible reference to the underlying formalism. That being said, it is simply impossible to explain even the ideas without invoking some basic terminology[^2]. Therefore, those readers that are satisfied with the two statements above may freely skip the rest of this subsection without any loss of ability to following the remaining two subsections in this post.
+We will now give overviews of the proofs for the two statements above. Giving the actual detailed proofs would require introducing various definitions, technical facts and auxiliary lemmata about non-commutative $$\mathcal{L}^p $$ spaces, the Cauchy-Stieljtes transform, the $$R $$-transform and analytic subordination. Consequently, we will try to sketch the main ideas with minimal possible reference to the underlying formalism. That being said, it is simply impossible to explain even the ideas without invoking some basic terminology[^2]. Therefore, those readers that are satisfied with the two statements above may freely skip the rest of this subsection without any loss of ability to following the remaining two subsections in this post.
 
-_Idealized Operator Norm_: We first locate the maximum of the bulk spectrum of $$\sqrt{2}\beta S - D $$. Let us lay down the strategy to do so:
-1. First, we compute the _explicit_ form of a particular function[^3] which reduces the resolvent[^4] of the sum of two (free) matrices $$X $$ and $$Y $$ to the resolvent of just one matrix $$X $$ evaluated at a shifted argument. This is a standard (and first-half of a remarkable) fact borrowed from [[Bia98]](), and says that:
+_Idealized Operator Norm_: We locate the maximum of the bulk spectrum of $$\sqrt{2}\beta S - D $$. Let us lay down the strategy to do so:
+1. First, we compute the _explicit_ form of a function[^3] which reduces the resolvent[^4] of the sum of two (free) matrices $$X $$ and $$Y $$ to the resolvent of just one matrix $$X $$ evaluated at a shifted argument. This is a standard (and first-half of a remarkable) fact borrowed from [[Bia98]](), and says that:
 
     $$ \begin{equation} \exists! f: \mathbb{H} \to \mathbb{H}, \text{s.t.},\,\text{i) }f(z) = z + O(1)\text{ for z large enough, and ii) }g_{X+Y}(z) = g_X(f(z))\,.   \end{equation} $$
 
-2. Using the explicit form of $$f^{-1} $$ for our specific case with $$X = -D $$ and $$Y = \sqrt{2}\beta S $$ we will conclude that, under a normalizaiton assumption about the trace of $$D^{-2} $$, the function $$f^{-1} $$ is strictly monotone in a certain region of the complex plane and, therefore, invertible.
+2. Using the explicit form of $$f^{-1} $$ for our specific case with $$X = -D $$ and $$Y = \sqrt{2}\beta S $$ we will conclude that, under a normalization assumption about the trace of $$D^{-2} $$, the function $$f^{-1} $$ is strictly monotone in a certain region of the complex plane and, therefore, invertible.
 
 3. At this point, we will reason about the analytic behavior of the resolvent of $$\sqrt{2}\beta S-D $$ at the shifted argument. In particular, we will demonstrate that the resolvent is analytic in $$\left(2\beta^2 g_{-D}(0), \infty\right) $$ to obtain an upper bound and then do some approximation to obtain a matching lower bound.
 
