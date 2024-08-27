@@ -9,7 +9,7 @@ og_image: /assets/img/content/post-example/Banner.jpg
 
 [//]: # (<img src="{{ "/assets/img/content/post-example/Banner.jpg" | absolute_url }}" alt="bay" class="post-pic"/>)
 
-This is the second blog past in a **3-part** series on a recent result [[JSS24]](https://arxiv.org/abs/2408.02360) by [David](https://davidjekel.com/), [Jonathan](https://jshi.science/) and me. The first blog post can be found [here]().
+This is the second blog past in a **3-part** series on a recent result [[JSS24]](https://arxiv.org/abs/2408.02360) by [David](https://davidjekel.com/), [Jonathan](https://jshi.science/) and me. The first blog post can be found [here](https://juspreetsandhu.me/2024/08/12/hessian-ascent-for-the-sk-model-i).
 
 A quick recap of what we accomplished in the first blog post:
 1. We briefly went over the various representations of the Parisi formula, and then derived the Hessian ascent algorithm from the generalized TAP free energy.
