@@ -75,28 +75,28 @@ where $$\mathbb{H} $$ denotes the upper-half plane.
 3. At this point, we will reason about the analytic behavior of the resolvent of $$\sqrt{2}\beta S-D $$ at the shifted argument. In particular, we will demonstrate that the resolvent is analytic in $$\left(2\beta^2 g_{-D}(0), \infty\right) $$ to obtain an upper bound and then do some approximation to obtain a matching lower bound.
 
 
-First, we use the fact that the $$R $$-transform is defined as $$r_X(z) = g^{-1}_X(z) - 1/z $$, and that for of a sum of two (asymptotically) free matrices, it simplifies to $$r_{X+Y}(z) = r_X(z) + r_Y(z) $$, to quickly obtain that
+We begin by obtaining an explicit form of $$f^{-1} $$ and inferring basic analytic properties about (its injectivity and domain). <br>
+Note that the $$R $$-transform is defined as $$r_X(z) = g^{-1}_X(z) - 1/z $$, and that for of a sum of two free operators, it simplifies to $$r_{X+Y}(z) = r_X(z) + r_Y(z) $$. With this, one quickly obtains that
 
 $$ \begin{equation} z = g_{\sqrt{2}\beta S - D}\left(g^{-1}_{-D}(z) + r_{\sqrt{2}\beta S}(z)\right)\,, \end{equation} $$
 
 for $$z $$ in a neighborhood around $$0 $$. <br>
-Then, combining the above equation with the fact that the $$R $$-transform of a semi-circular operator with variance $$2\beta^2 $$ is $$2\beta^2 z $$, and that $$g^{-1}_{-D}(z) $$ will be in a neighborhood of $$\infty $$, one can deduce that,
+Combining the above functional equation with the fact that the $$R $$-transform of a semi-circular operator with variance $$2\beta^2 $$ is $$2\beta^2 z $$, and that $$g^{-1}_{-D}(z) $$ will be in a neighborhood of $$\infty $$, one can deduce that,
 
 $$ \begin{equation} g_{-D}(w) = g_{\sqrt{2}\beta S - D}(w + 2\beta^2 g_{-D}(w))\, ,\end{equation} $$
 
-where we define $$w = g^{-1}_{-D}(z) $$. At this point, since $$w $$ is sufficiently large[^5], one can apply the magical fact of [[Bia98]]() and conclude that, for $$w = f(z) $$,
+where we define $$w = g^{-1}_{-D}(z) $$. Since $$w $$ is sufficiently large[^5], one can apply the magical fact of [[Bia98]]() and conclude that, for $$w = f(z) $$,
 
 $$ \begin{equation}  g_{\sqrt{2}\beta S - D}(w + 2\beta^2g_{-D}(w)) = g_{- D}(w) = g_{-D}(f(z)) = g_{\sqrt{2}\beta S - D}(z)\, .\end{equation} $$
 
 Then, using the injectivity of $$g_{\sqrt{2}\beta S - D} $$ itself, it straightforwardly follows that:
 * $$f^{-1}(z) = z + 2\beta^2 g_{-D}(z) $$, and
 * $$f(\cdot) $$ is injective.
+* In fact, with some more effort, one can conclude that,
 
-With some more effort, one can conclude that,
+    $$ \begin{equation} z \in \mathsf{dom}(f^{-1}) \iff  \mathsf{Im}\left(z + 2\beta^2 g_{-D}(z)\right) > 0\,.\end{equation} $$
 
-$$ \begin{equation} z \in \mathsf{dom}(f^{-1}) \iff  \mathsf{Im}\left(z + 2\beta^2 g_{-D}(z)\right) > 0\,.\end{equation} $$
-
-Consequently, the domain of $$f^{-1} $$ is a subset of the upper-half (complex) plane where the imaginary part of $$2\beta^2 g_{-D}(z) $$ is "countered" by the imaginary part of $$z $$ itself. It will be possible to strengthen this observation, under the assumption that $$\frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}] = 1 $$, and conclude that  $$\mathsf{sgn}\left(\mathsf{Im}(z)\right) = \mathsf{sgn}\left(\mathsf{Im}(f^{-1}(z))\right) $$. Combining this fact with basic properties about the resolvent allows one to conclude that $$f^{-1} $$ is injective on $$A = \{z = x + iy \mid x \in (0,\infty), y \in \mathbb{R} \} $$.
+Consequently, the domain of $$f^{-1} $$ is a subset of the upper-half (complex) plane where the imaginary part of $$2\beta^2 g_{-D}(z) $$ is "countered" by the imaginary part of $$z $$ itself. Under the assumption that $$\frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}] = 1 $$, one may strengthen this observation via some simple algebra and conclude that  $$\mathsf{sgn}\left(\mathsf{Im}(z)\right) = \mathsf{sgn}\left(\mathsf{Im}(f^{-1}(z))\right) $$. Combining this fact with basic properties about the resolvent allows one to conclude that $$f^{-1} $$ is injective on $$A = \{z = x + iy \mid x \in (0,\infty), y \in \mathbb{R} \} $$.
 
 At this point, the upper bound follows by using the injectivity of $$f^{-1} $$ in the desired region to conlcude that $$g_{-D}\circ f^{-1} $$ agree on the region of injectivity, and that $$g_{-D}\circ f^{-1} = g_{\sqrt{2}\beta S - D} $$ is analytic on the region $$f^{-1}(A) $$. It is a standard property of the Cauchy-Stieljtes transform that $$f^{-1}(\mathsf{Re}(A)) = \left(\frac{2\beta^2}{n}\mathsf{Tr}[D^{-1}], \infty\right)$$ cannot, then, be in the support of the spectral measure of $$\sqrt{2}\beta S - D $$.
 
