@@ -7,9 +7,9 @@ publications:
 
 - title: The Maximal Entanglement problem&colon; a quantum generalization of Unique Games
   authors: Zachary Jorquera, Alexandra Kolla, Steven Kordonowy, <u>Juspreet Singh Sandhu</u>, Stuart Wayland
-   conference: Submitted
-   paperlink: NA
-   codelink: NA
+  conference: Submitted
+  paperlink: NA
+  codelink: NA
 
 - title: Potential Hessian Ascent&colon; The Sherrington-Kirkpatrick Model 
   authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
