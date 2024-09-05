@@ -5,7 +5,7 @@ slug: /publications
 
 publications:
 
-- title: The Maximal Entanglement problem&colon; a quantum generalization of Unique Games
+- title: The Maximal Entanglement Problem&colon; A Quantum Generalization of Unique Games
   authors: Zachary Jorquera, Alexandra Kolla, Steven Kordonowy, <u>Juspreet Singh Sandhu</u>, Stuart Wayland
   conference: Submitted
   paperlink: NA
