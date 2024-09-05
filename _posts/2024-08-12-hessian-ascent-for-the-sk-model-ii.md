@@ -104,8 +104,10 @@ To obtain the lower bound, we do a Taylor expansion of $$f^{-1} $$ near $$0 $$, 
 
 _Large-overlap with top-eigenspace_: We now focus on formally showing that the matrix $$P(D)^2 $$ will have large overlap with the top-eigenspace of the shifted Hessian. To do this, we will see that control over the diagonal of $$P(D)^2 $$ will become crucial.
 
+We now formally choose the distortion parameter $$b = \beta n^{-.01} $$, and explicitly compute the overlap between $$P(D)^2 $$ and the
+
 #### Approximating the diagonal of the projector
-We now formally choose the distortion parameter $$b = \beta n^{-.01} $$. With this choice, we infer that the diagonal entries of $$P(D)^ 2$$ behave desirably, with high probability.
+We now given an overview of how to infer that the diagonal entries of $$P(D)^ 2$$ behave desirably, with high probability. As mentioned above, we will do this by comparing the 
 
 $$ \begin{equation} \text{[Diagonal entries]} \end{equation} $$
 

@@ -5,6 +5,12 @@ slug: /publications
 
 publications:
 
+- title: The Maximal Entanglement problem&colon; a quantum generalization of Unique Games
+  authors: Zachary Jorquera, Alexandra Kolla, Steven Kordonowy, <u>Juspreet Singh Sandhu</u>, Stuart Wayland
+   conference: Submitted
+   paperlink: NA
+   codelink: NA
+
 - title: Potential Hessian Ascent&colon; The Sherrington-Kirkpatrick Model 
   authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: Submitted
@@ -51,12 +57,6 @@ preprints:
 
 - title: Potential Hessian Ascent II&colon; Mixed p-Spin Models
   authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: In Preparation
-  paperlink: NA
-  codelink: NA
-
-- title: A Quantum Unique-Games Hamiltonian
-  authors: Zachary Jorquera, Alexandra Kolla, Steven Kordonowy, <u>Juspreet Singh Sandhu</u>, Stuart Wayland
   conference: In Preparation
   paperlink: NA
   codelink: NA
