@@ -104,7 +104,7 @@ To obtain the lower bound, we do a Taylor expansion of $$f^{-1} $$ near $$0 $$, 
 
 _Large-overlap with top-eigenspace_: We now focus on formally showing that the matrix $$P(D)^2 $$ will have large overlap with the top-eigenspace of the shifted Hessian.
 
-We now formally choose the distortion parameter $$b $$, and explicitly compute the overlap between $$P(D)^2 $$ and the subspace spanned by the eigenvectors of $$2\beta A_{sym} - D $$ that are small. Our goal will be to show that there is a valid choice of $$b $$ where this overlap is desirably minimal, which immediately implies that $$P^2(D) $$ must have large overlap with the top-eigenspace. It is easy to see that, by the definition of $$P(D)^2 $$,
+We wiill formally choose the distortion parameter $$b $$, and explicitly compute the overlap between $$P(D)^2 $$ and the subspace spanned by the eigenvectors of $$2\beta A_{sym} - D $$ that are small. Our goal will be to show that there is a valid choice of $$b $$ where this overlap is desirably minimal, which immediately implies that $$P^2(D) $$ must have large overlap with the top-eigenspace. It is easy to see that, by the definition of $$P(D)^2 $$,
 
 $$ \begin{equation} \frac{1}{n}\left\langle P(D)^2, (\widetilde{a(D)}-(2\beta A_{sym} - D))^2\right\rangle = \frac{1}{n}\mathsf{Tr}\left[b(b^2 + (\widetilde{a(D)}-(2\beta A_{sym} - D))^2)^{-1}(\widetilde{a(D)}-(2\beta A_{sym}-D))^{-1}\right]\,. \end{equation} $$
 
@@ -120,11 +120,11 @@ which follows with some straightforward algebra and the defintion of the resolve
 
 $$ \begin{equation} \mathsf{Im}(ic + 2\beta^2 g_{-D}(ic)) = c\left(1-\frac{2\beta^2}{n}\mathsf{Tr}\left[D^{-2}\right] + \frac{2\beta^2}{n}\mathsf{Tr}\left[(b^2\mathsf{Id}_n + D^2)^{-1}D^{-2}\right]\right)\,. \end{equation} $$
 
-Using the assumption of the trace of $$D^{-2} $$ being normalized to $$1 $$ and the fact that $$b > 0$$ immediately yields,
+Using the assumption of the trace of $$\frac{2\beta^2}{n}D^{-2} $$ being normalized to $$1 $$ and the fact that $$b > 0$$ immediately yields,
 
 $$ \begin{equation} b = \mathsf{Im}(ic + 2\beta^2 g_{-D}(ic)) \le \frac{2\beta^2 c^{3}}{n}\mathsf{Tr}\left[D^{-4}\right]\,.\end{equation} $$
 
-A choice of $$c = \beta n^{.01} $$ along with the fact that our diagonal matrix coming from the entropic correction will be positive-definite and satisfying a bound $$D^{-1} \preceq (1 + O(\epsilon))\mathsf{Id}_n $$ uniformly, will then yield the desired result.
+A choice of $$c = \beta n^{-.01} $$, along with the fact that our diagonal matrix coming from the entropic correction will be positive-definite and satisfying a bound $$D^{-1} \preceq (1 + O(\epsilon))\mathsf{Id}_n $$ uniformly, will then yield the desired result.
 
 #### Approximating the diagonal of the projector
 We now given an overview of how to infer that the diagonal entries of $$P(D)^ 2$$ behave desirably, with high probability. As mentioned above, we will do this by comparing the
