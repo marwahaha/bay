@@ -48,7 +48,7 @@ where $$\widetilde{a(D)} $$ is (approximately) the maximum value of the spectrum
 
 Let us now write a brief and informal statement that summarizes two (of the three) key qualities the operator $$P(D)^2 $$ will have[^1]. In the statement below, we will assume that $$\frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}] = 1$$.
 
-$$ \begin{align*} \text{[Idealized operator norm]:}& \quad\quad \| \sqrt{2}\beta S - D\|_{\mathsf{op}} = \frac{2\beta^2}{n}\mathsf{Tr}[D^{-1}]\,. \\
+$$ \begin{align*} \text{[Idealized operator norm]:}& \quad\quad \mathsf{maxSpec}\left(\sqrt{2}\beta S - D\right) = \frac{2\beta^2}{n}\mathsf{Tr}[D^{-1}]\,. \\
 \text{[Large-overlap with top-eigenspace]:} & \quad\quad \frac{1}{n}\left\langle P(D)^2,(\widetilde{a(D)}-(2\beta A_{sym} - D))^2\right\rangle \le \frac{O_\beta(\mathsf{Tr}[D^{-4}])}{n^{1.03}}\,. \end{align*} $$
 
 The notation $$O_\beta(\cdot) $$ suppresses the dependencies on $$\beta = O(1/\epsilon)$$ for terms that decay sufficiently fast in $$n $$. For technical reasons, $$\widetilde{a(D)} $$ is not _exactly_ $$\|\sqrt{2}\beta S - D\|_{\mathsf{op}} $$, but a _small_ perturbation around it whereby,
@@ -104,7 +104,7 @@ To obtain the lower bound, we do a Taylor expansion of $$f^{-1} $$ near $$0 $$, 
 
 _Large-overlap with top-eigenspace_: We now focus on formally showing that the matrix $$P(D)^2 $$ will have large overlap with the top-eigenspace of the shifted Hessian.
 
-We wiill formally choose the distortion parameter $$b $$, and explicitly compute the overlap between $$P(D)^2 $$ and the subspace spanned by the eigenvectors of $$2\beta A_{sym} - D $$ that are small. Our goal will be to show that there is a valid choice of $$b $$ where this overlap is desirably minimal, which immediately implies that $$P^2(D) $$ must have large overlap with the top-eigenspace. It is easy to see that, by the definition of $$P(D)^2 $$,
+We will formally choose the distortion parameter $$b $$, and explicitly compute the overlap between $$P(D)^2 $$ and the subspace spanned by the eigenvectors of $$2\beta A_{sym} - D $$ that are small. Our goal will be to show that there is a valid choice of $$b $$ where this overlap is desirably minimal, which immediately implies that $$P^2(D) $$ must have large overlap with the top-eigenspace. It is easy to see that, by the definition of $$P(D)^2 $$,
 
 $$ \begin{equation} \frac{1}{n}\left\langle P(D)^2, (\widetilde{a(D)}-(2\beta A_{sym} - D))^2\right\rangle = \frac{1}{n}\mathsf{Tr}\left[b(b^2 + (\widetilde{a(D)}-(2\beta A_{sym} - D))^2)^{-1}(\widetilde{a(D)}-(2\beta A_{sym}-D))^{-1}\right]\,. \end{equation} $$
 
@@ -127,11 +127,40 @@ $$ \begin{equation} b = \mathsf{Im}(ic + 2\beta^2 g_{-D}(ic)) \le \frac{2\beta^2
 A choice of $$c = \beta n^{-.01} $$, along with the fact that our diagonal matrix coming from the entropic correction will be positive-definite and satisfying a bound $$D^{-1} \preceq (1 + O(\epsilon))\mathsf{Id}_n $$ uniformly, will then yield the desired result.
 
 #### Approximating the diagonal of the projector
-We now given an overview of how to infer that the diagonal entries of $$P(D)^ 2$$ behave desirably, with high probability. As mentioned above, we will do this by comparing the
+We have shown that $$P(D)^2 $$ has desirably large overlap with the top-eigenspace of the shifted Hessian, and that the idealized operator norm is $$\approx \frac{2\beta^2}{n}\mathsf{Tr}\left[D^{-1}\right] $$ uniformly over the choices of $$D $$. We now give an overview of how to infer that the diagonal entries of $$P(D)^2 $$ behave desirably. This is essential to arranging the fact that the dynamics of the algorithm converge to the primal Auffinger-Chen SDE; without asserting this convergence, it is unclear how to prove that the energy achieved by the final iterate output by the algorithm is sufficiently large.
 
-$$ \begin{equation} \text{[Diagonal entries]} \end{equation} $$
+We do this via two steps:
+* Using the second-half of the remarkable result of [[Bia98]]() to show that the conditional expectation of a free sum can be studied by looking at the algebra of one of the components. Specifically, the result tells us that the same subordination function $$f $$ used above **also** preserves the projection of the free sum $$X + Y $$ onto the diagonal algebra when $$X $$ is an element of the same algebra. Namely,
+
+    $$ \begin{equation} \mathsf{diag}[(z - X + Y)^{-1}] = (f(z) - X)^{-1} \,.\end{equation} $$
+
+    The equation above will allow us to reduce studying $$\mathsf{diag}\left(\tilde{z} - (\sqrt{2}\beta S - D)\right)^{-1} $$ to simply studying $$(f(\tilde{z}) + D)^{-1} $$.
+
+* Comparing the "idealized" free-probability analog $$\mathsf{diag}(\tilde{z} - \sqrt{2}\beta S - D)^{-1} = \left(f(\tilde{z})+ D\right)^{-1} $$ with the "true" random-matrix analog $$\mathsf{diag}\left(\tilde{z} - \left(2\beta A_{sym} - D\right)\right)^{-1} $$. This is done by using concentration of measure for Lipschitz functions of Gaussians to show that,
+
+    $$ \begin{equation} \left\| \mathsf{diag}\left(\tilde{z} - \left(2\beta A_{sym} - D\right)\right)^{-1} - \mathbb{E}\left[\mathsf{diag}\left(\tilde{z} - \left(2\beta A_{sym} - D\right)\right)^{-1}\right] \right\|_2 \le \text{small}_1\,, \end{equation} $$
+
+    and then using a free interpolation, which may be regarded as a non-commutative version of Gaussian interpolation that is ubiquituous in spin-glass theory, to obtain the fact that
+
+    $$ \begin{equation} \left\| \left(f(\tilde{z})+ D\right)^{-1} - \mathbb{E}\left[\mathsf{diag}\left(\tilde{z} - \left(2\beta A_{sym} - D\right)\right)^{-1}\right] \right\|_2 \le \text{small}_2\,. \end{equation} $$
+
+
+The above line of reasoning, with a choice of $$\tilde{z} = f^{-1}(z) = z + 2\beta^2 g_{-D}(z) $$ where $$z = a + ib = \widetilde{a(D)} + ic$$, leads to the conclusion that
+
+$$ \begin{equation} \| \mathsf{diag}\left(\tilde{z} - \left(2\beta A_{sym} - D\right)\right)^{-1} - (z + D)^{-1}\|_2 \le \text{small}_1 + \text{small}_2 \,,\end{equation} $$
+
+at which point taking the imaginary component of the operators immediately yields the desired result,
+
+$$ \begin{equation} \text{[Diagonal entries]} \quad\quad \left\| \mathsf{diag}(P(D)^2) - c(c^2 + D^2)^{-1}\right\|_2 \le \text{small}_1 + \text{small}_2\,.\end{equation} $$
 
 ### Empirical distribution of the coordinates of the iterates
+With a clear constriction of the projection operator $$P(D)^2 $$, and proofs that it projects into the top-eigenspace with desirable diagonal behavior, we are ready to demonstrate that the empirical distribution of the coordinates of the sequence of iterates
+
+$$ \begin{equation} \sigma_1,\dots,\sigma_K \sim \mathcal{N}\left(0, P(D_1)^2\right) \times \dots \times \mathcal{N}\left(0,P(D_k)^2\right)\, , \end{equation} $$
+
+will approximate, at every step (with high probability), the distribution of the primal Auffinger-Chen SDE $$dY_t = \frac{\sqrt{2}\beta}{\partial_{2,2}\Lambda_\gamma(t, Y_t)}dW_t $$. We will set an external "clock" where $$t = j\eta $$ for some sufficiently small $$\eta(\epsilon) $$ and $$j \in [K] $$.
+
+To demonstrate that the empirical distribution converges to the desired SDE, we will set up an inductive argument and follow a straegy of, one again, using the Lipschitz-ness of the underlying SDE to show concentration of the empirical distribution around its expectation. We will then compare the expected empirical distribution of the coordinates under the inductive hypothesis with a discretization of a step of the primal AC SDE.
 
 ### Fluctuations of the generalized TAP free energy under fRSB
 

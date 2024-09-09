@@ -252,7 +252,7 @@ Recall that in [(1.1)](#the-parisi-formula-and-auffinger-chen-representation) we
 
 Using a bit of Ito calculus, as is done in [[Proposition 2.10, JSS24]](https://arxiv.org/pdf/2408.02360), the following primal AC SDEs for $$\Lambda $$ and $$\Lambda_\gamma $$ are obtained,
 
-$$ \begin{equation} dY_t = \frac{\sqrt{2}\beta}{\partial_{y,y}\Lambda(t,y)}dW_t\,, Y_0 = 0\,\,\,\text{and}\,\,\,\,\, dY^{\gamma}_t = \frac{\sqrt{2}\beta}{\partial_{y,y}\Lambda_\gamma(t,y)}dW_t\,,\,Y^{\gamma}_0 = 0\,.\end{equation} $$
+$$ \begin{equation} dY_t = \frac{\sqrt{2}\beta}{\partial_{y,y}\Lambda(t,Y_t)}dW_t\,, Y_0 = 0\,\,\,\text{and}\,\,\,\,\, dY^{\gamma}_t = \frac{\sqrt{2}\beta}{\partial_{y,y}\Lambda_\gamma(t,Y_t)}dW_t\,,\,Y^{\gamma}_0 = 0\,.\end{equation} $$
 
 Then, using the estimates for the derivatives of $$\Lambda $$ and $$\Lambda_\gamma $$ (as briefly mentioned below) as Lipschitz bounds in conjunction with Gronwall's inequality (again)[^3] and some Ito calculus, one obtains the following final bound [[Lemma 2.17, JSS24](https://arxiv.org/pdf/2408.02360)],
 
