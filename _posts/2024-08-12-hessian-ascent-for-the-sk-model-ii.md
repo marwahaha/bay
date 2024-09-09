@@ -9,7 +9,7 @@ og_image: /assets/img/content/post-example/Banner.jpg
 
 [//]: # (<img src="{{ "/assets/img/content/post-example/Banner.jpg" | absolute_url }}" alt="bay" class="post-pic"/>)
 
-This is the second blog past in a **3-part** series on a recent result [[JSS24]](https://arxiv.org/abs/2408.02360) by [David](https://davidjekel.com/), [Jonathan](https://jshi.science/) and me. The first blog post can be found [here](https://juspreetsandhu.me/2024/08/12/hessian-ascent-for-the-sk-model-i).
+This is the second blog past in a **3-part** series on a recent result [[JSS24]](https://arxiv.org/abs/2408.02360) by [David](https://davidjekel.com/), [Jonathan](https://jshi.science/) and me. The first blog post can be found [here](https://juspreetsandhu.me/2024/08/08/hessian-ascent-for-the-sk-model-i).
 
 A quick recap of what we accomplished in the first blog post:
 1. We briefly went over the various representations of the Parisi formula, and then derived the Hessian ascent algorithm from the generalized TAP free energy.
@@ -116,7 +116,7 @@ and, therefore, it now remains to define and bound $$b $$. Recall from the calcu
 
 $$ \begin{equation} \mathsf{Im}(ic + 2\beta^2 g_{-D}(ic)) = c + 2\beta^2\mathsf{Im}(g_{-D}(ic)) = c + \frac{2\beta^2}{n} \left(-b\mathsf{Tr\left[(b^2\mathsf{Id}_n + D^2)^{-1}\right]}\right)\, , \end{equation} $$
 
-which follows with some straightforward algebra and the defintion of the resolvent. At this point, adding and subtracting D^{-2} inside the trace and invoking the resolvent identity, one obtains,
+which follows with some straightforward algebra and the defintion of the resolvent. At this point, adding and subtracting $$D^{-2} $$ inside the trace and invoking the resolvent identity, one obtains,
 
 $$ \begin{equation} \mathsf{Im}(ic + 2\beta^2 g_{-D}(ic)) = c\left(1-\frac{2\beta^2}{n}\mathsf{Tr}\left[D^{-2}\right] + \frac{2\beta^2}{n}\mathsf{Tr}\left[(b^2\mathsf{Id}_n + D^2)^{-1}D^{-2}\right]\right)\,. \end{equation} $$
 
@@ -154,13 +154,40 @@ at which point taking the imaginary component of the operators immediately yield
 $$ \begin{equation} \text{[Diagonal entries]} \quad\quad \left\| \mathsf{diag}(P(D)^2) - c(c^2 + D^2)^{-1}\right\|_2 \le \text{small}_1 + \text{small}_2\,.\end{equation} $$
 
 ### Empirical distribution of the coordinates of the iterates
-With a clear constriction of the projection operator $$P(D)^2 $$, and proofs that it projects into the top-eigenspace with desirable diagonal behavior, we are ready to demonstrate that the empirical distribution of the coordinates of the sequence of iterates
+With a clear construction of the projection operator $$P(D)^2 $$, and proofs that it projects into the top-eigenspace with desirable diagonal behavior, we are ready to demonstrate that the empirical distribution of the coordinates of the sequence of iterates
 
-$$ \begin{equation} \sigma_1,\dots,\sigma_K \sim \mathcal{N}\left(0, P(D_1)^2\right) \times \dots \times \mathcal{N}\left(0,P(D_k)^2\right)\, , \end{equation} $$
+$$ \begin{equation} \left(\sigma_1,\dots,\sigma_K\right) \sim \left(\mathcal{N}\left(0, P(D_1)^2\right), \dots,  \mathcal{N}\left(0,P(D_k)^2\right)\right)\, , \end{equation} $$
 
 will approximate, at every step (with high probability), the distribution of the primal Auffinger-Chen SDE $$dY_t = \frac{\sqrt{2}\beta}{\partial_{2,2}\Lambda_\gamma(t, Y_t)}dW_t $$. We will set an external "clock" where $$t = j\eta $$ for some sufficiently small $$\eta(\epsilon) $$ and $$j \in [K] $$.
 
-To demonstrate that the empirical distribution converges to the desired SDE, we will set up an inductive argument and follow a straegy of, one again, using the Lipschitz-ness of the underlying SDE to show concentration of the empirical distribution around its expectation. We will then compare the expected empirical distribution of the coordinates under the inductive hypothesis with a discretization of a step of the primal AC SDE.
+To demonstrate that the empirical distribution converges to the desired SDE, we will use an inductive argument and follow a straegy of, one again, using the Lipschitz-ness of the underlying SDE to show concentration of the empirical distribution around its expectation. We will then compare the expected empirical distribution of the coordinates under the inductive hypothesis with a discretization of a step of the primal AC SDE.
+
+To start, we renormalize $$P(D)^2 $$ so that its (normalized) trace is $$1 \pm o_n(1) $$ and also project orthogonal to the current iterate $$\sigma_i $$. This normalization will be helpful in the convergence computations, and the projection will be particularly useful in the energy analysis that follows. The final covariance matrices $$\{Q_i(D)^2\}_{i \in [K]} $$ are then given as,
+
+$$ \begin{equation} Q_i(D)^2 := 2\beta n^{.01}\Pi_{\sigma_i^{\perp}}P(D)^2\Pi_{\sigma_i^{\perp}}\,, \end{equation} $$
+
+where $$D := \left(\frac{2\beta^2}{n}\sum_{j=1}^n \partial_{2,2}\Lambda_\gamma\left(i\eta,(\sigma_i)_j\right)^{-2}\right)^{1/2}\mathsf{diag}\left[\partial_{2,2}\Lambda_\gamma(i\eta,,\sigma_i)\right] $$. It is straightforward to verify with the new definition and using the three conclusions of the prior section that:
+1. The normalized trace is,
+
+    $$ \begin{equation} \frac{1}{n}\mathsf{Tr}\left[Q_i(D)^2\right] = 1 \pm O_\beta(n^{-.01})\,.\end{equation} $$
+
+2. The diagonal of $$Q_i(D)^2 $$ is close to $$D^{-2} $$,
+
+    $$ \begin{equation} \left\| \mathsf{diag}\left[Q_i(D)^2\right] - 2\beta^2 D^{-2}\right\|_2 \le  O_\beta\left(n^{.49}\right)\,.\end{equation} $$
+
+
+In fact, we can also assert that the diagonal of $$Q_i(D)^2 $$ has $$2 $$-norm that is of $$O_\beta(\sqrt{n}) $$ and that the operator norm of the covariance matrix is $$O(n^{.04}) $$. As stated above we will proceed in two steps:
+* Consider a _fixed_ iterate $$\sigma_i $$ with desirably small Wasserstein distance to the distribution of $$Y_{i\eta} $$. Then, we first show that,
+
+    $$ \begin{equation} d_{W,2}\left(\mathbb{E}\left[\mathsf{emp}(\sigma_{i+1})\right], Y_{(i+1)\eta}\right)^2 \le d_{W,2}\left(\mathsf{emp}(\sigma_{i}), Y_{i\eta}\right)^2 + \text{small}_{\beta}\left(\eta,\epsilon\right)\,,\end{equation} $$
+
+    at which point the inductive hypothesis kicks in to accumulate the errors on the previous step.
+
+* Having shown this, we use concentration of measure arguments to argue that the empirical distribution doesn't fluctuate a lot. Namely,
+
+    $$ \begin{equation} d_{W,2}\left(\mathsf{emp}\left(\sigma_{i+1}\right), \mathbb{E}\left[\mathsf{emp}\left(\sigma_{i+1}\right)\right]\right) \le o_n(1)\,.\end{equation} $$
+
+    To this we use the fact that we can upper bound, with high probability over the randomness of the iterate, the values of every coordinate. Then, since the operator norm of the covariance is bounded, we can apply Lipschitz test functions on a single updated iterate and project the underlying space into a large enough cube which contains the current iterate. On doing this, one can use concentration for Lipschitz functions of Gaussians to bound the behavior of $$1 $$-Lipschitz functions, and make the strength of the concentration fight the size of a net over the size of all Lipschitz functions.  
 
 ### Fluctuations of the generalized TAP free energy under fRSB
 
