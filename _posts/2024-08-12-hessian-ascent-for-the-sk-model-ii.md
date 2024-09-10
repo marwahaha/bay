@@ -23,6 +23,8 @@ A quick recap of what we accomplished in the first blog post:
    * [Fluctuations of the generalized TAP free energy under fRSB](#fluctuations-of-the-generalized-tap-free-energy-under-frsb)
 2. [Footnotes](#footnotes)
 <br>
+<br>
+<br>
 
 ## Proof Sketch
 ### Analyzing the TAP-corrected Hessian via free probability
