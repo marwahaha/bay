@@ -164,7 +164,7 @@ will approximate, at every step (with high probability), the distribution of the
 
 To demonstrate that the empirical distribution converges to the desired SDE, we will use an inductive argument and follow a straegy of, one again, using the Lipschitz-ness of the underlying SDE to show concentration of the empirical distribution around its expectation. We will then compare the expected empirical distribution of the coordinates under the inductive hypothesis with a discretization of a step of the primal AC SDE.
 
-To start, we renormalize $$P(D)^2 $$ so that its (normalized) trace is $$1 \pm o_n(1) $$ and also project orthogonal to the current iterate $$\sigma_i $$. This normalization will be helpful in the convergence computations, and the projection will be particularly useful in the energy analysis that follows. The final covariance matrices $$\{Q_i(D)^2\}_{i \in [K]} $$ are then given as,
+To start, we renormalize $$P(D)^2 $$ so that its (normalized) trace is $$1 \pm o_n(1) $$; we also project $$P(D)^2 $$ orthogonal to the current iterate $$\sigma_i $$. This normalization will be helpful in the convergence computations, and the projection will be particularly useful in the energy analysis that follows. The final covariance matrices $$\{Q_i(D)^2\}_{i \in [K]} $$ are then given as,
 
 $$ \begin{equation} Q_i(D)^2 := 2\beta n^{.01}\Pi_{\sigma_i^{\perp}}P(D)^2\Pi_{\sigma_i^{\perp}}\,, \end{equation} $$
 
@@ -189,7 +189,7 @@ In fact, we can also assert that the diagonal of $$Q_i(D)^2 $$ has $$2 $$-norm t
 
     $$ \begin{equation} d_{W,2}\left(\mathsf{emp}\left(\sigma_{i+1}\right), \mathbb{E}\left[\mathsf{emp}\left(\sigma_{i+1}\right)\right]\right) \le o_n(1)\,.\end{equation} $$
 
-    To this we use the fact that we can upper bound, with high probability over the randomness of the iterate, the values of every coordinate. Then, since the operator norm of the covariance is bounded, we can apply Lipschitz test functions on a single updated iterate and project the underlying space into a large enough cube which contains the current iterate. On doing this, one can use concentration for Lipschitz functions of Gaussians to bound the behavior of $$1 $$-Lipschitz functions, and make the strength of the concentration fight the size of a net over the size of all Lipschitz functions.  
+    To do this we use the fact that we can upper bound, with high probability over the randomness of the iterate, the maximum value of every coordinate. Then, since the operator norm of the covariance is bounded, we can apply Lipschitz test functions on a single updated iterate and project the underlying space into a large enough cube which contains the current iterate. On doing this, one can use concentration for Lipschitz functions to bound the behavior of $$1 $$-Lipschitz functions, and make the strength of the concentration fight the size of a net over all Lipschitz functions.  
 
 ### Fluctuations of the generalized TAP free energy under fRSB
 
