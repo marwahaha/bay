@@ -160,7 +160,7 @@ With a clear construction of the projection operator $$P(D)^2 $$, and proofs tha
 
 $$ \begin{equation} \left(\sigma_1,\dots,\sigma_K\right) \sim \left(\mathcal{N}\left(0, P(D_1)^2\right), \dots,  \mathcal{N}\left(0,P(D_k)^2\right)\right)\, , \end{equation} $$
 
-will approximate, at every step (with high probability), the distribution of the primal Auffinger-Chen SDE $$dY_t = \frac{\sqrt{2}\beta}{\partial_{2,2}\Lambda_\gamma(t, Y_t)}dW_t $$. We will set an external "clock" where $$t = j\eta $$ for some sufficiently small $$\eta(\epsilon) $$ and $$j \in [K] $$.
+will approximate, at every step (with high probability), the distribution of the primal Auffinger-Chen SDE $$dY^\gamma_t = \frac{\sqrt{2}\beta}{\partial_{2,2}\Lambda_\gamma(t, Y^\gamma_t)}dW_t $$. We will set an external "clock" where $$t = j\eta $$ for some sufficiently small $$\eta(\epsilon) $$ and $$j \in [K] $$.
 
 To demonstrate that the empirical distribution converges to the desired SDE, we will use an inductive argument and follow a straegy of, one again, using the Lipschitz-ness of the underlying SDE to show concentration of the empirical distribution around its expectation. We will then compare the expected empirical distribution of the coordinates under the inductive hypothesis with a discretization of a step of the primal AC SDE.
 
@@ -181,9 +181,30 @@ where $$D := \left(\frac{2\beta^2}{n}\sum_{j=1}^n \partial_{2,2}\Lambda_\gamma\l
 In fact, we can also assert that the diagonal of $$Q_i(D)^2 $$ has $$2 $$-norm that is of $$O_\beta(\sqrt{n}) $$ and that the operator norm of the covariance matrix is $$O(n^{.04}) $$. As stated above we will proceed in two steps:
 * Consider a _fixed_ iterate $$\sigma_i $$ with desirably small Wasserstein distance to the distribution of $$Y_{i\eta} $$. Then, we first show that,
 
-    $$ \begin{equation} d_{W,2}\left(\mathbb{E}\left[\mathsf{emp}(\sigma_{i+1})\right], Y_{(i+1)\eta}\right)^2 \le d_{W,2}\left(\mathsf{emp}(\sigma_{i}), Y_{i\eta}\right)^2 + \text{small}_{\beta}\left(\eta,\epsilon\right)\,,\end{equation} $$
+    $$ \begin{equation} d_{W,2}\left(\mathbb{E}\left[\mathsf{emp}(\sigma_{i+1})\right], Y^\gamma_{(i+1)\eta}\right)^2 \le d_{W,2}\left(\mathsf{emp}(\sigma_{i}), Y^\gamma_{i\eta}\right)^2 + \text{small}_{\beta}\left(\eta,\epsilon\right)\,,\end{equation} $$
 
-    at which point the inductive hypothesis kicks in to accumulate the errors on the previous step.
+    To show this, we first combine a standard estimate using Gronwall's inequality, the Lipschitz-ness of the driving function $$\frac{\sqrt{2}\beta}{\partial_{2,2}\Lambda_\gamma(t,y)} $$, and an applicaton ot Ito-isometry to conclude that,
+
+    $$ \begin{equation} \left\|Y^\gamma_{(i+1)\eta} - \left(Y^\gamma_{i\eta} + \frac{\sqrt{2}\beta}{\partial_{2,2}\Lambda_\gamma(t,Y^\gamma_t)\vert_{t=i\eta}}\left(W_{(i+1)\eta} - W_{i\eta}\right)\right)\right\|^2_2 \le O_\beta(\eta^2)\,,\end{equation} $$
+
+    allowing us to approximate the primal AC SDE in small, discretized time increments with sufficiently small quantitative error. At this point, the inductive hypothesis kicks in to accumulate the errors from the previous step, provided we can bound the action of (Lipschitz) test functions on the iterate $$\sigma_{i+1} = \sigma_i + \sqrt{\eta}Q_i(D)z_i $$ where $$z_i \sim \mathcal{N}(0,\mathsf{Id}_n) $$.
+
+    They key point here is to notice that $$\sqrt{\eta}(Q_i(D)z_i)_j $$ can be replaced by $$\left(Q^2_i(D)\right)_{j,j}^{1/2} W$$ with $$W \sim \mathcal{N}(0,\eta) $$ while retaining equality in distribution. This allows us to study the normalized counting measure on the coordinates $$[n] $$. Letting $$\Sigma $$ denote the random variable that takes value $$(\sigma_i)_j $$ on $$j \in [n] $$, and $$\Pi $$ be one that takes value $$\left(Q^2_i(D)\right)_{j,j}^{1/2} W$$ on $$j \in [n] $$, a simple rewrite then implies that,
+
+    $$ \begin{equation} \mathbb{E}[\mathsf{emp}(\sigma_{i+1})] \overset{d}{=} \Sigma + \Pi W\, , \end{equation} $$
+
+    and consequently, optimally coupling $$\Sigma $$ and $$Y^{\gamma}_{i\eta} $$,
+
+    $$ \begin{equation} \|\Sigma -  Y^\gamma_{i\eta}\|_2 = d_{W,2}\left(\mathsf{emp}(\sigma_i), Y^\gamma_i\right)\,. \end{equation} $$
+
+    At this point, we simply use the definition of the $$W_2$$ distance in conjunction with a triangle inequality to conclude
+
+    $$ \begin{align*} d_{W,2}\left(\mathbb{E}\left[\mathsf{emp}(\sigma_{i+1})\right], Y^\gamma_{(i+1)\eta}\right) &\le \|(\Sigma + \Pi W)- Y^\gamma_{(i+1)\eta}\|_2 \\
+    &\le \| \Sigma - Y^\gamma_{i\eta}\|_2 + \| \Pi W - (Y^\gamma_{(i+1)\eta} - Y^\gamma_{i\eta})\|_2\,. \end{align*} $$   
+
+     Now, we apply the inductive hypothesis, and use the estimate above in conjunction with the properties of $$Q_i(D)^2 $$ mentioned above to conclude that
+
+     $$ \begin{equation} d_{W,2}\left(\mathbb{E}\left[\mathsf{emp}(\sigma_{i+1})\right], Y^\gamma_{(i+1)\eta}\right) \le \text{small}_{\beta}(\eta,\gamma) + o_n(1)\,.\end{equation} $$
 
 * Having shown this, we use concentration of measure arguments to argue that the empirical distribution doesn't fluctuate a lot. Namely,
 
