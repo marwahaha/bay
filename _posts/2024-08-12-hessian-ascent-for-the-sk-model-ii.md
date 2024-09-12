@@ -184,7 +184,7 @@ In fact, we can also assert that the diagonal of $$Q_i(D)^2 $$ has $$2 $$-norm t
 
     $$ \begin{equation} d_{W,2}\left(\mathbb{E}\left[\mathsf{emp}(\sigma_{i+1})\right], Y^\gamma_{(i+1)\eta}\right)^2 \le d_{W,2}\left(\mathsf{emp}(\sigma_{i}), Y^\gamma_{i\eta}\right)^2 + \text{small}_{\beta}\left(\eta,\epsilon\right)\,,\end{equation} $$
 
-    To show this, we first combine a standard estimate using Gronwall's inequality, the Lipschitz-ness of the driving function $$\frac{\sqrt{2}\beta}{\partial_{2,2}\Lambda_\gamma(t,y)} $$, and an applicaton ot Ito-isometry to conclude that,
+    To show this, we first combine a standard estimate using Gronwall's inequality, the Lipschitz-ness of the driving function $$\frac{\sqrt{2}\beta}{\partial_{2,2}\Lambda_\gamma(t,y)} $$, and an application of Ito-isometry to conclude that,
 
     $$ \begin{equation} \left\|Y^\gamma_{(i+1)\eta} - \left(Y^\gamma_{i\eta} + \frac{\sqrt{2}\beta}{\partial_{2,2}\Lambda_\gamma(t,Y^\gamma_t)\vert_{t=i\eta}}\left(W_{(i+1)\eta} - W_{i\eta}\right)\right)\right\|^2_2 \le O_\beta(\eta^2)\,,\end{equation} $$
 
