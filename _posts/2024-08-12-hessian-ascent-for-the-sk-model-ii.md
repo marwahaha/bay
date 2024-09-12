@@ -29,7 +29,7 @@ A quick recap of what we accomplished in the first blog post:
 ## Proof Sketch
 ### Analyzing the TAP-corrected Hessian via free probability
 We now begin sketching the proof overview for the first main statement. As stated in the previous post, the goal is to create a matrix $$Q(t_j, \sigma_j) $$ for every step $$j \in [K] $$ with time $$t_j = j\eta $$ that, with high probability,
-1. Projects into the top-eigenspace of $$\nabla^2 \mathsf{TAP} :=\sqrt{2}\beta\,\mathsf{GOE}(n) - D(t_j,\sigma_j) $$, and
+1. Projects into the top-eigenspace of $$\nabla^2 \mathsf{TAP} :=2\beta A_{sym} - D(t_j,\sigma_j) $$, and
 2. Has "well-behaved" diagonal entries, so that we can assert convergence of the empirical distribution of the coordinates of every iterate of the algorithm to the primal version of the AC SDE in [[2.2]](#empirical-distribution-of-the-coordinates-of-the-iterates).
 
 We proceed in chronological fashion, first giving a construction of $$Q $$ and showing it projects into the top-eigenspace, and then proving that this construction leads to diagonal entries with the desired behavior.
@@ -53,7 +53,7 @@ Let us now write a brief and informal statement that summarizes two (of the thre
 $$ \begin{align*} \text{[Idealized operator norm]:}& \quad\quad \mathsf{maxSpec}\left(\sqrt{2}\beta S - D\right) = \frac{2\beta^2}{n}\mathsf{Tr}[D^{-1}]\,. \\
 \text{[Large-overlap with top-eigenspace]:} & \quad\quad \frac{1}{n}\left\langle P(D)^2,(\widetilde{a(D)}-(2\beta A_{sym} - D))^2\right\rangle \le \frac{O_\beta(\mathsf{Tr}[D^{-4}])}{n^{1.03}}\,. \end{align*} $$
 
-The notation $$O_\beta(\cdot) $$ suppresses the dependencies on $$\beta = O(1/\epsilon)$$ for terms that decay sufficiently fast in $$n $$. For technical reasons, $$\widetilde{a(D)} $$ is not _exactly_ $$\|\sqrt{2}\beta S - D\|_{\mathsf{op}} $$, but a _small_ perturbation around it whereby,
+The notation $$O_\beta(\cdot) $$ suppresses the dependencies on $$\beta = O(1/\epsilon)$$ for terms that decay sufficiently fast in $$n $$. For technical reasons, $$\widetilde{a(D)} $$ is not _exactly_ $$\mathsf{maxSpec}\left(\sqrt{2}\beta S - D\right) $$, but a _small_ perturbation around it whereby,
 
 $$ \begin{equation} \left| \widetilde{a(D)} - \frac{2\beta^2}{n}\mathsf{Tr}[D^{-1}] \right| \le \frac{O_\beta\left(\mathsf{Tr}[D^{-3}]\right)}{n^{1.02}}\,. \end{equation} $$
 
@@ -146,6 +146,7 @@ We do this via two steps:
 
     $$ \begin{equation} \left\| \left(f(\tilde{z})+ D\right)^{-1} - \mathbb{E}\left[\mathsf{diag}\left(\tilde{z} - \left(2\beta A_{sym} - D\right)\right)^{-1}\right] \right\|_2 \le \text{small}_2\,. \end{equation} $$
 
+    The free interpolation used to prove the above statement is the most technicaly involved part of the proofs of section 4 in the paper. It extends an idea of Collins, Guionnet and Parraud
 
 The above line of reasoning, with a choice of $$\tilde{z} = f^{-1}(z) = z + 2\beta^2 g_{-D}(z) $$ where $$z = a + ib = \widetilde{a(D)} + ic$$, leads to the conclusion that
 
@@ -197,14 +198,14 @@ In fact, we can also assert that the diagonal of $$Q_i(D)^2 $$ has $$2 $$-norm t
 
     $$ \begin{equation} \|\Sigma -  Y^\gamma_{i\eta}\|_2 = d_{W,2}\left(\mathsf{emp}(\sigma_i), Y^\gamma_i\right)\,. \end{equation} $$
 
-    At this point, we simply use the definition of the $$W_2$$ distance in conjunction with a triangle inequality to conclude
+    At this point, we use the definition of the $$W_2$$ distance in conjunction with a triangle inequality to conclude
 
     $$ \begin{align*} d_{W,2}\left(\mathbb{E}\left[\mathsf{emp}(\sigma_{i+1})\right], Y^\gamma_{(i+1)\eta}\right) &\le \|(\Sigma + \Pi W)- Y^\gamma_{(i+1)\eta}\|_2 \\
     &\le \| \Sigma - Y^\gamma_{i\eta}\|_2 + \| \Pi W - (Y^\gamma_{(i+1)\eta} - Y^\gamma_{i\eta})\|_2\,. \end{align*} $$   
 
-     Now, we apply the inductive hypothesis, and use the estimate above in conjunction with the properties of $$Q_i(D)^2 $$ mentioned above to conclude that
+     Now, we apply the inductive hypothesis, and use the discretized primal AC SDE estimate above in conjunction with the properties of $$Q_i(D)^2 $$ mentioned above to conclude that
 
-     $$ \begin{equation} d_{W,2}\left(\mathbb{E}\left[\mathsf{emp}(\sigma_{i+1})\right], Y^\gamma_{(i+1)\eta}\right) \le \text{small}_{\beta}(\eta,\gamma) + o_n(1)\,.\end{equation} $$
+     $$ \begin{equation} d_{W,2}\left(\mathbb{E}\left[\mathsf{emp}(\sigma_{i+1})\right], Y^\gamma_{(i+1)\eta}\right) \le \text{small}_{\beta}(\eta,\gamma) + o_n(1)\,. \end{equation} $$
 
 * Having shown this, we use concentration of measure arguments to argue that the empirical distribution doesn't fluctuate a lot. Namely,
 
