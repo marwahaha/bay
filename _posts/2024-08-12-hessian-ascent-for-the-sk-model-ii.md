@@ -65,7 +65,7 @@ where $$\Pi_{\delta'}\left(\sqrt{2}\beta S - D\right) $$ is a projector into the
 We will now give overviews of the proofs for the two statements above. Giving the actual detailed proofs would require introducing various definitions, technical facts and auxiliary lemmata about non-commutative $$\mathcal{L}^p $$ spaces, the Cauchy-Stieljtes transform (denoted for the spectral measure of an operator $$A $$ as $$g_A(z) $$), the $$R $$-transform and analytic subordination. Consequently, we will try to sketch the main ideas with minimal possible reference to the underlying formalism. That being said, it is simply impossible to explain even the ideas without invoking some basic terminology[^1]. Therefore, those readers that are satisfied with the two statements above may freely skip the rest of this subsection without any loss of ability to following the remaining two subsections in this post.
 
 _Idealized Operator Norm_: We locate the maximum of the bulk spectrum of $$\sqrt{2}\beta S - D $$. Let us lay down the strategy to do so:
-1. Those familiar with resolvent formalism will immediately notice that $$P(D)^2 $$ is nothing but the (negative of the) imaginary part of the _resolvent_[^2] $$g_{2\beta A_{sym} - D} $$, evaluated at a purely imaginary point $$ib $$, which is a slight perturbation[^3] from $$0 $$. First, we compute the _explicit_ form of a function[^4] which reduces the resolvent of the sum of two (free) matrices $$X $$ and $$Y $$ to the resolvent of just one matrix $$X $$ evaluated at a shifted argument. This is a standard (and first-half of a remarkable) fact borrowed from [[Bia98]](), and says that:
+1. Those familiar with resolvent formalism will immediately notice that $$P(D)^2 $$ is nothing but the (negative of the) imaginary part of the _resolvent_[^2] $$g_{2\beta A_{sym} - D} $$, evaluated at a purely imaginary point $$ib $$, which is a slight perturbation[^3] from $$0 $$. First, we compute the _explicit_ form of a function[^4] which reduces the resolvent of the sum of two (free) matrices $$X $$ and $$Y $$ to the resolvent of just one matrix $$X $$ evaluated at a shifted argument. This is a standard (and first-half of a remarkable) fact borrowed from [[Bia98]](https://link.springer.com/content/pdf/10.1007/PL00004363.pdf), and says that:
 
     $$ \begin{equation} \exists! f: \mathbb{H} \to \mathbb{H}, \text{s.t.},\,\text{i) }f(z) = z + O(1)\text{ for z large enough, and ii) }g_{X+Y}(z) = g_X(f(z))\,,   \end{equation} $$
 
@@ -86,7 +86,7 @@ Combining the above functional equation with the fact that the $$R $$-transform 
 
 $$ \begin{equation} g_{-D}(w) = g_{\sqrt{2}\beta S - D}(w + 2\beta^2 g_{-D}(w))\, ,\end{equation} $$
 
-where we define $$w = g^{-1}_{-D}(z) $$. Since $$w $$ is sufficiently large[^5], one can apply the magical fact of [[Bia98]]() and conclude that, for $$w = f(z) $$,
+where we define $$w = g^{-1}_{-D}(z) $$. Since $$w $$ is sufficiently large[^5], one can apply the magical fact of [[Bia98]](https://link.springer.com/content/pdf/10.1007/PL00004363.pdf) and conclude that, for $$w = f(z) $$,
 
 $$ \begin{equation}  g_{\sqrt{2}\beta S - D}(w + 2\beta^2g_{-D}(w)) = g_{- D}(w) = g_{-D}(f(z)) = g_{\sqrt{2}\beta S - D}(z)\, .\end{equation} $$
 
@@ -131,7 +131,7 @@ A choice of $$c = \beta n^{-.01} $$, along with the fact that our diagonal matri
 We have shown that $$P(D)^2 $$ has desirably large overlap with the top-eigenspace of the shifted Hessian, and that the idealized operator norm is $$\approx \frac{2\beta^2}{n}\mathsf{Tr}\left[D^{-1}\right] $$ uniformly over the choices of $$D $$. We now give an overview of how to infer that the diagonal entries of $$P(D)^2 $$ behave desirably. This is essential to arranging the fact that the dynamics of the algorithm converge to the primal Auffinger-Chen SDE; without asserting this convergence, it is unclear how to prove that the energy achieved by the final iterate output by the algorithm is sufficiently large.
 
 We do this via two steps:
-* Using the second-half of the remarkable result of [[Bia98]]() to show that the conditional expectation of a free sum can be studied by looking at the algebra of one of the components. Specifically, the result tells us that the same subordination function $$f $$ used above **also** preserves the projection of the free sum $$X + Y $$ onto the diagonal algebra when $$X $$ is an element of the same algebra. Namely,
+* Using the second-half of the remarkable result of [[Bia98]](https://link.springer.com/content/pdf/10.1007/PL00004363.pdf) to show that the conditional expectation of a free sum can be studied by looking at the algebra of one of the components. Specifically, the result tells us that the same subordination function $$f $$ used above **also** preserves the projection of the free sum $$X + Y $$ onto the diagonal algebra when $$X $$ is an element of the same algebra. Namely,
 
     $$ \begin{equation} \mathsf{diag}[(z - X + Y)^{-1}] = (f(z) - X)^{-1} \,.\end{equation} $$
 
