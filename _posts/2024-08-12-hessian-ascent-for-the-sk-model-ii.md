@@ -65,7 +65,7 @@ where $$\Pi_{\delta'}\left(\sqrt{2}\beta S - D\right) $$ is a projector into the
 We will now give overviews of the proofs for the two statements above. Giving the actual detailed proofs would require introducing various definitions, technical facts and auxiliary lemmata about non-commutative $$\mathcal{L}^p $$ spaces, the Cauchy-Stieljtes transform (denoted for the spectral measure of an operator $$A $$ as $$g_A(z) $$), the $$R $$-transform and analytic subordination. Consequently, we will try to sketch the main ideas with minimal possible reference to the underlying formalism. That being said, it is simply impossible to explain even the ideas without invoking some basic terminology[^1]. Therefore, those readers that are satisfied with the two statements above may freely skip the rest of this subsection without any loss of ability to following the remaining two subsections in this post.
 
 _Idealized Operator Norm_: We locate the maximum of the bulk spectrum of $$\sqrt{2}\beta S - D $$. Let us lay down the strategy to do so:
-1. Those familiar with resolvent formalism will immediately notice that $$P(D)^2 $$ is nothing but the (negative of the) imaginary part of the _resolvent_[^2] $$g_{2\beta A_{sym} - D} $$, evaluated at a purely imaginary point $$ib $$, which is a slight perturbation from $$0 $$^[3]. First, we compute the _explicit_ form of a function[^4] which reduces the resolvent of the sum of two (free) matrices $$X $$ and $$Y $$ to the resolvent of just one matrix $$X $$ evaluated at a shifted argument. This is a standard (and first-half of a remarkable) fact borrowed from [[Bia98]](), and says that:
+1. Those familiar with resolvent formalism will immediately notice that $$P(D)^2 $$ is nothing but the (negative of the) imaginary part of the _resolvent_[^2] $$g_{2\beta A_{sym} - D} $$, evaluated at a purely imaginary point $$ib $$, which is a slight perturbation[^3] from $$0 $$. First, we compute the _explicit_ form of a function[^4] which reduces the resolvent of the sum of two (free) matrices $$X $$ and $$Y $$ to the resolvent of just one matrix $$X $$ evaluated at a shifted argument. This is a standard (and first-half of a remarkable) fact borrowed from [[Bia98]](), and says that:
 
     $$ \begin{equation} \exists! f: \mathbb{H} \to \mathbb{H}, \text{s.t.},\,\text{i) }f(z) = z + O(1)\text{ for z large enough, and ii) }g_{X+Y}(z) = g_X(f(z))\,,   \end{equation} $$
 
@@ -222,9 +222,7 @@ In fact, we can also assert that the diagonal of $$Q_i(D)^2 $$ has $$2 $$-norm t
 
     $$ \begin{equation} d_{W,2}\left(\mathsf{emp}\left(\sigma_{i+1}\right), \mathbb{E}\left[\mathsf{emp}\left(\sigma_{i+1}\right)\right]\right) \le o_n(1)\,.\end{equation} $$
 
-    To do this we use the fact that we can upper bound, with high probability over the randomness of the iterate, the maximum value of every coordinate. Then, since the operator norm of the covariance is bounded, we can apply Lipschitz test functions on a single updated iterate and project the underlying space into a large enough cube which contains the current iterate. On doing this, one can use concentration for Lipschitz functions to bound the behavior of $$1 $$-Lipschitz functions, and make the strength of the concentration fight the size of a net over all Lipschitz functions.  
-
-### Fluctuations of the generalized TAP free energy under fRSB
+    To do this we use the fact that we can upper bound, with high probability over the randomness of the iterate, the maximum value of every coordinate. Then, since the operator norm of the covariance is bounded, we can apply Lipschitz test functions on a single updated iterate and project the underlying space into a large enough cube which contains the current iterate. On doing this, one can use concentration for Lipschitz functions to bound the behavior of $$1 $$-Lipschitz functions, and make the strength of the concentration fight the size of a net over all Lipschitz functions.
 
 #### FOOTNOTES
 
