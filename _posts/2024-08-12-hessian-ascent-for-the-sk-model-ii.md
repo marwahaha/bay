@@ -48,7 +48,7 @@ where $$\widetilde{a(D)} $$ is (approximately) the maximum value of the spectrum
 
 * The scalar $$b $$ will be chosen to be sufficiently small so that it does not cause $$P^2(D) $$ to deviate too much from projecting into the desired top-eigenspace. However, it will be non-zero all the same, so that the operator $$P^2 (D) $$ continues to be well-defined.
 
-Let us now write a brief and informal statement that summarizes two (of the three) key qualities the operator $$P(D)^2 $$ will have[^1]. In the statement below, we will assume that $$\frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}] = 1$$.
+Let us now write a brief and informal statement that summarizes two (of the three) key qualities the operator $$P(D)^2 $$[^1] will have. In the statement below, we will assume that $$\frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}] = 1$$.
 
 $$ \begin{align*} \text{[Idealized operator norm]:}& \quad\quad \mathsf{maxSpec}\left(\sqrt{2}\beta S - D\right) = \frac{2\beta^2}{n}\mathsf{Tr}[D^{-1}]\,. \\
 \text{[Large-overlap with top-eigenspace]:} & \quad\quad \frac{1}{n}\left\langle P(D)^2,(\widetilde{a(D)}-(2\beta A_{sym} - D))^2\right\rangle \le \frac{O_\beta(\mathsf{Tr}[D^{-4}])}{n^{1.03}}\,. \end{align*} $$
@@ -63,7 +63,7 @@ $$ \begin{equation} \frac{1}{n} \|P(D) -  \Pi_{\delta'}\left(2\beta A_{sym} - D\
 
 where $$\Pi_{\delta'}\left(\sqrt{2}\beta S - D\right) $$ is a projector into the top-$$\delta' n$$ dimensional eigenspace of the spectrum of $$2\beta A_{sym} - D $$.
 
-We will now give overviews of the proofs for the two statements above. Giving the actual detailed proofs would require introducing various definitions, technical facts and auxiliary lemmata about non-commutative $$\mathcal{L}^p $$ spaces, the Cauchy-Stieljtes transform, the $$R $$-transform and analytic subordination. Consequently, we will try to sketch the main ideas with minimal possible reference to the underlying formalism. That being said, it is simply impossible to explain even the ideas without invoking some basic terminology[^2]. Therefore, those readers that are satisfied with the two statements above may freely skip the rest of this subsection without any loss of ability to following the remaining two subsections in this post.
+We will now give overviews of the proofs for the two statements above. Giving the actual detailed proofs would require introducing various definitions, technical facts and auxiliary lemmata about non-commutative $$\mathcal{L}^p $$ spaces, the Cauchy-Stieljtes transform (denoted for the spectral measure of an operator $$A $$ as $$g_A(z) $$), the $$R $$-transform and analytic subordination. Consequently, we will try to sketch the main ideas with minimal possible reference to the underlying formalism. That being said, it is simply impossible to explain even the ideas without invoking some basic terminology[^2]. Therefore, those readers that are satisfied with the two statements above may freely skip the rest of this subsection without any loss of ability to following the remaining two subsections in this post.
 
 _Idealized Operator Norm_: We locate the maximum of the bulk spectrum of $$\sqrt{2}\beta S - D $$. Let us lay down the strategy to do so:
 1. First, we compute the _explicit_ form of a function[^3] which reduces the resolvent[^4] of the sum of two (free) matrices $$X $$ and $$Y $$ to the resolvent of just one matrix $$X $$ evaluated at a shifted argument. This is a standard (and first-half of a remarkable) fact borrowed from [[Bia98]](), and says that:
@@ -146,7 +146,7 @@ We do this via two steps:
 
     $$ \begin{equation} \left\| \left(f(\tilde{z})+ D\right)^{-1} - \mathbb{E}\left[\mathsf{diag}\left(\tilde{z} - \left(2\beta A_{sym} - D\right)\right)^{-1}\right] \right\|_2 \le \text{small}_2\,. \end{equation} $$
 
-    The free interpolation used to prove the above statement is the most technicaly involved part of the proofs of section 4 in the paper. It extends an idea of Collins, Guionnet and Parraud
+    The free interpolation used to prove the above statement is the most technically involved part of section-4 (and likely the paper). It extends an idea of Collins, Guionnet and Parraud [[CGP22]()] which attempts to understand the quantitative strength of fluctuations between the expected value of $$\frac{1}{n}\mathsf{Tr}\left[f(X_n)\right] $$ and $$\tau\left(f(S)\right) $$; $$X_n $$ is a finite random matrix, $$f $$ is a reasonably "nice" function (not necessarily a polynomial), and $$S $$ is an idealized operator in a non-commutative probability space.  
 
 The above line of reasoning, with a choice of $$\tilde{z} = f^{-1}(z) = z + 2\beta^2 g_{-D}(z) $$ where $$z = a + ib = \widetilde{a(D)} + ic$$, leads to the conclusion that
 
@@ -225,4 +225,4 @@ In fact, we can also assert that the diagonal of $$Q_i(D)^2 $$ has $$2 $$-norm t
 
 [^4]: See [here](https://en.wikipedia.org/wiki/Resolvent_formalism) for a definition of the resolvent, and a statement of the famous resolvent identity.
 
-[^5]: We work in the free product of the algebras generated by a semi-circular operator $$S $$ and an element $$D \in \text{M}_n(\mathbb{C}) $$ with $$0 \le \| D\|_{\mathsf{op}} \le O(1)$$.
+[^5]: We work in the free product of the algebras generated by a semi-circular operator $$S $$ and an element $$D \in \text{M}_n(\mathbb{C}) $$ with $$0 < \| D\|_{\mathsf{op}} \le O(1)$$.
