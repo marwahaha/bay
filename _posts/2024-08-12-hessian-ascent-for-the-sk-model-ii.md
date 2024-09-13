@@ -46,7 +46,7 @@ where $$\widetilde{a(D)} $$ is (approximately) the maximum value of the spectrum
 
   $$ \begin{equation} P_{S}(D)^2 := b\left(b^2\mathsf{Id} + (\widetilde{a(D)} - (\sqrt{2}\beta S - D))^2\right)^{-1}\,. \end{equation} $$
 
-* The scalar $$b $$ will be chosen to be sufficiently small so that it does not cause $$P^2(D) $$ to deviate too much from projecting into the desired top-eigenspace. However, it will be non-zero all the same, so that the operator $$P^2 (D) $$ continues to be well-defined.
+* The scalar $$b $$ will be chosen to be sufficiently small so that it does not cause $$P(D)^2 $$ to deviate too much from projecting into the desired top-eigenspace. However, it will be non-zero all the same, so that the operator $$P(D)^2 $$ continues to be well-defined.
 
 Let us now write a brief and informal statement that summarizes two (of the three) key qualities the operator $$P(D)^2 $$[^1] will have. In the statement below, we will assume that $$\frac{2\beta^2}{n}\mathsf{Tr}[D^{-2}] = 1$$.
 
@@ -63,10 +63,10 @@ $$ \begin{equation} \frac{1}{n} \|P(D) -  \Pi_{\delta'}\left(2\beta A_{sym} - D\
 
 where $$\Pi_{\delta'}\left(\sqrt{2}\beta S - D\right) $$ is a projector into the top-$$\delta' n$$ dimensional eigenspace of the spectrum of $$2\beta A_{sym} - D $$.
 
-We will now give overviews of the proofs for the two statements above. Giving the actual detailed proofs would require introducing various definitions, technical facts and auxiliary lemmata about non-commutative $$\mathcal{L}^p $$ spaces, the Cauchy-Stieljtes transform (denoted for the spectral measure of an operator $$A $$ as $$g_A(z) $$), the $$R $$-transform and analytic subordination. Consequently, we will try to sketch the main ideas with minimal possible reference to the underlying formalism. That being said, it is simply impossible to explain even the ideas without invoking some basic terminology[^2]. Therefore, those readers that are satisfied with the two statements above may freely skip the rest of this subsection without any loss of ability to following the remaining two subsections in this post.
+We will now give overviews of the proofs for the two statements above. Giving the actual detailed proofs would require introducing various definitions, technical facts and auxiliary lemmata about non-commutative $$\mathcal{L}^p $$ spaces, the Cauchy-Stieljtes transform (denoted for the spectral measure of an operator $$A $$ as $$g_A(z) $$), the $$R $$-transform and analytic subordination. Consequently, we will try to sketch the main ideas with minimal possible reference to the underlying formalism. That being said, it is simply impossible to explain even the ideas without invoking some basic terminology[^1]. Therefore, those readers that are satisfied with the two statements above may freely skip the rest of this subsection without any loss of ability to following the remaining two subsections in this post.
 
 _Idealized Operator Norm_: We locate the maximum of the bulk spectrum of $$\sqrt{2}\beta S - D $$. Let us lay down the strategy to do so:
-1. First, we compute the _explicit_ form of a function[^3] which reduces the resolvent[^4] of the sum of two (free) matrices $$X $$ and $$Y $$ to the resolvent of just one matrix $$X $$ evaluated at a shifted argument. This is a standard (and first-half of a remarkable) fact borrowed from [[Bia98]](), and says that:
+1. Those familiar with resolvent formalism will immediately notice that $$P(D)^2 $$ is nothing but the (negative of the) imaginary part of the _resolvent_[^2] $$g_{2\beta A_{sym} - D} $$, evaluated at a purely imaginary point $$ib $$, which is a slight perturbation from $$0 $$^[3]. First, we compute the _explicit_ form of a function[^4] which reduces the resolvent of the sum of two (free) matrices $$X $$ and $$Y $$ to the resolvent of just one matrix $$X $$ evaluated at a shifted argument. This is a standard (and first-half of a remarkable) fact borrowed from [[Bia98]](), and says that:
 
     $$ \begin{equation} \exists! f: \mathbb{H} \to \mathbb{H}, \text{s.t.},\,\text{i) }f(z) = z + O(1)\text{ for z large enough, and ii) }g_{X+Y}(z) = g_X(f(z))\,,   \end{equation} $$
 
@@ -118,7 +118,7 @@ and, therefore, it now remains to define and bound $$b $$. Recall from the calcu
 
 $$ \begin{equation} \mathsf{Im}(ic + 2\beta^2 g_{-D}(ic)) = c + 2\beta^2\mathsf{Im}(g_{-D}(ic)) = c + \frac{2\beta^2}{n} \left(-b\mathsf{Tr\left[(b^2\mathsf{Id}_n + D^2)^{-1}\right]}\right)\, , \end{equation} $$
 
-which follows with some straightforward algebra and the defintion of the resolvent. At this point, adding and subtracting $$D^{-2} $$ inside the trace and invoking the resolvent identity, one obtains,
+which follows with some straightforward algebra and the definition of the resolvent. At this point, adding and subtracting $$D^{-2} $$ inside the trace and invoking the resolvent identity, one obtains,
 
 $$ \begin{equation} \mathsf{Im}(ic + 2\beta^2 g_{-D}(ic)) = c\left(1-\frac{2\beta^2}{n}\mathsf{Tr}\left[D^{-2}\right] + \frac{2\beta^2}{n}\mathsf{Tr}\left[(b^2\mathsf{Id}_n + D^2)^{-1}D^{-2}\right]\right)\,. \end{equation} $$
 
@@ -217,12 +217,12 @@ In fact, we can also assert that the diagonal of $$Q_i(D)^2 $$ has $$2 $$-norm t
 
 #### FOOTNOTES
 
-[^1]: Those familiar with resolvent formalism will immediately notice that $$P^2(D) $$ is nothing but the (negative of the) imaginary part of the _resolvent_ $$g_{2\beta A_{sym} - D} $$, evaluated at a purely imaginary point $$ib $$, which is a slight perturbation from $$0 $$. Since, for a compactly supported measure, which we expect the empirical eigenspectrum of $$2\beta A_{sym} - D $$ to converge to, the Cauchy transform (which is equivalent to the resolvent) is invertible everywhere except at poles, this is a loss-less way of studying analytic properties of the spectrum.
+[^1]: I will introduce the relevant complex-analytic basics and the relevant free-probability notions in a separate blog-post. In the very same blog-post, I will provide sufficient background so that a motivated reader can actually follow most of the proofs in detail (_except_ for the proof which reasons about the projection of $$P(D)^2 $$ onto the diagonal sub-algebra, which I will introduce in yet another post). For the impatient reader, [[Section 4.1, JSS24](https://arxiv.org/pdf/2408.02360)] should also act as an intense, but reasonably accessible proxy.
 
-[^2]: I will introduce the relevant complex-analytic basics and the relevant free-probability notions in a separate blog-post. In the very same blog-post, I will provide sufficient background so that a motivated reader can actually follow most of the proofs in detail (_except_ for the proof which reasons about the projection of $$P(D)^2 $$ onto the diagonal sub-algebra, which I will introduce in yet another post). For the impatient reader, [[Section 4.1, JSS24](https://arxiv.org/pdf/2408.02360)] should also act as an intense, but reasonably accessible proxy.
+[^2]: See [here](https://en.wikipedia.org/wiki/Resolvent_formalism) for a definition of the resolvent, and a statement of the famous resolvent identity.
 
-[^3]: A function such as this is known in the literature as a **subordination** function. In fact, this function can be extended and shown to be analytic on $$\bar{\mathbb{H}} $$. It allows one to, in some sense, "separate" the support of the spectrum of the two freely independent operators by pushing the domain of one inside the resolvent to be significantly farther than the other.
+[^3]: Since, for a compactly supported measure, which we expect the empirical eigenspectrum of $$2\beta A_{sym} - D $$ to converge to, the Cauchy transform (which is equivalent to the resolvent) is invertible everywhere except at poles, this is a loss-less way of studying analytic properties of the spectrum.
 
-[^4]: See [here](https://en.wikipedia.org/wiki/Resolvent_formalism) for a definition of the resolvent, and a statement of the famous resolvent identity.
+[^4]: A function such as this is known in the literature as a **subordination** function. In fact, this function can be extended and shown to be analytic on $$\bar{\mathbb{H}} $$. It allows one to, in some sense, "separate" the support of the spectrum of the two freely independent operators by pushing the domain of one inside the resolvent to be significantly farther than the other.
 
 [^5]: We work in the free product of the algebras generated by a semi-circular operator $$S $$ and an element $$D \in \text{M}_n(\mathbb{C}) $$ with $$0 < \| D\|_{\mathsf{op}} \le O(1)$$.
