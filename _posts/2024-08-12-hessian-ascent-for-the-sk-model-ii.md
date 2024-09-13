@@ -20,7 +20,6 @@ A quick recap of what we accomplished in the first blog post:
 1. [Proof Sketch](#proof-sketch)
    * [Analyzing the TAP-corrected Hessian via free probability](#analyzing-the-tap-corrected-hessian-via-free-probability)
    * [Empirical distribution of the coordinates of the iterates](#empirical-distribution-of-the-coordinates-of-the-iterates)
-   * [Fluctuations of the generalized TAP free energy under fRSB](#fluctuations-of-the-generalized-tap-free-energy-under-frsb)
 2. [Footnotes](#footnotes)
 <br>
 <br>
@@ -146,7 +145,19 @@ We do this via two steps:
 
     $$ \begin{equation} \left\| \left(f(\tilde{z})+ D\right)^{-1} - \mathbb{E}\left[\mathsf{diag}\left(\tilde{z} - \left(2\beta A_{sym} - D\right)\right)^{-1}\right] \right\|_2 \le \text{small}_2\,. \end{equation} $$
 
-    The free interpolation used to prove the above statement is the most technically involved part of section-4 (and likely the paper). It extends an idea of Collins, Guionnet and Parraud [[CGP22]()] which attempts to understand the quantitative strength of fluctuations between the expected value of $$\frac{1}{n}\mathsf{Tr}\left[f(X_n)\right] $$ and $$\tau\left(f(S)\right) $$; $$X_n $$ is a finite random matrix, $$f $$ is a reasonably "nice" function (not necessarily a polynomial), and $$S $$ is an idealized operator in a non-commutative probability space.  
+    The free interpolation used to prove the above statement is the most technically involved part of section-4 (and likely the paper). It extends an idea of Collins, Guionnet and Parraud [[CGP22]()] which attempts to understand the quantitative strength of fluctuations between the expected value of $$\frac{1}{n}\mathsf{Tr}\left[f(X_n)\right] $$ and $$\tau\left(f(S)\right) $$; $$X_n $$ is a finite random matrix, $$f $$ is a reasonably "nice" function (not necessarily a polynomial), $$S $$ is an idealized operator in a non-commutative probability space, and $$\tau $$ is the tracial operator in this space. The free interpolation looks at
+
+    $$ \begin{equation} h(t) := \mathbb{E}\left[\frac{1}{n}\mathsf{Tr}\left[(zI_{nk} - 2\beta[\sqrt{1-t}A_{sym} + \sqrt{t}B_{sym}]+ D\otimes I_k)^{-1}(D' \otimes I_k)\right]\right]\,,  \end{equation} $$
+
+    with
+
+    $$ \begin{equation} h(0) = \mathbb{E}\left[\frac{1}{n}\mathsf{Tr}\left[(zI_n -2\beta A_{sym} + D)^{-1}D'\right]\right]\,, \end{equation} $$
+
+    and
+
+    $$ \begin{equation} h(1) = \mathbb{E}\left[\frac{1}{n}\mathsf{Tr}\left[(zI_{nk} - \beta())^{-1}\right]\right]\,. \end{equation} $$
+
+    Here, $$h(1) $$ becomes a semi-circular element as the limit $$k \to \infty $$ is taken at the end of the argument and almost-surely convergence is invoked. The element $$h(0) $$ is the quantity we want to bound, and since we know the limiting spectrum of $$h(1) $$, it remains to show the time-derivative $$h(t) $$ is sufficiently small and apply the fundamental theorem of calculus. We apply a lemma about the resolvent to expand the derivative $$\frac{d}{dt} h(t) $$; we then evaluate the "easy" term using Gaussian integration-by-parts, and use various Lipschitz estimates on the resolvent $$G(z,t) $$ and the conjugated-resolvent $$h(t) $$ in conjunction with the Poincare inequality to estimate the "hard" term.
 
 The above line of reasoning, with a choice of $$\tilde{z} = f^{-1}(z) = z + 2\beta^2 g_{-D}(z) $$ where $$z = a + ib = \widetilde{a(D)} + ic$$, leads to the conclusion that
 
@@ -163,7 +174,7 @@ $$ \begin{equation} \left(\sigma_1,\dots,\sigma_K\right) \sim \left(\mathcal{N}\
 
 will approximate, at every step (with high probability), the distribution of the primal Auffinger-Chen SDE $$dY^\gamma_t = \frac{\sqrt{2}\beta}{\partial_{2,2}\Lambda_\gamma(t, Y^\gamma_t)}dW_t $$. We will set an external "clock" where $$t = j\eta $$ for some sufficiently small $$\eta(\epsilon) $$ and $$j \in [K] $$.
 
-To demonstrate that the empirical distribution converges to the desired SDE, we will use an inductive argument and follow a straegy of, one again, using the Lipschitz-ness of the underlying SDE to show concentration of the empirical distribution around its expectation. We will then compare the expected empirical distribution of the coordinates under the inductive hypothesis with a discretization of a step of the primal AC SDE.
+To demonstrate that the empirical distribution converges to the desired SDE, we will use an inductive argument and follow a strategy of, once again, using the Lipschitz-ness of the underlying SDE to show concentration of the empirical distribution around its expectation. We will then compare the expected empirical distribution of the coordinates under the inductive hypothesis with a discretization of a step of the primal AC SDE.
 
 To start, we renormalize $$P(D)^2 $$ so that its (normalized) trace is $$1 \pm o_n(1) $$; we also project $$P(D)^2 $$ orthogonal to the current iterate $$\sigma_i $$. This normalization will be helpful in the convergence computations, and the projection will be particularly useful in the energy analysis that follows. The final covariance matrices $$\{Q_i(D)^2\}_{i \in [K]} $$ are then given as,
 
