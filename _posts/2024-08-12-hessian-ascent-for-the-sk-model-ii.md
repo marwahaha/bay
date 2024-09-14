@@ -151,11 +151,11 @@ We do this via two steps:
 
     with
 
-    $$ \begin{equation} h(0) = \mathbb{E}\left[\frac{1}{n}\mathsf{Tr}\left[(zI_n -2\beta A_{sym} + D)^{-1}D'\right]\right]\,, \end{equation} $$
+    $$ \begin{equation} h(0) = \mathbb{E}\left[\frac{1}{n}\mathsf{Tr}\left[(zI_n -2\beta A_{sym} + D)^{-1}(D' \otimes I_k)\right]\right]\,, \end{equation} $$
 
     and
 
-    $$ \begin{equation} h(1) = \mathbb{E}\left[\frac{1}{n}\mathsf{Tr}\left[(zI_{nk} - \beta(B + B^{\mathsf{T}}) + D)^{-1}\right]\right]\,. \end{equation} $$
+    $$ \begin{equation} h(1) = \mathbb{E}\left[\frac{1}{n}\mathsf{Tr}\left[(zI_{nk} - \beta(B + B^{\mathsf{T}}) + D)^{-1}(D' \otimes I_k)\right]\right]\,. \end{equation} $$
 
     Here, $$h(1) $$ becomes a semi-circular element as the limit $$k \to \infty $$ is taken at the end of the argument and almost-surely convergence is invoked. The element $$h(0) $$ is the quantity we want to bound, and since we know the limiting spectrum of $$h(1) $$, it remains to show the time-derivative of $$h(t) $$ is sufficiently small and apply the fundamental theorem of calculus. We apply a lemma about the resolvent to expand the derivative $$\frac{d}{dt} h(t) $$; we then evaluate the "easy" term using Gaussian integration-by-parts, and use various Lipschitz estimates on the resolvent $$G(z,t) := \left(zI_{nk} - 2\beta(\sqrt{1-t}\,A_{sym} + \sqrt{t}\,B_{sym}) + D \otimes I_k\right)^{-1} $$ and the conjugated-resolvent $$h(t) $$ in conjunction with the Poincare inequality to estimate the "hard" term.
 
