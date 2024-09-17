@@ -15,7 +15,8 @@ A quick recap of what we accomplished in the second blog post:
 1. We proved the first major component in the analysis of the PHA algorithm on the SK model: the construction and desirable properties of the projector $$P_j(D)^2 $$ into the top-eigenspace of the TAP corrected Hessian.
 2. We then overviewed the second major component in the analysis of the PHA algorithm on the SK model: the proof that the empirical distribution of the coordinates of every iterate of the algorithm converge, with high probability, to the (primal) Auffinger-Chen SDE.
 <br>
-
+<br>
+<br>
 
 #### Table of Contents
 1. [Connections: Potential Hessian ascent and other algorithms](#connections:-potential-hessian-ascent-and-other-algorithms)
