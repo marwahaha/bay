@@ -24,7 +24,7 @@ A quick recap of what we accomplished in the second blog post:
    * [Potential Hessian ascent and approximate-message passing](#potential-hessian-ascent-and-approximate-message-passing)
 2. [Ongoing work and open problems](#ongoing-work-and-open-problems)
    * [Parisi-type formulae for different geometries](#parisi-type-formulae-for-different-geometries)
-   * [Low-degree sum-of-squares certificates for potential Hessian ascent](#low-degree-sum-of-squares-certificates-for-potential-hessian-ascent)
+   * [Low-degree sum-of-squares certificates for HES processes on the cube](#low-degree-sum-of-squares-certificates-for-hes-processes-on-the-cube)
    * [Potential Hessian ascent: mixed p-spin models and bounded-degree CSPs](potential-hessian-ascent:-mixed-p-spin-models-and-bounded-degree-csps)
 3. [The ultimate goal: a research program](the-ultimate-goal:-a-research-program)
 3. [Footnotes](#footnotes)
@@ -51,7 +51,7 @@ So, what relationship do HES processes have with PHA? For starters, in [[Theorem
 
 ### Parisi-type formulae for different geometries
 
-### Low-degree sum-of-squares certificates for potential Hessian ascent
+### Low-degree sum-of-squares certificates for HES processes on the cube
 
 ### Potential Hessian ascent: mixed p-spin models and bounded-degree CSPs
 
