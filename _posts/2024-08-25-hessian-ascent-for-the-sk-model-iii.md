@@ -43,7 +43,7 @@ In a recent result [[SS24]](https://arxiv.org/abs/2401.14383), Jonathan and I in
 
 For the spherical spin glass problem, we demonstrate that the certified value matches (up to constant factors) the _true_ value under a technical condition. Even in the absence of the said condition, the certificates obtain the correct _scaling_ of the maximum; due to the known lower-bounds against the standard SoS hierarchy for the same problem [[BGL16]]()[[HPK17]](), the standard SoS hierarchy is off by superlinear factors.
 
-So, what relationship do HES processes have with PHA? For starters, in [[Theorem 7.1, SS24]](https://arxiv.org/abs/2401.14383) we demonstrate that Subag's Hessian ascent algorithm is an instance of a HES process. The properties of the conditional covariances $$P_j(D)^2 $$ used in the PHA algorithm on the cube _also_ seem to satisfy the properties of HES distributions[^1]. Consequently, independent of geometry, it seems that HES processes capture the algorithmic threshold for optimizing spin glasses. In fact, in [[Conjecture 1.6, SS24]]() we think that HES processes will capture the algorithmic threshold for **all** polynomial time algorithms for a _larger_ class of polynomial optimization problems.
+So, what relationship do HES processes have with PHA? For starters, in [[Theorem 7.1, SS24]](https://arxiv.org/abs/2401.14383) we demonstrate that Subag's Hessian ascent algorithm is an instance of a HES process. The PHA algorithm on the cube _also_ seems to be a HES process[^1]. Importantly, the geometry seems to not affect the description of the underlying optimal process. In fact, we think that HES processes will capture the algorithmic threshold among **all** polynomial time algorithms for a _larger_ class of polynomial optimization problems [[Conjecture 1.6, SS24]]().
 
 ### Potential Hessian ascent and approximate-message passing
 
@@ -56,3 +56,8 @@ So, what relationship do HES processes have with PHA? For starters, in [[Theorem
 ### Potential Hessian ascent: mixed p-spin models
 
 ## The ultimate goal: a research program
+
+
+#### FOOTNOTES
+
+[^1]: This is a premeditated crime. The construction of the conditional covariances $$P_j(D)^2 $$ of the PHA algorithm, and the properties about it proved in [[Theorem 4.1, JSS24]()], have the dual aim of making it easier to demonstrate convergence to the AC SDE _and_ also satisfy the properties imposed on the conditional covariances of a HES process.
