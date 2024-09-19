@@ -15,6 +15,8 @@ A quick recap of what we accomplished in the first blog post:
 1. We briefly went over the various representations of the Parisi formula, and then derived the Hessian ascent algorithm from the generalized TAP free energy.
 2. We then motivated the two main statements we need to prove to demonstrate the success of our algorithm. We concluded by developing a _primal_ theory for the Parisi PDE and AC SDE, which will be quintessential at various points in the main arguments.
 <br>
+<br>
+<br>
 
 #### Table of Contents
 1. [Proof Sketch](#proof-sketch)
