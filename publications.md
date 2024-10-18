@@ -5,7 +5,7 @@ slug: /publications
 
 publications:
 
-- title: The Maximal Entanglement Problem&colon; A Quantum Generalization of Unique Games
+- title: Algorithms and Sum-of-Squares Certificates for Qudit Hamiltonians of Maximally Entangles States
   authors: Zachary Jorquera, Alexandra Kolla, Steven Kordonowy, <u>Juspreet Singh Sandhu</u>, Stuart Wayland
   conference: Submitted
   paperlink: NA
