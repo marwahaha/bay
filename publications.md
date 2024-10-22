@@ -5,10 +5,10 @@ slug: /publications
 
 publications:
 
-- title: Algorithms and Sum-of-Squares Certificates for Qudit Hamiltonians of Maximally Entangles States
+- title: Algorithms and Sum-of-Squares Certificates for Qudit Hamiltonians over Maximally Entangles States
   authors: Zachary Jorquera, Alexandra Kolla, Steven Kordonowy, <u>Juspreet Singh Sandhu</u>, Stuart Wayland
   conference: Submitted
-  paperlink: NA
+  paperlink: https://arxiv.org/pdf/2410.15544
   codelink: NA
 
 - title: Potential Hessian Ascent&colon; The Sherrington-Kirkpatrick Model 
