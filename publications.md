@@ -5,10 +5,10 @@ slug: /publications
 
 publications:
 
-- title: The Maximal Entanglement Problem&colon; A Quantum Generalization of Unique Games
+- title: Monogamy of Entanglement Bounds and Improved Approximation Algorithms for Qudit Hamiltonians
   authors: Zachary Jorquera, Alexandra Kolla, Steven Kordonowy, <u>Juspreet Singh Sandhu</u>, Stuart Wayland
   conference: Submitted
-  paperlink: NA
+  paperlink: https://arxiv.org/pdf/2410.15544
   codelink: NA
 
 - title: Potential Hessian Ascent&colon; The Sherrington-Kirkpatrick Model 
@@ -68,9 +68,9 @@ preprints:
   codelink: NA
 ---
 
-My papers can be found on [DBLP](https://dblp.org/pid/299/8207.html) or [current Google Scholar](https://scholar.google.com/citations?hl=en&authuser=1&user=2G4gViMAAAAJ) (to be updated in future to [this](https://scholar.google.com/citations?hl=en&user=IkxViPsAAAAJ)). I primarily work with:
+My papers can be found on [DBLP](https://dblp.org/pid/299/8207.html) or [Google Scholar](https://scholar.google.com/citations?hl=en&user=IkxViPsAAAAJ). I primarily work with:
 * [David Jekel](https://davidjekel.com/) and [Jonathan Shi](https://jshi.science/) on designing spectral algorithms and sum-of-squares relaxations for certifying and optimizing spin glasses, operator-valued polynomials & CSPs, and more generally extending the theory of the Parisi formula to different geometries.
-* [Saeed Mehraban](https://sites.google.com/view/saeedmehraban/about) on developing and extending probabilistic techniques from mathematical spin-glass theory with complex-analytic ideas to systematically study the mathematical and algorithmic questions surrouring the "random permanent" problem.
+* [Saeed Mehraban](https://sites.google.com/view/saeedmehraban/about) on developing and extending probabilistic techniques from mathematical spin-glass theory with complex-analytic ideas to systematically study the mathematical and algorithmic questions surrounding the "random permanent" problem.
 * [Alexandra Kolla](https://people.ucsc.edu/~akolla/) and [Zack Jorquera](https://zackjorquera.github.io/) on initiating the algorithmic study of certain families of local quantum hamiltonians using the non-commutative sum-of-squares hierarchy.
 <br/>
 
