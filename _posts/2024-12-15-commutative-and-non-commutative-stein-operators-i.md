@@ -14,6 +14,7 @@ In this series of two posts, I want to talk about Stein's method. In the first p
 <br>
 <br>
 
+
 #### Table of Contents
 1. [Stein's Method](#stein's-method)
    * [The easy direction of Stein's lemma](#the-easy-direction-of-stein's-lemma)
@@ -23,6 +24,8 @@ In this series of two posts, I want to talk about Stein's method. In the first p
 3. [Berry-Esseen theorem](#berry-esseen-theorem)
 4. [Footnotes](#footnotes)
 <br>
+<br>
+
 
 ## Stein's Method
 
@@ -30,9 +33,7 @@ The Stein operator leads to an _exact_ characterization of the Gaussian distribu
 
 More generally, this leads to a technique of defining a Stein operator for many distributions. There are two ways to do this, but we will only mention a way which involves relating the generator of a particular Markov process whose stationary distribution is related to the distribution we are interested in. We will touch upon this when we show how to derive "Stein identities" for sums of independent random variables and a coupling for "exchangeable pairs" of random variables. 
 
-
 In fact, the idea of approximating reasonable random variables by normal variables with quantiative precision is partially summarized in a proposition we will state later. To conclude, we will then see how Stein's method gives a quantitative version of the CLT known as the Berry-Esseen theorem.
-
 
 ### The easy direction of Stein's lemma
 
