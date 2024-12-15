@@ -11,6 +11,8 @@ og_image: /assets/img/content/post-example/Banner.jpg
 <br />
 
 In this series of two posts, I want to talk about Stein's method. In the first post, the goal will be to introduce an analytic characterization of the normal distribution via Stein's operator. This characterization leads to a set of techniques to show when distributions are "close to" normal. Naturally, this finds uses in getting quantiative variants of the CLT, and the method has relationship with Markov semigroups. In the [second post](), we will focus on a _non-commutative_ version of Stein's lemma, and a technique of Collins, Guionnet and Parraud [[CGP22]]() which allows one to "replace" sufficiently large random matrices with their idealized free-probabilistic analog with vanishing error.
+<br>
+<br>
 
 #### Table of Contents
 1. [Stein's Method](#stein's-method)
