@@ -20,7 +20,7 @@ In this series of two posts, I want to talk about Stein's method. In the first p
    * [Stein operator for normal variables](#stein-operator-for-normal-variables)
    * [Stein identities for sums and exchangeable pairs of random variables](#stein-identities-for-sums-and-exchangeable-paris-of-random-variables)
 2. [Normal approximation of Lipschitz functions](#normal-approximation-for-lipschitz-functions)
-3. [Berry-Esseen theorem: CLT with quantitative convergence rates](#berry-esseen-theorem:-clt-with-quantitative-convergence-rates)
+3. [Berry-Esseen theorem](#berry-esseen-theorem)
 4. [Footnotes](#footnotes)
 <br>
 
@@ -46,7 +46,7 @@ In fact, the idea of approximating reasonable random variables by normal variabl
 ## Normal approximation of Lipschitz functions
 
 
-## Berry-Esseen theorem: CLT with quantitative convergence rates
+## Berry-Esseen theorem
 
 
 #### FOOTNOTES
