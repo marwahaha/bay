@@ -38,13 +38,9 @@ In fact, the idea of approximating reasonable random variables by normal variabl
 We begin by writing down Stein's lemma, and then spending the next two sections establishing its proof.
 _<u>(Stein's Lemma)</u>:_ The following statements are true:
 * If $$Z \sim \mathcal{N}(0,1) $$, then for every absolutely continuous function $$f : \mathbb{R} \to \mathbb{R} $$ with $$\mathbb{E}[f'(Z)] < \infty $$, it is the case that
-$$\begin{equation} 
-    \mathbb{E}[f'(Z)] = \mathbb{E}[Zf(Z)]\, . 
-\end{equation} $$
+$$ \begin{equation} \mathbb{E}[f'(Z)] = \mathbb{E}[Zf(Z)]\, . \end{equation} $$
 * If, for every $$f: \mathbb{R} \to \mathbb{R} $$ that is absolutely continuous, bounded and continuously differentiable, it is true that
-$$\begin{equation}
-    \mathbb{E}[f'(W)] = \mathbb{E}[Wf(W)]\, ,
-\end{equation} $$
+$$ \begin{equation} \mathbb{E}[f'(W)] = \mathbb{E}[Wf(W)]\, , \end{equation} $$
 then $$W \sim \mathcal{N}(0,1) $$.
 
 ### The easy direction of Stein's lemma
