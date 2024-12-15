@@ -38,7 +38,7 @@ In fact, the idea of approximating reasonable random variables by normal variabl
 ### Stein operator for normal variables
 
 
-### Constructing Stein operators
+### Stein identities for sums and exchangeable pairs of random variables
 
 
 ## Normal approximation of Lipschitz functions
