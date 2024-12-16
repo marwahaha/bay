@@ -99,8 +99,29 @@ which implies that $$w $$ is distributed as standard normal.
 
 We will first give an explicit expression for $$f_z(w) $$ when it uniquely solves the Stein ODE, and then we will show that this solution is bounded, continuous and piecewise continuously differentiable.
 
-**<u>Unique solution to the Stein ODE</u>**:  
+**<u>Unique solution to the Stein ODE</u>**: While the specific form of the solution to the Stein ODE matters little in the broad power of Stein's method, it is important in (tediously) working out the fact that the solution is "sufficiently nice" to be in the class of Stein testers.
 
+Note that 
+
+$$ \begin{equation} \frac{d}{dw} (e^{-w^2/2}f_z(w)) = e^{-w^2/2}\left(f'_z(w) - wf_z(w)\right) \end{equation}\,. $$
+
+Then, applying the fundamental theorem of calculus, we obtain
+
+$$ \begin{equation} e^{-w^2/2}f_z(w) = \int_{-\infty}^w e^{-t^2/2}\left(f'_z(t) - tf_z(t)\right)dt\,.\end{equation} $$
+
+By applying the Stein ODE, this further implies that
+
+$$ \begin{equation} e^{-w^2/2}f_z(w) = \int_{-\infty}^w (\mathbb{1}_{t \le z} - \Phi(z))e^{-t^2/2}dt\,. \end{equation} $$
+
+Consequently,
+
+$$ \begin{equation} f_z(w) = e^{w^2/2} \left(\int_{-\infty}^w (\mathbb{1}_{t \le z} - \Phi(z))e^{-t^2/2}dt\right)\,.
+\end{equation} $$
+
+This can further be simplified into two cases when explicitly evaluting the indicator function and then using the definition of the CDF, finally yielding
+
+$$ \begin{equation} f_z(w) = \begin{cases} \sqrt{2\pi}\,e^{w^2/2}\,\Phi(w)\left(1 - \Phi(z)\right) & w \le z\,, \\
+\sqrt{2\pi}\,e^{w^2/2}\,\Phi(z)\left(1-\Phi(w)\right) & w > z\,. \end{cases} \end{equation} $$ 
 
 **<u>Boundedness & differentiability of the solution</u>**:
 
