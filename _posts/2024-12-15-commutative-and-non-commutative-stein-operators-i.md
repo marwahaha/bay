@@ -57,7 +57,7 @@ Splitting the integral around $$0 $$ yields
 
 $$ \begin{equation} \mathbb{E}[Z(f(Z))] = \frac{1}{\sqrt{2\pi}}\left(\int_{-\infty}^0\left(\int_x^0 f'(y)dy\right)(-xe^{-x^2/2})dx + \int_{0}^{\infty}\left(\int_0^x f'(y)dy\right)xe^{-x^2/2}dx\right)\,. \end{equation} $$
 
-Rearranging integrals, which is justified by an invocation of Fubini's theorem and absolutely continuity of $$f $$ gives
+Rearranging integrals, which is justified by an invocation of Fubini's theorem and the absolutely continuity of $$f $$ gives
 
 $$ \begin{equation} \mathbb{E}[Zf(Z)] = \frac{1}{\sqrt{2\pi}}\left(\int_{-\infty}^0f'(y)\left(\int_{-\infty}^y-xe^{-x^2/2}dx\right)dy + \int_0^{\infty} f'(y)\left(\int_y^\infty xe^{-x^/2}dx\right)dy\right)\,. \end{equation} $$  
 
