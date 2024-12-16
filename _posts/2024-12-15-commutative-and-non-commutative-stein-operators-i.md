@@ -59,7 +59,7 @@ $$ \begin{equation} \mathbb{E}[Z(f(Z))] = \frac{1}{\sqrt{2\pi}}\left(\int_{-\inf
 
 Rearranging integrals, which is justified by an invocation of Fubini's theorem and the absolutely continuity of $$f $$, gives
 
-$$ \begin{equation} \mathbb{E}[Zf(Z)] = \frac{1}{\sqrt{2\pi}}\left(\int_{-\infty}^0f'(y)\left(\int_{-\infty}^y-xe^{-x^2/2}dx\right)dy + \int_0^{\infty} f'(y)\left(\int_y^\infty xe^{-x^/2}dx\right)dy\right)\,. \end{equation} $$  
+$$ \begin{equation} \mathbb{E}[Zf(Z)] = \frac{1}{\sqrt{2\pi}}\left(\int_{-\infty}^0f'(y)\left(\int_{-\infty}^y-xe^{-x^2/2}dx\right)dy + \int_0^{\infty} f'(y)\left(\int_y^\infty xe^{-x^2/2}dx\right)dy\right)\,. \end{equation} $$  
 
 At this point, one observes that $$d/dx (e^{-x^2/2}) = -xe^{-x^2/2} $$ and one more invocation of the fundamental theorem of calculus along with elementary limit taking simplifies the RHS of the above equation to
 
