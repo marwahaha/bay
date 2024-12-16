@@ -66,6 +66,13 @@ At this point, one observes that $$d/dx (e^{-x^2/2}) = -xe^{-x^2/2} $$ and one m
 $$ \begin{equation} \mathbb{E}[Zf(Z)] = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f'(y)e^{-y^2/2}dy = \mathbb{E}[f'(Z)]\,. \end{equation} $$
 
 ### Stein operator for normal variables
+We now prove the second part of Stein's lemma. To do this, we will (somewhat painfully) probe the analytic properties of a parmaterized family of functions $$\{f_{z}(w)\}_{z \in \mathbb{R}} $$ that solve a particular ODE. This ODE measures, for every $$z \in \mathbb{R} $$, the pointwise difference in the action of the Stein operator with the pointwise difference in a function that indicates being $$\le z $$ with the CDF of a normal at $$z $$. We notate this function as
+
+$$ \begin{equation} g_z(w) := \mathbb{1}_{w \le z} - \Phi(z)\, , \end{equation} $$
+
+where $$\Phi(z) := \mathsf{Pr}_{w \sim \mathcal{N}(0,1)}[w \le z] $$. Note that,
+
+$$ \begin{equation} \mathbb{E}_{w \sim \mathcal{N}(0,1)}[g_z(w)] = \mathbb{E}_{w \sim \mathcal{N}(0,1)}[\mathbb{1}_{w \le z}] - \mathbb{E}_w[\Phi(z)] = \Phi(z) - \Phi(z) = 0\,. \end{equation} $$ 
 
 
 ### Stein identities for sums and exchangeable pairs of random variables
