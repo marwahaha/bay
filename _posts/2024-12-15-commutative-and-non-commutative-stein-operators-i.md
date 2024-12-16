@@ -49,7 +49,7 @@ $$ \begin{equation} \mathbb{E}[f'(W)] = \mathbb{E}[Wf(W)]\, , \end{equation} $$
 then $$W \sim \mathcal{N}(0,1) $$.
 
 ### The easy direction of Stein's lemma
-The proof for the first direction is simple. We use the fundamental theorem of calculus along with the fact that $$xe^{-x^/2} $$ is an odd function to evaluate the correlation between the normal variable $$Z $$ and $$f(Z) $$, 
+The proof for the first direction is simple. We use the fundamental theorem of calculus along with the fact that $$xe^{-x^2/2} $$ is an odd function to evaluate the correlation between the normal variable $$Z $$ and $$f(Z) $$, 
 
 $$ \begin{equation} \mathbb{E}[Zf(Z)] = \frac{1}{\sqrt{2\pi}}\int_x (x e^{-x^2/2})f(x)dx = \int_x \left(\int_0^x f'(y)dy\right)xe^{-x^2/2}dx\,. \end{equation} $$ 
 
