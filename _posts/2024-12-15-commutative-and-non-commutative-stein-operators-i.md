@@ -97,6 +97,12 @@ $$ \begin{equation} \mathbb{E}_{w}[\mathcal{A}[f](w)] = 0 = \mathsf{Pr}_w[w \le 
 
 which implies that $$w $$ is distributed as standard normal.
 
+We will first give an explicit expression for $$f_z(w) $$ when it uniquely solves the Stein ODE, and then we will show that this solution is bounded, continuous and piecewise continuously differentiable.
+
+**<u>Unique solution to the Stein ODE</u>**:  
+
+
+**<u>Boundedness & differentiability of the solution</u>**:
 
 ### Stein identities for sums and exchangeable pairs of random variables
 
