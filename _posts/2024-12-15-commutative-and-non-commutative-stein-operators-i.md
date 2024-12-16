@@ -77,7 +77,7 @@ Note that, for every $$z \in \mathbb{R} $$,
 
 $$ \begin{equation} \mathbb{E}_{w \sim \mathcal{N}(0,1)}[g_z(w)] = \mathbb{E}_{w \sim \mathcal{N}(0,1)}[\mathbb{1}_{w \le z}] - \mathbb{E}_w[\Phi(z)] = \Phi(z) - \Phi(z) = 0\,. \end{equation} $$ 
 
-Therefore, this implies that the average of $$g_z(w) $$ under $$w \sim \mathcal{N}(0,1) $$ is $40 $4 for every $$z $$. The parameterized families of functions, therefore, will solve an ODE of the Stein operator acting on $$w $$ for _every_ $$z $$ in a way that the RHS is $$0 $$ on average. This begs the question: what is the Stein operator?
+Therefore, this implies that the average of $$g_z(w) $$ under $$w \sim \mathcal{N}(0,1) $$ is $$0 $$ for every $$z $$. The parameterized families of functions, therefore, will solve an ODE of the Stein operator acting on $$f_z(w) $$ for _every_ $$z $$ in a way that the RHS is $$0 $$ on average. This begs the question: what is the Stein operator?
 
 _<u>(Stein operator)</u>_: The Stein operator $$\mathcal{A} $$ maps every bounded, continuously differentiable function $$f: \mathbb{R} \to \mathbb{R} $$ to a new function denoted as
 
@@ -91,7 +91,11 @@ This naturally induces the Stein ODE, to which the parametrized family of functi
 
 $$ \begin{equation} \mathcal{A}[f_z](w) = \mathbb{1}_{w \le z} - \Phi(z)\,. \end{equation} $$
 
-We are given that $$\mathbb{E}_w[\mathcal{A}[f](w)] = 0 $$ for every "nice enough" function $$f $$. Consequently, proving the second part of Stein's lemma now reduces to showing that the solutions $$\{f_z(w)\}_{z \in \mathbb{R}} $$ to the Stein ODE are bounded, continuous, and piecewise differentiable.
+We are given that $$\mathbb{E}_w[\mathcal{A}[f](w)] = 0 $$ for every "nice enough" function $$f $$. Consequently, proving the second part of Stein's lemma now reduces to showing that the solutions $$\{f_z(w)\}_{z \in \mathbb{R}} $$ to the Stein ODE are bounded, continuous, and piecewise differentiable. If so, then we immediately have that
+
+$$ \begin{equation} \mathbb{E}_{w}[\mathcal{A}[f](w)] = 0 = \mathsf{Pr}_w[w \le z] - \Phi(z)\, , \end{equation} $$
+
+which implies that $$w $$ is distributed as standard normal.
 
 
 ### Stein identities for sums and exchangeable pairs of random variables
