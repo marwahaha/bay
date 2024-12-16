@@ -49,7 +49,21 @@ $$ \begin{equation} \mathbb{E}[f'(W)] = \mathbb{E}[Wf(W)]\, , \end{equation} $$
 then $$W \sim \mathcal{N}(0,1) $$.
 
 ### The easy direction of Stein's lemma
+The proof for the first direction is simple. We use the fundamental theorem of calculus along with the fact that $$xe^{-x^/2} $$ is an odd function to evaluate the correlation between the normal variable $$Z $$ and $$f(Z) $$, 
 
+$$ \begin{equation} \mathbb{E}[Zf(Z)] = \frac{1}{\sqrt{2\pi}}\int_x (x e^{-x^2/2})f(x)dx = \int_x \left(\int_0^x f'(y)dy\right)xe^{-x^2/2}dx\,. \end{equation} $$ 
+
+Splitting the integral around $$0 $$ yields
+
+$$ \begin{equation} \mathbb{E}[Z(f(Z))] = \frac{1}{\sqrt{2\pi}}\left(\int_{-\infty}^0\left(\int_x^0 f'(y)dy\right)(-xe^{-x^2/2})dx + \int_{0}^{\infty}\left(\int_0^x f'(y)dy\right)xe^{-x^2/2}dx\right)\,. \end{equation} $$
+
+Rearranging integrals, which is justified by an invocation of Fubini's theorem and absolutely continuity of $$f $$ gives
+
+$$ \begin{equation} \mathbb{E}[Zf(Z)] = \frac{1}{\sqrt{2\pi}}\left(\int_{-\infty}^0f'(y)\left(\int_{-\infty}^y-xe^{-x^2/2}dx\right)dy + \int_0^{\infty} f'(y)\left(\int_y^\infty xe^{-x^/2}dx\right)dy\right)\,. \end{equation} $$  
+
+At this point, one observes that $$d/dx (e^{-x^2/2}) = -xe^{-x^2/2} $$ and one more invocation of the fundamental theorem of calculus along with elementary limit taking simplifies the RHS of the above equation to
+
+$$ \begin{equation} \mathbb{E}[Zf(Z)] = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f'(y)e^{-y^2/2}dy = \mathbb{E}[f'(Z)]\,. \end{equation} $$
 
 ### Stein operator for normal variables
 
