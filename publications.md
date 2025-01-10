@@ -55,8 +55,14 @@ preprints:
   paperlink: NA
   codelink: NA
 
-- title: Potential Hessian Ascent II&colon; Mixed p-Spin Models
+- title: Potential Hessian Ascent II&colon; p-Spin Models &amp; Approximate-Message Passing
   authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  conference: In Preparation
+  paperlink: NA
+  codelink: NA
+
+- title: On the Size of Quantum Independent Sets induced by Random Channels
+  authors: Zackary Jorquera, Alexandra Kolla, <u>Juspreet Singh Sandhu</u>, Stuart Wayland
   conference: In Preparation
   paperlink: NA
   codelink: NA
