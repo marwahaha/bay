@@ -49,14 +49,20 @@ publications:
 
 preprints:
 
-- title: Sum-of-Squares &amp; Gaussian Processes II&colon; Rounding 
-  authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+- title: Potential Hessian Ascent II&colon; Duality &amp; Approximate-Message Passing
+  authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
   codelink: NA
 
-- title: Potential Hessian Ascent II&colon; p-Spin Models &amp; Approximate-Message Passing
+- title: Potential Hessian Ascent III&colon; Mixed p-Spin Models &amp; HES Distributions
   authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  conference: In Preparation
+  paperlink: NA
+  codelink: NA
+
+- title: Sum-of-Squares &amp; Gaussian Processes II&colon; Rounding 
+  authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
   codelink: NA
