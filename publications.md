@@ -80,10 +80,10 @@ preprints:
   codelink: NA
 ---
 
-My papers can be found on [DBLP](https://dblp.org/pid/299/8207.html) or [Google Scholar](https://scholar.google.com/citations?hl=en&user=IkxViPsAAAAJ). I primarily work with:
-* [David Jekel](https://davidjekel.com/) and [Jonathan Shi](https://jshi.science/) on designing spectral algorithms and sum-of-squares relaxations for certifying and optimizing spin glasses, operator-valued polynomials & CSPs, and more generally extending the theory of the Parisi formula to different geometries.
-* [Saeed Mehraban](https://sites.google.com/view/saeedmehraban/about) on developing and extending probabilistic techniques from mathematical spin-glass theory with complex-analytic ideas to systematically study the mathematical and algorithmic questions surrounding the "random permanent" problem.
-* [Alexandra Kolla](https://people.ucsc.edu/~akolla/) and [Zack Jorquera](https://zackjorquera.github.io/) on initiating the algorithmic study of certain families of local quantum hamiltonians using the non-commutative sum-of-squares hierarchy.
+My papers can be found on [Google Scholar](https://scholar.google.com/citations?hl=en&user=IkxViPsAAAAJ) or [DBLP](https://dblp.org/pid/299/8207.html). I primarily work with:
+* [David Jekel](https://davidjekel.com/) and [Jonathan Shi](https://jshi.science/) to design spectral algorithms that optimize spin glasses, operator-valued polynomials (quantum spin glasses) & CSPs, along with sum-of-squares relaxations that certify algorithmic thresholds in these problems.
+* [Saeed Mehraban](https://sites.google.com/view/saeedmehraban/about) to develop & extend probabilistic techniques from mathematical spin-glass theory with complex-analytic ideas to study mathematical and algorithmic questions surrounding the "random permanent" problem.
+* [Alexandra Kolla](https://people.ucsc.edu/~akolla/) and [Zack Jorquera](https://zackjorquera.github.io/) to optimize quantum CSPs and study properties of (random) quantum channels.
 <br/>
 
-More broadly, I am interested in using/developing ideas and techniques in _free probability_, _stochastic analysis_, _optimal transport_, _harmonic analysis_ and _sum-of-squares hierarchies_ to solve problems in **theoretical computer science** and **mathematical physics**.
+I use/develop ideas & techniques from _free probability_, _stochastic analysis_, _optimal transport_, _harmonic analysis_ and _convex optimization_ to solve problems in **theoretical computer science** and **mathematical physics**.
