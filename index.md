@@ -18,4 +18,4 @@ In Summer 2022, I visited Prof. <a href="https://lucatrevisan.github.io/">Luca T
 
 I am broadly interested at the intersection of **theoretical computer science**, **mathematical physics** and **probability theory**. For more details, see <a href="https://juspreetsandhu.me/publications">here</a>.
 
-Previously, I was a SWE at <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.kensho.com%2F&sa=D&sntz=1&usg=AFQjCNFFNoPaarKyKr6fU23OmUQpKrbyxQ">Kensho, Inc.</a> in the graph-infrastructure team. I got my BS in physics (with minors in mathematics & computer Science) from <a href="https://www.google.com/url?q=https%3A%2F%2Fphysics.illinois.edu%2F&sa=D&sntz=1&usg=AFQjCNHRHJYVorx2ldFR6JEe1PHQjmt3oA">UIUC</a>.
+Previously, I was a SWE at <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.kensho.com%2F&sa=D&sntz=1&usg=AFQjCNFFNoPaarKyKr6fU23OmUQpKrbyxQ">Kensho, Inc.</a> in the graph-infrastructure team. I got my BS in physics (with minors in mathematics & computer science) from <a href="https://www.google.com/url?q=https%3A%2F%2Fphysics.illinois.edu%2F&sa=D&sntz=1&usg=AFQjCNHRHJYVorx2ldFR6JEe1PHQjmt3oA">UIUC</a>.
