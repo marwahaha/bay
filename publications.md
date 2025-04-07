@@ -5,6 +5,18 @@ slug: /publications
 
 publications:
 
+- title: Potential Hessian Ascent II&colon; Duality &amp; Incremental Message Passing
+  authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  conference: Submitted
+  paperlink: NA
+  codelink: NA
+
+- title: On expectations and variances in the hard-core model on bounded degree graphs
+  authors: Ewan Davies, <u>Juspreet Singh Sandhu</u>, Brian Tan
+  conference: Submitted
+  paperlink: NA
+  codelink: NA
+
 - title: Monogamy of Entanglement Bounds and Improved Approximation Algorithms for Qudit Hamiltonians
   authors: Zachary Jorquera, Alexandra Kolla, Steven Kordonowy, <u>Juspreet Singh Sandhu</u>, Stuart Wayland
   conference: Submitted
@@ -48,12 +60,6 @@ publications:
   codelink: NA
 
 preprints:
-
-- title: Potential Hessian Ascent II&colon; Duality &amp; Approximate-Message Passing
-  authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: In Preparation
-  paperlink: NA
-  codelink: NA
 
 - title: Potential Hessian Ascent III&colon; Mixed p-Spin Models &amp; HES Distributions
   authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
