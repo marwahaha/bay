@@ -83,7 +83,7 @@ preprints:
 My papers can be found on [Google Scholar](https://scholar.google.com/citations?hl=en&user=IkxViPsAAAAJ) or [DBLP](https://dblp.org/pid/299/8207.html). I primarily work with:
 * [David Jekel](https://davidjekel.com/) and [Jonathan Shi](https://jshi.science/) to design spectral algorithms that optimize spin glasses, operator-valued polynomials (quantum spin glasses) & CSPs. Additionally, I work on developing tools for the analysis & geometry of Gaussian processes on symmetric domains (such as compact Lie groups), designing and analyzing sum-of-squares relaxations that certify algorithmic thresholds in these problems.
 * [Saeed Mehraban](https://sites.google.com/view/saeedmehraban/about) to develop & extend probabilistic techniques from mathematical spin-glass theory with complex-analytic ideas to study mathematical and algorithmic questions surrounding the random-permanent problem.
-* [Ewan Davies](https://www.ewandavies.org/) on extending the theory of local occupancy to include information about higher moments about Gibbs measures, and study the implications of this on the hard-core model on explicit families of graphs.
+* [Ewan Davies](https://www.ewandavies.org/) on extending the theory of local occupancy to include information about higher moments of Gibbs measures, and study the implications of this on the hard-core model on explicit families of graphs.
 <br/>
 
 I use/develop ideas & techniques in _free probability_, _stochastic analysis_, _optimal transport_, _harmonic analysis_ and _convex optimization_ to solve problems in **mathematical physics** and **theoretical computer science**.
