@@ -11,7 +11,7 @@ publications:
   paperlink: NA
   codelink: NA
 
-- title: On expectations and variances in the hard-core model on bounded degree graphs
+- title: On Expectations and Variances in the Hard-Core Model on Bounded Degree Graphs
   authors: Ewan Davies, <u>Juspreet Singh Sandhu</u>, Brian Tan
   conference: Submitted
   paperlink: NA
