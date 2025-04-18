@@ -73,23 +73,23 @@ preprints:
   paperlink: NA
   codelink: NA
 
-- title: On the Size of Quantum Independent Sets induced by Random Channels
+- title: On Quantum 2-Lifts
   authors: Zackary Jorquera, Alexandra Kolla, <u>Juspreet Singh Sandhu</u>, Stuart Wayland
   conference: In Preparation
   paperlink: NA
   codelink: NA
 
-- title: Complex-valued Random Hamiltonians &amp; Gaussian Interpolation
+- title: Gaussian Interpolations over Non-Product Spaces&colon; Real Hamiltonians
   authors: Saeed Mehraban, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
   codelink: NA
 ---
 
-My papers can be found on [Google Scholar](https://scholar.google.com/citations?hl=en&user=IkxViPsAAAAJ) or [DBLP](https://dblp.org/pid/299/8207.html). I primarily work with:
-* [David Jekel](https://davidjekel.com/) and [Jonathan Shi](https://jshi.science/) to design spectral algorithms that optimize spin glasses, operator-valued polynomials (quantum spin glasses) & CSPs. We work on developing tools for the analysis & geometry of Gaussian processes on symmetric domains (such as compact Lie groups), and designing & analyzing sum-of-squares relaxations that certify algorithmic thresholds in these problems.
-* [Saeed Mehraban](https://sites.google.com/view/saeedmehraban/about) to develop & extend probabilistic techniques from mathematical spin-glass theory with complex-analytic ideas to study mathematical and algorithmic questions surrounding the random-permanent problem.
-* [Ewan Davies](https://www.ewandavies.org/) on extending the theory of local occupancy to include information about higher moments of Gibbs measures, and study the implications of this on the hard-core model on explicit families of graphs.
-<br/>
+**<u>Research interests</u>**: _Classical & Quantum Spin Glasses_, _Random Optimization_, _Matrix Models_, _Asymptotic Combinatorics of the Hard-Core Model_, _Analysis & Geometry of Gaussian Processes_, _Gaussian Free Field_, _Louiville Quantum Gravity_.
 
-I use/develop ideas & techniques in _free probability_, _stochastic analysis_, _optimal transport_, _harmonic analysis_ and _convex optimization_ to solve problems in **mathematical physics** and **theoretical computer science**.
+My papers can be found on [Google Scholar](https://scholar.google.com/citations?hl=en&user=IkxViPsAAAAJ) or [DBLP](https://dblp.org/pid/299/8207.html). I (primarily) work with:
+* [David Jekel](https://davidjekel.com/) and [Jonathan Shi](https://jshi.science/) to design spectral algorithms that optimize spin glasses, operator-valued polynomials (quantum spin glasses) & CSPs. This includes developing tools for the analysis & geometry of Gaussian processes on symmetric domains (such as compact Lie groups), and designing & analyzing sum-of-squares relaxations that certify algorithmic thresholds in random optimization problems.
+* [Saeed Mehraban](https://sites.google.com/view/saeedmehraban/about) to develop & extend probabilistic techniques from mathematical spin-glass theory with complex-analytic ideas to study mathematical and algorithmic questions surrounding the random-permanent problem.
+* [Ewan Davies](https://www.ewandavies.org/) to extend the theory of local occupancy to include information about higher moments of Gibbs measures, and study the implications of this on the hard-core model on explicit families of graphs.
+<br/>
