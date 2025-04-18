@@ -44,5 +44,9 @@ article.post-content > h3 {
 margin-top: 2.5em;
 }
 
+p:has(+ ul) {
+    margin-bottom: 0px;
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import "base", "layout", "site", "work", "blog", "post", "404";
