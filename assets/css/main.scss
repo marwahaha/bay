@@ -44,8 +44,8 @@ article.post-content > h3 {
 margin-top: 2.5em;
 }
 
-p:has(+ ul) {
-    margin-bottom: 0px;
+p:has(+ ul) p:has(+ ol) {
+    margin-bottom: 2px;
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)
