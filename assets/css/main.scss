@@ -44,7 +44,7 @@ article.post-content > h3 {
 margin-top: 2.5em;
 }
 
-p:has(+ ul) p:has(+ ol) {
+p:has(+ ul), p:has(+ ol) {
     margin-bottom: 2px;
 }
 
