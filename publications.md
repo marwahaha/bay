@@ -86,7 +86,7 @@ preprints:
   codelink: NA
 ---
 
-**<u>Research interests</u>**: _Classical & Quantum Spin Glasses_, _Random Optimization_, _Matrix Models_, _Asymptotic Combinatorics of the Hard-Core Model_, _Analysis & Geometry of Gaussian Processes_, _Gaussian Free Field_, _Louiville Quantum Gravity_.
+**<u>Research interests</u>**: _Classical & Quantum Spin Glasses_, _Random Optimization_, _Matrix Models_, _Asymptotic Combinatorics of the Hard-Core Model_, _Analysis & Geometry of Gaussian Processes_, _Gaussian Free Field_, _Liouville Quantum Gravity_.
 
 My papers can be found on [Google Scholar](https://scholar.google.com/citations?hl=en&user=IkxViPsAAAAJ) or [DBLP](https://dblp.org/pid/299/8207.html). I (primarily) work with:
 * [David Jekel](https://davidjekel.com/) and [Jonathan Shi](https://jshi.science/) to design spectral algorithms that optimize spin glasses, operator-valued polynomials (quantum spin glasses) & CSPs. This includes developing tools for the analysis & geometry of Gaussian processes on symmetric domains (such as compact Lie groups), and designing & analyzing sum-of-squares relaxations that certify algorithmic thresholds in random optimization.
