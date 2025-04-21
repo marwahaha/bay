@@ -1,7 +1,7 @@
 ---
 layout: publications
-title: Publications
-slug: /publications
+title: Research
+slug: /research
 
 publications:
 
