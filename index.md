@@ -9,8 +9,7 @@ profile_picture_two:
   alt: website picture
   caption: 서울, January 2019.
 ---
-
-Starting August 2025, I will be an assistant professor in the <a href="https://compsci.colostate.edu/">department of computer science</a> at <a href="https://www.colostate.edu/">Colorado State University</a>. I am interested in _algorithmic_ and _mathematical_ problems at the intersection of **probability theory**, **non-commutative geometry/analysis** & **mathematical physics**. For more details, see <a href="https://juspreetsandhu.me/publications">here</a>.
+I will join as an assistant professor in the <a href="https://compsci.colostate.edu/">department of computer science</a> at <a href="https://www.colostate.edu/">Colorado State University</a> starting August 2025. My interests lie in _algorithmic_ and _mathematical_ problems at the intersection of **probability theory**, **non-commutative geometry/analysis** & **mathematical physics**. For more details, see <a href="https://juspreetsandhu.me/publications">here</a>.
 
 I am currently a post-doctoral scholar at <a href="https://tcs.soe.ucsc.edu/trg">UC Santa Cruz</a> hosted by the wonderful Prof. <a href="https://people.ucsc.edu/~akolla/">Alexandra Kolla</a>. I completed my PhD at <a href="https://www.google.com/url?q=https%3A%2F%2Fwww.seas.harvard.edu%2Fcomputer-science&sa=D&sntz=1&usg=AFQjCNGjg26QHPZ0TDV_KVdv3VHJ0ZsKYg">Harvard University</a> under the splendid guidance of Prof. <a href="https://www.google.com/url?q=https%3A%2F%2Fsites.google.com%2Fview%2Ftuftsqi&sa=D&sntz=1&usg=AFQjCNHcsMTHG5jtH46FfNZ8OHvDqzM97w">Peter Love</a> and Prof. <a href="https://www.boazbarak.org/">Boaz Barak</a> as part of the <a href="https://toc.seas.harvard.edu/people/juspreet-sandhu">theory of computation</a> and <a href="">quantum information theory</a> groups. 
  
