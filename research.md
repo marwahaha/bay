@@ -1,7 +1,7 @@
 ---
-layout: publications
-title: publications
-slug: /publications
+layout: research
+title: research
+slug: /research
 
 publications:
 
