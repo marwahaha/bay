@@ -67,6 +67,12 @@ preprints:
   paperlink: NA
   codelink: NA
 
+- title: Gaussian Processes Over The Symmetric Group&colon; High-Temperature Regime
+  authors: Saeed Mehraban, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  conference: In Preparation
+  paperlink: NA
+  codelink: NA
+
 - title: Sum-of-Squares &amp; Gaussian Processes II&colon; Rounding 
   authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
@@ -75,12 +81,6 @@ preprints:
 
 - title: On Quantum 2-Lifts
   authors: Zackary Jorquera, Alexandra Kolla, <u>Juspreet Singh Sandhu</u>, Stuart Wayland
-  conference: In Preparation
-  paperlink: NA
-  codelink: NA
-
-- title: Gaussian Interpolations over Non-Product Spaces&colon; Real Hamiltonians
-  authors: Saeed Mehraban, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
   codelink: NA
