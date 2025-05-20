@@ -14,7 +14,7 @@ publications:
 - title: On Expectations and Variances in the Hard-Core Model on Bounded Degree Graphs
   authors: Ewan Davies, <u>Juspreet Singh Sandhu</u>, Brian Tan
   conference: Submitted
-  paperlink: NA
+  paperlink: https://arxiv.org/pdf/2505.13396
   codelink: NA
 
 - title: Monogamy of Entanglement Bounds and Improved Approximation Algorithms for Qudit Hamiltonians
