@@ -89,7 +89,7 @@ preprints:
 **<u>Research interests</u>**: _Classical & Quantum Spin Glasses_, _Random Optimization_, _Matrix Models_, _Asymptotic Combinatorics of the Hard-Core Model_, _Analysis & Geometry of Gaussian Processes_, _Gaussian Free Field_, _Liouville Quantum Gravity_.
 
 My papers can be found on [Google Scholar](https://scholar.google.com/citations?hl=en&user=IkxViPsAAAAJ) or [DBLP](https://dblp.org/pid/299/8207.html). I (primarily) work with:
-* [David Jekel](https://davidjekel.com/) and [Jonathan Shi](https://jshi.science/) to optimize spin glasses, operator-valued polynomials & CSPs, and analyze Gaussian processes on symmetric domains (such as compact Lie groups). We also design sum-of-squares hierarchies to certify algorithmic thresholds for random optimization.
+* [David Jekel](https://davidjekel.com/) and [Jonathan Shi](https://jshi.science/) to optimize spin glasses, operator-valued polynomials & CSPs, analyze Gaussian processes on symmetric domains (such as compact Lie groups), and design sum-of-squares hierarchies to certify algorithmic thresholds for random optimization.
 * [Saeed Mehraban](https://sites.google.com/view/saeedmehraban/about) to develop & extend probabilistic techniques from mathematical spin-glass theory with complex-analytic ideas to study mathematical and algorithmic questions surrounding the random-permanent problem.
 * [Ewan Davies](https://www.ewandavies.org/) to extend the theory of local occupancy to include information about higher moments of Gibbs measures, and study the implications of this on the hard-core model on explicit families of graphs.
 <br/>
