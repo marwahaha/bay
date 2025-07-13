@@ -5,7 +5,7 @@ slug: /research
 
 publications:
 
-- title: Potential Hessian Ascent II&colon; Duality &amp; Incremental Message Passing
+- title: Potential Hessian Ascent II&colon; Duality, Robustness &amp; Approximate Message Passing
   authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: Submitted
   paperlink: NA
@@ -86,7 +86,7 @@ preprints:
   codelink: NA
 ---
 
-**<u>Research interests</u>**: _High-Dimensional Optimization & Sampling_, _Classical & Quantum Spin Glasses_, _Matrix Models_, _Combinatorics & Phase Transitions of the Hard-Core Model_, _Analysis & Geometry of Gaussian Processes_, _Gaussian Free Field_, _Liouville Quantum Gravity_.
+**<u>Research interests</u>**: _High-Dimensional Optimization & Sampling_, _Classical & Quantum Spin Glasses_, _Matrix Models_, _Phase Transitions in Gibbs measures_, _Analysis & Geometry of Gaussian Processes_, _Gaussian Free Field_, _Liouville Quantum Gravity_.
 
 My papers can be found on [Google Scholar](https://scholar.google.com/citations?hl=en&user=IkxViPsAAAAJ) or [DBLP](https://dblp.org/pid/299/8207.html). I (primarily) work with:
 * [David Jekel](https://davidjekel.com/) and [Jonathan Shi](https://jshi.science/) to optimize spin glasses, operator-valued functions & CSPs, analyze Gaussian processes on symmetric domains (ex: Lie groups), and design sum-of-squares hierarchies to certify algorithmic thresholds in random optimization.
