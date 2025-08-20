@@ -8,7 +8,6 @@ This will be a reading group across Tufts, Harvard and MIT. The focus will be on
 
 **Organizers**: [Saeed Mehraban](https://sites.google.com/view/saeedmehraban/about), [Juspreet Singh Sandhu](https://juspreetsandhu.me)
 
-**Recordings**: [Google Drive](https://drive.google.com/drive/u/0/folders/1ENZ-tJdyZfcmIVGh8TZVZ_6xsW5ecYuC)
 
 # Talk Schedule
 
