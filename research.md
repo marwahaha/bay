@@ -5,6 +5,12 @@ slug: /research
 
 publications:
 
+- title: Potential Hessian Ascent III&colon; Gibbs Sampling for the Sherrington--Kirkpatrick Model at &beta; &lt; 1&#47; 2
+  authors: Ewan Davies, Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  conference: Submitted
+  paperlink: NA
+  codelink: NA
+
 - title: Potential Hessian Ascent II&colon; Duality, Robustness &amp; Approximate Message Passing
   authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: Submitted
@@ -61,14 +67,8 @@ publications:
 
 preprints:
 
-- title: Potential Hessian Ascent III&colon; Mixed p-Spin Models &amp; HES Distributions
+- title: Potential Hessian Ascent IV&colon; Mixed p-Spin Models &amp; HES Distributions
   authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: In Preparation
-  paperlink: NA
-  codelink: NA
-
-- title: Potential Hessian Ascent IV&colon; Sampling in Total Variation Distance
-  authors: Ewan Davies, Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
   codelink: NA
