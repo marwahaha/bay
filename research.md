@@ -5,7 +5,7 @@ slug: /research
 
 publications:
 
-- title: Potential Hessian Ascent III&colon; Gibbs Sampling for the Sherrington--Kirkpatrick Model at &beta; &lt; 1&#47; 2
+- title: Potential Hessian Ascent III&colon; Sampling the Sherrington--Kirkpatrick Model at &beta; &lt; 1&#47; 2
   authors: Ewan Davies, Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: Submitted
   paperlink: NA
