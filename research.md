@@ -25,7 +25,7 @@ publications:
 
 - title: Monogamy of Entanglement Bounds and Improved Approximation Algorithms for Qudit Hamiltonians
   authors: Zachary Jorquera, Alexandra Kolla, Steven Kordonowy, <u>Juspreet Singh Sandhu</u>, Stuart Wayland
-  conference: Submitted
+  conference: Quantum
   paperlink: https://arxiv.org/pdf/2410.15544
   codelink: NA
 
