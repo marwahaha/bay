@@ -68,10 +68,10 @@ publications:
 preprints:
 
 - title: Weak Poincar&eacute; Inequality for the Sherrington--Kirkpatrick Model via Approximate Stochastic Localization
-   authors: Ewan Davies, Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-   conference: In Preparation
-   paperlink: NA
-   codelink: NA
+  authors: Ewan Davies, Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  conference: In Preparation
+  paperlink: NA
+  codelink: NA
 
 - title: Potential Hessian Ascent IV&colon; Mixed p-Spin Models &amp; HES Distributions
   authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
