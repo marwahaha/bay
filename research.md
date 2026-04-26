@@ -67,7 +67,7 @@ publications:
 
 preprints:
 
- - title: Weak Poincar&eacute; Inequality for the Sherrington--Kirkpatrick Model via Approximate Stochastic Localization
+- title: Weak Poincar&eacute; Inequality for the Sherrington--Kirkpatrick Model via Approximate Stochastic Localization
    authors: Ewan Davies, Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
    conference: In Preparation
    paperlink: NA
