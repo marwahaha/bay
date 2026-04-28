@@ -31,7 +31,7 @@ publications:
 
 - title: Potential Hessian Ascent&colon; The Sherrington-Kirkpatrick Model 
   authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: SODA 2025
+  conference: SODA 2025, Communications in Mathematical Physics
   paperlink: https://arxiv.org/pdf/2408.02360 
   codelink: NA
 
