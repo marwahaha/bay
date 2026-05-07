@@ -6,7 +6,7 @@ slug: /research
 publications:
 
 - title: Degree-sequence bounds for independent sets via multivariate local occupancy
-  authors: Ewan Davies, <u>Juspreet Singh Sandhu</u>, Brian Tan
+  authors: Ewan Davies, <u>Juspreet Singh Sandhu</u>, Jaehyeon Seo, Brian Tan
   conference: Submitted
   paperlink: https://arxiv.org/pdf/2605.05149
   codelink: NA
