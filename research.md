@@ -101,7 +101,7 @@ preprints:
 **<u>Research interests</u>**: _High-Dimensional Optimization & Sampling_, _Classical & Quantum Spin Glasses_, _Matrix Models_, _Phase Transitions in Gibbs measures_, _Analysis & Geometry of Gaussian Processes_, _Gaussian Free Field_, _Liouville Quantum Gravity_.
 
 My papers can be found on [Google Scholar](https://scholar.google.com/citations?hl=en&user=IkxViPsAAAAJ) or [DBLP](https://dblp.org/pid/299/8207.html). I (primarily) work with:
-* [David Jekel](https://davidjekel.com/) and [Jonathan Shi](https://jshi.science/) to optimize spin glasses, operator-valued functions & CSPs, analyze Gaussian processes on symmetric domains (ex: Lie groups), and design sum-of-squares hierarchies to certify algorithmic thresholds in random optimization.
-* [Saeed Mehraban](https://sites.google.com/view/saeedmehraban/about) to develop & extend probabilistic techniques from mathematical spin-glass theory with complex-analytic ideas to study mathematical and algorithmic questions surrounding the random-permanent problem.
-* [Ewan Davies](https://www.ewandavies.org/) to extend the theory of local occupancy to higher moments of Gibbs measures, and study the implications of this on the hard-core model on explicit families of graphs (including phase transitions).
+* [David Jekel](https://davidjekel.com/), [Holden Lee](https://holdenlee.github.io/) and [Jonathan Shi](https://jshi.science/) to optimize and sample from spin glasses, operator-valued functions & CSPs, analyze Gaussian processes on symmetric domains (ex: Lie groups), and design SoS hierarchies to certify algorithmic thresholds.
+* [Saeed Mehraban](https://sites.google.com/view/saeedmehraban/about) to develop & extend probabilistic techniques from mathematical spin-glass theory with complex-analytic ideas to study questions surrounding the random-permanent problem.
+* [Ewan Davies](https://www.ewandavies.org/) to extend the theory of local occupancy, and study the implications of this on the hard-core model on explicit families of graphs (including phase transitions).
 <br/>
