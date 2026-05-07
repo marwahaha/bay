@@ -5,6 +5,12 @@ slug: /research
 
 publications:
 
+- title: Degree-sequence bounds for independent sets via multivariate local occupancy
+  authors: Ewan Davies, <u>Juspreet Singh Sandhu</u>, Brian Tan
+  conference: Submitted
+  paperlink: https://arxiv.org/pdf/2605.05149
+  codelink: NA
+  
 - title: Potential Hessian Ascent III&colon; Sampling the Sherrington--Kirkpatrick Model at &beta; &lt; 1&#47; 2
   authors: Ewan Davies, Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: Submitted
