@@ -67,13 +67,13 @@ publications:
 
 - title: A General Framework for Analyzing Stochastic Dynamics in Learning Algorithms
   authors: Chi-Ning Chou, <u>Juspreet Singh Sandhu</u>, Mien Brabeeba Wang, Tiancheng Yu
-  conference: Submitted
+  conference: Not intended for submission
   paperlink: https://arxiv.org/pdf/2006.06171
   codelink: NA
 
 preprints:
 
-- title: Weak Poincar&eacute; Inequality for the Sherrington--Kirkpatrick Model via Approximate Stochastic Localization
+- title: Weak Poincar&eacute; Inequalities via Approximate Stochastic Localization
   authors: Ewan Davies, Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: In Preparation
   paperlink: NA
@@ -98,7 +98,7 @@ preprints:
   codelink: NA
 ---
 
-**<u>Research interests</u>**: _High-Dimensional Optimization & Sampling_, _Classical & Quantum Spin Glasses_, _Matrix Models_, _Phase Transitions in Gibbs measures_, _Analysis & Geometry of Gaussian Processes_, _Gaussian Free Field_, _Liouville Quantum Gravity_.
+**<u>Research interests</u>**: _High-Dimensional Optimization & Sampling_, _Classical & Quantum Spin Glasses_, _Matrix Models_, _Analysis & Geometry of Stochastic Processes_, _Gaussian Free Field_, _Liouville Quantum Gravity_.
 
 My papers can be found on [Google Scholar](https://scholar.google.com/citations?hl=en&user=IkxViPsAAAAJ) or [DBLP](https://dblp.org/pid/299/8207.html). I (primarily) work with:
 * [David Jekel](https://davidjekel.com/), [Holden Lee](https://holdenlee.github.io/) and [Jonathan Shi](https://jshi.science/) to optimize and sample from spin glasses, operator-valued functions & CSPs, analyze Gaussian processes on symmetric domains (ex: Lie groups), and design SoS hierarchies to certify algorithmic thresholds.
