@@ -5,6 +5,12 @@ slug: /research
 
 publications:
 
+- title: Weak Poincar&eacute; Inequalities via Approximate Stochastic Localization
+  authors: Ewan Davies, Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  conference: Submitted
+  paperlink: https://arxiv.org/pdf/2607.08160
+  codelink: NA
+
 - title: Degree-sequence bounds for independent sets via multivariate local occupancy
   authors: Ewan Davies, <u>Juspreet Singh Sandhu</u>, Jaehyeon Seo, Brian Tan
   conference: Submitted
@@ -72,12 +78,6 @@ publications:
   codelink: NA
 
 preprints:
-
-- title: Weak Poincar&eacute; Inequalities via Approximate Stochastic Localization
-  authors: Ewan Davies, Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: In Preparation
-  paperlink: NA
-  codelink: NA
 
 - title: Potential Hessian Ascent IV&colon; Mixed p-Spin Models &amp; HES Distributions
   authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
