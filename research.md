@@ -5,7 +5,7 @@ slug: /research
 
 publications:
 
-- title: First-order phase transitions in the hard-core model
+- title: First-Order Phase Transitions in the Hard-Core Model
   authors: Ewan Davies, <u>Juspreet Singh Sandhu</u>, Brian Tan
   conference: Submitted
   paperlink: https://arxiv.org/pdf/2608.00449
@@ -17,7 +17,7 @@ publications:
   paperlink: https://arxiv.org/pdf/2607.08160
   codelink: NA
 
-- title: Degree-sequence bounds for independent sets via multivariate local occupancy
+- title: Degree-Sequence Bounds for Independent Sets via Multivariate Local Occupancy
   authors: Ewan Davies, <u>Juspreet Singh Sandhu</u>, Jaehyeon Seo, Brian Tan
   conference: Submitted
   paperlink: https://arxiv.org/pdf/2605.05149
