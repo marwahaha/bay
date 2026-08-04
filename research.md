@@ -5,6 +5,12 @@ slug: /research
 
 publications:
 
+- title: First-order phase transitions in the hard-core model
+  authors: Ewan Davies, <u>Juspreet Singh Sandhu</u>, Brian Tan
+  conference: Submitted
+  paperlink: https://arxiv.org/pdf/2608.00449
+  codelink: NA
+
 - title: Weak Poincar&eacute; Inequalities via Approximate Stochastic Localization
   authors: Ewan Davies, Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: Submitted
