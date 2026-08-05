@@ -14,7 +14,7 @@ Continuing on the program that [Jonathan](https://www.jshi.science/) and I start
 
 This work gives a $$o_n(1) $$ TVD sampler for the SK model up to $$\beta < 1/2 $$ using an algorithm that combines algorithmic stochastic localization with Jarzynski's equality. The analysis uses the PHA framework, developing new cavity interpolation theory and combining it with novel estimates/techniques from free-probability developed in []() and entropy contraction from Markov chain theory. I have decided to write, with guest contributions from Holden, a **4-part** blog post explaining the background, three main proof structures, and main technical innovations of this result and the open questions it naturally induces.
 
-In this first blog post, I will explain the connection between algorithmic stochastic localization and potential Hessian ascent, Jarzynski's equality, the over-determined system of ASL, TAP and PHD, and the natural development of the ``desiderata'' the analysis must prove. 
+In this first blog post, I will explain the connection between algorithmic stochastic localization and potential Hessian ascent, Jarzynski's equality, the over-determined system of ASL, TAP and PHD, and the natural development of the ''desiderata'' the analysis must prove. 
 <br>
 
 #### Table of Contents
@@ -53,5 +53,7 @@ Stuff and things
 <br>
 
 ### Emergent desiderata
+Stuff and things
+<br>
 
 #### FOOTNOTES
