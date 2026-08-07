@@ -15,7 +15,7 @@ publications:
   authors: Ewan Davies, Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: Submitted
   paperlink: https://arxiv.org/pdf/2607.08160
-  codelink: NA
+  codelink: https://www.youtube.com/watch?v=uX80Vqqin_Y
 
 - title: Degree-Sequence Bounds for Independent Sets via Multivariate Local Occupancy
   authors: Ewan Davies, <u>Juspreet Singh Sandhu</u>, Jaehyeon Seo, Brian Tan
@@ -27,7 +27,7 @@ publications:
   authors: Ewan Davies, Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: Submitted
   paperlink: https://arxiv.org/pdf/2605.03718
-  codelink: NA
+  codelink: https://www.youtube.com/watch?v=uX80Vqqin_Y
 
 - title: Potential Hessian Ascent II&colon; Duality, Robustness &amp; Approximate Message Passing
   authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
