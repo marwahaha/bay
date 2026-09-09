@@ -5,6 +5,12 @@ slug: /research
 
 publications:
 
+- title: On overlap concentration in the Curie-Weiss Random Field model
+  authors: Yutong Li, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  conference: Submitted
+  paperlink: https://arxiv.org/pdf/2609.08169
+  codelink: NA
+
 - title: First-Order Phase Transitions in the Hard-Core Model
   authors: Ewan Davies, <u>Juspreet Singh Sandhu</u>, Brian Tan
   conference: Submitted
