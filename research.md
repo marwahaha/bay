@@ -5,6 +5,12 @@ slug: /research
 
 publications:
 
+- title: Potential Hessian Ascent IV&colon; Sampling the Sherrington-Kirkpatrick Model at &beta; &lt; 1
+  authors: Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
+  conference: In Preparation
+  paperlink: NA
+  codelink: NA
+
 - title: On overlap concentration in the Curie-Weiss Random Field model
   authors: Yutong Li, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: Submitted
@@ -90,12 +96,6 @@ publications:
   codelink: NA
 
 preprints:
-
-- title: Potential Hessian Ascent IV&colon; Sampling the Sherrington-Kirkpatrick Model in the Full RS Regime
-  authors: Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: In Preparation
-  paperlink: NA
-  codelink: NA
   
 - title: Potential Hessian Ascent V&colon; HES Distributions &amp; Mixed p-Spin Optimization
   authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
