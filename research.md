@@ -95,25 +95,6 @@ publications:
   paperlink: https://arxiv.org/pdf/2006.06171
   codelink: NA
 
-preprints:
-  
-- title: Potential Hessian Ascent V&colon; HES Distributions &amp; Mixed p-Spin Optimization
-  authors: David Jekel, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: In Preparation
-  paperlink: NA
-  codelink: NA
-
-- title: Gaussian Processes Over The Symmetric Group&colon; High-Temperature Regime
-  authors: Saeed Mehraban, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: In Preparation
-  paperlink: NA
-  codelink: NA
-
-- title: Sum-of-Squares &amp; Gaussian Processes II&colon; Rounding 
-  authors: <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: In Preparation
-  paperlink: NA
-  codelink: NA
 ---
 
 **<u>Research interests</u>**: _High-Dimensional Optimization & Sampling_, _Classical & Quantum Spin Glasses_, _Analysis & Geometry of Stochastic Processes_, _Liouville Quantum Gravity_, _Stochastic Quantization_, _AQFT & Operator Algebras_.
