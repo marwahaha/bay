@@ -7,7 +7,7 @@ publications:
 
 - title: Potential Hessian Ascent IV&colon; Sampling the Sherrington-Kirkpatrick Model at &beta; &lt; 1
   authors: Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: In Preparation
+  conference: Submitted
   paperlink: NA
   codelink: NA
 
