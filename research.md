@@ -97,7 +97,7 @@ publications:
 
 ---
 
-**<u>Research interests</u>**: _High-Dimensional Optimization & Sampling_, _Classical & Quantum Spin Glasses_, _Analysis & Geometry of Stochastic Processes_, _Liouville Quantum Gravity_, _Stochastic Quantization_, _AQFT & Operator Algebras_.
+**<u>Research interests</u>**: _Classical & Quantum Spin Glasses_, _Analysis & Geometry of Stochastic Processes_, _Liouville Quantum Gravity_, _Stochastic Quantization_, _AQFT & Operator Algebras_.
 
 My papers can be found on [Google Scholar](https://scholar.google.com/citations?hl=en&user=IkxViPsAAAAJ) or [DBLP](https://dblp.org/pid/299/8207.html). I work with:
 * [David Jekel](https://davidjekel.com/), [Holden Lee](https://holdenlee.github.io/) and [Jonathan Shi](https://jshi.science/) to optimize and sample from spin glasses, operator-valued functions & CSPs, analyze Gaussian processes on symmetric domains, and design SoS hierarchies to certify algorithmic thresholds.
