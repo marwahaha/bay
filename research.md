@@ -25,7 +25,7 @@ publications:
 
 - title: Weak Poincar&eacute; Inequalities via Approximate Stochastic Localization
   authors: Ewan Davies, Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: Submitted
+  conference: SODA 2027
   paperlink: https://arxiv.org/pdf/2607.08160
   codelink: https://www.youtube.com/watch?v=uX80Vqqin_Y
 
@@ -37,7 +37,7 @@ publications:
   
 - title: Potential Hessian Ascent III&colon; Sampling the Sherrington-Kirkpatrick Model at &beta; &lt; 1&#47; 2
   authors: Ewan Davies, Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
-  conference: Submitted
+  conference: SODA 2027
   paperlink: https://arxiv.org/pdf/2605.03718
   codelink: https://www.youtube.com/watch?v=uX80Vqqin_Y
 
