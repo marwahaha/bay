@@ -8,7 +8,7 @@ publications:
 - title: Potential Hessian Ascent IV&colon; Sampling the Sherrington-Kirkpatrick Model at &beta; &lt; 1
   authors: Holden Lee, <u>Juspreet Singh Sandhu</u>, Jonathan Shi
   conference: Submitted
-  paperlink: https://drive.google.com/file/d/1m3gcwaRhGCjb2v-dnvtaIg8zEfBPfGiu/view?usp=sharing
+  paperlink: https://arxiv.org/pdf/2609.30590
   codelink: NA
 
 - title: On overlap concentration in the Curie-Weiss Random Field model
