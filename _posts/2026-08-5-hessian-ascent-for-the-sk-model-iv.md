@@ -25,11 +25,11 @@ I have decided to write, with a guest contribution from Holden, a **5-part** blo
 
 #### Table of Contents
 1. [Algorithm design](#algorithm-design)
-   * [Stochastic Localization and Hessian Dynamics](#the-parisi-formula-and-auffinger-chen-representation)
+   * [Stochastic localization and Hessian dynamics](#the-parisi-formula-and-auffinger-chen-representation)
    * [Algorithmic surrogates via the TAP free energy](#algorithmic-surrogates-via-the-tap-free-energy)
    * [ASL-TAP and boosting to a KL divergence bound](#asl-tap-and-boosting-to-a-kl-divergence-bound)
 2. [Jarzynski equality](#jarzynski-equality)
-   * [Overdetermined system and errors](#overdetermined-system-and-errors)
+   * [Rejection sampling over path space](#rejection-sampling-over-path-space)
    * [Final desiderata](#final-desiderata)
 3. [Conclusions]()
    * [Certifying the overlap distribution](certifying-the-overlap-distribution)
@@ -89,7 +89,7 @@ While it is not clear right now, the covariance and PHD-TAP drift error estimate
 We are now two steps away from getting a $$o_n(1) $$-TVD sampler, if we can show the desiderata outlined above. First, we need to reason about *one* more source of $$L_2 $$-error to go from $$O_{T,\beta}(1) $$-$$W_2 $$ error to $$O_{T,\beta}(1) $$-KL divergence error via an application of Girsanov's theorem. At that point, Pinsker's inequality yields a $$O_{T,\beta}(1) $$-TVD error, but that is still not $$o_n(1) $$. The second step, which achieves this, is to use rejection sampling (but over path space) to suppress the error further to $$o_{n}(1) $$-TVD error -- this is where Jarzynski's equality enters the picture. We will now introduce the ideal processes (SL/HD), then define the TAP free energy and use it to derive the algorithmic surrogates. At that point, we will be able to complete the ASL-TAP and PHD $$L_2 $$-error bound needed to apply Girsanov's theorem. We will then move on to defining Jarzynski's equality, see how it allows us to do rejection sampling, and briefly overview how it suppresses the TVD error further. Doing the last step will incur *one* more desiderata, at which point we will conclude with our final list of desiderata.
 <br>
 
-### Stochastic Localization and Hessian Dynamics
+### Stochastic localization and Hessian dynamics
 Stuff and things
 <br>
 
