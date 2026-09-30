@@ -77,7 +77,7 @@ At this point, it is clear that if we are only to run our algorithmic processes 
 
 Now, if we stop our algorithmic processes at some large constant time $$ T $$, we *must* either assert that some deterministic and efficient function $$h(\hat{m}_T,\hat{y}_T) $$ outputs a sample with $$o_n(1) $$ TVD error, **or** we can use the pair $$(\hat{m}_T,\hat{y}_T) $$ as a "warm start" to another efficient algorithm which outputs a sample $$\sigma \in \lbrace -1,1\rbrace^n $$ that is $$o_n(1) $$ close in TVD error to the target measure. We will choose the latter approach.
 
-Between the bounds on the four final four quantities for the cumulative error process, the sampler to the warm start mentioned above, and the fact that $$\hat{Q}(\cdot) $$ *must* be a valid covariance, we already have a list of the desiderata that the algorithm requires, at least to have $$W_2 $$ error that is $$O_{T,\beta}(1) $$[^1]:
+Between the bounds on the four final four quantities for the cumulative error process, the required sampler with the warm start mentioned above, and the fact that the algorithmic surrogate $$\hat{Q}(\cdot) $$ *must* be a valid covariance, we already have a list of the desiderata that the algorithm requires, at least to have $$W_2 $$ error that is $$O_{T,\beta}(1) $$[^1]:
 - $$\hat{Q}(\cdot) $$ is a regular and valid covariance, namely $$c(\beta)I_n \preceq \hat{Q}(m) \preceq C(\beta)I_n $$ at all $$ m \in \lbrace -1,1\rbrace^n $$[^2].
 - The covariance errors are small, that is $$\mathbb{E}\|\hat{Q}(m_t) - Q(m_t)\|^2_F \le O_{t,\beta}(1) $$.
 - The functions $$\hat{f}_t(\cdot) $$ are $$C_{\beta,t}$$-Lipschitz with respect to $$\|\cdot\|_2 $$ inside the solid cube.
@@ -90,7 +90,39 @@ We are now two steps away from getting a $$o_n(1) $$-TVD sampler, if we can show
 <br>
 
 ### Stochastic localization and Hessian dynamics
-Stuff and things
+Given a measurable space $$(\Omega, \mathcal{B}(\Omega)) $$ a localization process is a stochastic process $$\lbrace\nu_t(\cdot)\rbrace_{t\ge 0} $$ over the space of probability measures on $$(\Omega, \mathcal{B}(\Omega)) $$. The process has two distinct properties: 1) for any $$A \in \mathcal{B}(\Omega) $$, $$\lim_{t\to\infty} \nu_t(A) \in \lbrace0,1\rbrace$$, and 2) $$\nu_t(\cdot) $$ is a martingale.
+
+The first property tells us that the stochastic process "localizes" at one particular event $$A $$ in the measure space, and the fact that it is a martingale implies that the process is "stationary" upon averaging. The latter property allows us to think of the localization process as a convex decomposition of the measure $$\nu_0(\cdot) $$, weighted by the "tilted" measures along the way. For us, there are two important consequences of this:
+1. If we can algorithmically simulate the process by "following" the tilts that generate the sequence of tilted measures for a very large (but constant) time $$T $$, then we will come close to a sample from the target measure, and 
+2. We can choose *any* measure-valued process that localizes and is a martingale based on its convenience for simulating efficiently, and analzying its paths to prove our desiderata.
+
+There is just one remaining subtlety -- while we can choose a localization process that we can analyze and simulate, where do we start it? As we will see, we choose the "linear-tilt" localization scheme which essentially starts at a sample $$x_0 $$ drawn from the target measure, and consists of noisy observations through time $$t $$ that ultimately become more informative and localize as a Dirac measure $$\delta_{x_0} $$[^4]. This scheme starts at $$y_0 = 0^n $$ and reveals itself at time $$t $$ as
+
+$$
+y_t = x_0 t + B_t\, ,
+$$
+
+where $$x_0 \sim \nu_0 $$ and $$B_t \sim \mathcal{N}(0,t) $$. The measure $$\nu_t(\cdot) $$ induced by this scheme is
+
+$$
+\nu_t(\sigma) \propto e^{\langle y_t,\sigma \rangle}\nu_0(\sigma)\,,
+$$
+
+and it is easy to see that $$\lim_{t \to\infty} \nu_t(\cdot) \to \delta_{x_0} $$ almost-surely and that $$\lbrace\nu_t(\cdot)\rbrace_{t\ge 0} $$ is a martingale process since they form a Doob martingale. At this point, using the many known equivalent characterizations of stochastic localization (see [[Sections 1 & 2, STZ26]](https://arxiv.org/pdf/2510.04460)) one can also rewrite the linear-tilt process as
+
+$$
+dy_t = m_t dt + dB_t\,,
+$$
+
+where $$m_t = \mathbb{E}_{x\sim\nu_t}\left[x\right] $$. A main conceptual insight in our work is that there is **yet** another equivalent rewrite for a stochastic localization process, and this rewrite tracks the evolution of the magnetizations/averages $$\lbrace m_t\rbrace_{t\ge 0} $$ of the "tilted" measures $$\nu_t(\cdot) $$ given by the linear-tilt localization scheme $$\lbrace y_t\rbrace_{t\ge 0} $$. This process is
+
+$$
+dm_t = \mathsf{Cov}(\nu_t)dB_t\,, 
+$$
+
+where $$\mathsf{Cov}(\nu_t) $$ is the covariance matrix for the measure $$\nu_t $$.
+
+
 <br>
 
 ### Algorithmic surrogates via the TAP free energy
@@ -150,3 +182,5 @@ Stuff and things
 [^2]: Note that the fact that $$\hat{Q}(\cdot) $$ must be $$C$$-Lispchitz is not immediately implied by the upper bound on the Loewner order, but requires using the resolvent identity and definition of the exact choice of $$\hat{Q}(\cdot) $$ used in the algorithmic process.
 
 [^3]: It will shortly become clear why I am calling this a "PHD-TAP drift error".
+
+[^4]: This seems cyclical, since we are starting at a sample drawn from the measure we wish to eventually sample from. However, it will turn out that the dependency between the "tilted" measures along the localization process at every time $$t $$ and the input randomness can be decoupled -- this is because, at high-temperature ($$\beta < 1 $$), our measure turns out to be contiguous with respect to drawing the initial sample $$x_0 \sim \mathsf{Unif}\left(\lbrace-1,1\rbrace^n\right) $$ and then running the process, albeit with a "plant" term that independently gets added to the input randomness. This obviously changes the structure of our surrogate covariance $$\hat{Q}(\cdot) $$, but the added technical burden can be dealt with and is substantially easier that dealing with a localization process where the tilted measures cannot be decoupled (made independent) from the randomness of the instance. See [[Section 2, EAMS'22]](https://arxiv.org/abs/2203.05093) for more details about the planted model. 
