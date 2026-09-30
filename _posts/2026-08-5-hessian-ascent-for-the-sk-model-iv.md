@@ -126,7 +126,7 @@ $$
 d\hat{m}_t s= \hat{Q}(\hat{m}_t)dB_t\,,
 $$
 
-and now a critical part of proving our desiderata and writing down the final algorithm relies on gaining access to an efficiently computable sequence of matrix-valued functions $$\hat{Q} : [-1,1]^n \to M_n(\mathbb{R})_{\text{sa}} $$ -- this is exactly where the contiguity to a planted model *and* the TAP free energy will be of assistance. 
+and now a critical part of proving our desiderata and writing down the final algorithm relies on gaining access to an efficiently computable sequence of matrix-valued functions $$\hat{Q} : [-1,1]^n \to M_n(\mathbb{R})_{\text{sa}} $$ -- this is exactly where the contiguity to a planted model *and* the TAP free energy will be of assistance.
 <br>
 
 ### Algorithmic surrogates via the TAP free energy
@@ -136,7 +136,7 @@ $$
 	\mu_{\beta A}(\sigma) := \frac{e^{\frac{1}{2}\left\langle\sigma,\beta A\sigma\right\rangle}}{Z}\,,
 $$
 
-where $$ Z $$ is the normalizing constant called the partition function, and the density is defined for every $$\sigma \in \Sigma_n := \lbrace -1,1 \rbrace^n $$.
+where $$A $$ is a $$\mathsf{GOE}(n) $$ matrix, $$Z $$ is the normalizing constant called the partition function, and the density is defined for every $$\sigma \in \Sigma_n := \lbrace -1,1 \rbrace^n $$.
 
 The SK model has a particularly nice form for its free energy in the high-temperature regime ($$\beta < 1 $$) whose validity was rigorously established in a series of papers -- see, for instance [[CP19]](https://arxiv.org/abs/1709.03468). The free energy is equivalent to the largest value of the TAP functional evaluated as a supremum over all possible magnetizations. The TAP functional for the SK model at some magnetization $$m \in [-1,1]^n $$ is given as
 
@@ -152,13 +152,13 @@ $$
 
 We will be interested in viewing this as a Fenchel legendre transform, and given some algorithmic estimate $$\hat{y}_t $$ of $$ y_t $$ (with sufficiently good approximation) we will be able to compute $$ \hat{m}_t $$ using the strong convexity of this TAP free energy (since that will guarnatee the uniqueness of $$ \hat{m}_t$$ ), which will in turn allow us to compute the *next* tilt $$\hat{y}_{t+\delta t} $$. 
 
-This is fantastic for the algorithmic procedure, and it also suggests a natural covariance $$ \hat{Q}(m) $$ that can be defined everywhere[^6] in $$[-1,1]^n $$ -- the inverse of the Hessian of the TAP free energy. This is so since $$ y_t $$ and $$ m_t $$ are dual to each other, and the Crouzeix identity tells us that the second-derivative with respect to one variable ($$y_t $$) is the functional inverse of the other ($$m_t $$) and this gives
+This is fantastic for the algorithmic procedure, and it also suggests a natural covariance $$ \hat{Q}(m) $$ that can be defined everywhere[^6] in $$(-1,1)^n $$ -- the inverse of the Hessian of the TAP free energy. This is so since $$ y_t $$ and $$ m_t $$ are dual to each other, and the Crouzeix identity tells us that the second-derivative with respect to one variable ($$y_t $$) is the functional inverse of the other ($$m_t $$) and this gives
 
 $$
-	\hat{Q}(m) := \left(\nabla^2 \mathcal{F}_{\mathsf{TAP}}(y,m)\right)^{-1} = \left(\beta^2\mathsf{tr}_n[D^{-1}(m)]I_n -\beta A + D(m)-\frac{2\beta^2}{n}mm^T\right)^{-1}\,.
+	\hat{Q}(m) := \left(\nabla^2 \mathcal{F}_{\mathsf{TAP}}(y,m)\right)^{-1} = \left(\beta^2\mathsf{tr}_n[D^{-1}(m)]I_n -\beta A + D(m)-\frac{2\beta^2}{n}mm^T\right)^{-1}\,,
 $$   
  
-A pleasant consequence of the choice of $$\hat{Q}(m) $$ is that it is actually independent of the tilt $$y $$. Another immediate consequence is that, under the Loewner order sandwich on $$\hat{Q}(\cdot) $$ (and consequently $$D(\cdot)\hat{Q}(\cdot) $$) required by the first desideratum for the covariance matrix, one can easily obtain that
+where $$D(m) $$ is the diagonal matrix with entries $$\left\lbrace \frac{1}{1-(m_i)^2}\right\rbrace_{i=1}^n $$. A pleasant consequence of the choice of $$\hat{Q}(m) $$ is that it is actually independent of the tilt $$y $$. Another immediate consequence is that, under the Loewner order sandwich on $$\hat{Q}(\cdot) $$ (and consequently $$D(\cdot)\hat{Q}(\cdot) $$) required by the first desideratum for the covariance matrix, one can easily obtain that
 
 $$
 \begin{aligned}
@@ -169,6 +169,14 @@ $$
 $$
 
 where $$R(a) = \left(\beta^2\mathsf{tr}_n[D^{-1}(a)]I_n-\beta A - \frac{2\beta^2}{n}aa^T\right)^{-1} $$. Then, conditioning on the event that $$\|A\|_\infty \le 2+\delta_\beta $$ and doing some elementary estimates using the fact that $$a,b \in (-1,1)^n $$, yields that $$\|R(a)-R(b)\|^2_F \le C(\beta)\|a-b\|^2_2 $$. Substituting this into the bound above shows that $$\hat{Q}(\cdot) $$ is Lipschitz with respect to $$\|\cdot\|_F $$ and proves one of the four regularity properties in the desiderata (simply as a consequence of the first desideraturm and surrogate choice of covariance).
+
+I mentioned before that while the algorithmic version of HD, which we can now see will start at $$ \hat{m}_0 = 0^n $$ with updates
+
+$$
+d\hat{m}_t = \left(\beta^2\mathsf{tr}_n[D^{-1}(m)]I_n -\beta A + D(m)-\frac{2\beta^2}{n}mm^T\right)^{-1}dB_t\,,
+$$
+
+will not be used directly, it will be useful in the analysis. One can ask, then, why can't we just boost the $$O_{T,\beta}(1) $$ bound we can assume (given our desiderata, which we will systematically prove) 
 <br>
 
 ### ASL-TAP and boosting to a KL divergence bound
