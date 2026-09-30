@@ -99,7 +99,7 @@ The first property tells us that the stochastic process "localizes" at one parti
 There is just one remaining subtlety -- while we can choose a localization process that we can analyze and simulate, where do we start it? As we will see, we choose the "linear-tilt" localization scheme which essentially starts at a sample $$x_0 $$ drawn from the target measure, and consists of noisy observations through time $$t $$ that ultimately become more informative and localize as a Dirac measure $$\delta_{x_0} $$[^4]. This scheme starts at $$y_0 = 0^n $$ and reveals itself at time $$t $$ as
 
 $$
-y_t = x_0 t + B_t\, ,
+y_t = tx_0  + B_t\, ,
 $$
 
 where $$x_0 \sim \nu_0 $$ and $$B_t \sim \mathcal{N}(0,t) $$. The measure $$\nu_t(\cdot) $$ induced by this scheme is
@@ -126,13 +126,19 @@ $$
 d\hat{m}_t = \hat{Q}(\hat{m}_t)dB_t\,,
 $$
 
-and now a critical part of proving our desiderata and writing down the final algorithm relies on gaining access to an efficiently computable sequence of matrix-valued functions $$\hat{Q} : [0,T] \to M_n(\mathbb{R})_{\text{sa}} $$ -- this is exactly where the contiguity to a planted model *and* the TAP free energy will be of assistance. 
+and now a critical part of proving our desiderata and writing down the final algorithm relies on gaining access to an efficiently computable sequence of matrix-valued functions $$\hat{Q} : [-1,1]^n \to M_n(\mathbb{R})_{\text{sa}} $$ -- this is exactly where the contiguity to a planted model *and* the TAP free energy will be of assistance. 
 
 
 <br>
 
 ### Algorithmic surrogates via the TAP free energy
-The SK model has a particularly nice form for its free energy in the high-temperature regime ($$\beta < 1 $$) whose validity was rigorously established in a series of papers -- see, for instance []().
+The SK model has a particularly nice form for its free energy in the high-temperature regime ($$\beta < 1 $$) whose validity was rigorously established in a series of papers -- see, for instance [[CP19]](https://arxiv.org/abs/1709.03468). The TAP free energy is written as a supremum over all possible magnetizations, given a fixed tilt $$y $$ as
+
+$$
+	\mathcal{F}_{\mathsf{TAP}}(y) = \sup_{} 
+$$
+
+This structure of the TAP free energy is closely related to taking a Legendre transform of the standard definition of the free energy, and the 
 
 A pleasant consequence of the choice of $$\hat{Q}(m) := \left(\beta^2\mathsf{tr}_n[D^{-1}(m)]I_n -\beta A + D(m)-\frac{2\beta^2}{n}mm^T\right)^{-1} $$ is that, under the Loewner order sandwich on $$\hat{Q}(\cdot) $$ (and consequently $$D(\cdot)\hat{Q}(\cdot) $$) required by the first desideratum for the covariance matrix, one can easily obtain that
 
