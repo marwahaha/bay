@@ -10,13 +10,13 @@ og_image: /assets/img/content/post-example/Banner.jpg
 [//]: # (<img src="{{ "/assets/img/content/post-example/Banner.jpg" | absolute_url }}" alt="bay" class="post-pic"/>)
 
 
-Continuing on the program that [Jonathan](https://www.jshi.science/) and I started with [David](https://davidjekel.com/) in [PHA 1](https://arxiv.org/abs/2408.02360) and [PHA 2](), with [Ewan](https://www.ewandavies.org/) and [Holden](https://holdenlee.github.io/), we put out a PHA 3 preprint on the arXiv [(Potential Hessian Ascent III: Sampling the Sherrington-Kirkpatrick Model at $$\beta $$ < 1/2, DLSS26)](https://arxiv.org/abs/2605.03718). Shortly after PHA 3, Holden, Jonathan and I put out a follow-up, creatively termed [(Potential Hessian Ascent IV: Sampling the Sherrington-Kirkpatrick Model at $$\beta $$ < 1, LSS26)](https://arxiv.org/abs/2609.30590) that builds on the cavity interpolation theory and free probability toolkit built in PHA 3 to introduce a "local" error analysis which only uses (and proves) "local" regularity properties of the underlying SDEs. 
+Continuing on the program that [Jonathan](https://www.jshi.science/) and I started with [David](https://davidjekel.com/) in [PHA 1](https://arxiv.org/abs/2408.02360) and [PHA 2](), with [Ewan](https://www.ewandavies.org/) and [Holden](https://holdenlee.github.io/), we put out a PHA 3 preprint on the arXiv [(Potential Hessian Ascent III: Sampling the Sherrington-Kirkpatrick Model at $$\beta $$ < 1/2, DLSS26)](https://arxiv.org/abs/2605.03718). Shortly after PHA 3, Holden, Jonathan and I put out a follow-up, creatively termed [(Potential Hessian Ascent IV: Sampling the Sherrington-Kirkpatrick Model at $$\beta $$ < 1, LSS26)](https://arxiv.org/abs/2609.30590) that builds on the cavity interpolation theory and free probability toolkit developed in PHA 3 to introduce a "local" SDE error analysis which only uses (and proves) "local" regularity properties for the driver and drift terms underlying the matricial functions of certain quantities that drive the SDEs. 
 
-Togethere, these works together yield a $$o_n(1) $$ TVD sampler for the SK model up to the replica-symmetric threshold $$\beta < 1 $$ which is the conjectured hardness threshold for sampling. The algorithm combines algorithmic stochastic localization (ASL) with rejection sampling over path-space via Jarzynski's equality (JE). The analysis uses local regularity properties of the TAP Hessian and the PHA framework, developing new cavity interpolation theory and an extension to the free-probability toolkit introduced in [PHA 1, Section-4](https://arxiv.org/pdf/2408.02360), which is then combined with delicate SDE error analysis and the ability to efficiently sample from sufficiently "localized" distributions, i.e., those with large enough external field induced by the stochastic localization (SL) process. 
+Togethere, these works together yield a $$o_n(1) $$ TVD sampler for the SK model up to the replica-symmetric threshold $$\beta < 1 $$, above which sampling from the Gibbs measured is conjectued to be hard. The algorithm combines algorithmic stochastic localization (ASL) with rejection sampling over path-space via Jarzynski's equality (JE). The analysis uses local regularity properties of the TAP Hessian and the PHA framework, developing new cavity interpolation theory and an extension to the free-probability toolkit introduced in [PHA 1, Section-4](https://arxiv.org/pdf/2408.02360), which is then combined with delicate SDE error analysis and the ability to efficiently sample from sufficiently "localized" distributions, i.e., those with large enough external field induced by a stochastic localization (SL) process that's been run long enough. 
 
-I have decided to write, with a guest contribution from Holden, a **5-part** blog post explaining the background, the development of the algorithm, the main proof skeletons, and highlighting the main technical innovations. 
+I have decided to write, with a guest contribution from Holden, a **5-part** blog post explaining the background, the development of the algorithm, the main proof skeletons, and the main technical innovations. 
 
-- In this first blog post, I will explain the connection between ASL and PHA, introduce Jarzynski's equality, the over-determined system of ASL, TAP and PHD, and the natural development of the ''desiderata'' that must be proved for the algorithm to succeed. I will end with three consequences (and perspectives) of the result -- one for theoretical physicists, another for analysts/probabilists, and a final one for theoretical computer scientists.   
+- In this first blog post, I will explain the connection between SL and Hessian dynamics (HD), introduce Jarzynski's equality, the over-determined system of ASL, TAP and PHD, and the natural development of the ''desiderata'' that must be proved for the algorithm to succeed. I will end with three consequences (and perspectives) of the result -- one for theoretical physicists, another for analysts/probabilists, and a final one for theoretical computer scientists.   
 - In the second blog post, I will spend time developing the cavity interpolation theory that gives exact moment estimates and ''better-than-naive''' overlap-concentration along the SL process. This is necessary to prove the desideratum that the algorithmic covariance (Hessian of the TAP free energy) stays close to the true covariance along the SL path. It will turn out to be the case that this theory holds for $$\beta < 1$$ even though this was not explicitly written down in PHA 3, and a couple of final details for this were not fleshed out till PHA 4. The key technical contribution here is to run a cavity interpolation for the planted SL model with SL tilt and compute "self-stability" estimates on doing Taylor expansions for bulk-deviation quantities (such as overlaps and magnetizations) to get *exact* moment estimates.
 -  In the third blog post, I will spend time explaining the extension to the analysis of the non-commutative interpolation developed in [PHA 1, Section-4](https://arxiv.org/pdf/2408.02360) to control the diagonal entries of the (squared) algorithmic covariance -- this will then imply various regularity estimates and show that the ASL-TAP process closely tracks the PHD process. We will first do this for $$ \beta < 1/2 $$, and then I will then show that, in fact, one can reason about a "regularized" resolvent which agrees with the original resolvent *only* over a (possibly non-convex) subset of $$(-1,1)^n $$ and, simultaneously, *significantly* simplify the free interpolation analysis in PHA 3 by using a result of [Bandeira, Boedihardjo and van-Handel, 2023](https://arxiv.org/abs/2108.06312). This allows one to reason about the concentration and free limits of the diagonal sub-algebra of the TAP Hessian (a resolvent) all the way to $$\beta < 1 $$ where it *can* be singular in a subset of $$(-1,1)^n $$.   
 -  In the fourth blog post, Holden will show how the localized distribution concentrates on a wedge of the hypercube (provided it is run for sufficiently long) and how a 2-stage decomposition on this wedge allows one to show the entropy contraction property, which is the final desideratum that needs to be proved -- this is the approach adopted in PHA 3. After that, I will briefly overview how a result of [Kumar et al, 2026](), which allows one to sample from a Gibbs distribution with quadratic potential and sufficiently strong external field on a wedge of $$\lbrace -1,1\rbrace^n $$ using an annealing-type procedure, is used in PHA 4 to directly sample from the localized distribution after invoking the fact that SL run for large time *will* cause the distribution to be heavilty concentrated inside a wedge of sufficient size.
@@ -27,15 +27,64 @@ I have decided to write, with a guest contribution from Holden, a **5-part** blo
 1. [Algorithm design](#algorithm-design)
    * [Stochastic Localization and Hessian Dynamics](#the-parisi-formula-and-auffinger-chen-representation)
    * [The TAP free energy](#the-generalized-tap-free-energy)
-   * [Jarzynski equality](#a-primal-theory-for-the-parisi-pde-via-convex-duality)
-2. [ASL, TAP and PHD]()
+   * [ASL, TAP and PHD](#a-primal-theory-for-the-parisi-pde-via-convex-duality)
+2. [Jarzynski equality](#jarzynski-equality)
    * [Overdetermined system and errors](#overdetermined-system-and-error)
    * [Emergent desiderata](#emergent-desiderata)
+3. [Conclusions]()
+   * []()
 4. [Footnotes](#footnotes)
 <br>
 
 ## Algorithm Design
-Stuff and things
+Let us first reason about how to bound the error between two continuous diffusion processes run for large constant time. Think of one process as representing an "ideal" process that, if run for infinite time, will localize on a point in the suport of the Gibbs measure, and think of the other as one that attempts to proxy it with a covariance that can be algorithmically computed (but incurs approximation errors). 
+
+Denote the ideal process as $$dm_t = Q(m_t)dB_t $$ and the algorithmic process as $$d\hat{m}_t = \hat{Q}(\hat{m}_t)dB_t $$. Then, by a simple argument using the fact that the Wasserstein-$$2 $$ distance between two Gaussians is upper bounded Frobenius norm difference between their covariances, we have
+
+$$
+W_2(\mathsf{dist}(m_t),\mathsf{dist}(\hat{m}_t)) \le \mathbb{E}\|\hat{Q}(\hat{m}_t) - Q(m_t)\|^2_F\, .
+$$
+
+This already hints at why one of the most crucial desiderata in the entire program is going to be an error estimate tracking how well a "surrogate" covariance $$\hat{Q}(\cdot) $$ tracks the "ideal" covariance $$Q(\cdot) $$ across SL paths $$\lbrace m_t \rbrace_t $$. 
+
+It turns out, we will compute the error between two sets of Ito processes. The ideal processes will be a set of two coupled processes, and the algorithmic case will be similar (though not necessarily coupled). These processes are SDEs that also have drift terms. In addition to the diffusion processes before, the ideal process will also include $$ dy_t = m_tdt + dB_t $$ and the algorithmic estimate will include $$ d\hat{y}_t = \hat{f}_t(\hat{m}_t)dt + dB_t$$. Now, we set $$ y_0 = m_0 = \hat{y}_0 = \hat{m}_0 = 0^n $$ (which is the relevant initialization for us) and, assuming that the solutions exist and are well-posed, obtain the following representation for the ideal and algorithmic processes
+
+$$
+d\begin{pmatrix} y_t \\ m_t \end{pmatrix} = \begin{pmatrix} m_t \\ 0^n \end{pmatrix} dt + \begin{pmatrix} I_n \\ Q(m_t) \end{pmatrix}dB_t\,,
+$$
+
+and
+
+$$
+d\begin{pmatrix} \hat{y}_t \\ \hat{m}_t \end{pmatrix} = \begin{pmatrix} \hat{f}_t(\hat{m}_t) \\ 0^n \end{pmatrix} dt + \begin{pmatrix} I_n \\ \hat{Q}(\hat{m}_t) \end{pmatrix}dB_t\,.
+$$
+
+We can now upper-bound the $$W_2 $$ distance between the ideal and algorithmic processes using the cunulative difference process $$\text{err}_t = \begin{pmatrix} y_t - \hat{y}_t \\ m_t - \hat{f}_t(\hat{m}_t) \end{pmatrix} $$. A simple application of Ito's formula tells us the rate of the average instantaneous error between the two processes is
+
+$$
+\frac{d}{dt}\mathbb{E}\|\text{err}_t\|^2_2 = 2\mathbb{E}\langle\text{err}_t, (\hat{f}_t(\hat{m}_t),0^n)-(m_t,0^n)\rangle + \mathbb{E}\|Q(m_t) - \hat{Q}(\hat{m}_t)\|^2_F\,,
+$$
+
+whereupon an applictation of a $$c $$-weighted AM-GM inequality on the first term followed by some triangle inequalities and the fact that $$(a+b)^2 \le 2a^2+2b^2 $$ tells us that 
+
+$$
+\frac{d}{dt}\mathbb{E}\|\text{err}_t\|^2_2 \le c\mathbb{E}\|\text{err}_t\|^2_2 + \frac{2}{c}\left(\mathbb{E}\|\hat{f}_t(\hat{m}_t)-\hat{f}_t(m_t)\|^2_2 + \mathbb{E}\|\hat{f}_t(m_t)-m_t\|^2_2\right) + \mathbb{E}\|\hat{Q}(\hat{m}_t)-\hat{Q}(m_t)\|^2_F + \mathbb{E}\|\hat{Q}(m_t)-Q(m_t)\|^2_F\,.
+$$
+
+At this point, it is clear that if we are only to run our algorithmic processes for finite time $$ T $$ and the final four terms in the bound above are of order $$O_{t,\beta}(1) $$ at every $$0 \le t \le T $$, a Gronwall's inequality bound will immediately give that $$\mathbb{E}\|\text{err}_T\|^2_2 = O_{T,\beta}(1) $$. 
+
+Now, if we stop our algorithmic processes at some large constant time $$ T $$, we *must* either assert that some deterministic and efficient function $$h(\hat{m}_T,\hat{y}_T) $$ outputs a sample with $$o_n(1) $$ TVD error, **or** we can use the pair $$(\hat{m}_T,\hat{y}_T) $$ as a "warm start" to another efficient algorithm which outputs a sample $$\sigma \in \lbrace -1,1\rbrace^n $$ that *is* $$o_n(1) $$ close in TVD error to the target measure. We will fo for the latter approach.
+
+Between the bounds on the four final four quantities for the cumulative error process, the sampler to the warm start mentioned above, and the fact that $$\hat{Q}(\cdot) $$ *must* be a valid covariance, we already have a list of the desiderata that the algorithm requires, at least to have $$W_2 $$ error that is $$O_{T,\beta}(1) $$:
+- $$\hat{Q}(\cdot) $$ is a regular and valid covariance, namely $$c(\beta)I_n \preceq \hat{Q}(m) \preceq C(\beta)I_n $$ at all $$ m \in \lbrace -1,1\rbrace^n $$[^1].
+- The covariance errors are small, that is $$\mathbb{E}\|\hat{Q}(m_t) - Q(m_t)\|^2_F \le O_{t,\beta}(1) $$.
+- The functions $$\hat{f}_t(\cdot) $$ are $$C_{\beta,t}$$-Lipschitz with respect to $$\|\cdot\|_2 $$.
+- The error of the magnetization estimate of the algorithm is bounded, that is $$\mathbb{E}\|\hat{f}_t(m)-m\|^2_2 \le O_{t,\beta}(1) $$ for every $$m \in \lbrace -1,1\rbrace^n $$.
+- After running the (discretized) algorithmic processes for $$(\hat{m}_t,\hat{y}_t) $$ for time $$T $$, there is a sampler that samples from a certain simpler ("stochastically localized") distribution with $$o_n(1) $$ TVD error in polynomial time.
+
+While it is not clear, the covariance and magnetization estimates will only permit error of the desired order when $$ \beta < 1 $$. Additionally, the PSD-ness property of the covariance will hold pointwise inside the cube *only* for $$ \beta < 1/2 $$. To make it, and the magnetization estimate (which relies on it in an indirect way), work, we will need to refine these desiderata to hold *only* at a certain "safe" set $$S_A(c) \subset \lbrace -1, 1\rbrace^n $$ -- this will be the subject of the final blog post.
+
+We will now introduce the ideal processes (SL/HD) and algorithmic processes (ASL/PHD) explicitly.
 <br>
 
 ### Stochastic Localization and Hessian Dynamics
@@ -46,20 +95,22 @@ Stuff and things
 Stuff and things
 <br>
 
-### Jarzynski equality
+### ASL-TAP and KL divergence
+The $$O(1) $$ error estimate for the $$W_2 $$ distance between the ideal and algorithmic SDEs for the magnetization and tilt we developed at the beginning will, unfortunately, not be sufficient to conlcude a $$O(1) $$ KL-divergence error via an application of Girsanov's theorem. This is because in the SL process, the magnetization $$m_t $$ is coupled with the tilt $$y_t $$, whereas this is simply not true for the algorithmic process for $$ \hat{m}_t $$ and $$ \hat{y}_t $$ when $$ \hat{Q}(\hat{m}_t) = \left(\nabla^2\mathcal{F}_{\mathsf{TAP}}(\hat{m}_t)\right)^{-1} $$. Consequently, we must account for *one* additional source of error, and that is the expected squared error between ASL-TAP and the PHD process. The final desiderata to obtain $$O(1) $$ KL divergence error will come from this part of the argument.
+<br>
+
+## Jarzynski equality
 Stuff and things
 <br>
 
-## ASL, TAP and PHD
+### Rejection sampling over path space
 Stuff and things
 <br>
 
-### Overdetermined system and errors
-Stuff and things
-<br>
-
-### Emergent desiderata
+### Final desiderata
 Stuff and things
 <br>
 
 #### FOOTNOTES
+
+[^1]: Note that the fact that $$\hat{Q}(\cdot) $$ must be $$C$$-Lispchitz is implied by the upper bound on the Loewner order, which is one of the required conditions to use Gronwall and bound the error by $$O_{T,\beta}(1) $$.
