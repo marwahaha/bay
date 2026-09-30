@@ -114,19 +114,25 @@ $$
 dy_t = m_t dt + dB_t\,,
 $$
 
-where $$m_t = \mathbb{E}_{x\sim\nu_t}\left[x\right] $$. A main conceptual insight in our work is that there is **yet** another equivalent rewrite for a stochastic localization process, and this rewrite tracks the evolution of the magnetizations/averages $$\lbrace m_t\rbrace_{t\ge 0} $$ of the "tilted" measures $$\nu_t(\cdot) $$ given by the linear-tilt localization scheme $$\lbrace y_t\rbrace_{t\ge 0} $$. This process is
+where $$m_t = \mathbb{E}_{x\sim\nu_t}\left[x\right] $$. A main conceptual insight in our work is that there is **yet** another equivalent rewrite for a stochastic localization process, and this rewrite tracks the evolution of the magnetizations/averages $$\lbrace m_t\rbrace_{t\ge 0} $$ of the "tilted" measures $$\nu_t(\cdot) $$ under the linear-tilt localization scheme $$\lbrace y_t\rbrace_{t\ge 0} $$. This process is
 
 $$
-dm_t = \mathsf{Cov}(\nu_t)dB_t\,, 
+dm_t = \mathsf{Cov}(\nu_t)dB_t\,\qquad \text{Hessian dynamics (HD)}\,, 
 $$
 
-where $$\mathsf{Cov}(\nu_t) $$ is the covariance matrix for the measure $$\nu_t $$.
+where $$\mathsf{Cov}(\nu_t) $$ is the covariance matrix for the measure $$\nu_t $$. It is not difficult to see that this is the SDE that the magnetization process should obey from its definition as the mean of the tilted measures plus an application of Ito's lemma in conjunction with the fact that the magnetizations must form a martingale. It will turn out to be the case (for convenience more than anything else) that, though the actual algorithm will not run an algorithmic version of *this* particular version of SL, it will still be very useful to analyze it to prove some of the desiderata[^5]. The algorithmic version of this process is
+
+$$
+d\hat{m}_t = \hat{Q}(\hat{m}_t)dB_t\,,
+$$
+
+and now a critical part of proving our desiderata and writing down the final algorithm relies on gaining access to an efficiently computable sequence of matrix-valued functions $$\hat{Q} : [0,T] \to M_n(\mathbb{R})_{\text{sa}} $$ -- this is exactly where the contiguity to a planted model *and* the TAP free energy will be of assistance. 
 
 
 <br>
 
 ### Algorithmic surrogates via the TAP free energy
-Stuff and things
+The SK model has a particularly nice form for its free energy in the high-temperature regime ($$\beta < 1 $$) whose validity was rigorously established in a series of papers -- see, for instance []().
 
 A pleasant consequence of the choice of $$\hat{Q}(m) := \left(\beta^2\mathsf{tr}_n[D^{-1}(m)]I_n -\beta A + D(m)-\frac{2\beta^2}{n}mm^T\right)^{-1} $$ is that, under the Loewner order sandwich on $$\hat{Q}(\cdot) $$ (and consequently $$D(\cdot)\hat{Q}(\cdot) $$) required by the first desideratum for the covariance matrix, one can easily obtain that
 
@@ -184,3 +190,5 @@ Stuff and things
 [^3]: It will shortly become clear why I am calling this a "PHD-TAP drift error".
 
 [^4]: This seems cyclical, since we are starting at a sample drawn from the measure we wish to eventually sample from. However, it will turn out that the dependency between the "tilted" measures along the localization process at every time $$t $$ and the input randomness can be decoupled -- this is because, at high-temperature ($$\beta < 1 $$), our measure turns out to be contiguous with respect to drawing the initial sample $$x_0 \sim \mathsf{Unif}\left(\lbrace-1,1\rbrace^n\right) $$ and then running the process, albeit with a "plant" term that independently gets added to the input randomness. This obviously changes the structure of our surrogate covariance $$\hat{Q}(\cdot) $$, but the added technical burden can be dealt with and is substantially easier that dealing with a localization process where the tilted measures cannot be decoupled (made independent) from the randomness of the instance. See [[Section 2, EAMS'22]](https://arxiv.org/abs/2203.05093) for more details about the planted model. 
+
+[^5]: For the particular linear-tilt scheme that we are using as our localization process, we will be able to assert that the algorithmic process we use allows us to efficiently estimate $$\hat{m}_t $$ from $$\hat{y}_t $$. 
