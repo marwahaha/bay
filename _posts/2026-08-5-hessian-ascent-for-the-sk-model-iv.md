@@ -26,13 +26,15 @@ I have decided to write, with a guest contribution from Holden, a **5-part** blo
 #### Table of Contents
 1. [Algorithm design](#algorithm-design)
    * [Stochastic Localization and Hessian Dynamics](#the-parisi-formula-and-auffinger-chen-representation)
-   * [The TAP free energy](#the-generalized-tap-free-energy)
+   * [Algorithmic surrogates via the TAP free energy](#algorithmic-surrogates-via-the-tap-free-energy)
    * [ASL-TAP and boosting to a KL divergence bound](#asl-tap-and-boosting-to-a-kl-divergence-bound)
 2. [Jarzynski equality](#jarzynski-equality)
-   * [Overdetermined system and errors](#overdetermined-system-and-error)
-   * [Emergent desiderata](#emergent-desiderata)
+   * [Overdetermined system and errors](#overdetermined-system-and-errors)
+   * [Final desiderata](#final-desiderata)
 3. [Conclusions]()
-   * []()
+   * [Certifying the overlap distribution](certifying-the-overlap-distribution)
+   * [Weak functional inequalities and resolvent driven SDEs](weak-functional-inequalities-and-resolvent-driven-SDEs)
+   * [Sampling without functional inequalities]()
 4. [Footnotes](#footnotes)
 <br>
 
@@ -82,7 +84,7 @@ Between the bounds on the four final four quantities for the cumulative error pr
 - The error PHD-TAP drift error for magnetization is bounded, that is $$\mathbb{E}\|\hat{f}_t(m)-m\|^2_2 \le O_{t,\beta}(1) $$ for every $$m \in \lbrace -1,1\rbrace^n $$[^3].
 - After running the (discretized) algorithmic processes for $$(\hat{m}_t,\hat{y}_t) $$ for time $$T $$, there is a sampler that samples from a certain simpler ("stochastically localized") distribution with $$o_n(1) $$ TVD error in polynomial time.
 
-While it is not clear right now, the covariance and PHD-TAP drift error estimates will only permit error of the desired order when $$ \beta < 1 $$ -- this will be the discussed in the second blog post. Additionally, the PSD-ness property of the covariance will hold pointwise inside the cube *only* for $$ \beta < 1/2 $$. To make the PSD-ness property, and the PHD-TAP drift error estimate (which relies on it in an indirect way), work for $$\beta < 1 $$, we will need to refine these desiderata to hold *only* at a certain "safe" set $$S_A(c) \subset \lbrace -1, 1\rbrace^n $$ -- the PHD-TAP error part of this will be the subject of the third blog post, and obtaining PSD-ness over the "safe" set will be established in the final blog post.
+While it is not clear right now, the covariance and PHD-TAP drift error estimates will only permit error of the desired order when $$ \beta < 1 $$ -- this will be discussed in the second and third blog post. Additionally, the PSD-ness property of the covariance will hold pointwise inside the cube *only* for $$ \beta < 1/2 $$. To make the PSD-ness property, and the PHD-TAP drift error estimate (which relies on it in an indirect way), work for $$\beta < 1 $$, we will need to refine these desiderata to hold *only* at a certain "safe" set $$S_A(c) \subset \lbrace -1, 1\rbrace^n $$ -- the PHD-TAP error part of this will be the subject of the third blog post, and obtaining PSD-ness over the "safe" set will be established in the final blog post. Lastly, the Lipschitz error for $$\hat{Q}(\cdot) $$ will be a consequence of the Loewner regularity of $$ \hat{Q}(\cdot) $$ combined with the resolvent structure it has based on the *explicit* choice we use -- see [(1.2)](algorithmic-surrogates-via-the-tap-free-energy).
 
 We are now two steps away from getting a $$o_n(1) $$-TVD sampler, if we can show the desiderata outlined above. First, we need to reason about *one* more source of $$L_2 $$-error to go from $$O_{T,\beta}(1) $$-$$W_2 $$ error to $$O_{T,\beta}(1) $$-KL divergence error via an application of Girsanov's theorem. At that point, Pinsker's inequality yields a $$O_{T,\beta}(1) $$-TVD error, but that is still not $$o_n(1) $$. The second step, which achieves this, is to use rejection sampling (but over path space) to suppress the error further to $$o_{n}(1) $$-TVD error -- this is where Jarzynski's equality enters the picture. We will now introduce the ideal processes (SL/HD), then define the TAP free energy and use it to derive the algorithmic surrogates. At that point, we will be able to complete the ASL-TAP and PHD $$L_2 $$-error bound needed to apply Girsanov's theorem. We will then move on to defining Jarzynski's equality, see how it allows us to do rejection sampling, and briefly overview how it suppresses the TVD error further. Doing the last step will incur *one* more desiderata, at which point we will conclude with our final list of desiderata.
 <br>
@@ -104,9 +106,9 @@ $$
 \end{aligned}
 $$
 
-where $$R(a) = \left(\beta^2\mathsf{tr}_n[D^{-1}(a)]I_n-\beta A - \frac{2\beta^2}{n}aa^T\right)^{-1} $$. 
+where $$R(a) = \left(\beta^2\mathsf{tr}_n[D^{-1}(a)]I_n-\beta A - \frac{2\beta^2}{n}aa^T\right)^{-1} $$. Then, conditioning on the event that $$\|A\|_\infty \le 2+\delta_\beta $$ and doing some elementary estimates using the fact that $$a,b \in (-1,1)^n $$, yields that $$\|R(a)-R(b)\|^2_F \le C(\beta)\|a-b\|^2_2 $$. Substituting this into the bound above shows that $$\hat{Q}(\cdot) $$ is Lipschitz with respect to $$\|\cdot\|_F $$ and proves one of the four regularity properties in the desiderata.
 
-is  
+
 <br>
 
 ### ASL-TAP and boosting to a KL divergence bound
@@ -122,6 +124,22 @@ Stuff and things
 <br>
 
 ### Final desiderata
+Stuff and things
+<br>
+
+## Conclusions
+Stuff and things
+<br>
+
+### Certifying the overlap distribution
+Stuff and things
+<br>
+
+### Weak functional inequalities and resolvent driven SDEs
+Stuff and things
+<br>
+
+### Sampling without functional inequalities
 Stuff and things
 <br>
 
