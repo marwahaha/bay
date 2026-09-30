@@ -68,7 +68,7 @@ $$
 whereupon an application of a $$c $$-weighted AM-GM inequality on the first term followed by some triangle inequalities and the fact that $$(a+b)^2 \le 2a^2+2b^2 $$ tells us that 
 
 $$
-\frac{d}{dt}\mathbb{E}\|\text{err}_t\|^2_2 \le c\mathbb{E}\|\text{err}_t\|^2_2 + \frac{2}{c}\left(\mathbb{E}\|\hat{f}_t(\hat{m}_t)-\hat{f}_t(m_t)\|^2_2 + \mathbb{E}\|\hat{f}_t(m_t)-m_t\|^2_2\right) + \mathbb{E}\|\hat{Q}(\hat{m}_t)-\hat{Q}(m_t)\|^2_F + \underline{\mathbb{E}\|\hat{Q}(m_t)-Q(m_t)\|^2_F}_{\text{covariance estimtate error}}\,.
+\frac{d}{dt}\mathbb{E}\|\text{err}_t\|^2_2 \le c\mathbb{E}\|\text{err}_t\|^2_2 + \frac{2}{c}\left(\underbrace{\mathbb{E}\|\hat{f}_t(\hat{m}_t)-\hat{f}_t(m_t)\|^2_2}_{\hat{f}_t \text{ Lipschitz error}} + \underbrace{\mathbb{E}\|\hat{f}_t(m_t)-m_t\|^2_2}_{\text{ASL-TAP and PHD error}}\right) + \underbrace{\mathbb{E}\|\hat{Q}(\hat{m}_t)-\hat{Q}(m_t)\|^2_F}_{\le \mathbb{E}\|\hat{Q}(\cdot)\|^2_\infty\|\hat{m}_t-m_t\|^2_2} + \underbrace{\mathbb{E}\|\hat{Q}(m_t)-Q(m_t)\|^2_F}_{\text{covariance estimtate error}}\,.
 $$
 
 At this point, it is clear that if we are only to run our algorithmic processes for finite time $$ T $$ and the final four terms in the bound above are of order $$O_{t,\beta}(1) $$ at every $$0 \le t \le T $$, a Gronwall's inequality bound will immediately give that $$\mathbb{E}\|\text{err}_T\|^2_2 = O_{T,\beta}(1) $$. 
