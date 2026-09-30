@@ -68,7 +68,7 @@ $$
 whereupon an application of a $$c $$-weighted AM-GM inequality on the first term followed by some triangle inequalities and the fact that $$(a+b)^2 \le 2a^2+2b^2 $$ tells us that 
 
 $$
-\frac{d}{dt}\mathbb{E}\|\text{err}_t\|^2_2 \le c\mathbb{E}\|\text{err}_t\|^2_2 + \frac{2}{c}\left(\underbrace{\mathbb{E}\|\hat{f}_t(\hat{m}_t)-\hat{f}_t(m_t)\|^2_2}_{\hat{f}_t \text{ Lipschitz error}} + \underbrace{\mathbb{E}\|\hat{f}_t(m_t)-m_t\|^2_2}_{\text{ASL-TAP and PHD error}}\right) + \underbrace{\mathbb{E}\|\hat{Q}(\hat{m}_t)-\hat{Q}(m_t)\|^2_F}_{\le \mathbb{E}\|\hat{Q}(\cdot)\|^2_\infty\|\hat{m}_t-m_t\|^2_2} + \underbrace{\mathbb{E}\|\hat{Q}(m_t)-Q(m_t)\|^2_F}_{\text{covariance estimtate error}}\,.
+\frac{d}{dt}\mathbb{E}\|\text{err}_t\|^2_2 \le c\mathbb{E}\|\text{err}_t\|^2_2 + \frac{2}{c}\left(\underbrace{\mathbb{E}\|\hat{f}_t(\hat{m}_t)-\hat{f}_t(m_t)\|^2_2}_{\hat{f}_t \text{ Lipschitz error}} + \underbrace{\mathbb{E}\|\hat{f}_t(m_t)-m_t\|^2_2}_{\text{PHD-TAP drift error}}\right) + \underbrace{\mathbb{E}\|\hat{Q}(\hat{m}_t)-\hat{Q}(m_t)\|^2_F}_{\hat{Q}(\cdot)\text{ Lipschitz error}} + \underbrace{\mathbb{E}\|\hat{Q}(m_t)-Q(m_t)\|^2_F}_{\text{covariance estimtate error}}\,.
 $$
 
 At this point, it is clear that if we are only to run our algorithmic processes for finite time $$ T $$ and the final four terms in the bound above are of order $$O_{t,\beta}(1) $$ at every $$0 \le t \le T $$, a Gronwall's inequality bound will immediately give that $$\mathbb{E}\|\text{err}_T\|^2_2 = O_{T,\beta}(1) $$. 
@@ -78,11 +78,11 @@ Now, if we stop our algorithmic processes at some large constant time $$ T $$, w
 Between the bounds on the four final four quantities for the cumulative error process, the sampler to the warm start mentioned above, and the fact that $$\hat{Q}(\cdot) $$ *must* be a valid covariance, we already have a list of the desiderata that the algorithm requires, at least to have $$W_2 $$ error that is $$O_{T,\beta}(1) $$[^1]:
 - $$\hat{Q}(\cdot) $$ is a regular and valid covariance, namely $$c(\beta)I_n \preceq \hat{Q}(m) \preceq C(\beta)I_n $$ at all $$ m \in \lbrace -1,1\rbrace^n $$[^2].
 - The covariance errors are small, that is $$\mathbb{E}\|\hat{Q}(m_t) - Q(m_t)\|^2_F \le O_{t,\beta}(1) $$.
-- The functions $$\hat{f}_t(\cdot) $$ are $$C_{\beta,t}$$-Lipschitz with respect to $$\|\cdot\|_2 $$.
-- The error of the magnetization estimate of the algorithm is bounded, that is $$\mathbb{E}\|\hat{f}_t(m)-m\|^2_2 \le O_{t,\beta}(1) $$ for every $$m \in \lbrace -1,1\rbrace^n $$.
+- The functions $$\hat{f}_t(\cdot) $$ are $$C_{\beta,t}$$-Lipschitz with respect to $$\|\cdot\|_2 $$ inside the solid cube.
+- The error PHD-TAP drift error for magnetization is bounded, that is $$\mathbb{E}\|\hat{f}_t(m)-m\|^2_2 \le O_{t,\beta}(1) $$ for every $$m \in \lbrace -1,1\rbrace^n $$[^3].
 - After running the (discretized) algorithmic processes for $$(\hat{m}_t,\hat{y}_t) $$ for time $$T $$, there is a sampler that samples from a certain simpler ("stochastically localized") distribution with $$o_n(1) $$ TVD error in polynomial time.
 
-While it is not clear, the covariance and magnetization estimates will only permit error of the desired order when $$ \beta < 1 $$. Additionally, the PSD-ness property of the covariance will hold pointwise inside the cube *only* for $$ \beta < 1/2 $$. To make it, and the magnetization estimate (which relies on it in an indirect way), work, we will need to refine these desiderata to hold *only* at a certain "safe" set $$S_A(c) \subset \lbrace -1, 1\rbrace^n $$ -- this will be the subject of the final blog post.
+While it is not clear, the covariance and magnetization estimates will only permit error of the desired order when $$ \beta < 1 $$. Additionally, the PSD-ness property of the covariance will hold pointwise inside the cube *only* for $$ \beta < 1/2 $$. To make it, and the ASL-TAP vs PHD magnetization estimate (which relies on it in an indirect way), work for $$\beta < 1 $$, we will need to refine these desiderata to hold *only* at a certain "safe" set $$S_A(c) \subset \lbrace -1, 1\rbrace^n $$ -- this will be the subject of the final blog post.
 
 We will now introduce the ideal processes (SL/HD) and algorithmic processes (ASL/PHD) explicitly.
 <br>
@@ -93,6 +93,20 @@ Stuff and things
 
 ### Algorithmic surrogates via the TAP free energy
 Stuff and things
+
+A pleasant consequence of the choice of $$\hat{Q}(m) := \left(\beta^2\mathsf{tr}_n[D^{-1}(m)]I_n -\beta A + D(m)-\frac{2\beta^2}{n}mm^T\right)^{-1} $$ is that, under the Loewner order sandwich on $$\hat{Q}(\cdot) $$ (and consequently $$D(\cdot)\hat{Q}(\cdot) $$) required by the first desideratum for the covariance matrix, one can easily obtain that
+
+$$
+\begin{aligned}
+\|\hat{Q}(a) -\hat{Q}(b)\|^2_F &= \|\hat{Q}(a)D(a)\left(D^{-1}(a)-D^{-1}(b)\right)D(b)\hat{Q}(b) -\hat{Q}(a)(R(a)-R(b))\hat{Q}(b)\|^2_F  \\
+&\le \|D(a)\hat{Q}(a)\|_\infty^2\|D^{-1}(a) - D^{-1}(b)\|_F^2 + \|\hat{Q}(a)\|^2_\infty\|R(a) - R(b)\|^2_F \\
+&\le C(\beta)\|a-b\|^2_2 + C'(\beta)\|R(a)-R(b)\|^2_F\, ,
+\end{aligned}
+$$
+
+where $$R(a) = \left(\beta^2\mathsf{tr}_n[D^{-1}(a)]I_n-\beta A - \frac{2\beta^2}{n}aa^T\right)^{-1} $$. 
+
+is  
 <br>
 
 ### ASL-TAP and boosting to a KL divergence bound
@@ -115,4 +129,8 @@ Stuff and things
 
 [^1]: Note that even having a sampler with $$W_2 $$-error of order $$O_{T,\beta}(1) $$ is an update over the prior state of the art result, if it works for the entire replica-symmetric regime of $$0 <\beta< 1 $$. As we shall see, one only needs to argue that the PHD process stays close to the ASL-TAP process, which is derived in [(1.3)](#asl-tap-and-boosting-to-a-kl-divergence-bound).
 
-[^2]: Note that the fact that $$\hat{Q}(\cdot) $$ must be $$C$$-Lispchitz is implied by the upper bound on the Loewner order, which is one of the required conditions to use Gronwall and bound the error by $$O_{T,\beta}(1) $$.
+[^2]: Note that the fact that $$\hat{Q}(\cdot) $$ must be $$C$$-Lispchitz is not immediately implied by the upper bound on the Loewner order, but requires using the resolvent identity and definition of the exact choice of $$\hat{Q}(\cdot) $$ used in the algorithmic process.
+
+which gives
+
+[^3]: It will shortly become clear why I am calling this a "PHD-TAP drift error".
