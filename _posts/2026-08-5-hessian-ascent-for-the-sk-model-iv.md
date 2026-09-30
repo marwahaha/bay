@@ -73,7 +73,7 @@ $$
 
 At this point, it is clear that if we are only to run our algorithmic processes for finite time $$ T $$ and the final four terms in the bound above are of order $$O_{t,\beta}(1) $$ at every $$0 \le t \le T $$, a Gronwall's inequality bound will immediately give that $$\mathbb{E}\|\text{err}_T\|^2_2 = O_{T,\beta}(1) $$. 
 
-Now, if we stop our algorithmic processes at some large constant time $$ T $$, we *must* either assert that some deterministic and efficient function $$h(\hat{m}_T,\hat{y}_T) $$ outputs a sample with $$o_n(1) $$ TVD error, **or** we can use the pair $$(\hat{m}_T,\hat{y}_T) $$ as a "warm start" to another efficient algorithm which outputs a sample $$\sigma \in \lbrace -1,1\rbrace^n $$ that *is* $$o_n(1) $$ close in TVD error to the target measure. We will fo for the latter approach.
+Now, if we stop our algorithmic processes at some large constant time $$ T $$, we *must* either assert that some deterministic and efficient function $$h(\hat{m}_T,\hat{y}_T) $$ outputs a sample with $$o_n(1) $$ TVD error, **or** we can use the pair $$(\hat{m}_T,\hat{y}_T) $$ as a "warm start" to another efficient algorithm which outputs a sample $$\sigma \in \lbrace -1,1\rbrace^n $$ that *is* $$o_n(1) $$ close in TVD error to the target measure. We will choose the latter approach.
 
 Between the bounds on the four final four quantities for the cumulative error process, the sampler to the warm start mentioned above, and the fact that $$\hat{Q}(\cdot) $$ *must* be a valid covariance, we already have a list of the desiderata that the algorithm requires, at least to have $$W_2 $$ error that is $$O_{T,\beta}(1) $$:
 - $$\hat{Q}(\cdot) $$ is a regular and valid covariance, namely $$c(\beta)I_n \preceq \hat{Q}(m) \preceq C(\beta)I_n $$ at all $$ m \in \lbrace -1,1\rbrace^n $$[^1].
@@ -91,11 +91,11 @@ We will now introduce the ideal processes (SL/HD) and algorithmic processes (ASL
 Stuff and things
 <br>
 
-### The TAP free energy
+### Algorithmic surrogates via the TAP free energy
 Stuff and things
 <br>
 
-### ASL-TAP and KL divergence
+### ASL-TAP and boosting to a KL divergence bound
 The $$O(1) $$ error estimate for the $$W_2 $$ distance between the ideal and algorithmic SDEs for the magnetization and tilt we developed at the beginning will, unfortunately, not be sufficient to conlcude a $$O(1) $$ KL-divergence error via an application of Girsanov's theorem. This is because in the SL process, the magnetization $$m_t $$ is coupled with the tilt $$y_t $$, whereas this is simply not true for the algorithmic process for $$ \hat{m}_t $$ and $$ \hat{y}_t $$ when $$ \hat{Q}(\hat{m}_t) = \left(\nabla^2\mathcal{F}_{\mathsf{TAP}}(\hat{m}_t)\right)^{-1} $$. Consequently, we must account for *one* additional source of error, and that is the expected squared error between ASL-TAP and the PHD process. The final desiderata to obtain $$O(1) $$ KL divergence error will come from this part of the argument.
 <br>
 
