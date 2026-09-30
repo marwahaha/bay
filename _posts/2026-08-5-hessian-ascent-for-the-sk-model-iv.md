@@ -59,7 +59,7 @@ $$
 d\begin{pmatrix} \hat{y}_t \\ \hat{m}_t \end{pmatrix} = \begin{pmatrix} \hat{f}_t(\hat{m}_t) \\ 0^n \end{pmatrix} dt + \begin{pmatrix} I_n \\ \hat{Q}(\hat{m}_t) \end{pmatrix}dB_t\,.
 $$
 
-We can now upper-bound the $$W_2 $$ distance between the ideal and algorithmic processes using the cunulative difference process $$\text{err}_t = \begin{pmatrix} y_t - \hat{y}_t \\ m_t - \hat{f}_t(\hat{m}_t) \end{pmatrix} $$. Indeed, a simple application of Ito's lemma tells us that the rate of the average instantaneous error between the two processes is
+We can now upper-bound the $$W_2 $$ distance between the ideal and algorithmic processes using the cumulative difference process $$\text{err}_t = \begin{pmatrix} y_t - \hat{y}_t \\ m_t - \hat{f}_t(\hat{m}_t) \end{pmatrix} $$. Indeed, a simple application of Ito's lemma tells us that the rate of the average instantaneous error between the two processes is
 
 $$
 \frac{d}{dt}\mathbb{E}\|\text{err}_t\|^2_2 = 2\mathbb{E}\langle\text{err}_t, (\hat{f}_t(\hat{m}_t),0^n)-(m_t,0^n)\rangle + \mathbb{E}\|Q(m_t) - \hat{Q}(\hat{m}_t)\|^2_F\,,
@@ -68,12 +68,12 @@ $$
 whereupon an application of a $$c $$-weighted AM-GM inequality on the first term followed by some triangle inequalities and the fact that $$(a+b)^2 \le 2a^2+2b^2 $$ tells us that 
 
 $$
-\frac{d}{dt}\mathbb{E}\|\text{err}_t\|^2_2 \le c\mathbb{E}\|\text{err}_t\|^2_2 + \frac{2}{c}\left(\underbrace{\mathbb{E}\|\hat{f}_t(\hat{m}_t)-\hat{f}_t(m_t)\|^2_2}_{\hat{f}_t \text{ Lipschitz error}} + \underbrace{\mathbb{E}\|\hat{f}_t(m_t)-m_t\|^2_2}_{\text{PHD-TAP drift error}}\right) + \underbrace{\mathbb{E}\|\hat{Q}(\hat{m}_t)-\hat{Q}(m_t)\|^2_F}_{\hat{Q}(\cdot)\text{ Lipschitz error}} + \underbrace{\mathbb{E}\|\hat{Q}(m_t)-Q(m_t)\|^2_F}_{\text{covariance estimtate error}}\,.
+\frac{d}{dt}\mathbb{E}\|\text{err}_t\|^2_2 \le c\mathbb{E}\|\text{err}_t\|^2_2 + \frac{2}{c}\left(\underbrace{\mathbb{E}\|\hat{f}_t(\hat{m}_t)-\hat{f}_t(m_t)\|^2_2}_{\hat{f}_t \text{ Lipschitz error}} + \underbrace{\mathbb{E}\|\hat{f}_t(m_t)-m_t\|^2_2}_{\text{PHD-TAP drift error}}\right) + 2\underbrace{\mathbb{E}\|\hat{Q}(\hat{m}_t)-\hat{Q}(m_t)\|^2_F}_{\hat{Q}(\cdot)\text{ Lipschitz error}} + 2\underbrace{\mathbb{E}\|\hat{Q}(m_t)-Q(m_t)\|^2_F}_{\text{covariance estimtate error}}\,.
 $$
 
 At this point, it is clear that if we are only to run our algorithmic processes for finite time $$ T $$ and the final four terms in the bound above are of order $$O_{t,\beta}(1) $$ at every $$0 \le t \le T $$, a Gronwall's inequality bound will immediately give that $$\mathbb{E}\|\text{err}_T\|^2_2 = O_{T,\beta}(1) $$. 
 
-Now, if we stop our algorithmic processes at some large constant time $$ T $$, we *must* either assert that some deterministic and efficient function $$h(\hat{m}_T,\hat{y}_T) $$ outputs a sample with $$o_n(1) $$ TVD error, **or** we can use the pair $$(\hat{m}_T,\hat{y}_T) $$ as a "warm start" to another efficient algorithm which outputs a sample $$\sigma \in \lbrace -1,1\rbrace^n $$ that *is* $$o_n(1) $$ close in TVD error to the target measure. We will choose the latter approach.
+Now, if we stop our algorithmic processes at some large constant time $$ T $$, we *must* either assert that some deterministic and efficient function $$h(\hat{m}_T,\hat{y}_T) $$ outputs a sample with $$o_n(1) $$ TVD error, **or** we can use the pair $$(\hat{m}_T,\hat{y}_T) $$ as a "warm start" to another efficient algorithm which outputs a sample $$\sigma \in \lbrace -1,1\rbrace^n $$ that is $$o_n(1) $$ close in TVD error to the target measure. We will choose the latter approach.
 
 Between the bounds on the four final four quantities for the cumulative error process, the sampler to the warm start mentioned above, and the fact that $$\hat{Q}(\cdot) $$ *must* be a valid covariance, we already have a list of the desiderata that the algorithm requires, at least to have $$W_2 $$ error that is $$O_{T,\beta}(1) $$[^1]:
 - $$\hat{Q}(\cdot) $$ is a regular and valid covariance, namely $$c(\beta)I_n \preceq \hat{Q}(m) \preceq C(\beta)I_n $$ at all $$ m \in \lbrace -1,1\rbrace^n $$[^2].
@@ -84,7 +84,7 @@ Between the bounds on the four final four quantities for the cumulative error pr
 
 While it is not clear, the covariance and magnetization estimates will only permit error of the desired order when $$ \beta < 1 $$. Additionally, the PSD-ness property of the covariance will hold pointwise inside the cube *only* for $$ \beta < 1/2 $$. To make it, and the ASL-TAP vs PHD magnetization estimate (which relies on it in an indirect way), work for $$\beta < 1 $$, we will need to refine these desiderata to hold *only* at a certain "safe" set $$S_A(c) \subset \lbrace -1, 1\rbrace^n $$ -- this will be the subject of the final blog post.
 
-We will now introduce the ideal processes (SL/HD) and algorithmic processes (ASL/PHD) explicitly.
+We are now two steps away from getting a $$o_n(1) $$ sampler, if we can show the desiderata outlined above. First, we need to reason about *one* more source of $$L_2 $$-error to go from $$O_{T,\beta}(1) $$-$$W_2 $$ error to $$O_{T,\beta}(1) $$-KL divergence error via an application of Girsanov's theorem. At this point, Pinsker's inequality yields a $$O_{T,\beta}(1) $$-TVD error, but that is still not $$o_n(1) $$. The second step, which achieves this, is to use rejection sampling (but over path space) to suppress the error further to $$o_{n}(1) $$-TVD error. We will now introduce the ideal processes (SL/HD), then define the TAP free energy and use it to derive the algorithmic surrogates. At that point, we will be able to complete the ASL-TAP and PHD $$L_2 $$-error bound needed to apply Girsanov's theorem. We will then move on to defining Jarzynski's equality, see how it allows us to do rejection sampling, and briefly overview how it suppresses the TVD error further. Doing the last step will incur *one* more desiderata, at which point we will conclude with our final list of desiderata.
 <br>
 
 ### Stochastic Localization and Hessian Dynamics
@@ -127,7 +127,7 @@ Stuff and things
 
 #### FOOTNOTES
 
-[^1]: Note that even having a sampler with $$W_2 $$-error of order $$O_{T,\beta}(1) $$ is an update over the prior state of the art result, if it works for the entire replica-symmetric regime of $$0 <\beta< 1 $$. As we shall see, one only needs to argue that the PHD process stays close to the ASL-TAP process, which is derived in [(1.3)](#asl-tap-and-boosting-to-a-kl-divergence-bound).
+[^1]: Note that even having a sampler with $$W_2 $$-error of order $$O_{T,\beta}(1) $$ is an improvement over the prior state of the art result, if it works for the entire replica-symmetric regime of $$0 <\beta< 1 $$. As we shall see, one only needs to argue that the PHD process stays close to the ASL-TAP process, which is derived in [(1.3)](#asl-tap-and-boosting-to-a-kl-divergence-bound), to obtain $$O_{T,\beta}(1) $$ error. Jarzynski's equality only enters as a final step, to boost the 
 
 [^2]: Note that the fact that $$\hat{Q}(\cdot) $$ must be $$C$$-Lispchitz is not immediately implied by the upper bound on the Loewner order, but requires using the resolvent identity and definition of the exact choice of $$\hat{Q}(\cdot) $$ used in the algorithmic process.
 
