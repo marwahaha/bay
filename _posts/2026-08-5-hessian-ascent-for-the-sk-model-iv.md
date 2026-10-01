@@ -34,7 +34,7 @@ I have decided to write, with a guest contribution from Holden, a **5-part** blo
 3. [Conclusions]()
    * [Certifying the overlap distribution](certifying-the-overlap-distribution)
    * [Weak functional inequalities and resolvent driven SDEs](weak-functional-inequalities-and-resolvent-driven-SDEs)
-   * [Sampling without functional inequalities]()
+   * [Sampling without functional inequalities](sampling-without-functional-inequalities)
 4. [Footnotes](#footnotes)
 <br>
 
@@ -170,17 +170,48 @@ $$
 
 where $$R(a) = \left(\beta^2\mathsf{tr}_n[D^{-1}(a)]I_n-\beta A - \frac{2\beta^2}{n}aa^T\right)^{-1} $$. Then, conditioning on the event that $$\|A\|_\infty \le 2+\delta_\beta $$ and doing some elementary estimates using the fact that $$a,b \in (-1,1)^n $$, yields that $$\|R(a)-R(b)\|^2_F \le C(\beta)\|a-b\|^2_2 $$. Substituting this into the bound above shows that $$\hat{Q}(\cdot) $$ is Lipschitz with respect to $$\|\cdot\|_F $$ and proves one of the four regularity properties in the desiderata (simply as a consequence of the first desideraturm and surrogate choice of covariance).
 
-I mentioned before that while the algorithmic version of HD, which we can now see will start at $$ \hat{m}_0 = 0^n $$ with updates
+I mentioned before that while the algorithmic version of HD, called potential Hessian dynamics (PHD), which we can now see will start at $$ \hat{m}_0 = 0^n $$ with updates
 
 $$
-d\hat{m}_t = \left(\beta^2\mathsf{tr}_n[D^{-1}(m)]I_n -\beta A + D(m)-\frac{2\beta^2}{n}mm^T\right)^{-1}dB_t\,,
+d\hat{m}_t = \left(\beta^2\mathsf{tr}_n[D^{-1}(\hat{m}_t)]I_n -\beta A + D(\hat{m}_t)-\frac{2\beta^2}{n}\hat{m}_t(\hat{m}_t)^T\right)^{-1}dB_t\,,
 $$
 
-will not be used directly, it will be useful in the analysis. One can ask, then, why can't we just boost the $$O_{T,\beta}(1) $$ bound we can assume (given our desiderata, which we will systematically prove) 
+will not be used directly, it will be useful in the analysis. One can ask, then, how so? One answer is the reason we can't just boost the $$O_{T,\beta}(1) $$ $$W_2 $$ bound we can assume (given our desiderata, which we will systematically prove) to a $$O(1) $$-KL divergence bound via Girsanov's theorem -- we now focus on why this is, and how to address it.
 <br>
 
 ### ASL-TAP and boosting to a KL divergence bound
-The $$O(1) $$ error estimate for the $$W_2 $$ distance between the ideal and algorithmic SDEs for the magnetization and tilt we developed at the beginning will, unfortunately, not be sufficient to conlcude a $$O(1) $$ KL-divergence error via an application of Girsanov's theorem. This is because in the SL process, the magnetization $$m_t $$ is coupled with the tilt $$y_t $$, whereas this is simply not true for the algorithmic process for $$ \hat{m}_t $$ and $$ \hat{y}_t $$ when $$ \hat{Q}(\hat{m}_t) = \left(\nabla^2\mathcal{F}_{\mathsf{TAP}}(\hat{m}_t)\right)^{-1} $$. Consequently, we must account for *one* additional source of error, and that is the expected squared error between the ASL-TAP and PHD process. The final desiderata to obtain $$O(1) $$ KL divergence error will come from this part of the argument.
+In a nutshell, the main reason why the $$O_{t,\beta}(1) $$ $$W_2 $$ error can't be boosted to a KL-divergence error via Girsanov's theorem is that the algorithmic processes for $$\hat{y}_t $$ and $$\hat{m}_t $$ are not coupled in any way, but they *should* satisfy the constraint that $$\nabla\mathcal{F}_{\mathsf{TAP}}(\hat{m}_t,\hat{y}_t)  = 0 $$. This requirement is the algorithmic analogue of the fact that $$ y_t $$ and $$ m_t $$ satisfy the relationship $$ m_t = \mathbb{E}_{x\sim\nu_t}[x] $$. If not, $$\hat{m}_t $$ and $$ \hat{y}_t $$ are simply not coupled in a way the ideal processes are, and *this* is what stops us from applying Girsanov's theorem to boost the $$W_2 $$ error to a KL-divergence error. It turns out that we cannot satisfy all three algorithmic processes at the same time -- the algorithmic processes based on the TAP surrogacy are over-determined. We need to satisfy the TAP fixed-point, so we can either choose PHD-TAP
+
+$$
+	d\hat{m}_t = \hat{Q}(\hat{m}_t)dB_t\,,\qquad\qquad d\hat{y}_t = \hat{f}(\hat{m}_t)dt + dB_t
+$$
+
+or ASL-TAP
+
+$$
+	d\hat{y}_t = \hat{m}_tdt + dB_t\,,\qquad\qquad d\hat{m}_t=\hat{Q}(\hat{m}_t)\left(\hat{m}_t-\hat{f}(\hat{m}_t)\right)dt + \hat{Q}(\hat{m}_t)dB_t\,, 
+$$ 
+
+where 
+
+$$
+\hat{f}(z) := \left(D(z)E_{\mathsf{D}_n}\left[\hat{Q}(z)^2\right]D(z) - \beta^2\left(\mathsf{tr}_n\left[\hat{Q}(z)^2\right]I_n + 2\hat{Q}(z)^2\right)\right)z
+$$ 
+
+can be explicitly derived via an application of Ito's lemma to the function that gives a precise relationship between $$\hat{y}_t $$ and $$ \hat{m}_t $$, which itself can be straightforwardly derived from the TAP fixed-point equation. 
+
+For the algorithm, using the strong convexity of $$\hat{Q}(\cdot) $$, we choose to satisfy the TAP fixed-point constraint and run the (discretized) ASL process $$d\hat{y}_t = \hat{m}_tdt + dB_t $$. For the analysis, we actually show that, under the desiderata mentioned before, PHD-TAP $$(\hat{m}_t, \hat{y}_t) $$ stays close to the ideal processes $$(y_t,m_t) $$ in the sense that
+
+$$
+	\mathbb{E}\|\hat{m}(y_t) - m_t(y_t)\|^2_2 = O_{t,\beta}(1)\,.
+$$
+
+This follows by a triangle inequality, the Lipschitz-ness of $$ \hat{m}_t $$ (which can be straightofrwardly concluded from the fact that $$\hat{Q} $$ has bonuded operator norm by the first desideratum) and the fact that 
+
+
+After this, one *can* apply Girsanov's theorem (after an application of the DPI) to show that ASL-TAP stays close to the ideal SL process for $$y_t $$. 
+
+Consequently, we must account for *one* additional source of error, and that is the expected squared error between the ASL-TAP and PHD process. The final desiderata to obtain $$O(1) $$ KL divergence error will come from this part of the argument.
 <br>
 
 ## Jarzynski equality
