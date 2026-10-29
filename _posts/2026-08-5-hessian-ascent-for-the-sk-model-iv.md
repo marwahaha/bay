@@ -57,6 +57,7 @@ I have decided to write, with a guest contribution from Holden, a **6-part** blo
    - [Sampling without functional inequalities](#sampling-without-functional-inequalities)
 
 4. [Footnotes](#footnotes)
+
 <br>
 
 ## Designing the algorithm and desiderata
@@ -257,6 +258,7 @@ where the first line uses the triangle inequality and the second line uses the L
 After this, one *can* apply Girsanov's theorem (after an application of the DPI) to show that ASL-TAP stays close to the ideal SL process for $$y_t$$. 
 
 Consequently, we must account for *one* additional source of error, and that is the expected squared error between the ASL-TAP and PHD process. The final desiderata to obtain $$O(1)$$ KL divergence error will come from this part of the argument.
+
 <br>
 
 ## Reducing to negligible TVD error via rejection sampling over path space
@@ -361,7 +363,8 @@ In fact, this follows from a more basic fact.
 
 Calculation shows that $$\nabla \omega (m) = m - f(m)$$, so this is in fact exactly the same drift error that is considered in desideratum 4.
 
-Exponential moments (d5) may seem like a strong condition, but it is satisfied for Lipschitz functions of Gaussian random variables. The key insight is that Lipschitzness of $$\omega$$ implies that $$\hat w_T$$ is Lipschitz in a Gaussian space, not a finite one but an *infinite-dimensional* path space. We will show the implication between (d5') and (d5) in a subsequent post. Upon adding this final desideraturm to the previously existing list as number 5), the list of required desiderata are complete and the next few blog posts will focus on how one proves these in the case of the SK model, highlighting reusable techniques and frameworks in the approach where possible. 
+Exponential moments (d5) may seem like a strong condition, but it is satisfied for Lipschitz functions of Gaussian random variables. The key insight is that Lipschitzness of $$\omega$$ implies that $$\hat w_T$$ is Lipschitz in a Gaussian space, not a finite one but an *infinite-dimensional* path space. We will show the implication between (d5') and (d5) in a subsequent post. Upon adding this final desideraturm to the previously existing list as number 5), the list of required desiderata are complete and the next few blog posts will focus on how one proves these in the case of the SK model, highlighting reusable techniques and frameworks in the approach where possible.
+ 
 <br>
 
 ## Conclusions
