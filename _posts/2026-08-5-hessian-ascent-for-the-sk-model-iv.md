@@ -62,7 +62,6 @@ I have decided to write, with a guest contribution from Holden, a **6-part** blo
 ## Designing the algorithm and desiderata
 
 We will begin by introducin the precise equivalence between stochastic localization and Hessian dynamics, and the "surrogate" covariance we use (and where it comes from). After that, it will be clear that the error of the produced sample with respect to the true distribution will be entirely a function of how well one (algorithmic) family of SDEs tracks another (ideal) family of SDEs, and this can be done by systematically building a list of desiderata that can be used to control the error starting from $$O(1)$$ Wasserstein-2 distance all the way to $$o_n(1)$$ TVD error.
-<br>
 
 ### Stochastic localization and Hessian dynamics
 
@@ -105,7 +104,6 @@ d\hat{m}_t = \hat{Q}(\hat{m}_t)dB_t\,,
 $$
 
 and now a critical part of proving our desiderata and writing down the final algorithm relies on gaining access to an efficiently computable sequence of matrix-valued functions $$\hat{Q} : [-1,1]^n \to M_n(\mathbb{R})_{\text{sa}}$$ -- this is exactly where the contiguity to a planted model *and* the TAP free energy will be of assistance.
-<br>
 
 ### Algorithmic surrogates via the TAP free energy
 
@@ -156,9 +154,8 @@ d\hat{m}_t = \left(\beta^2\mathsf{tr}_n[D^{-1}(\hat{m}_t)]I_n -\beta A + D(\hat{
 $$
 
 will not be used directly, it will be useful in the analysis. One can ask, then, how so? One answer is the reason we can't just boost the $$O_{T,\beta}(1)$$ $$W_2$$ bound we can assume (given our desiderata, which we will systematically prove) to a $$O(1)$$-KL divergence bound via Girsanov's theorem -- we now focus on why this is, and how to address it.
-<br>
 
-### SDE error Analysis
+### SDE error analysis
 
 Let us now reason about how to bound the error between two continuous diffusion processes run for large constant time. Think of one process as representing an "ideal" process that, if run for infinite time, will localize on a point in the support of the Gibbs measure, and think of the other as one that uses a proxy covariance that can be algorithmically computed (but incurs approximation errors). 
 
@@ -345,9 +342,8 @@ $$
 We can estimate if we can estimate the partition function $$Z_{\beta A, \hat y_T}$$; by a standard argument with simulated annealing, this is possible if we can sample from $$\mu_{\beta'A, \hat y_T}$$, $$0\le \beta'\le \beta$$. The efficiency of this derives from 2 separate estimates: first, that $$p_T$$ is close to $$\hat p_T$$ ($$\mathrm{KL}(p_T \| \hat p_T)= O(1)$$), and that second, that most of the mass of the expectation $$\mathbb E e^{\hat w_T}$$ comes from when the relative size of $$e^{\hat w_T}$$ is bounded, which we formalize as a desiderata below.
 
 We note some subtleties in operationalizing this idea into an algorithmic guarantee. First, because the rejection sampling ratio is not normalized, we first draw multiple samples and normalize using an appropriate quantile. Second, we only know that we can sample from $$\mu_{\beta A,y}$$ and hence estimate $$Z_{\beta A, y}$$ over typical draws of $$y$$ from the *ideal* SL distribution $$y_T\sim p_T$$, whereas we are applying this to draws $$\hat y_T\sim \hat p_T$$. This will not be a problem as long as we do not overestimate the partition function in the possibly "fictitious" $$y$$'s. Fortunately, we can ensure this using a functional inequality on a subset of the hypercube (a wedge) which does *not* depend on the tilt $$y$$.
-<br>
 
-### Final desiderata
+### Final desideratum
 
 Because the JE weights are exponentiated, a natural desideratum is that the moment generating function is bounded. 
 
@@ -365,23 +361,19 @@ In fact, this follows from a more basic fact.
 
 Calculation shows that $$\nabla \omega (m) = m - f(m)$$, so this is in fact exactly the same drift error that is considered in desideratum 4.
 
-Exponential moments (d5) may seem like a strong condition, but it is satisfied for Lipschitz functions of Gaussian random variables. The key insight is that Lipschitzness of $$\omega$$ implies that $$\hat w_T$$ is Lipschitz in a Gaussian space, not a finite one but an *infinite-dimensional* path space. We will show the implication between (d5') and (d5) in a subsequent post.
+Exponential moments (d5) may seem like a strong condition, but it is satisfied for Lipschitz functions of Gaussian random variables. The key insight is that Lipschitzness of $$\omega$$ implies that $$\hat w_T$$ is Lipschitz in a Gaussian space, not a finite one but an *infinite-dimensional* path space. We will show the implication between (d5') and (d5) in a subsequent post. Upon adding this final desideraturm to the previously existing list as number 5), the list of required desiderata are complete and the next few blog posts will focus on how one proves these in the case of the SK model, highlighting reusable techniques and frameworks in the approach where possible. 
 <br>
 
 ## Conclusions
 
 We will end this blog post by focusing on three consequences about the PHA paradigm for sampling. The first is that sampling in TVD allows one to conclude that the distribution of overlaps of two samples produced by two independent runs of the algorithm on the same instance is certifiably close to that of the overlap distribution of the target Gibbs measure -- this is simply not possible to conclude with $$o(n)$$-$$W_2$$ error. For spin-glasses, the distribution of overlaps under the Gibbs is the order parameter of the system and so being able to compute it gives access to many statistics of the system. The second consequence is that the literature has historically focused on getting efficient TVD sampling by proving functional inequalities for a Markov chain whose invariant measure is the target Gibbs measure. Unfortunately, proving functional inequalities straight-up for the Gibbs measure of spin-glasses seems to be difficult for various technical reasons, but the PHA paradigm allows one to sample even without access to such a functional inequality and, in fact, provides access to certain regularity conditions that can be then "bootstrapped" into proving (weak) functional inequalities. This drives into the third point, which briefly talks about how the PHA paradigm (in conjunction wiht Jarzynski's equality) can be used to show weak functional inequalities, and how hte PHA paradigm can be seen as a framework about resolvent-driven SDEs whose dynamics can be analyzed systematically using tools from non-commutative analysis.
-<br>
 
 ### Certifying the overlap distribution
-
 Juspreet writes stuff and things.
-<br>
 
 ### Sampling without functional inequalities
 
 Much of the literature on efficient sampling algorithms proceeds by proving a functional inequality (Poincaré or log-Sobolev), which establishes rapid mixing of the associated Markov chain (Glauber dynamics in discrete settings and Langevin dynamics in continuous settings). **Our framework provides an alternative path, obtaining the strong guarantee of negligble TV distance without needing to prove the standard (stronger) functional inequalities.** In the context of sampling algorithms, functional inequalities are the strongest results one can prove and hence desirable when achievable--however, for spin glass models, they may be exceedingly difficult to prove, if indeed they do hold, which is by no means clear.
-<br>
 
 ### Weak functional inequalities and resolvent driven SDEs
 
@@ -417,7 +409,8 @@ where $$P(A(z)) := c_0\mathbf{1} + \sum_{k=1}^n\frac{c_k(-1)^{k-1}}{(k-1)!}\frac
 
 Note that the approximation above is for the ideal, infinite-dimensional objects in a free-algebra generated by the operators $$\{\hat{Q}_\infty(t,\hat{m}_t),M_\infty(\hat{m}_t)\}$$ with the same spectral distributions that the finite-dimensional matrices $$\hat{Q}(t,\hat{m}_t)$$ and $$M(\hat{m}_t)$$ converge to. Of course, we want a finite dimensional version of this, and by recent advances in free probability theory, we can replace the terms with their finite-dimensional counterparts without incurring too much error. A systematic way to do this using strong-convergence results that are based on Gaussian interpolation along with a way to make the resolvent "sufficiently nice" is something that has been systematically developed in [PHA-1, Section-4](https://arxiv.org/abs/2408.02360), [PHA-3, Appendix B](https://arxiv.org/abs/2605.03718) and [PHA-4, Section-5](https://arxiv.org/abs/2609.30590). One can then use this control to prove various regularity statements by using the regularity of the corresponding free objects (see [PHA-4, Section-6](https://arxiv.org/abs/2609.30590)) or prove convergence of various Lipschitz functions of the iterates to one-dimensional SDEs (see [PHA-1, Section-5](https://arxiv.org/abs/2408.02360)).
 
-The particular structure of the sum inside the resolvent is based on the Hessian of a free-energy -- the free energy has an internal-energy term and an entropy term that which encodes the underlying target geometry. Therefore, the $$\mathcal{F}$$ matrix can be thought of as a Hessian of the energy and the matrix $$M$$ is the Hessian of an entropy term. The projection onto the algebra generated by $$M$$ asks for the purely entropic contribution of the dynamics at any time $$t$$ and point $$\hat{m}_t \in \mathcal{D}$$.   
+The particular structure of the sum inside the resolvent is based on the Hessian of a free-energy -- the free energy has an internal-energy term and an entropy term that which encodes the underlying target geometry. Therefore, the $$\mathcal{F}$$ matrix can be thought of as a Hessian of the energy and the matrix $$M$$ is the Hessian of an entropy term. The projection onto the algebra generated by $$M$$ asks for the purely entropic contribution of the dynamics at any time $$t$$ and point $$\hat{m}_t \in \mathcal{D}$$.
+<br>   
 
 #### FOOTNOTES
 
