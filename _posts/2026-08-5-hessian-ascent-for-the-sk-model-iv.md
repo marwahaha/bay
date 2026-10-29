@@ -25,8 +25,7 @@ I have decided to write, with a guest contribution from Holden, a **6-part** blo
 
 - In the fifth blog post, I will talk about *how* to access a "safe set" of points $$S_{A}(c) \subset \lbrace -1,1\rbrace^n$$ when one fixes a "good" event over the input $$A$$ so that, with high probability over the SL paths, the TAP Hessian evaluated at any $$m \in S_{A}(c)$$ is $$c$$-strongly convex. This is the place where, perhaps unsurpringly, we rely on a result about AMP state evolution. Essentially, we combine the fact that posterior means of the SL tilted measures are "stable" in time for most SL paths with the $$c$$-strong convexity of Hessians in small balls around AMP iterates, to build "tubes" around good SL paths that we then union to be contained in $$S_{A}(c)$$. From this, one straightforwardly obtains that, with high probability over $$A$$ and the SL paths, uniformly in time $$t \in [0,T]$$, small enough balls around the SL-tilted means $$\lbrace m_t\rbrace_{0 \le t \le T}$$ lie in $$S_{A}(c)$$.
 
-- In the final blog-post, I will talk about the PHA program in general, mentioning the two main current projects underway as well a more longer-term set of two projects that are also being worked on (but I will discuss these far more vaguely and briefly, for reasons that I hope are obvious given the current circumstances). I will, in a related way, (briefly) discuss the next "phase" of the program. When the program was originally conceived, spin-glasses on the hypercube were seen merely as a "test-bed" for the program that had historical importance, sufficient technical depth, and structural similarity to models that were the more long-term target of the program.  
-
+- In the final blog-post, I will talk about the PHA program in general, mentioning the two main current projects underway as well a more longer-term set of two projects that are also being worked on (but I will discuss these far more vaguely and briefly, for reasons that I hope are obvious given the current circumstances). I will, in a related way, (briefly) discuss the next "phase" of the program. When the program was originally conceived, spin-glasses on the hypercube were seen merely as a "test-bed" for the program that had historical importance, sufficient technical depth, and structural similarity to models that were the more long-term target of the program.
 <br>
 
 #### Table of Contents
@@ -58,13 +57,11 @@ I have decided to write, with a guest contribution from Holden, a **6-part** blo
    - [Sampling without functional inequalities](#sampling-without-functional-inequalities)
 
 4. [Footnotes](#footnotes)
-
 <br>
 
 ## Designing the algorithm and desiderata
 
 We will begin by introducin the precise equivalence between stochastic localization and Hessian dynamics, and the "surrogate" covariance we use (and where it comes from). After that, it will be clear that the error of the produced sample with respect to the true distribution will be entirely a function of how well one (algorithmic) family of SDEs tracks another (ideal) family of SDEs, and this can be done by systematically building a list of desiderata that can be used to control the error starting from $$O(1)$$ Wasserstein-2 distance all the way to $$o_n(1)$$ TVD error.
-
 <br>
 
 ### Stochastic localization and Hessian dynamics
@@ -108,7 +105,6 @@ d\hat{m}_t = \hat{Q}(\hat{m}_t)dB_t\,,
 $$
 
 and now a critical part of proving our desiderata and writing down the final algorithm relies on gaining access to an efficiently computable sequence of matrix-valued functions $$\hat{Q} : [-1,1]^n \to M_n(\mathbb{R})_{\text{sa}}$$ -- this is exactly where the contiguity to a planted model *and* the TAP free energy will be of assistance.
-
 <br>
 
 ### Algorithmic surrogates via the TAP free energy
@@ -160,7 +156,6 @@ d\hat{m}_t = \left(\beta^2\mathsf{tr}_n[D^{-1}(\hat{m}_t)]I_n -\beta A + D(\hat{
 $$
 
 will not be used directly, it will be useful in the analysis. One can ask, then, how so? One answer is the reason we can't just boost the $$O_{T,\beta}(1)$$ $$W_2$$ bound we can assume (given our desiderata, which we will systematically prove) to a $$O(1)$$-KL divergence bound via Girsanov's theorem -- we now focus on why this is, and how to address it.
-
 <br>
 
 ### SDE error Analysis
@@ -265,7 +260,6 @@ where the first line uses the triangle inequality and the second line uses the L
 After this, one *can* apply Girsanov's theorem (after an application of the DPI) to show that ASL-TAP stays close to the ideal SL process for $$y_t$$. 
 
 Consequently, we must account for *one* additional source of error, and that is the expected squared error between the ASL-TAP and PHD process. The final desiderata to obtain $$O(1)$$ KL divergence error will come from this part of the argument.
-
 <br>
 
 ## Reducing to negligible TVD error via rejection sampling over path space
@@ -351,7 +345,6 @@ $$
 We can estimate if we can estimate the partition function $$Z_{\beta A, \hat y_T}$$; by a standard argument with simulated annealing, this is possible if we can sample from $$\mu_{\beta'A, \hat y_T}$$, $$0\le \beta'\le \beta$$. The efficiency of this derives from 2 separate estimates: first, that $$p_T$$ is close to $$\hat p_T$$ ($$\mathrm{KL}(p_T \| \hat p_T)= O(1)$$), and that second, that most of the mass of the expectation $$\mathbb E e^{\hat w_T}$$ comes from when the relative size of $$e^{\hat w_T}$$ is bounded, which we formalize as a desiderata below.
 
 We note some subtleties in operationalizing this idea into an algorithmic guarantee. First, because the rejection sampling ratio is not normalized, we first draw multiple samples and normalize using an appropriate quantile. Second, we only know that we can sample from $$\mu_{\beta A,y}$$ and hence estimate $$Z_{\beta A, y}$$ over typical draws of $$y$$ from the *ideal* SL distribution $$y_T\sim p_T$$, whereas we are applying this to draws $$\hat y_T\sim \hat p_T$$. This will not be a problem as long as we do not overestimate the partition function in the possibly "fictitious" $$y$$'s. Fortunately, we can ensure this using a functional inequality on a subset of the hypercube (a wedge) which does *not* depend on the tilt $$y$$.
-
 <br>
 
 ### Final desiderata
@@ -373,25 +366,21 @@ In fact, this follows from a more basic fact.
 Calculation shows that $$\nabla \omega (m) = m - f(m)$$, so this is in fact exactly the same drift error that is considered in desideratum 4.
 
 Exponential moments (d5) may seem like a strong condition, but it is satisfied for Lipschitz functions of Gaussian random variables. The key insight is that Lipschitzness of $$\omega$$ implies that $$\hat w_T$$ is Lipschitz in a Gaussian space, not a finite one but an *infinite-dimensional* path space. We will show the implication between (d5') and (d5) in a subsequent post.
-
 <br>
 
 ## Conclusions
 
-We will end this blog post by focusing on three consequences about the PHA paradigm for sampling. The first is that sampling in TVD allows one to conclude that the distribution of overlaps of two samples produced by two independent runs of the algorithm on the same instance is certifiably close to that of the overlap distribution of the target Gibbs measure -- this is simply not possible to conclude with $$o(n)$$-$$W_2$$ error. For spin-glasses, the distribution of overlaps under the Gibbs is the order parameter of the system and so being able to compute it gives access to many statistics of the system. The second consequence is that the literature has historically focused on getting efficient TVD sampling by proving functional inequalities for a Markov chain whose invariant measure is the target Gibbs measure. Unfortunately, proving functional inequalities straight-up for the Gibbs measure of spin-glasses seems to be difficult for various technical reasons, but the PHA paradigm allows one to sample even without access to such a functional inequality and, in fact, provides access to certain regularity conditions that can be then "bootstrapped" into proving (weak) functional inequalities. This drives into the third point, which briefly talks about how the PHA paradigm (in conjunction wiht Jarzynski's equality) can be used to show weak functional inequalities, and how hte PHA paradigm can be seen as a framework about resolvent-driven SDEs whose dynamics can be analyzed systematically using tools from non-commutative analysis. 
-
+We will end this blog post by focusing on three consequences about the PHA paradigm for sampling. The first is that sampling in TVD allows one to conclude that the distribution of overlaps of two samples produced by two independent runs of the algorithm on the same instance is certifiably close to that of the overlap distribution of the target Gibbs measure -- this is simply not possible to conclude with $$o(n)$$-$$W_2$$ error. For spin-glasses, the distribution of overlaps under the Gibbs is the order parameter of the system and so being able to compute it gives access to many statistics of the system. The second consequence is that the literature has historically focused on getting efficient TVD sampling by proving functional inequalities for a Markov chain whose invariant measure is the target Gibbs measure. Unfortunately, proving functional inequalities straight-up for the Gibbs measure of spin-glasses seems to be difficult for various technical reasons, but the PHA paradigm allows one to sample even without access to such a functional inequality and, in fact, provides access to certain regularity conditions that can be then "bootstrapped" into proving (weak) functional inequalities. This drives into the third point, which briefly talks about how the PHA paradigm (in conjunction wiht Jarzynski's equality) can be used to show weak functional inequalities, and how hte PHA paradigm can be seen as a framework about resolvent-driven SDEs whose dynamics can be analyzed systematically using tools from non-commutative analysis.
 <br>
 
 ### Certifying the overlap distribution
 
 Juspreet writes stuff and things.
-
 <br>
 
 ### Sampling without functional inequalities
 
 Much of the literature on efficient sampling algorithms proceeds by proving a functional inequality (Poincaré or log-Sobolev), which establishes rapid mixing of the associated Markov chain (Glauber dynamics in discrete settings and Langevin dynamics in continuous settings). **Our framework provides an alternative path, obtaining the strong guarantee of negligble TV distance without needing to prove the standard (stronger) functional inequalities.** In the context of sampling algorithms, functional inequalities are the strongest results one can prove and hence desirable when achievable--however, for spin glass models, they may be exceedingly difficult to prove, if indeed they do hold, which is by no means clear.
-
 <br>
 
 ### Weak functional inequalities and resolvent driven SDEs
