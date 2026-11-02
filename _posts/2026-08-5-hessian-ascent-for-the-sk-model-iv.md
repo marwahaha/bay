@@ -51,7 +51,7 @@ I have decided to write, with a guest contribution from Holden, a **6-part** blo
 
 3. [Conclusions](#conclusions)
 
-   - [Certifying the overlap distribution](#certifying-the-overlap-distribution)
+   - [Approximating the overlap distribution](#approximating-the-overlap-distribution)
 
    - [Weak functional inequalities and resolvent driven SDEs](#weak-functional-inequalities-and-resolvent-driven-sdes)
 
